@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = @ApsStrings.rewards;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li><a href="@Url.Action("Index", "Home")">@ApsStrings.home</a></li>
+    <li>@ApsStrings.rewards</li>
+</ul>
+<div class="box2 box2-info">
+
+    <table class="table">
+        <tr>
+            <td>
+                <label>
+                    @ApsStrings.researcher_reward
+                </label>
+            </td>
+            <td>
+                <a href="@Url.Action("Researchers")" class="btn btn-icon btn-info" title="@ApsStrings.edit"><i class="fa fa-edit"></i></a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    @ApsStrings.referee_reward
+                </label>
+            </td>
+            <td>
+                <a href="@Url.Action("Reviewers")" class="btn btn-icon btn-info" title="@ApsStrings.edit"><i class="fa fa-edit"></i></a>
+            </td>
+        </tr>
+    </table>
+</div>

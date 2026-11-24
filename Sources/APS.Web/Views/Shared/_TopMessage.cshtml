@@ -1,0 +1,38 @@
+﻿@{
+    var message = (string)null;
+    var message_type = (string)null;
+    var message_link = (string)null;
+
+    if (!string.IsNullOrWhiteSpace(ViewBag.Message))
+    {
+        message = ViewBag.Message;
+        message_type = ViewBag.MessageType;
+        message_link = ViewBag.MessageLink;
+    }
+    else if (TempData["message"] != null && !string.IsNullOrWhiteSpace((string)TempData["message"]))
+    {
+        message = (string)TempData["message"];
+        message_type = (string)TempData["message_type"];
+        message_link = (string)TempData["message_link"];
+    }
+
+    if (!string.IsNullOrWhiteSpace(message))
+    {
+
+        if (string.IsNullOrWhiteSpace(message_type))
+        {
+            message_type = "success";
+        }
+
+        if (!string.IsNullOrWhiteSpace(message_link))
+        {
+            message = message.Replace("<link>", "<a href=\"" + message_link + "\">").Replace("</link>", "</a>");
+        }
+
+        ViewBag.Message = message;
+        ViewBag.MessageType = message_type;
+
+        <div class="alert alert-@ViewBag.MessageType">@Html.Raw(ViewBag.Message.Replace("'", "\\'").Replace("\r\n", "<br />"))</div>
+
+    }
+}

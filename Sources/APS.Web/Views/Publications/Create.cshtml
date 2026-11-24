@@ -1,0 +1,302 @@
+﻿@model APS.Web.Models.PublishOrderViewModel
+
+@{
+    ViewBag.Title = @ApsStrings.publish_order;
+}
+
+<div class="step-wizard-container2">
+
+    <div class="step-wizard">
+        <div class="progress2">
+            <div class="progressbar2 empty"></div>
+            <div id="prog" class="progressbar2"></div>
+        </div>
+        <ul>
+            <li class="active">
+                <a href="~/Publications/Create?requestId=@Model.RequestId" id="step1">
+                    <span class="step2">1</span>
+                    <span class="title2">@ApsStrings.create</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/PublicationDetails?requestId=@Model.RequestId" id="step2">
+                    <span class="step2">2</span>
+                    <span class="title2">@ApsStrings.publication_details</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/BankDetails?requestId=@Model.RequestId" id="step3">
+                    <span class="step2">3</span>
+                    <span class="title2">@ApsStrings.bank_details</span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="~/Publications/Participant?requestId=@Model.RequestId" id="step4">
+                    <span class="step2">4</span>
+                    <span class="title2">@ApsStrings.co_researcher</span>
+                </a>
+            </li>
+
+            <li class="">
+
+                <a href="~/Publications/Agreement?requestId=@Model.RequestId" id="step5">
+
+                    <span class="step2">5</span>
+                    <span class="title2">@ApsStrings.agreements</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<h2>@ApsStrings.publish_order</h2>
+
+@Html.ValidationSummary(false, "", htmlAttributes: new { @class = "text-danger" })
+
+@using (Html.BeginForm("Create", "Publications", new { RequestId = Model.RequestId, RequestType = ViewBag.RequestType }, FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ResearcherName, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.ResearcherName, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CollegeId, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(model => model.CollegeId, new SelectList(ViewBag.Colleges, "Id", "NameArabic"), ApsStrings.select, htmlAttributes: new { @class = "form-control ddl-college" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DepartmentId, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(model => model.DepartmentId, new SelectList(ViewBag.Departments, "Value", "Text"), ApsStrings.select, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    @*<div id="divMajorSelect" class="form-group" style="display: none;">
+            @Html.LabelFor(m => m.MajorId, new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.DropDownListFor(model => model.MajorId, new SelectList(ViewBag.Majors, "Id", "NameArabic", Model.MajorId), ApsStrings.select, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div id="divMajorFree" class="form-group" style="display: none;">
+            @Html.LabelFor(m => m.MajorOther, new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Html.TextBoxFor(model => model.MajorOther, new { @class = "form-control" })
+            </div>
+        </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ScientificMaterialTypeId, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(x => x.ScientificMaterialTypeId, new List<SelectListItem>
+        {
+            new SelectListItem() {Text = ApsStrings.select, Value= "0"},
+            new SelectListItem() {Text =ApsStrings.type_book, Value= PublicationType.Book.ToString()},
+            new SelectListItem() {Text =ApsStrings.type_handbook, Value= PublicationType.Handbook.ToString()},
+            new SelectListItem() {Text =ApsStrings.type_thesis, Value= PublicationType.Thesis.ToString()},
+            new SelectListItem() {Text =ApsStrings.type_probe, Value= PublicationType.Probe.ToString()},
+            new SelectListItem() {Text =ApsStrings.type_encyclopedia, Value= PublicationType.Encyclopedia.ToString()},
+            new SelectListItem() {Text =ApsStrings.type_dictionary, Value= PublicationType.Dictionary.ToString()},
+            }, htmlAttributes: new
+            {
+                @class = "form-control"
+            }
+                      )
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.PublishType, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.RadioButtonFor(m => m.PublishType, PublishTimeType.NewPublish, new { @id = PublishTimeType.NewPublish, @class = "radio-inline", @checked = "true" }) @ApsStrings.newpublish
+            @Html.RadioButtonFor(m => m.PublishType, PublishTimeType.Republish, new { @id = PublishTimeType.Republish, @class = "radio-inline" }) @ApsStrings.republish
+        </div>
+    </div>
+
+    <div class="form-group" id="divPublishRequests" style="display: none;">
+        @Html.LabelFor(m => m.PublishRequestId, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(m => m.PublishRequestId, Model.PreviousPublishRequests, ApsStrings.select_publish_request, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="pull-right wizard-nav">
+        <input type="submit" id="submit" class="btn btn-primary wizard-fin" value="@ApsStrings.next_btn" data-current-step="2" />
+    </div>
+}
+
+@section Scripts
+{
+
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+
+        $(document).ready(function () {
+
+            $('input[type=radio][name=PublishType]').change(function () {
+                if (this.value == '@PublishTimeType.NewPublish') {
+                    $('#divPublishRequests').hide();
+                }
+                else {
+                    $('#divPublishRequests').show();
+                }
+            });
+
+            var showDropDown = @((Model.PublishType == PublishTimeType.Republish).ToString().ToLower());
+
+            if(showDropDown)
+            {
+                $('#divPublishRequests').show();
+            } else
+            {
+
+            }
+
+            function setClasses(index, steps) {
+                if (index < 0 || index > steps) return;
+                if (index == 0) {
+                    $(".step-wizard-container2 #prev").prop('disabled', true);
+                } else {
+                    $(".step-wizard-container2 #prev").prop('disabled', false);
+                }
+                if (index == steps) {
+                    $(".step-wizard-container2 #next").text('done');
+                } else {
+                    $(".step-wizard-container2 #next").text('next');
+                }
+                $(".step-wizard-container2 ul li").each(function () {
+                    $(this).removeClass();
+                });
+                $(".step-wizard-container2 ul li:lt(" + index + ")").each(function () {
+                    $(this).addClass("done");
+                });
+                $(".step-wizard-container2 ul li:eq(" + index + ")").addClass("active")
+                var p = index * (100 / steps);
+                $(".step-wizard-container2 #prog").width(p + '%');
+            }
+
+            // initial state setup
+            setClasses(0, $(".step-wizard-container2 .step-wizard ul li").length - 1);
+        });
+
+        $('#CollegeId').change(function () {
+
+            var selectedCollegeId = $(this).val();
+
+            if (selectedCollegeId === '0') {
+                $('#divMajorSelect').hide();
+                $('#divMajorFree').show();
+            } else {
+
+                $('#divMajorSelect').show();
+                $('#divMajorFree').hide();
+            }
+
+            var majorSelect = $('#MajorId');
+            majorSelect.empty();
+            majorSelect.selectpicker('refresh');
+
+            if (selectedCollegeId != null && selectedCollegeId != '') {
+                $.getJSON(baseAjaxUrl + 'GetMajors?collegeId=' + selectedCollegeId, function (cities) {
+                    majorSelect.empty();
+                    majorSelect.html('<option></option>');
+                    $.each(cities, function (index, city) {
+                        majorSelect.append($('<option />', {
+                            value: city.value,
+                            text: city.text
+                        }));
+                    });
+
+                    majorSelect.selectpicker('refresh');
+                });
+            }
+        });
+
+   onDomInserted('.ddl-college', function (el) {
+
+            $(el).change(function () {
+
+                var $el = $(el);
+                var selected = $el.val();
+
+                var uniEl = $(el).closest('.form-group').prev().find('select');
+                var otherEl = $(el).closest('.form-group').next().find('select');
+
+                if (otherEl == null || otherEl.length === 0 || !otherEl.attr('name').endsWith('DepartmentId')) {
+                    otherEl = $(el).closest('.form-group').next().next().find('select');
+
+                    uniEl = $(el).closest('.form-group').prev().prev().find('select');
+                }
+
+                var hasSelectPicker = false &&  isFunction(otherEl.selectpicker) && otherEl.hasClass('selectpicker');
+
+                otherEl.empty();
+
+                @*if (uniEl.val() != 1) {
+                    otherEl.append($('<option />', {
+                        value: '0',
+                        text: '@ApsStrings.other'
+                    }));
+                }*@
+
+                //switchOther(otherEl);
+
+                if (hasSelectPicker) {
+                    otherEl.selectpicker('refresh');
+
+                }
+
+                var selectedVal = null;
+                try {
+                    selectedVal = parseInt(selected);
+                } catch (e) {
+
+                }
+
+                if (selectedVal === 0) {
+                } else {
+
+                    $.getJSON(baseAjaxUrl + 'GetDepartments?dontFilter=1&&collegeId=' + selected + "&others=False", function (cats) {
+                        var secCateSelect = otherEl;
+                        secCateSelect.empty();
+                         secCateSelect.append($('<option />', {
+                        value: '', text: '@LangHelpers.Instance["select"]'
+                        }));
+
+                        $.each(cats, function (index, cat) {
+
+                            secCateSelect.append($('<option />', {
+                                value: cat.value,
+                                text: cat.text
+                            }));
+                        });
+
+                        @*if (uniEl.val() != 1) {
+                            secCateSelect.append($('<option />', {
+                                value: '0',
+                                text: '@ApsStrings.other'
+                            }));
+                        }*@
+
+                        //if (cats.length === 0) {
+                        //    secCateSelect.val('0');
+                        //    switchOther(secCateSelect);
+                        //}
+
+                        if (hasSelectPicker) {
+                            secCateSelect.selectpicker('refresh');
+                            otherEl.selectpicker('refresh');
+                        }
+
+                    });
+                }
+            });
+        });
+    </script>
+}

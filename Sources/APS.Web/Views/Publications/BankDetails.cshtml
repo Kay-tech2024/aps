@@ -1,0 +1,301 @@
+﻿@model APS.Web.Models.BankViewModel
+
+@{
+    ViewBag.Title = @ApsStrings.bank_details;
+}
+
+<div class="step-wizard-container2 @(Model.PublicationType == PublicationType.Thesis? "ro" : "")">
+
+    <div class="step-wizard">
+        <div class="progress2">
+            <div class="progressbar2 empty"></div>
+            <div id="prog" class="progressbar2"></div>
+        </div>
+        <ul>
+            <li class="active">
+                <a href="~/Publications/Create?requestId=@Model.RequestId" id="step1">
+                    <span class="step2">1</span>
+                    <span class="title2">@ApsStrings.create</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/PublicationDetails?requestId=@Model.RequestId" id="step2">
+                    <span class="step2">2</span>
+                    <span class="title2">@ApsStrings.publication_details</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/BankDetails?requestId=@Model.RequestId" id="step3">
+                    <span class="step2">3</span>
+                    <span class="title2">@ApsStrings.bank_details</span>
+                </a>
+            </li>
+
+            @if (Model.PublicationType != PublicationType.Thesis)
+            {
+                <li class="">
+                    <a href="~/Publications/Participant?requestId=@Model.RequestId" id="step4">
+                        <span class="step2">4</span>
+                        <span class="title2">@ApsStrings.co_researcher</span>
+                    </a>
+                </li>
+            }
+
+            <li class="">
+
+                <a href="~/Publications/Agreement?requestId=@Model.RequestId" id="step@(Model.PublicationType != PublicationType.Thesis? 5:4)">
+
+                    <span class="step2">@(Model.PublicationType != PublicationType.Thesis ? 5 : 4)</span>
+                    <span class="title2">@ApsStrings.agreements</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<h2>@ApsStrings.bank_details</h2>
+
+@Html.ValidationSummary(false, "", htmlAttributes: new { @class = "text-danger" })
+
+@using (Html.BeginForm("BankDetails", "Publications", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.Hidden("RequestId", Session["RequestId"])
+    <div class="form-group">
+        @Html.LabelFor(m => m.AccountType, "نوع الحساب البنكي", new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10">
+            @Html.RadioButtonFor(m => m.BankAccountTypeId, (int)BankAccountType.Local, new { @id = BankAccountType.Local, @class = "radio-inline", @checked = "true" }) @ApsStrings.local
+            @Html.RadioButtonFor(m => m.BankAccountTypeId, (int)BankAccountType.International, new { @id = BankAccountType.International, @class = "radio-inline" }) @ApsStrings.international
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.BankId, "اسم البنك", new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(model => model.BankId, new SelectList(ViewBag.Banks, "Value", "Text"), ApsStrings.select, htmlAttributes: new { @class = "form-control other-dropdown" })
+        </div>
+    </div>
+
+    <div class="form-group div-bank-other" style="display: @(Model.BankId == null || Model.BankId > 0 ? "none" : "block")">
+        <label class="control-label col-md-2">@LangHelpers.Instance["BankOther"]</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.BankOther, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.BankOther)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.AccountOwnerName, "اسم صاحب الحساب", new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.AccountOwnerName, new { @class = "form-control", @placeholder = "اسم صاحب الحساب" })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        <label class="control-label col-sm-2">@LangHelpers.Instance["BankAccountNumberTypeId"]</label>
+        <div class="col-sm-10">
+            @Html.DropDownListFor(m => m.BankAccountNumberTypeId, new SelectList(Model.BankAccountNumberTypes, "Value", "Text", Model.BankAccountNumberTypeId), new { @class = "form-control ddl-BankAccountType" })
+            @Html.ValidationMessageFor(m => m.BankAccountNumberTypeId)
+        </div>
+    </div>
+
+    <div class="form-group div-Iban">
+        @Html.LabelFor(m => m.IbanNo, "رقم الايبان", new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.IbanNo, new { @class = "form-control", @placeholder = "رقم الايبان" })
+        </div>
+    </div>
+
+    <div class="form-group required div-Swift" style="display:none;">
+        <label class="control-label col-sm-2">@LangHelpers.Instance["SwiftCode"]</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.SwiftCode, new { @class = "form-control", @placeholder = LangHelpers.Instance["SwiftCode"] })
+        </div>
+    </div>
+
+    <div class="form-group div-Swift" style="display:none;">
+        <label class="control-label col-sm-2">@LangHelpers.Instance["RoutingNumber"]</label>
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.RoutingNumber, new { @class = "form-control", @placeholder = LangHelpers.Instance["RoutingNumber"] })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CountryId, "الدولة", new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(model => model.CountryId, new SelectList(ViewBag.Countries, "Value", "Text"), ApsStrings.select, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CityId, "اسم المدينة", new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(model => model.CityId, new SelectList(ViewBag.Cities, "Id", "NameArabic"), ApsStrings.select, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @*<div class="col-md-10 col-md-offset-2">
+                <label id="chkIsScientificProduction" class="checkbox">@(Html.CheckBoxFor(m => m.IsScientificProduction))&nbsp; هل المادة العلمية جزء من انتاج علمي؟</label>
+            </div>*@
+        <div class="col-md-10 col-md-offset-2">
+            @Html.LabelFor(m => m.IsScientificProduction, "هل المادة العلمية جزء من انتاج علمي؟", new { @class = "control-label" })
+            @Html.DropDownListFor(model => model.IsScientificProduction, new SelectList(ViewBag.SelectYN, "Value", "Text"))
+        </div>
+    </div>
+
+    if (Model.PublicationType != PublicationType.Thesis)
+    {
+        <div id="show2">
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    <label id="chkHasParticipant" class="checkbox">@(Html.CheckBoxFor(m => m.HasParticipant))&nbsp; هل لك مشارك في التأليف؟</label>
+                </div>
+            </div>
+        </div>
+    }
+    <div id="show">
+        <div class="form-group">
+            <label class="control-label col-sm-2">يرجى ادخال عدد المشاركين</label>
+            <div class="col-sm-10">
+                @*@Html.EditorFor(m => m.NoOfParticipant , new { @class = "form-control",  @min = "0" })*@
+                @Html.TextBoxFor(m => m.NoOfParticipant, new { @class = "form-control", min = 0, max = 100, @type = "number" })
+            </div>
+        </div>
+    </div>
+
+    <div class="pull-right wizard-nav">
+        <input type="submit" id="submit" class="btn btn-primary wizard-fin" value="@ApsStrings.next_btn" data-current-step="2" />
+    </div>
+}
+@section scripts
+{
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+
+        $(document).ready(function () {
+            function setClasses(index, steps) {
+                if (index < 0 || index > steps) return;
+                if (index == 0) {
+                    $(".step-wizard-container2 #prev").prop('disabled', true);
+                } else {
+                    $(".step-wizard-container2 #prev").prop('disabled', false);
+                }
+                if (index == steps) {
+                    $(".step-wizard-container2 #next").text('done');
+                } else {
+                    $(".step-wizard-container2 #next").text('next');
+                }
+                $(".step-wizard-container2 ul li").each(function () {
+                    $(this).removeClass();
+                });
+                $(".step-wizard-container2 ul li:lt(" + index + ")").each(function () {
+                    $(this).addClass("done");
+                });
+                $(".step-wizard-container2 ul li:eq(" + index + ")").addClass("active")
+                var p = index * (100 / steps);
+                $(".step-wizard-container2 #prog").width(p + '%');
+            }
+
+            // initial state setup
+            setClasses(2, $(".step-wizard-container2 .step-wizard ul li").length - 1);
+        });
+        /**/
+        /* END EXTERNAL SOURCE */
+        /* BEGIN EXTERNAL SOURCE */
+        /**/
+        $(document).ready(function () {
+            if ($('[name=HasParticipant]:checked').length == 0) {
+                $('#show').hide();
+            } else {
+                $('#show').show();
+            }
+
+            $('#chkHasParticipant').click(function () {
+                if ($('[name=HasParticipant]:checked').length == 0) {
+                    $('#NoOfParticipant').val('');
+                    $('#show').hide();
+                } else {
+                    $('#NoOfParticipant').val('1');
+                    $('#show').show();
+                }
+
+            });
+
+        });
+
+        var switchOther = function ($el) {
+            var $otherEl = $el.closest('.form-group').next();
+            var selected = $el.val();
+            var selectedVal = null;
+            try {
+                selectedVal = parseInt(selected);
+            } catch (e) {
+                return;
+            }
+            if (selectedVal == NaN) return;
+            if (selectedVal === 0) {
+                $otherEl.slideDown();
+            } else {
+                $otherEl.find('input').val('');
+                $otherEl.slideUp();
+            }
+        };
+
+        onDomInserted('.other-dropdown', function (el) {
+            $(el).on('change', function (e) {
+                switchOther($(el));
+                return false;
+            });
+        });
+
+        $('#CountryId').change(function () {
+
+            var selectedCountryId = $(this).val();
+
+            var citySelect = $('#CityId');
+            citySelect.empty();
+            citySelect.selectpicker('refresh');
+
+            if (selectedCountryId != null && selectedCountryId != '') {
+                $.getJSON(baseAjaxUrl + 'GetCities?countryId=' + selectedCountryId, function (cities) {
+                    citySelect.empty();
+                    citySelect.html('<option></option>');
+                    $.each(cities, function (index, city) {
+                        citySelect.append($('<option />', {
+                            value: city.value,
+                            text: city.text
+                        }));
+                    });
+
+                    citySelect.selectpicker('refresh');
+                });
+            }
+        });
+
+        var type = $("#BankAccountNumberTypeId").val();
+            console.log(type);
+            if (type == '1') {
+                $(".div-Iban").show();
+                $(".div-Swift").hide();
+                $('#photoCopy').text('@LangHelpers.Instance["BankIbanPhotocopy"]');
+            }
+            else {
+                $(".div-Iban").hide();
+                $(".div-Swift").show();
+                $('#photoCopy').text('@LangHelpers.Instance["BankSwiftPhotocopy"]');
+            }
+            $("#BankAccountNumberTypeId").change(function () {
+                var type = this.value;
+                if (type == '1') {
+                    $(".div-Iban").show();
+                    $(".div-Swift").hide();
+                    $('#photoCopy').text('@LangHelpers.Instance["BankIbanPhotocopy"]');
+                }
+                else {
+                    $(".div-Iban").hide();
+                    $(".div-Swift").show();
+                    $('#photoCopy').text('@LangHelpers.Instance["BankSwiftPhotocopy"]');
+                }
+            });
+    </script>
+
+}

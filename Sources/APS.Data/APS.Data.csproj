@@ -1,0 +1,532 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5DC740D-E8D6-447D-A618-D0E9CB6F38F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>APS.Data</RootNamespace>
+    <AssemblyName>APS.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CodeFirstStoreFunctions, Version=1.2.0.0, Culture=neutral, PublicKeyToken=46c4868af4307d2c, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.CodeFirstStoreFunctions.1.2.0\lib\net45\CodeFirstStoreFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApsDbEntities.cs" />
+    <Compile Include="DbEnums.cs" />
+    <Compile Include="DbModels2\Agency.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\AgencyConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ApsDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ApsDbEntitiesPrivate.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Bank.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\BankConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\BookRequest.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\BookRequestConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\City.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\CityConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\College.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\CollegeConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ContactedU.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ContactedUConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Country.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\CountryConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\DegreeType.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\DegreeTypeConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Department.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\DepartmentConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\DictionaryRequest.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\DictionaryRequestConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\DistributionEntity.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\DistributionEntityConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\EncyclopediaRequest.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\EncyclopediaRequestConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\FuncRequestsByFinancialTypesReturnModel.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\FuncRequestsByTypeReturnModel.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\HandbookRequest.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\HandbookRequestConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\IApsDbEntitiesPrivate.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Language.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\LanguageConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Major.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\MajorConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Meeting.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\MeetingConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\MeetingParticipant.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\MeetingParticipantConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\MeetingRequest.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\MeetingRequestConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Referee.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RefereeConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RefereeRequestFeedback.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RefereeRequestFeedbackConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RefereeRequestFeedbackFormQuestion.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RefereeRequestFeedbackFormQuestionConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Region.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RegionConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Request.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestCoresearcher.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestCoresearcherConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestData.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestDataConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestDistributionListAgency.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestDistributionListAgencyConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestFile.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestFileConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestHistoryLog.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestHistoryLogConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestReferee.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestRefereeConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestUser.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RequestUserConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Researcher.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ResearcherConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ResearcherReward.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ResearcherRewardConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ReviewerReward.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ReviewerRewardConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ReviewRequest.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ReviewRequestConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RewardRequest.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RewardRequestConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Role.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\RoleConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Setting.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\SettingConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\Template.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\TemplateConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ThesisRequest.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ThesisRequestConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\TranslatedToLanguage.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\TranslatedToLanguageConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\University.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UniversityConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\User.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserClaim.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserClaimConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserDelegation.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserDelegationConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserDependent.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserDependentConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserExtraRole.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserExtraRoleConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserFile.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserFileConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserLog.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserLogConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserLogin.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserLoginConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserNotification.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserNotificationConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserPreference.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserPreferenceConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserProfile.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserProfileConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserSession.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserSessionConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserSessionData.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserSessionDataConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserSessionFile.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserSessionFileConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserTemporaryUrl.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UserTemporaryUrlConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UspGetRequestsByFinancialDetailedReturnModel.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\UspGetRequestsByTypeDetailedReturnModel.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewPublishReport.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewPublishReportConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestDetailCrystalReport.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestDetailCrystalReportConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestForCrystalReport1.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestForCrystalReport1Configuration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestsByFinancialTypesReport.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestsByFinancialTypesReportConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestsByFinancialTypesReportCrystalReport1.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestsByFinancialTypesReportCrystalReport1Configuration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestsByTypeReport.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestsByTypeReportConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestsDetail.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRequestsDetailConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRewardRequestsDetail.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRewardRequestsDetailConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRewardRequestsDetailsCrystalReport2.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewRewardRequestsDetailsCrystalReport2Configuration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewUser.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModels2\ViewUserConfiguration.cs">
+      <DependentUpon>ApsDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DbModels2\EF.Reverse.POCO.Core.ttinclude" />
+    <None Include="DbModels2\EF.Reverse.POCO.ttinclude" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DbModels2\ApsDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ApsDb.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

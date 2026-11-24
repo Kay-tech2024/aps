@@ -1,0 +1,54 @@
+﻿@model DistributionEntitiesViewModel
+
+@{
+
+    var index = ViewBag.Index != null && ViewBag.Index > 0 ? (int)ViewBag.Index : 0;
+    var key = (int)ViewBag.Index;
+
+    var dataKey = ViewBag.Index != null && ViewBag.Index > 0 ? Model.DistributionEntities[index].Id : -1;
+    if (Model.DistributionEntities == null || Model.DistributionEntities.Count == 0)
+    {
+        Model.DistributionEntities = new List<DistributionEntityViewModel>
+        { new DistributionEntityViewModel { } };
+    }
+    var id = ViewBag.IsTemplate == true ? "DistributionEntities_{index}" : "DistributionEntities_" + index;
+}
+<tr id="@id" data-index="@(ViewBag.IsTemplate == null? index + "" : "{index}")" data-key="@Model.DistributionEntities[index]">
+    <td>
+        @(ViewBag.IsTemplate == null ? (index + 1) + "" : "{order}")
+    </td>
+    <td>
+        @Html.TextBoxFor(m => m.DistributionEntities[index].Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DistributionEntities[index].Name)
+    </td>
+    <td class="form-group">
+        @Html.TextBoxFor(m => m.DistributionEntities[index].NoOfCopies, new { @class = "form-control", @type = "number", @min = "0" })
+    </td>
+    <td>
+        <a href="#" class="btnRemoveRow btn btn-danger" data-key="@dataKey">@ApsStrings.delete</a>
+        @Html.HiddenFor(m => m.DistributionEntities[index].Id)
+    </td>
+</tr>
+
+@*@using (Html.BeginCollectionItem())
+        {
+            <tr>
+                <td class="col-sm-4 s_no" data-rowid="m.Id">
+                    <label class="control-label">1</label>
+                    @Html.HiddenFor(m => m.Id)
+                    @Html.HiddenFor(m => m.IsDeleted)
+                </td>
+                <td class="col-sm-4">
+                    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                </td>
+                <td class="col-sm-3">
+                    @Html.TextBoxFor(m => m.NoOfCopies, new { @class = "form-control", @type = "number" })
+                </td>
+                <td class="col-sm-2">
+                    <button type="button" class="delete" data-id="@Model.Id">Delete</button>
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.Name)
+    <a class="deleteRow" data-id="@Model.Id"></a>
+            </td>
+        </tr>
+    }*@

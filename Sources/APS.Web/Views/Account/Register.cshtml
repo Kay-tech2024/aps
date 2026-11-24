@@ -1,0 +1,11 @@
+﻿@model APS.Web.Models.RegistrationViewModel
+
+@{
+    ViewBag.Title = @ApsStrings.register_new_user;
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div style="max-width: 600px;">
+    <a href="~/Account/Register?role=Referee" class="btn btn-warning btn-block">@ApsStrings.register_as_referee</a>
+    <a href="~/Account/Register?role=Researcher" class="btn btn-warning btn-block">@ApsStrings.register_as_researcher</a>
+</div>

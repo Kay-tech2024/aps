@@ -1,0 +1,327 @@
+﻿@model EditUserViewModel
+
+@{
+    ViewBag.Title = ApsStrings.edit_user;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<ul class="breadcrumb">
+    <li>@Html.ActionLink(ApsStrings.homepage, "Index", "Home")</li>
+    <li>@Html.ActionLink(ApsStrings.users, "Index", "Users")</li>
+    <li>@ApsStrings.edit_user @Model.UserName</li>
+</ul>
+
+<h2 class="page-header">@ApsStrings.edit_user</h2>
+<div class="box2 box2-info">
+
+    @using (Html.BeginForm("Edit", "Users", new { id = Model.UserId }, FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="alert alert-danger alert-validation">
+                    <h5>@ApsStrings.ValidationSummary</h5>
+                    <div class="text-left">
+                        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            }
+            @Html.HiddenFor(model => model.UserId)
+
+            <div class="form-group required">
+                @Html.LabelFor(model => model.FullName, @ApsStrings.name, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-3"> رقم الهوية</label>
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.NationalId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NationalId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(expression: model => model.Email, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(expression: model => model.MobileNo, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.MobileNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(expression: model => model.UserName, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.RoleId, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.RoleId, new SelectList(Model.Roles, dataValueField: "RoleId", dataTextField: "RoleName"), htmlAttributes: new { @class = "form-control" }, optionLabel: @ApsStrings.select)
+                    @Html.ValidationMessageFor(model => model.RoleId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            @if (!Utils.IsCollegeUser)
+            {
+                <div id="divCollege" class="form-group" style="display: none;">
+                    @Html.LabelFor(model => model.CollegeId, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.DropDownListFor(model => model.CollegeId, new SelectList(Model.Colleges, dataValueField: "Id", dataTextField: "Name"), htmlAttributes: new { @class = "form-control" }, optionLabel: @ApsStrings.select)
+                        <input type="hidden" id="college_id" value="@Model.CollegeId" />
+                        @Html.ValidationMessageFor(model => model.CollegeId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            }
+
+            @if (!Utils.IsMajorUser)
+            {
+                <div id="divMajor" class="form-group" style="display: none;">
+                    @Html.LabelFor(model => model.MajorId, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.DropDownListFor(model => model.MajorId, new SelectList(Model.Majors, dataValueField: "Id", dataTextField: "Name"), htmlAttributes: new { @class = "form-control" }, optionLabel: @ApsStrings.select)
+                        @Html.ValidationMessageFor(model => model.MajorId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            }
+
+            <div id="divExtraRoles">
+                <div class="panel-group div-repeatable" data-key="ExtraRoles">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>@LangHelpers.Instance["sn"]</th>
+                                <th>@LangHelpers.Instance["role_name"]</th>
+                                <th>@LangHelpers.Instance["college_name"]</th>
+                                <th>@LangHelpers.Instance["is_enabled"]</th>
+                                <th>@LangHelpers.Instance["actions"]</th>
+                            </tr>
+                        </thead>
+                        @{
+                            var index = -1;
+                        }
+                        <tbody>
+                            @foreach (var c in Model.ExtraRoles)
+                            {
+                                index++;
+                                ViewBag.Index = index;
+                                @Html.Partial("~/Views/Users/_PartialExtraRoles.cshtml", Model);
+                            }
+                        </tbody>
+                    </table>
+                    <p class="text-center">
+                        <a href="#" class="btnAddRow btn btn-success" data-key="ExtraRoles">@LangHelpers.Instance["add_extra_role"]</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-3">
+                    <div class="checkbox">
+                        <label>@Html.EditorFor(model => model.IsActivated)&nbsp;@Html.LabelFor(model => model.IsActivated)</label>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.IsActivated, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-9 col-md-offset-3">
+                    <div class="checkbox">
+                        <label>@Html.EditorFor(model => model.ForcePasswordChange)&nbsp;@Html.LabelFor(model => model.ForcePasswordChange)</label>
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ForcePasswordChange, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-9">
+                    <input type="submit" value="@ApsStrings.save" class="btn btn-primary btn-lg btn-block" />
+                </div>
+            </div>
+        </div>
+                            }
+</div>
+
+<h2 class="page-header">
+    @ApsStrings.change_password
+</h2>
+<div class="box2 box2-info">
+    @using (Html.BeginForm("ChangePassword", "Users", new { UserId = Model.UserId }, FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-3 col-md-9">
+                <input type="submit" value="Change" class="btn btn-primary btn-lg btn-block" />
+            </div>
+        </div>
+    }
+</div>
+
+@{
+    ViewBag.IsTemplate = true;
+    ViewBag.Index = 0;
+}
+
+@section Scripts
+{
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+        $('#RoleId').change(function () {
+            toggleProvider($("#RoleId option:selected").text());
+        });
+        var _Colleges = [];
+        $('#CollegeId option').each(function () {
+            _Colleges.push({ value: $(this).val(), text: $(this).text() });
+        });
+        var ResearchUnitScretary = "@LangHelpers.Instance[ApsUserRole.ResearchUnitScretary.ToString()]";
+        var ResearchUnitHead = "@LangHelpers.Instance[ApsUserRole.ResearchUnitHead.ToString()]";
+        var ResearchUnitCouncilMember = "@LangHelpers.Instance[ApsUserRole.ResearchUnitCouncilMember.ToString()]";
+        var Referee = "@LangHelpers.Instance[ApsUserRole.Referee.ToString()]";
+
+        var toggleProvider = function (role) {
+            switch (role) {
+                case ResearchUnitScretary:
+                case ResearchUnitHead:
+                case ResearchUnitCouncilMember:
+                    $('#divCollege').show();
+                    $("#CollegeId").val($("#college_id").val());
+                    $('#divMajor').hide();
+                    break;
+                case Referee:
+                    $('#divCollege').hide();
+                    $('#divMajor').show();
+                    break;
+                default:
+                    $('#divCollege').hide();
+                    $('#divMajor').hide();
+                    break;
+            }
+        };
+
+        toggleProvider($("#RoleId option:selected").text());
+
+        var templates = {};
+        templates.ExtraRoles = '@(Html.Raw(Html.Partial("~/Views/Users/_PartialExtraRoles.cshtml", Model).ToHtmlString().Replace("\r\n", " ")))';
+
+        $('.btnAddRow').on('click', function (e) {
+
+            var div = $(this).closest('div');
+            var key = div.attr('data-key');
+            var elms = div.find('tbody tr');
+
+            var rowHtml = templates[key];
+
+            var index = elms.length;
+
+            var el = $(rowHtml.replaceAll('{index}', index).replaceAll('{order}', index + 1).replaceAll('data-id="0"', 'data-id="' + index + '"').replaceAll('_0__', '_' + index + '__').replaceAll('[0]', '[' + index + ']'));
+            el.find('input,select,textarea').val('');
+            el.find('.field-validation-error').remove();
+
+            div.find('table tbody').append(el);
+            e.preventDefault();
+            return false;
+
+        });
+
+        onDomInserted('.btnRemoveRow', function (el) {
+
+            $(el).on('click', function (e) {
+
+                var elm = $(el).closest('tr');
+                var index = parseInt(elm.attr('data-index'));
+                var div = elm.closest('.div-repeatable');
+                var elms = div.find('tbody tr');
+
+                for (var i = 0; i < elms.length; i++) {
+
+                    if (index == i) {
+                        elm.remove();
+                    } else if (index < i) {
+                        $($(elms[i]).find('td')[0]).text(i);
+                        var els = $(elms[i]).find('input,select,textarea');;
+
+                        for (var j = 0; j < els.length; j++) {
+                            var el2 = $(els[j]);
+                            if (!el2.attr('name')) continue;
+                            var tabs = el2.attr('name').split('.');
+                            var name = tabs[0].split('[')[0];
+                            var x = name + '[' + (i - 1) + '].' + prop;
+
+                            var prop = tabs[1];
+                            el2.attr('id', name + (i - 1) + '_' + prop).attr('name', name + '[' + (i - 1) + '].' + prop);
+                        }
+                        $(elms[i]).attr('data-index', i - 1);
+                    }
+                }
+                e.preventDefault();
+                return false;
+
+            });
+        });
+
+        // Getting colleges based on the selection of Role
+        //Getting college Roles
+        var collegeRoles = @Html.Raw(Utils.SerializeObject(Utils.GetCollegeRoles()));
+
+        var switchCollege = function ($el) {
+            window.el = $el;
+            var $otherEl = $el.closest('td').next().find('div');
+            var selected = $el.val();
+            var found = false;
+            for (var i = 0; i < collegeRoles.length; i++) {
+                if (collegeRoles[i] == selected) {
+                    found = true;
+                    break;
+                }
+            }
+            if (found) {
+                $otherEl.slideDown();
+            } else {
+                $otherEl.find('input').val('');
+                $otherEl.slideUp();
+            }
+        };
+
+        // On Role selection event handling
+        onDomInserted('.role-dropdown', function (el) {
+            $(el).on('change', function (e) {
+                switchCollege($(el));
+                return false;
+            });
+        });
+    </script>
+}

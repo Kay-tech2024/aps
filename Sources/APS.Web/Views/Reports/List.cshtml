@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = ViewBag.Heading;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var gridName = Utils.IsUserLanguageArabic ? "DetailedRequestsReportMvcGridArabic" : "DetailedRequestsReportMvcGridArabic";
+    var ReportNo = Request["ReportNo"] != null ? int.Parse(Request["ReportNo"]) : 0;
+    var Status = Request["Status"] != null ? int.Parse(Request["Status"]) : 0;
+    var rType = Request["Type"] != null ? int.Parse(Request["Type"]) : 0;
+
+    if (ReportNo != 1 && ReportNo != 2)
+    {
+        ReportNo = 1;
+    }
+}
+
+<h3>@ViewBag.Heading</h3>
+<br />
+<div class="container">
+    @Html.Partial("_MVCGridToolbar", new MVCGridToolbarModel()
+{
+    MVCGridName = gridName,
+    PageSize = true,
+    Export = false,
+    GlobalSearch = false
+})
+    @Html.MVCGrid(gridName)
+    <div class="row">
+        <button class="btn btn-primary printbtn" onclick="window.print();">@ApsStrings.print &nbsp;<i class="fa fa-print"></i></button>
+        <button class="btn btn-primary printbtn" onclick="location.href='@Utils.GetApplicationUrl()'+'/Reports/ReportAsPdf?Type=detailed&ReportNo='+@ReportNo+'&Status='+@Status+'&rType='+@rType">Pdf &nbsp;<i class="fa fa-file-pdf-o"></i></button>
+        <button class="btn btn-primary printbtn" onclick="location.href='@Utils.GetApplicationUrl()'+'/Ajax/ExportDocuments?Type=detailed&ReportNo='+@ReportNo+'&Status='+@Status+'&rType='+@rType">Excel &nbsp;<i class="fa fa-file-excel-o"></i></button>
+    </div>
+</div>

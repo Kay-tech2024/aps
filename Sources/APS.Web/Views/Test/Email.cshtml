@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "E-mail And SMS Testing";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+@Html.Partial("_TopMessage")
+<div align="center">
+    <h2>Test Email And SMS</h2>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            <label class="control-label col-sm-4 text-center" for="mobile">رقم الهاتف</label>
+            <div class="col-sm-8">
+                @Html.TextBox("Email", null, new { @class = "form-control", placeholder = ApsStrings.email, type = "text" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4 text-center" for="mobile">@ApsStrings.mobile_number</label>
+            <div class="col-sm-8">
+                @Html.TextBox("Mobile", null, new { @class = "form-control", placeholder = ApsStrings.mobile_number, type = "text" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-8 col-sm-10">
+                <button type="submit" class="btn btn-default btn-primary">@ApsStrings.send</button>
+            </div>
+        </div>
+    }
+</div>

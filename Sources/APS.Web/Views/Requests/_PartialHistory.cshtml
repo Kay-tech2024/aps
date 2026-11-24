@@ -1,0 +1,71 @@
+﻿@model PublishRequestViewModel
+
+<div class="box2 box2-info">
+    <h4 class="text-center">@ApsStrings.request_history</h4>
+    @if (Model.CommentThread != null && Model.CommentThread.Count(m => m.Hide == false) > 0)
+    {
+        <table class="table table-responsive" sstyle="margin: 0 auto;">
+            <thead>
+                <tr>
+
+                    <th style="max-width: 100px">@ApsStrings.date</th>
+                    @if (!Utils.HasRolesAny(ApsUserRole.Researcher))
+                    {
+                        <th style="max-width: 100px">@ApsStrings.username</th>
+                    }
+                    <th style="max-width: 100px">@ApsStrings.role</th>
+                    <th style="max-width: 100px">@ApsStrings.action</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    var i = 0;
+                }
+
+                @foreach (var c in Model.CommentThread.Where(m => m.Hide == false))
+                {
+
+                    <tr class="@(++i % 2 == 0 ? "alt-row" : "")" @Html.Raw(c.Comment != null ? "style=\"border-bottom: 0;\"" : "")>
+                        <td style="max-width: 100px; font-size: 12px;">@c.DateStr</td>
+                        @if (!Utils.HasRolesAny(ApsUserRole.Researcher))
+                        {
+                            <td>@c.Username</td>
+                        }
+                        <td>@c.Role</td>
+                        <td>@c.Action</td>
+                    </tr>
+                    if (c.Comment != null)
+                    {
+                        //if (!((@c.Action == @ApsStrings.history_return_to_research_unit_secretary || @c.Action == @ApsStrings.history_approve_and_forward_to_research_unit_head) && Utils.HasRolesAny(ApsUserRole.Researcher)))
+                        //&& Utils.HasRolesAny(ApsUserRole.Researcher)
+                        if ((@c.Action == @ApsStrings.history_send_to_commitee_members && Utils.HasRolesAny(ApsUserRole.ResearchUnitCouncilMember)) ||
+                            ((@c.Action == @ApsStrings.action_return_to_researcher || @c.Action == @ApsStrings.history_forward_to_researcher) && Utils.HasRolesAny(ApsUserRole.Researcher)) ||
+                            (@c.Action == @ApsStrings.history_approve_and_forward_to_vice_dean_of_academic_research && Utils.HasRolesAny(ApsUserRole.ResearchUnitHead)) ||
+                            ((@c.Action == @ApsStrings.history_forward_to_dean_of_academic_research || @c.Action == @ApsStrings.history_approve_and_forward_to_dean_of_academic_research) && Utils.HasRolesAny(ApsUserRole.DeanOfAcademicResearch)) ||
+                            (@c.Action == @ApsStrings.history_approve_and_forward_to_unversity_rector && Utils.HasRolesAny(ApsUserRole.UniversityRector)) ||
+                            (@c.Action == @ApsStrings.history_forward_to_paecommittee_head && Utils.HasRolesAny(ApsUserRole.CommitteForPAEHead)) ||
+                            (@c.Action == @ApsStrings.history_select_referees && Utils.HasRolesAny(ApsUserRole.AcademicCouncilSecretary)) ||
+                             ((@c.Action == @ApsStrings.history_submit_operation_command_to_vice_dean_of_academic_research || @c.Action == @ApsStrings.history_forward_to_vice_dean_of_academic_research) && Utils.HasRolesAny(ApsUserRole.ViceDeanOfAcademicResearch)) ||
+                             (@c.Action == @ApsStrings.history_approve_and_forward_to_university_press_director && Utils.HasRolesAny(ApsUserRole.UniversityPressDirector)) ||
+                             ((@c.Action == @ApsStrings.history_certify_and_forward_to_university_press_officer || @c.Action == @ApsStrings.history_return_to_university_press_officer || @c.Action == @ApsStrings.history_forward_to_press_oficer) && Utils.HasRolesAny(ApsUserRole.UniversityPressOfficer)) ||
+                             ((@c.Action == @ApsStrings.history_accept || @c.Action == @ApsStrings.history_operation_command_executed_and_forward_to_puap || @c.Action == @ApsStrings.history_submit_isbnto_imam_university) && Utils.HasRolesAny(ApsUserRole.OfficerOfPrintingUnit))
+                               ||c.RequestType!=RequestType.PublishRequest
+                             )
+
+                        // || @c.Action == @ApsStrings.action_return_to_researcher
+
+                        {
+                            <tr class="@(i % 2 == 0 ? "alt-row" : "")">
+                                <td colspan="4" style="border-top: 0;">@ApsStrings.comments: <b>@c.Comment</b></td>
+                            </tr>
+                        }
+                    }
+                }
+            </tbody>
+        </table>
+        <br />
+
+    }
+</div>

@@ -1,0 +1,300 @@
+﻿@model APS.Web.Models.PublicationViewModel
+
+@{
+    ViewBag.Title = @ApsStrings.dictionary_details;
+}
+
+<div class="step-wizard-container2 @(Model.PublicationType == PublicationType.Thesis? "ro" : "")">
+
+    <div class="step-wizard">
+        <div class="progress2">
+            <div class="progressbar2 empty"></div>
+            <div id="prog" class="progressbar2"></div>
+        </div>
+        <ul>
+            <li class="active">
+                <a href="~/Publications/Create?requestId=@Model.RequestId" id="step1">
+                    <span class="step2">1</span>
+                    <span class="title2">@ApsStrings.create</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/PublicationDetails?requestId=@Model.RequestId" id="step2">
+                    <span class="step2">2</span>
+                    <span class="title2">@ApsStrings.publication_details</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/BankDetails?requestId=@Model.RequestId" id="step3">
+                    <span class="step2">3</span>
+                    <span class="title2">@ApsStrings.bank_details</span>
+                </a>
+            </li>
+
+            @if (Model.PublicationType != PublicationType.Thesis)
+            {
+                <li class="">
+                    <a href="~/Publications/Participant?requestId=@Model.RequestId" id="step4">
+                        <span class="step2">4</span>
+                        <span class="title2">@ApsStrings.co_researcher</span>
+                    </a>
+                </li>
+            }
+
+            <li class="">
+
+                <a href="~/Publications/Agreement?requestId=@Model.RequestId" id="step@(Model.PublicationType != PublicationType.Thesis? 5:4)">
+
+                    <span class="step2">@(Model.PublicationType != PublicationType.Thesis ? 5 : 4)</span>
+                    <span class="title2">@ApsStrings.agreements</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<h2>@ApsStrings.dictionary_details</h2>
+
+@Html.ValidationSummary(false, "", htmlAttributes: new { @class = "text-danger" })
+@using (Html.BeginForm("PublicationDetails", "Publications", new { requestId = Model.RequestId, RequestType = ViewBag.RequestType }, FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+@Html.AntiForgeryToken()
+
+    @Html.Hidden("RequestId", Model.RequestId)
+    @Html.Hidden("RequestType", Model.RequestType)
+    <div class="form-group">
+        @Html.LabelFor(m => m.MajorOfDictionaryID, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(model => model.MajorOfDictionaryID, new SelectList(ViewBag.Majors, "Id", "NameArabic"), ApsStrings.select, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DictionaryLanguage, new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10" id="language">
+            <div class="form-group">
+                <div class="col-sm-3">
+                    @Html.CheckBoxFor(m => m.isArabic) @ApsStrings.arabic
+                </div>
+
+                <div class="col-sm-3">
+                    @Html.CheckBoxFor(m => m.IsTranslated) @ApsStrings.transulat_to
+                    @*@Html.TextAreaFor(m => m.TranslatedTo, new { @class = "form-control" })*@
+                    @Html.DropDownListFor(model => model.TranslatedToId, new SelectList(ViewBag.TranslatedTo, "Id", "NameArabic"), htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" id="txtTranslatedTo">
+        @Html.LabelFor(m => m.TranslatedTo, new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.TranslatedTo, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div id="show">
+        <div class="form-group">
+            @Html.LabelFor(m => m.OriginalDictionaryTitle, new { @class = "control-label col-sm-2 text-center" })
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.OriginalDictionaryTitle, new { @class = "form-control", @placeholder = " عنوان المعجم الأصلي " })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DictionaryTitle, new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.DictionaryTitle, new { @class = "form-control", @placeholder = "عنوان المعجم " })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.AuthorMajorId, new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(model => model.AuthorMajorId, new SelectList(ViewBag.Majors, "Id", "NameArabic"), ApsStrings.select, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.RecommmendationNumber, new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.RecommmendationNumber, new { @class = "form-control", @placeholder = "رقم توصية" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.RecommmendationDate, new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.RecommmendationDate, new { @class = "form-control datepicker-lang", @placeholder = "تاريخ توصية " })
+        </div>
+    </div>
+
+    if (Model.Files != null && Model.Files.Count > 0)
+    {
+        <div class="row">
+            <h4 class="col-md-offset-3 col-md-6 text-center">@ApsStrings.uploaded_files</h4>
+        </div>
+
+        var i = 0;
+        foreach (var item in Model.Files)
+        {
+            <div class="form-group">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    @Html.ActionLink(!string.IsNullOrWhiteSpace(item.FileName) ? item.FileName : item.Type.ToString(), "Index", "GetFile", new { id = item.FileId }, new { @class = "btn btn-info btn-xs", target = "_blank" })
+
+                    @(item.PageCount > 0 ? "  (" + ApsStrings.no_of_pages + ": " + item.PageCount + ")" : "")
+                </div>
+            </div>
+
+            <hr style="border: 1px dashed #ddd;" />
+
+            @Html.HiddenFor(m => m.Files[i].FileId)
+            @Html.HiddenFor(m => m.Files[i].Type)
+
+            i++;
+
+        }
+
+    }
+
+    <div id="divUploadedFiles">
+        <br />
+        <h4>@ApsStrings.attachments</h4>
+
+        @Html.Partial("~/Views/Shared/_FileUploadPartial.cshtml")
+    </div>
+
+    if (Model.Type == RequestType.RepublishRequest)
+    {
+
+        <div id="type">
+            <div style="background:lavender; padding:15px; margin:5px;">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.PublishType, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.RadioButtonFor(m => m.PublishType, PublishType.Governmental, new { @id = PublishType.Governmental, @class = "radio-inline", @checked = "true" }) @ApsStrings.governmental
+                        @Html.RadioButtonFor(m => m.PublishType, PublishType.Commercial, new { @id = PublishType.Commercial, @class = "radio-inline" }) @ApsStrings.commercial
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Publisher, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(m => m.Publisher, new { @class = "form-control", @placeholder = ApsStrings.publisher })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.PublisherPlace, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(m => m.PublisherPlace, new { @class = "form-control", @placeholder = ApsStrings.publisher_place })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.DateOfPublish, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(m => m.DateOfPublish, new { @class = "form-control datepicker-lang", @placeholder = ApsStrings.publish_date })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="pull-right wizard-nav">
+        <input type="submit" id="submit" class="btn btn-primary wizard-fin" value="@ApsStrings.next_btn" data-current-step="2" />
+    </div>
+}
+@section scripts
+{
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+
+        $(document).ready(function () {
+            function setClasses(index, steps) {
+                if (index < 0 || index > steps) return;
+                if (index == 0) {
+                    $(".step-wizard-container2 #prev").prop('disabled', true);
+                } else {
+                    $(".step-wizard-container2 #prev").prop('disabled', false);
+                }
+                if (index == steps) {
+                    $(".step-wizard-container2 #next").text('done');
+                } else {
+                    $(".step-wizard-container2 #next").text('next');
+                }
+                $(".step-wizard-container2 ul li").each(function () {
+                    $(this).removeClass();
+                });
+                $(".step-wizard-container2 ul li:lt(" + index + ")").each(function () {
+                    $(this).addClass("done");
+                });
+                $(".step-wizard-container2 ul li:eq(" + index + ")").addClass("active")
+                var p = index * (100 / steps);
+                $(".step-wizard-container2 #prog").width(p + '%');
+            }
+
+            // initial state setup
+            setClasses(1, $(".step-wizard-container2 .step-wizard ul li").length - 1);
+        });
+        /**/
+        /* END EXTERNAL SOURCE */
+        /* BEGIN EXTERNAL SOURCE */
+        /**/
+        /* END EXTERNAL SOURCE */
+        /* BEGIN EXTERNAL SOURCE */
+    </script>
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+        $(document).ready(function () {
+            var typereq = $('#RequestType').val();
+
+            if (typereq == "NewPublish") {
+                $('#type').hide();
+            }
+
+            $('#show').hide();
+            $('#TranslatedToId').hide();
+            $('#txtTranslatedTo').hide();
+            if ($('#IsTranslated').is(':checked')) {
+                HandleIsTranslated(true);
+                var selectedVal = $('#TranslatedToId option:selected').attr('value');
+                HandleTranslatedTo(selectedVal);
+            }
+
+            $('#IsTranslated').click(function () {
+                var isTranslated = $('#IsTranslated').is(':checked');
+                HandleIsTranslated(isTranslated)
+            });
+
+            $('#TranslatedToId').change(function () {
+                var selectedVal = $('#TranslatedToId option:selected').attr('value');
+                HandleTranslatedTo(selectedVal);
+            });
+            function HandleTranslatedTo(selectedVal) {
+                if (selectedVal == '4') {
+                    $('#txtTranslatedTo').show();
+                    $('#TranslatedTo').show();
+                }
+                else {
+                    $('#txtTranslatedTo').hide();
+                    $('#TranslatedTo').hide();
+                }
+            }
+            function HandleIsTranslated(isTranslated) {
+                if (isTranslated) {
+                    $('#show').show();
+                    $('#TranslatedToId').show();
+                    //$('#txtTranslatedTo').show();
+                    var selectedVal = $('#TranslatedToId option:selected').attr('value');
+                    HandleTranslatedTo(selectedVal);
+                }
+                else {
+                    $('#show').hide();
+                    $('#TranslatedToId').hide();
+                    $('#txtTranslatedTo').hide();
+                }
+
+            }
+        });
+    </script>
+}

@@ -1,0 +1,33 @@
+﻿@model ResearchersRewardViewModel
+    @{
+        ViewBag.Title = @ApsStrings.researcher_reward;
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <ul class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Home")">@ApsStrings.home</a></li>
+        <li>@ApsStrings.rewards</li>
+        <li>@ApsStrings.researcher_reward</li>
+    </ul>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap-datetimepicker@(ApsStrings.css_suffix).css" />
+    @Html.ValidationSummary(false)
+    @using (Html.BeginForm("Researchers", "Rewards", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        @Html.HiddenFor(m => m.Id)
+        <div class="form-group required">
+            @Html.LabelFor(m => m.Master, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.Master, new { @class = "form-control", @placeholder = ApsStrings.master })
+            </div>
+        </div>
+
+        <div class="form-group required">
+            @Html.LabelFor(m => m.Phd, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.Phd, new { @class = "form-control", @placeholder = ApsStrings.phd })
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit" class="text-center btn btn-block btn-info">@ApsStrings.submit</button>
+        </div>
+    }

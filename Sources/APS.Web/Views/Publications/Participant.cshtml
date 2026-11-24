@@ -1,0 +1,143 @@
+﻿@model ParticipantDataViewModel
+@{
+    ViewBag.Title = "Participants";
+}
+<style type="text/css">
+    .pform {
+        width: 940px !important;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="step-wizard-container2 @(Model.PublicationType == PublicationType.Thesis? "ro" : "")">
+
+    <div class="step-wizard">
+        <div class="progress2">
+            <div class="progressbar2 empty"></div>
+            <div id="prog" class="progressbar2"></div>
+        </div>
+        <ul>
+            <li>
+                <a href="~/Publications/Create?requestId=@Model.RequestId" id="step1">
+                    <span class="step2">1</span>
+                    <span class="title2">@ApsStrings.create</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/PublicationDetails?requestId=@Model.RequestId" id="step2">
+                    <span class="step2">2</span>
+                    <span class="title2">@ApsStrings.details</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/BankDetails?requestId=@Model.RequestId" id="step3">
+                    <span class="step2">3</span>
+                    <span class="title2">@ApsStrings.bank_details</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="~/Publications/Participant?requestId=@Model.RequestId" id="step4">
+                    <span class="step2">4</span>
+                    <span class="title2">@ApsStrings.co_researcher</span>
+                </a>
+            </li>
+            <li class="">
+
+                <a href="~/Publications/Agreement?requestId=@Model.RequestId" id="step5">
+
+                    <span class="step2">5</span>
+                    <span class="title2">@ApsStrings.agreements</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@Html.ValidationSummary(false, "", htmlAttributes: new { @class = "text-danger" })
+
+<div class="container">
+    <div class="wrapper-form">
+        @using (Html.BeginForm("Participant", "Publications", FormMethod.Post, new { @class = "pform" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.Hidden("RequestId", Session["RequestId"])
+            <div class="table-responsive">
+                @*style="width: 940px;"*@
+                <table class="tc-table tc-table-striped table-bordered" style="width: 940px;">
+                    <thead>
+                        <tr>
+
+                            <th>@ApsStrings.name</th>
+                            <th>@ApsStrings.email</th>
+                            <th>@ApsStrings.phone_number</th>
+                        </tr>
+                    </thead>
+                    @for (int i = 0; i < ViewBag.NoOfParticipant; i++)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="col-sm-12">
+                                        @Html.TextBoxFor(m => m.ParticipantDetail[i].ParticipantName, new { @class = "form-control", @placeholder = "الاسم رباعي " })
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-sm-12">
+                                        @Html.TextBoxFor(m => m.ParticipantDetail[i].ParticipantEmail, new { @class = "form-control", @placeholder = "البريد الالكتروني " })
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-sm-12">
+                                        @Html.TextBoxFor(m => m.ParticipantDetail[i].ParticipanMobileNumber, new { @class = "form-control", @placeholder = "رقم الجوال" })
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="pull-right wizard-nav">
+                <input type="submit" id="submit" class="btn btn-primary wizard-fin" value="@ApsStrings.next_btn" data-current-step="2" />
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+
+        $(document).ready(function () {
+            function setClasses(index, steps) {
+                if (index < 0 || index > steps) return;
+                if (index == 0) {
+                    $(".step-wizard-container2 #prev").prop('disabled', true);
+                } else {
+                    $(".step-wizard-container2 #prev").prop('disabled', false);
+                }
+                if (index == steps) {
+                    $(".step-wizard-container2 #next").text('done');
+                } else {
+                    $(".step-wizard-container2 #next").text('next');
+                }
+                $(".step-wizard-container2 ul li").each(function () {
+                    $(this).removeClass();
+                });
+                $(".step-wizard-container2 ul li:lt(" + index + ")").each(function () {
+                    $(this).addClass("done");
+                });
+                $(".step-wizard-container2 ul li:eq(" + index + ")").addClass("active")
+                var p = index * (100 / steps);
+                $(".step-wizard-container2 #prog").width(p + '%');
+            }
+
+            // initial state setup
+            setClasses(3, $(".step-wizard-container2 .step-wizard ul li").length - 1);
+        });
+    </script>
+
+}

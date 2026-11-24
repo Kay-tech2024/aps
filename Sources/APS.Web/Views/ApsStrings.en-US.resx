@@ -1,0 +1,2001 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="account_City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="account_country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="account_holder_name" xml:space="preserve">
+    <value>Account Holder's Name</value>
+  </data>
+  <data name="account_holder_name_inter" xml:space="preserve">
+    <value>Account Holder's Name</value>
+  </data>
+  <data name="arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="arabic_dictionary" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="author_name" xml:space="preserve">
+    <value>Author Name</value>
+  </data>
+  <data name="author_title" xml:space="preserve">
+    <value>Author's Data</value>
+  </data>
+  <data name="bank_account_type" xml:space="preserve">
+    <value>Bank Account Type</value>
+  </data>
+  <data name="bank_name" xml:space="preserve">
+    <value>Bank Name</value>
+  </data>
+  <data name="book_attachment" xml:space="preserve">
+    <value>Book Attachments</value>
+  </data>
+  <data name="book_details" xml:space="preserve">
+    <value>Book Details</value>
+  </data>
+  <data name="book_lang" xml:space="preserve">
+    <value>Book Language</value>
+  </data>
+  <data name="book_title" xml:space="preserve">
+    <value>Book Title</value>
+  </data>
+  <data name="book_type" xml:space="preserve">
+    <value>Book type</value>
+  </data>
+  <data name="cultural" xml:space="preserve">
+    <value>Cultural</value>
+  </data>
+  <data name="dictionary_details" xml:space="preserve">
+    <value>Dictionary Details</value>
+  </data>
+  <data name="dictionary_language" xml:space="preserve">
+    <value>Dictionary Language</value>
+  </data>
+  <data name="dictionary_title" xml:space="preserve">
+    <value>Dictionary Title</value>
+  </data>
+  <data name="dic_attach" xml:space="preserve">
+    <value>Attachments :</value>
+  </data>
+  <data name="employer_name" xml:space="preserve">
+    <value>Employer</value>
+  </data>
+  <data name="encyclopedia_details" xml:space="preserve">
+    <value>Encyclopedia Details</value>
+  </data>
+  <data name="footer" xml:space="preserve">
+    <value>Scientific Publishing System 2017 - All Rights are Reserved</value>
+  </data>
+  <data name="international" xml:space="preserve">
+    <value>International</value>
+  </data>
+  <data name="international_bank_account_details" xml:space="preserve">
+    <value>international Bank Account details</value>
+  </data>
+  <data name="is_the_material" xml:space="preserve">
+    <value>Is the material a part of a scientific product?</value>
+  </data>
+  <data name="lang" xml:space="preserve">
+    <value>en</value>
+  </data>
+  <data name="local" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="localbank_account_details" xml:space="preserve">
+    <value>LocalBank Account Details</value>
+  </data>
+  <data name="majorof_dictionary" xml:space="preserve">
+    <value>Major of Dictionary</value>
+  </data>
+  <data name="majorof_theAuthor_dic" xml:space="preserve">
+    <value>Major of the Author</value>
+  </data>
+  <data name="major_ofthe_author" xml:space="preserve">
+    <value>Major of the Author</value>
+  </data>
+  <data name="next_book" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="next_btn" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="no_account" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="other_lang" xml:space="preserve">
+    <value>ar</value>
+  </data>
+  <data name="proof_of_identity_copy" xml:space="preserve">
+    <value>Proof of identity copy :</value>
+  </data>
+  <data name="public_science" xml:space="preserve">
+    <value>Public Science</value>
+  </data>
+  <data name="recommendation_date" xml:space="preserve">
+    <value>Recommendation Date of the council of department and college</value>
+  </data>
+  <data name="recommendation_number" xml:space="preserve">
+    <value>Recommendation number of the council of department and college</value>
+  </data>
+  <data name="site_title" xml:space="preserve">
+    <value>Scientific Publishing System</value>
+  </data>
+  <data name="systematic" xml:space="preserve">
+    <value>Systematic</value>
+  </data>
+  <data name="title_oftheoriginal_dictionary" xml:space="preserve">
+    <value>Title of the original Dictionary</value>
+  </data>
+  <data name="title_origianal_book" xml:space="preserve">
+    <value>Title of the original Book</value>
+  </data>
+  <data name="transulat_to" xml:space="preserve">
+    <value>Transulated to:</value>
+  </data>
+  <data name="transulat_to_dic" xml:space="preserve">
+    <value>Transulated to:</value>
+  </data>
+  <data name="username_required" xml:space="preserve">
+    <value>Please enter username</value>
+  </data>
+  <data name="yes_account" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="attached_file_thes" xml:space="preserve">
+    <value>Attached File</value>
+  </data>
+  <data name="attachments_probe" xml:space="preserve">
+    <value>Attachments</value>
+  </data>
+  <data name="book_attach" xml:space="preserve">
+    <value>Book Attachments</value>
+  </data>
+  <data name="children_stories" xml:space="preserve">
+    <value>Children's Stories</value>
+  </data>
+  <data name="commercial" xml:space="preserve">
+    <value>Commercial</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>Degree</value>
+  </data>
+  <data name="department" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="discussion_committeemembers" xml:space="preserve">
+    <value>Discussion Committee Members</value>
+  </data>
+  <data name="discussion_date" xml:space="preserve">
+    <value>Discussion Date</value>
+  </data>
+  <data name="encyclopedia_language" xml:space="preserve">
+    <value>Encyclopedia Language</value>
+  </data>
+  <data name="encyclopedia_title" xml:space="preserve">
+    <value>Encyclopedia Title</value>
+  </data>
+  <data name="faculity" xml:space="preserve">
+    <value>Faculity</value>
+  </data>
+  <data name="governmental" xml:space="preserve">
+    <value>Governmental</value>
+  </data>
+  <data name="gpa" xml:space="preserve">
+    <value>G.P.A</value>
+  </data>
+  <data name="handBook_attachments" xml:space="preserve">
+    <value>HandBook Attachments</value>
+  </data>
+  <data name="handbook_language" xml:space="preserve">
+    <value>HandBook Language</value>
+  </data>
+  <data name="handBook_title" xml:space="preserve">
+    <value>HandBook Title</value>
+  </data>
+  <data name="handbook_type" xml:space="preserve">
+    <value>HandBook type</value>
+  </data>
+  <data name="majorof_encyclopedia" xml:space="preserve">
+    <value>Major of Encyclopedia</value>
+  </data>
+  <data name="manuscript" xml:space="preserve">
+    <value>Manuscript</value>
+  </data>
+  <data name="master" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="phd" xml:space="preserve">
+    <value>Phd</value>
+  </data>
+  <data name="prober_major" xml:space="preserve">
+    <value>Prober's Major</value>
+  </data>
+  <data name="probe_type" xml:space="preserve">
+    <value>Probe type</value>
+  </data>
+  <data name="publisher" xml:space="preserve">
+    <value>Publisher</value>
+  </data>
+  <data name="publisher_date" xml:space="preserve">
+    <value>publisher Date</value>
+  </data>
+  <data name="publisher_place" xml:space="preserve">
+    <value>Publisher Place</value>
+  </data>
+  <data name="publish_type" xml:space="preserve">
+    <value>Publish Type</value>
+  </data>
+  <data name="rare_book" xml:space="preserve">
+    <value>Rare Book</value>
+  </data>
+  <data name="scientific_department" xml:space="preserve">
+    <value>Scientific Department</value>
+  </data>
+  <data name="scope_manuscript" xml:space="preserve">
+    <value>Scope of the Manuscript</value>
+  </data>
+  <data name="supervisor" xml:space="preserve">
+    <value>Supervisor</value>
+  </data>
+  <data name="thesis_detals" xml:space="preserve">
+    <value>Thesis Detals</value>
+  </data>
+  <data name="thesis_title" xml:space="preserve">
+    <value>Thesis Title</value>
+  </data>
+  <data name="title_of_original_encyclopedia" xml:space="preserve">
+    <value>Title of the original Encyclopedia</value>
+  </data>
+  <data name="title_original_handBook" xml:space="preserve">
+    <value>Title of the original HandBook</value>
+  </data>
+  <data name="update_book_details" xml:space="preserve">
+    <value>Update Book Details</value>
+  </data>
+  <data name="update_dictionary_details" xml:space="preserve">
+    <value>Update Dictionary Details</value>
+  </data>
+  <data name="update_encyclopedia_details" xml:space="preserve">
+    <value>Update Encyclopedia Details</value>
+  </data>
+  <data name="update_handbook_details" xml:space="preserve">
+    <value>Update Hand Book Details</value>
+  </data>
+  <data name="update_probe_details" xml:space="preserve">
+    <value>Update Probe Details</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="major" xml:space="preserve">
+    <value>Major</value>
+  </data>
+  <data name="modification_requests" xml:space="preserve">
+    <value>Modification Requests</value>
+  </data>
+  <data name="more_e" xml:space="preserve">
+    <value>more</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="new_publish" xml:space="preserve">
+    <value>New Publish</value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="participants_details" xml:space="preserve">
+    <value>Participants Details</value>
+  </data>
+  <data name="phone_number" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="probe_detail" xml:space="preserve">
+    <value>ProbeDetail</value>
+  </data>
+  <data name="publish_order" xml:space="preserve">
+    <value>Publish Order</value>
+  </data>
+  <data name="republish" xml:space="preserve">
+    <value>Republish</value>
+  </data>
+  <data name="requestof_modification" xml:space="preserve">
+    <value>Request of Modification</value>
+  </data>
+  <data name="request_status" xml:space="preserve">
+    <value>Request Status</value>
+  </data>
+  <data name="r_major" xml:space="preserve">
+    <value>Major</value>
+  </data>
+  <data name="scientificMat_type" xml:space="preserve">
+    <value>ScientificMat. type</value>
+  </data>
+  <data name="scientific_material_type" xml:space="preserve">
+    <value>Scientific material type</value>
+  </data>
+  <data name="subject_title" xml:space="preserve">
+    <value>Subject Title</value>
+  </data>
+  <data name="s_no" xml:space="preserve">
+    <value>S.No.</value>
+  </data>
+  <data name="css_suffix" xml:space="preserve">
+    <value />
+  </data>
+  <data name="attachments" xml:space="preserve">
+    <value>Attachments :</value>
+  </data>
+  <data name="author_major" xml:space="preserve">
+    <value>Major of the Author</value>
+  </data>
+  <data name="coun_coll_recomm_date" xml:space="preserve">
+    <value>Recommendation Date of the council of department and colleg</value>
+  </data>
+  <data name="coun_coll_recomm_no" xml:space="preserve">
+    <value>Recommendation number of the council of department and college</value>
+  </data>
+  <data name="delete_action" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="edit_action" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="encyclopedia_lang" xml:space="preserve">
+    <value>Encyclopedia Language</value>
+  </data>
+  <data name="encyclopedia_major" xml:space="preserve">
+    <value>Major of Encyclopedia</value>
+  </data>
+  <data name="encyclopedia_original_title" xml:space="preserve">
+    <value>Title of the original Encyclopedia</value>
+  </data>
+  <data name="handbook_lang" xml:space="preserve">
+    <value>HandBook Language</value>
+  </data>
+  <data name="hand_book_detail" xml:space="preserve">
+    <value>Hand Book Details</value>
+  </data>
+  <data name="original_handbook_title" xml:space="preserve">
+    <value>Title of the original HandBook</value>
+  </data>
+  <data name="publish_date" xml:space="preserve">
+    <value>Publishing Date</value>
+  </data>
+  <data name="publish_place" xml:space="preserve">
+    <value>Publishing Place</value>
+  </data>
+  <data name="publish_req_follw" xml:space="preserve">
+    <value>Follow Up Publishing Requests</value>
+  </data>
+  <data name="scientific_mat_type" xml:space="preserve">
+    <value>ScientificMat. type</value>
+  </data>
+  <data name="serial_no" xml:space="preserve">
+    <value>S.No.</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="transulated_to" xml:space="preserve">
+    <value>Transulated to:</value>
+  </data>
+  <data name="css_left" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="css_right" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="invalid_credentials" xml:space="preserve">
+    <value>Invalid credentials</value>
+  </data>
+  <data name="invalid_email" xml:space="preserve">
+    <value>The e-mail address provided is invalid. Please try again.</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="accept" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="author_data" xml:space="preserve">
+    <value>Author's Data</value>
+  </data>
+  <data name="experiment_details" xml:space="preserve">
+    <value>Experiment Details</value>
+  </data>
+  <data name="experiment_number" xml:space="preserve">
+    <value>Experiment Number</value>
+  </data>
+  <data name="experiment_order" xml:space="preserve">
+    <value>Experiment Order</value>
+  </data>
+  <data name="experiment_status" xml:space="preserve">
+    <value>Experiment Status</value>
+  </data>
+  <data name="exp_required" xml:space="preserve">
+    <value>Exp. Required</value>
+  </data>
+  <data name="iban" xml:space="preserve">
+    <value>IBAN</value>
+  </data>
+  <data name="language_name" xml:space="preserve">
+    <value>Language Name</value>
+  </data>
+  <data name="number_of_participants" xml:space="preserve">
+    <value>Number of Participants</value>
+  </data>
+  <data name="reason_for_reject" xml:space="preserve">
+    <value>Reason for Reject</value>
+  </data>
+  <data name="refuse" xml:space="preserve">
+    <value>Refuse</value>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="swift_code" xml:space="preserve">
+    <value>Swift Code</value>
+  </data>
+  <data name="upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="book" xml:space="preserve">
+    <value>Book</value>
+  </data>
+  <data name="dictionary" xml:space="preserve">
+    <value>Dictionary</value>
+  </data>
+  <data name="done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="d_c_member" xml:space="preserve">
+    <value>D.C. Member</value>
+  </data>
+  <data name="encyclopedia" xml:space="preserve">
+    <value>Encyclopedia</value>
+  </data>
+  <data name="hand_book" xml:space="preserve">
+    <value>Hand Book</value>
+  </data>
+  <data name="probe" xml:space="preserve">
+    <value>Probe</value>
+  </data>
+  <data name="read" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="researcher_approval_requests" xml:space="preserve">
+    <value>Researcher Approval Requests</value>
+  </data>
+  <data name="thesis" xml:space="preserve">
+    <value>Thesis</value>
+  </data>
+  <data name="title_of_the_book" xml:space="preserve">
+    <value>Title of the Book</value>
+  </data>
+  <data name="agree" xml:space="preserve">
+    <value>Agree</value>
+  </data>
+  <data name="data_of_part" xml:space="preserve">
+    <value>Data of Parthers(Repeated y Item where y is the Partbers# in SCB)</value>
+  </data>
+  <data name="disagree" xml:space="preserve">
+    <value>Disagree</value>
+  </data>
+  <data name="meeting_session_id" xml:space="preserve">
+    <value>Meeting Session ID#</value>
+  </data>
+  <data name="partner_email" xml:space="preserve">
+    <value>Partner Email</value>
+  </data>
+  <data name="partner_mobile" xml:space="preserve">
+    <value>Partner Mobile#</value>
+  </data>
+  <data name="partner_name" xml:space="preserve">
+    <value>Partner Name</value>
+  </data>
+  <data name="pass_the_audit" xml:space="preserve">
+    <value>Pass the audit</value>
+  </data>
+  <data name="request_number" xml:space="preserve">
+    <value>request_number</value>
+  </data>
+  <data name="request_type" xml:space="preserve">
+    <value>Request type</value>
+  </data>
+  <data name="return_to_the_researcher" xml:space="preserve">
+    <value>Return to the researcher</value>
+  </data>
+  <data name="text_of_decl" xml:space="preserve">
+    <value>Text of declaration</value>
+  </data>
+  <data name="under_audit" xml:space="preserve">
+    <value>Under Audit</value>
+  </data>
+  <data name="author_name_headof" xml:space="preserve">
+    <value>Author Name</value>
+  </data>
+  <data name="author_name_requerd" xml:space="preserve">
+    <value>Author Name requerd</value>
+  </data>
+  <data name="book_title_required" xml:space="preserve">
+    <value>The Title field is required.</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="dcMember_required" xml:space="preserve">
+    <value>The DCMember field is required.</value>
+  </data>
+  <data name="dictionary_title_required" xml:space="preserve">
+    <value>The Title field is required.</value>
+  </data>
+  <data name="discussiondate_required" xml:space="preserve">
+    <value>The DiscussionDate field is required.</value>
+  </data>
+  <data name="employer_requerd" xml:space="preserve">
+    <value>The Employer field is required.</value>
+  </data>
+  <data name="employer_required" xml:space="preserve">
+    <value>Employer Required</value>
+  </data>
+  <data name="encyclopedia_title_required" xml:space="preserve">
+    <value>The Title field is required.</value>
+  </data>
+  <data name="experimentnumber_required" xml:space="preserve">
+    <value>Experiment Number Required</value>
+  </data>
+  <data name="experimentorder_required" xml:space="preserve">
+    <value>Experiment Order Required</value>
+  </data>
+  <data name="gpa_required" xml:space="preserve">
+    <value>The GPA field is required.</value>
+  </data>
+  <data name="handbook_title_required" xml:space="preserve">
+    <value>The Title field is required.</value>
+  </data>
+  <data name="majorauthor_required" xml:space="preserve">
+    <value>The MajorAuthor field is required</value>
+  </data>
+  <data name="major_dictionary_required" xml:space="preserve">
+    <value>The MajorDictionary field is required.</value>
+  </data>
+  <data name="major_encyclopedia_required" xml:space="preserve">
+    <value>The Name field is required.</value>
+  </data>
+  <data name="member_name" xml:space="preserve">
+    <value>Member Name</value>
+  </data>
+  <data name="original_book_title_required" xml:space="preserve">
+    <value>The OriginalBookTitle field is required.</value>
+  </data>
+  <data name="original_dictionary_title_required" xml:space="preserve">
+    <value>The OriginalDictionaryTitle field is required.</value>
+  </data>
+  <data name="original_encyclopedia_title_required" xml:space="preserve">
+    <value>The OriginalEncyclopediaTitle field is required.</value>
+  </data>
+  <data name="please_entervalidname" xml:space="preserve">
+    <value>Please enter valid name</value>
+  </data>
+  <data name="plz_enter_name" xml:space="preserve">
+    <value>Please enter Name</value>
+  </data>
+  <data name="plz_enter_pass" xml:space="preserve">
+    <value>Please enter password!!</value>
+  </data>
+  <data name="plz_enter_user" xml:space="preserve">
+    <value>Please enter username!!</value>
+  </data>
+  <data name="probe_major_required" xml:space="preserve">
+    <value>The ProbeMajor field is required.</value>
+  </data>
+  <data name="recommendation_date_required" xml:space="preserve">
+    <value>The RecommendationDate field is required.</value>
+  </data>
+  <data name="recommendation_number_required" xml:space="preserve">
+    <value>The RecommendationDepartmentCollege field is required.</value>
+  </data>
+  <data name="scientificsubject_required" xml:space="preserve">
+    <value>Scientific Subject Required</value>
+  </data>
+  <data name="scope_manuscript_required" xml:space="preserve">
+    <value>The ScopeManuscript field is required.</value>
+  </data>
+  <data name="select_bank" xml:space="preserve">
+    <value>Select Bank</value>
+  </data>
+  <data name="select_department" xml:space="preserve">
+    <value>Select Department</value>
+  </data>
+  <data name="select_faculty" xml:space="preserve">
+    <value>Select Faculty</value>
+  </data>
+  <data name="select_facultyhh" xml:space="preserve">
+    <value />
+  </data>
+  <data name="select_major" xml:space="preserve">
+    <value>Select Major</value>
+  </data>
+  <data name="select_scientific_department" xml:space="preserve">
+    <value>Select Scientific Department</value>
+  </data>
+  <data name="selec_scientficmaterial" xml:space="preserve">
+    <value>Select Scientfic Material</value>
+  </data>
+  <data name="subject_type" xml:space="preserve">
+    <value>Subject Type</value>
+  </data>
+  <data name="submit_accept" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="superivisor_required" xml:space="preserve">
+    <value>The Superivisor field is required.</value>
+  </data>
+  <data name="the_authorname_requird" xml:space="preserve">
+    <value>The AuthorName field is required.</value>
+  </data>
+  <data name="the_originalbooktitle_required" xml:space="preserve">
+    <value>The OriginalBookTitle field is required.</value>
+  </data>
+  <data name="title_book_required" xml:space="preserve">
+    <value>The Title field is required.</value>
+  </data>
+  <data name="title_ofThesis_required" xml:space="preserve">
+    <value>The Title field is required.</value>
+  </data>
+  <data name="absense_reason" xml:space="preserve">
+    <value>Absense Reason</value>
+  </data>
+  <data name="academic_year" xml:space="preserve">
+    <value>Academic Year</value>
+  </data>
+  <data name="accepted" xml:space="preserve">
+    <value>Accepted</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="adoption_of_list_arbitrators" xml:space="preserve">
+    <value>Adoption of a list of arbitrators</value>
+  </data>
+  <data name="arbitration_request" xml:space="preserve">
+    <value>Arbitration Requests</value>
+  </data>
+  <data name="attendance_state" xml:space="preserve">
+    <value>Attendance State</value>
+  </data>
+  <data name="authors_modifications" xml:space="preserve">
+    <value>Authors Modifications</value>
+  </data>
+  <data name="back_to_researches_unit" xml:space="preserve">
+    <value>Back to Researches Unit</value>
+  </data>
+  <data name="Creation_and_Submitting_Minutes_of_meeting" xml:space="preserve">
+    <value>Creation and Submitting Minutes of meeting</value>
+  </data>
+  <data name="deceason_Reason" xml:space="preserve">
+    <value>Deceason Reason</value>
+  </data>
+  <data name="decision" xml:space="preserve">
+    <value>Decesion</value>
+  </data>
+  <data name="discussed_topics_other_than_request" xml:space="preserve">
+    <value>Discussed Topics other than request</value>
+  </data>
+  <data name="final_authentication" xml:space="preserve">
+    <value>Final authentication</value>
+  </data>
+  <data name="first_st_arbitrator" xml:space="preserve">
+    <value>1st arbitrator</value>
+  </data>
+  <data name="following_publication_requests" xml:space="preserve">
+    <value>following publication requests</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="judgement_commity_meeting_list" xml:space="preserve">
+    <value>Judgement Commity Meeting List</value>
+  </data>
+  <data name="last_meetings" xml:space="preserve">
+    <value>Last Meetings</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="meeting" xml:space="preserve">
+    <value>Meeting</value>
+  </data>
+  <data name="meetingsofthe_committee" xml:space="preserve">
+    <value>Meetings of the Committee</value>
+  </data>
+  <data name="meeting_date" xml:space="preserve">
+    <value>Meeting Date</value>
+  </data>
+  <data name="meeting_head_name" xml:space="preserve">
+    <value>Meeting Head Name</value>
+  </data>
+  <data name="meeting_place" xml:space="preserve">
+    <value>Meeting Place</value>
+  </data>
+  <data name="meeting_requests" xml:space="preserve">
+    <value>Meeting Requests</value>
+  </data>
+  <data name="meeting_room" xml:space="preserve">
+    <value>Meeting Room</value>
+  </data>
+  <data name="meeting_topics" xml:space="preserve">
+    <value>Meeting Topics</value>
+  </data>
+  <data name="minutes_of_meeting" xml:space="preserve">
+    <value>Minutes of meeting</value>
+  </data>
+  <data name="minutes_Of_meeting_List" xml:space="preserve">
+    <value>Minutes Of Meeting List</value>
+  </data>
+  <data name="minutes_of_meeting_Status" xml:space="preserve">
+    <value>Minutes of Meeting Status</value>
+  </data>
+  <data name="notification" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="other_topics" xml:space="preserve">
+    <value>Other Topics</value>
+  </data>
+  <data name="people_to_be_Invited" xml:space="preserve">
+    <value>People to be Invited</value>
+  </data>
+  <data name="pricing_requests" xml:space="preserve">
+    <value>Pricing Requests</value>
+  </data>
+  <data name="printing_experiments" xml:space="preserve">
+    <value>Printing experiments</value>
+  </data>
+  <data name="publication_request" xml:space="preserve">
+    <value>Publication Request</value>
+  </data>
+  <data name="publishing_requests" xml:space="preserve">
+    <value>Publishing Requests</value>
+  </data>
+  <data name="publishing_requests_discussed_during_meeting" xml:space="preserve">
+    <value>Publishing Requests that discussed during meeting</value>
+  </data>
+  <data name="reason" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="rejected" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="remuneration_of_arbitrators_examiners" xml:space="preserve">
+    <value>Remuneration of arbitrators and examiners</value>
+  </data>
+  <data name="reward_of_Authors" xml:space="preserve">
+    <value>Reward of Authors</value>
+  </data>
+  <data name="second_arbitrator" xml:space="preserve">
+    <value>2nd arbitrator</value>
+  </data>
+  <data name="secretaryofthe_committee_publishing_arbitratiosecretaryofthe_committee_publishing_arbitration" xml:space="preserve">
+    <value>Secretary of the Committee of Publishing and Arbitration</value>
+  </data>
+  <data name="site_map" xml:space="preserve">
+    <value>Site Map</value>
+  </data>
+  <data name="spare_arbitrator" xml:space="preserve">
+    <value>Spare arbitrator</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="subject_one" xml:space="preserve">
+    <value>Subject One</value>
+  </data>
+  <data name="submitting_publish_recommendation" xml:space="preserve">
+    <value>Submitting publish Recommendation</value>
+  </data>
+  <data name="topic" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="topics" xml:space="preserve">
+    <value>Topics</value>
+  </data>
+  <data name="upload_publishing_request" xml:space="preserve">
+    <value>upload a new publishing request</value>
+  </data>
+  <data name="researcher_name" xml:space="preserve">
+    <value>اسم الباحث</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="participant_email" xml:space="preserve">
+    <value>ParticipantEmail</value>
+  </data>
+  <data name="participant_name" xml:space="preserve">
+    <value>ParticipantName</value>
+  </data>
+  <data name="faculty_name" xml:space="preserve">
+    <value>Faculty name</value>
+  </data>
+  <data name="audit" xml:space="preserve">
+    <value>Audit</value>
+  </data>
+  <data name="audit_request" xml:space="preserve">
+    <value>Audit Request</value>
+  </data>
+  <data name="dictionary_title_original" xml:space="preserve">
+    <value>Original Dictionary Title</value>
+  </data>
+  <data name="is_published_before" xml:space="preserve">
+    <value>Has the Scientific Material been published before?</value>
+  </data>
+  <data name="publication_request_no" xml:space="preserve">
+    <value>Request No.</value>
+  </data>
+  <data name="recommendation" xml:space="preserve">
+    <value>Recommendation</value>
+  </data>
+  <data name="send_to_examiner" xml:space="preserve">
+    <value>Send To Examiner</value>
+  </data>
+  <data name="sl" xml:space="preserve">
+    <value>Serial</value>
+  </data>
+  <data name="view" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="descision_reason" xml:space="preserve">
+    <value>Descision Reason</value>
+  </data>
+  <data name="meeting_id" xml:space="preserve">
+    <value>Meeting Id</value>
+  </data>
+  <data name="request_meeting" xml:space="preserve">
+    <value>Meeting Invitation</value>
+  </data>
+  <data name="declaration" xml:space="preserve">
+    <value>Declaration</value>
+  </data>
+  <data name="absences" xml:space="preserve">
+    <value>Absences</value>
+  </data>
+  <data name="attendance" xml:space="preserve">
+    <value>Attendance</value>
+  </data>
+  <data name="job_name" xml:space="preserve">
+    <value>Job name</value>
+  </data>
+  <data name="lecturer_of_deanship_of_scientific_research" xml:space="preserve">
+    <value>Lecturer of deanship of scientific research</value>
+  </data>
+  <data name="lecturer_of_scientific_council" xml:space="preserve">
+    <value>Lecturer of Scientific Council</value>
+  </data>
+  <data name="main_page" xml:space="preserve">
+    <value>Main page</value>
+  </data>
+  <data name="meeting_day" xml:space="preserve">
+    <value>Meeting day</value>
+  </data>
+  <data name="meeting_schedule" xml:space="preserve">
+    <value>Meeting schedule</value>
+  </data>
+  <data name="meeting_time" xml:space="preserve">
+    <value>Meeting time</value>
+  </data>
+  <data name="request_publish" xml:space="preserve">
+    <value>Publish request</value>
+  </data>
+  <data name="request_republish" xml:space="preserve">
+    <value>Re-publish request</value>
+  </data>
+  <data name="arbitration_grade" xml:space="preserve">
+    <value>Arbitration Grade</value>
+  </data>
+  <data name="arbitration_requests" xml:space="preserve">
+    <value>Arbitration Requests</value>
+  </data>
+  <data name="calculate" xml:space="preserve">
+    <value>Calculate</value>
+  </data>
+  <data name="meeting_proceedings" xml:space="preserve">
+    <value>Proceedings of the Meeting</value>
+  </data>
+  <data name="no_of_pages" xml:space="preserve">
+    <value>No of Pages</value>
+  </data>
+  <data name="no_of_parts" xml:space="preserve">
+    <value>No of Parts</value>
+  </data>
+  <data name="payment_request" xml:space="preserve">
+    <value>Payment Request</value>
+  </data>
+  <data name="payment_requests" xml:space="preserve">
+    <value>Payment Requests</value>
+  </data>
+  <data name="payment_status" xml:space="preserve">
+    <value>Payment Status</value>
+  </data>
+  <data name="price" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="pricing_request" xml:space="preserve">
+    <value>Pricing Request</value>
+  </data>
+  <data name="select_arbitrators" xml:space="preserve">
+    <value>Select Arbitrators</value>
+  </data>
+  <data name="absentees" xml:space="preserve">
+    <value>Absentees</value>
+  </data>
+  <data name="accept_with_updates" xml:space="preserve">
+    <value>Accept with Updates</value>
+  </data>
+  <data name="arbitrator_report" xml:space="preserve">
+    <value>Inspector Report</value>
+  </data>
+  <data name="back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="judgement_committee_meetings" xml:space="preserve">
+    <value>Referee commitee minutes of meetings</value>
+  </data>
+  <data name="scientific_council_meeting" xml:space="preserve">
+    <value>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 2b5da8f775ce0be93d458d37c9448a4567cbe1b5</value>
+  </data>
+  <data name="agreements" xml:space="preserve">
+    <value>Agreement</value>
+  </data>
+  <data name="bank_details" xml:space="preserve">
+    <value>Bank Details</value>
+  </data>
+  <data name="co_researcher" xml:space="preserve">
+    <value>Co researchers</value>
+  </data>
+  <data name="scientific_material_details" xml:space="preserve">
+    <value>Scientific material details</value>
+  </data>
+  <data name="handbook" xml:space="preserve">
+    <value>Hand book</value>
+  </data>
+  <data name="copyright" xml:space="preserve">
+    <value>All right reserved to Imam Mohammed Bin Saud University</value>
+  </data>
+  <data name="css_dir" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="site_title_long" xml:space="preserve">
+    <value>Academic Publication System</value>
+  </data>
+  <data name="sms_verification_message_link" xml:space="preserve">
+    <value>لقد تمت دعوتك في المشاركة لبحث علمي "{0}" نفيدكم أنه لإكمال عملية التسجيل يرجى استخدام الرابط التالي: {1}</value>
+  </data>
+  <data name="Invalidkey" xml:space="preserve">
+    <value>Invalid key</value>
+  </data>
+  <data name="InvalidLink" xml:space="preserve">
+    <value>Invalid link</value>
+  </data>
+  <data name="LinkisAlreadyused" xml:space="preserve">
+    <value>Link is already used</value>
+  </data>
+  <data name="academic_council_member" xml:space="preserve">
+    <value>AcademicCouncilMember</value>
+  </data>
+  <data name="academic_council_secretary" xml:space="preserve">
+    <value>AcademicCouncilSecretary</value>
+  </data>
+  <data name="accountant" xml:space="preserve">
+    <value>Accountant</value>
+  </data>
+  <data name="approve_with_comments" xml:space="preserve">
+    <value>ApproveWithComments</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="committee_for_pae_member" xml:space="preserve">
+    <value>CommitteeforPAEMember</value>
+  </data>
+  <data name="committee_for_pae_secretary" xml:space="preserve">
+    <value>CommitteeforPAESecretary</value>
+  </data>
+  <data name="deanship_of_academic_research_council_medeanship_of_academic_research_council_member" xml:space="preserve">
+    <value>DeanshipOfAcademicResearchCouncilMember</value>
+  </data>
+  <data name="dean_of_academic_research" xml:space="preserve">
+    <value>DeanOfAcademicResearch</value>
+  </data>
+  <data name="dean_of_library_affairs" xml:space="preserve">
+    <value>DeanOfLibraryAffairs</value>
+  </data>
+  <data name="dearship_of_academic_research_council_secretary" xml:space="preserve">
+    <value>DearshipOfAcademicResearchCouncilSecretary</value>
+  </data>
+  <data name="employee_of_portal_section" xml:space="preserve">
+    <value>EmployeeOfPortalSection</value>
+  </data>
+  <data name="forward" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="forward_toInitial_referee" xml:space="preserve">
+    <value>ForwardToInitialReferee</value>
+  </data>
+  <data name="king_fahad_national_library_officer" xml:space="preserve">
+    <value>KingFahadNationalLibraryOfficer</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="pending_academic_council_referee_selection" xml:space="preserve">
+    <value>PendingAcademicCouncilRefereeSelection</value>
+  </data>
+  <data name="pending_coresearchers" xml:space="preserve">
+    <value>PendingCoresearchers</value>
+  </data>
+  <data name="pending_Initial_referee" xml:space="preserve">
+    <value>PendingInitialReferee</value>
+  </data>
+  <data name="pending_modifications" xml:space="preserve">
+    <value>PendingModifications</value>
+  </data>
+  <data name="pending_paereferee_selection" xml:space="preserve">
+    <value>PendingPAERefereeSelection</value>
+  </data>
+  <data name="pending_research_unit_members" xml:space="preserve">
+    <value>PendingResearchUnitMembers</value>
+  </data>
+  <data name="pending_research_unit_secretary" xml:space="preserve">
+    <value>PendingResearchUnitSecretary</value>
+  </data>
+  <data name="pending_university_rector_publish_approval" xml:space="preserve">
+    <value>PendingUniversityRectorPublishApproval</value>
+  </data>
+  <data name="pending_vicedean_of_academic_research" xml:space="preserve">
+    <value>PendingViceDeanOfAcademicResearch</value>
+  </data>
+  <data name="pricing_committee_secretary" xml:space="preserve">
+    <value>PricingCommitteeSecretary</value>
+  </data>
+  <data name="printing_unit_ofthe_academic_publishing_agency" xml:space="preserve">
+    <value>PrintingUnitOftheAcademicPublishingAgency</value>
+  </data>
+  <data name="public_relations_director" xml:space="preserve">
+    <value>PublicRelationsDirector</value>
+  </data>
+  <data name="publish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="referee" xml:space="preserve">
+    <value>Referee</value>
+  </data>
+  <data name="reject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="rejected_by_coresearchers" xml:space="preserve">
+    <value>RejectedByCoresearchers</value>
+  </data>
+  <data name="research_unit_council_member" xml:space="preserve">
+    <value>ResearchUnitCouncilMember</value>
+  </data>
+  <data name="research_unit_head" xml:space="preserve">
+    <value>ResearchUnitHead</value>
+  </data>
+  <data name="research_unit_member" xml:space="preserve">
+    <value>Research Unit Member</value>
+  </data>
+  <data name="research_unit_scretary" xml:space="preserve">
+    <value>ResearchUnitScretary</value>
+  </data>
+  <data name="resubmit" xml:space="preserve">
+    <value>Resubmit</value>
+  </data>
+  <data name="return_to_researcher" xml:space="preserve">
+    <value>ReturnToResearcher</value>
+  </data>
+  <data name="return_to_research_unit_head" xml:space="preserve">
+    <value>ReturnToResearchUnitHead</value>
+  </data>
+  <data name="return_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>ReturnToViceDeanOfAcademicResearch</value>
+  </data>
+  <data name="submit_coresearcher_data" xml:space="preserve">
+    <value>SubmitCoresearcherData</value>
+  </data>
+  <data name="system_admin" xml:space="preserve">
+    <value>SystemAdmin</value>
+  </data>
+  <data name="university_press_director" xml:space="preserve">
+    <value>UniversityPressDirector</value>
+  </data>
+  <data name="university_rector" xml:space="preserve">
+    <value>UniversityRector</value>
+  </data>
+  <data name="university_rector_office_director" xml:space="preserve">
+    <value>UniversityRectorOfficeDirector</value>
+  </data>
+  <data name="unspecificed" xml:space="preserve">
+    <value>Unspecificed</value>
+  </data>
+  <data name="vice_dean_of_academic_research" xml:space="preserve">
+    <value>ViceDeanOfAcademicResearch</value>
+  </data>
+  <data name="web_master" xml:space="preserve">
+    <value>Webmaster</value>
+  </data>
+  <data name="register_new_user" xml:space="preserve">
+    <value>Register new user</value>
+  </data>
+  <data name="PendingUniversityRectorRefereeApproval" xml:space="preserve">
+    <value />
+  </data>
+  <data name="committeefor_paemember" xml:space="preserve">
+    <value>Committee for Paemember</value>
+  </data>
+  <data name="committeefor_paesecretary" xml:space="preserve">
+    <value>committeefor_paesecretary</value>
+  </data>
+  <data name="completed" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="conditional_approval" xml:space="preserve">
+    <value>ConditionalApproval</value>
+  </data>
+  <data name="pending_academic_council_after_referees" xml:space="preserve">
+    <value>PendingAcademicCouncilAfterReferees</value>
+  </data>
+  <data name="pending_advertisement" xml:space="preserve">
+    <value>PendingAdvertisement</value>
+  </data>
+  <data name="pending_copies_distribution_by_libraryaffairs" xml:space="preserve">
+    <value>PendingCopiesDistributionByLibraryAffairs</value>
+  </data>
+  <data name="pending_distribution_closure" xml:space="preserve">
+    <value>PendingDistributionClosure</value>
+  </data>
+  <data name="pending_distribution_list_approval" xml:space="preserve">
+    <value>PendingDistributionListApproval</value>
+  </data>
+  <data name="pending_kfnl_copies_distribution_by_printing_unit" xml:space="preserve">
+    <value>PendingKFNLCopiesDistributionByPrintingUnit</value>
+  </data>
+  <data name="pending_operation_command_approval" xml:space="preserve">
+    <value>PendingOperationCommandApproval</value>
+  </data>
+  <data name="pending_operation_command_final_approval" xml:space="preserve">
+    <value>PendingOperationCommandFinalApproval</value>
+  </data>
+  <data name="pending_operation_command_initiation" xml:space="preserve">
+    <value>PendingOperationCommandInitiation</value>
+  </data>
+  <data name="pending_operation_command_preparation" xml:space="preserve">
+    <value>PendingOperationCommandPreparation</value>
+  </data>
+  <data name="pending_pae_after_referees" xml:space="preserve">
+    <value>PendingPAEAfterReferees</value>
+  </data>
+  <data name="pending_pricing_approval_by_library_affairs" xml:space="preserve">
+    <value>PendingPricingApprovalByLibraryAffairs</value>
+  </data>
+  <data name="pending_pricing_approval_by_university_press" xml:space="preserve">
+    <value>PendingPricingApprovalByUniversityPress</value>
+  </data>
+  <data name="pending_pricing_prepartion" xml:space="preserve">
+    <value>PendingPricingPrepartion</value>
+  </data>
+  <data name="pending_printing" xml:space="preserve">
+    <value>PendingPrinting</value>
+  </data>
+  <data name="pending_referees" xml:space="preserve">
+    <value>PendingReferees</value>
+  </data>
+  <data name="pending_researcher_acceptance" xml:space="preserve">
+    <value>PendingResearcherAcceptance</value>
+  </data>
+  <data name="rejected_by_researcher" xml:space="preserve">
+    <value>RejectedByResearcher</value>
+  </data>
+  <data name="researcher" xml:space="preserve">
+    <value>Researcher</value>
+  </data>
+  <data name="reward_pending_accountant" xml:space="preserve">
+    <value>RewardPendingAccountant</value>
+  </data>
+  <data name="reward_pending_approval_by_dean" xml:space="preserve">
+    <value>RewardPendingApprovalByDean</value>
+  </data>
+  <data name="reward_pending_approval_by_vice_dean" xml:space="preserve">
+    <value>&gt;&gt;&gt;&gt;&gt;&gt;&gt; a59224d050948ef21289750869a6093dc6d61817</value>
+  </data>
+  <data name="Approval" xml:space="preserve">
+    <value>Approval</value>
+  </data>
+  <data name="original_dictionary_title" xml:space="preserve">
+    <value>Original dictionary title</value>
+  </data>
+  <data name="original_encyclopedia_title" xml:space="preserve">
+    <value>Original encyclopedia title</value>
+  </data>
+  <data name="forward_to_initial_referee" xml:space="preserve">
+    <value>forward_to_initial_referee</value>
+  </data>
+  <data name="pending_academic_council_referee_selection_forward" xml:space="preserve">
+    <value>pending_academic_council_referee_selection_forward</value>
+  </data>
+  <data name="pending_academic_council_referee_selection_reject" xml:space="preserve">
+    <value>pending_academic_council_referee_selection_reject</value>
+  </data>
+  <data name="pending_coresearchers_submit" xml:space="preserve">
+    <value>pending_coresearchers_submit</value>
+  </data>
+  <data name="pending_coresearchers_submit_coresearcher_data" xml:space="preserve">
+    <value>pending_coresearchers_submit_coresearcher_data</value>
+  </data>
+  <data name="pending_distribution_list_preparation" xml:space="preserve">
+    <value>pending_distribution_list_preparation</value>
+  </data>
+  <data name="pending_distribution_list_preparation_approve" xml:space="preserve">
+    <value>PendingDistributionListPreparation</value>
+  </data>
+  <data name="pending_initial_referee_aprove" xml:space="preserve">
+    <value>pending_initial_referee_aprove</value>
+  </data>
+  <data name="pending_initial_referee_reject" xml:space="preserve">
+    <value>pending_initial_referee_reject</value>
+  </data>
+  <data name="pending_isbn_request_submission_approve" xml:space="preserve">
+    <value>pending_isbn_request_submission_approve</value>
+  </data>
+  <data name="pending_operation_command_approval_forward" xml:space="preserve">
+    <value>pending_operation_command_approval_forward</value>
+  </data>
+  <data name="pending_operation_command_execution_approve" xml:space="preserve">
+    <value>PendingOperationCommandExecution_Approve</value>
+  </data>
+  <data name="pending_operation_command_execution_reject" xml:space="preserve">
+    <value>pending_operation_command_execution_reject</value>
+  </data>
+  <data name="Pending_Operation_Command_FinalApproval_Reject" xml:space="preserve">
+    <value>PendingOperationCommandFinalApproval_Reject</value>
+  </data>
+  <data name="pending_operation_command_final_approval_approve" xml:space="preserve">
+    <value>pending_operation_command_final_approval_approve</value>
+  </data>
+  <data name="pending_operation_command_initiation_approve" xml:space="preserve">
+    <value>Pending Operation Command Initiation Approve</value>
+  </data>
+  <data name="pending_operation_command_preparation_approve" xml:space="preserve">
+    <value>pending_operation_command_preparation_approve</value>
+  </data>
+  <data name="pending_pae_after_referees_approve" xml:space="preserve">
+    <value>pending_pae_after_referees_approve</value>
+  </data>
+  <data name="pending_pae_referee_selection_approve" xml:space="preserve">
+    <value>PendingPAERefereeSelection_Approve</value>
+  </data>
+  <data name="pending_pricingApproval_by_library_affairs_reject" xml:space="preserve">
+    <value>PendingPricingApprovalByLibraryAffairs_Reject</value>
+  </data>
+  <data name="pending_pricing_approval_by_dean" xml:space="preserve">
+    <value>pending_pricing_approval_by_dean</value>
+  </data>
+  <data name="pending_pricing_approval_by_dean_approve" xml:space="preserve">
+    <value>pending_pricing_approval_by_dean_approve</value>
+  </data>
+  <data name="pending_pricing_approval_by_library_affairs_approve" xml:space="preserve">
+    <value>pending_pricing_approval_by_library_affairs_approve</value>
+  </data>
+  <data name="pending_pricing_approval_by_university_press_forward" xml:space="preserve">
+    <value>PendingPricingApprovalByUniversityPress</value>
+  </data>
+  <data name="pending_pricing_approval_by_university_press_reject" xml:space="preserve">
+    <value>PendingPricingApprovalByUniversityPress</value>
+  </data>
+  <data name="pending_pricing_prepartion_approve" xml:space="preserve">
+    <value>pending_pricing_prepartion_approve</value>
+  </data>
+  <data name="pending_pricing_prepartion_reject" xml:space="preserve">
+    <value>PendingPricingPrepartion Reject</value>
+  </data>
+  <data name="pending_printing_approve" xml:space="preserve">
+    <value>pending_printing_approve</value>
+  </data>
+  <data name="pending_referees_forward" xml:space="preserve">
+    <value>pending_referees_forward</value>
+  </data>
+  <data name="pending_researcher_acceptance_forward" xml:space="preserve">
+    <value>PendingResearcherAcceptance</value>
+  </data>
+  <data name="pending_research_unit_head_approve" xml:space="preserve">
+    <value>pending_research_unit_head_approve</value>
+  </data>
+  <data name="pending_research_unit_head_reject" xml:space="preserve">
+    <value>pending_research_unit_head_reject</value>
+  </data>
+  <data name="pending_research_unit_secretary_submit" xml:space="preserve">
+    <value>pending_research_unit_secretary_submit</value>
+  </data>
+  <data name="pending_university_rector_publish_approval_approve" xml:space="preserve">
+    <value>pending_university_rector_publish_approval_approve</value>
+  </data>
+  <data name="pending_university_rector_publish_approval_reject" xml:space="preserve">
+    <value>pending_university_rector_publish_approval_reject</value>
+  </data>
+  <data name="pending_university_rector_referee _approval_ approve" xml:space="preserve">
+    <value>Pending University RectorReferee Approval Approve</value>
+  </data>
+  <data name="pending_university_rector_referee_approval" xml:space="preserve">
+    <value>pending_university_rector_referee_approval</value>
+  </data>
+  <data name="pending_vice_dean_of_academic_research" xml:space="preserve">
+    <value>pending_vice_dean_of_academic_research</value>
+  </data>
+  <data name="pending_vice_dean_of_academic_research_approve" xml:space="preserve">
+    <value>Pending ViceDean Of Academic Research Approve</value>
+  </data>
+  <data name="pending_vice_dean_of_academic_research_reject" xml:space="preserve">
+    <value>pending_vice_dean_of_academic_research_reject</value>
+  </data>
+  <data name="pending_vice_dean_of_academic_research_return_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>pending_vice_dean_of_academic_research_return_to_vice_dean_of_academic_research</value>
+  </data>
+  <data name="rejected_by_coresearchers_return_to_researcher" xml:space="preserve">
+    <value>rejected_by_coresearchers_return_to_researcher</value>
+  </data>
+  <data name="select_referees" xml:space="preserve">
+    <value>select_referees</value>
+  </data>
+  <data name="PendingCoresearchers" xml:space="preserve">
+    <value>PendingCoresearchers</value>
+  </data>
+  <data name="PendingPricingApprovalByLibraryAffairs_reject" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PendingResearchUnitSecretary" xml:space="preserve">
+    <value>PendingResearchUnitSecretary</value>
+  </data>
+  <data name="pending_distribution_closure_approve" xml:space="preserve">
+    <value>pending_distribution_closure_approve</value>
+  </data>
+  <data name="pending_distribution_list_approval_approve" xml:space="preserve">
+    <value>pending_distribution_list_approval_approve</value>
+  </data>
+  <data name="pending_distribution_list_preparation_reject" xml:space="preserve">
+    <value>pending_distribution_list_preparation_reject</value>
+  </data>
+  <data name="pending_knl_copies_distribution_by_printing_unit_approve" xml:space="preserve">
+    <value>pending_knl_copies_distribution_by_printing_unit_approve</value>
+  </data>
+  <data name="pending_pricing_approval_by_library_affairs_reject" xml:space="preserve">
+    <value>pending_pricing_approval_by_library_affairs_reject</value>
+  </data>
+  <data name="pending_research_unit_secretary_approve" xml:space="preserve">
+    <value>pending_research_unit_secretary_approve</value>
+  </data>
+  <data name="pending_unspecified" xml:space="preserve">
+    <value>pending_unspecified</value>
+  </data>
+  <data name="pending_academic_council_referee_selection_approve" xml:space="preserve">
+    <value>pending_academic_council_referee_selection_approve</value>
+  </data>
+  <data name="pending_paereferee_selection_select_referees" xml:space="preserve">
+    <value>pending_paereferee_selection_select_referees</value>
+  </data>
+  <data name="PendingCoresearchers_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PendingPricingApprovalByLibraryAffairs" xml:space="preserve">
+    <value>PendingPricingApprovalByLibraryAffairs</value>
+  </data>
+  <data name="pending_modifications_submit" xml:space="preserve">
+    <value>pending_modifications_submit</value>
+  </data>
+  <data name="pending_referees_approve" xml:space="preserve">
+    <value>pending_referees_approve</value>
+  </data>
+  <data name="dd" xml:space="preserve">
+    <value>publish_request_pending_paeafter_referees</value>
+  </data>
+  <data name="distribution" xml:space="preserve">
+    <value>distribution</value>
+  </data>
+  <data name="distribution_pending_author_copies_distribution_by_pr" xml:space="preserve">
+    <value>distribution_pending_author_copies_distribution_by_pr</value>
+  </data>
+  <data name="distribution_pending_author_copies_distribution_by_pr_submit" xml:space="preserve">
+    <value>distribution_pending_author_copies_distribution_by_pr_submit</value>
+  </data>
+  <data name="distribution_pending_copies_distribution_by_library_affairs" xml:space="preserve">
+    <value>distribution_pending_copies_distribution_by_library_affairs</value>
+  </data>
+  <data name="distribution_pending_copies_distribution_by_library_affairs_submit" xml:space="preserve">
+    <value>distribution_pending_copies_distribution_by_library_affairs_submit</value>
+  </data>
+  <data name="distribution_pending_distribution_closure" xml:space="preserve">
+    <value>distribution_pending_distribution_closure</value>
+  </data>
+  <data name="distribution_pending_distribution_closure_submit" xml:space="preserve">
+    <value>distribution_pending_distribution_closure_submit</value>
+  </data>
+  <data name="distribution_pending_distribution_list_approval" xml:space="preserve">
+    <value>distribution_pending_distribution_list_approval</value>
+  </data>
+  <data name="distribution_pending_distribution_list_approval_approve" xml:space="preserve">
+    <value>distribution_pending_distribution_list_approval_approve</value>
+  </data>
+  <data name="distribution_pending_distribution_list_preparation" xml:space="preserve">
+    <value>distribution_pending_distribution_list_preparation</value>
+  </data>
+  <data name="distribution_pending_distribution_list_preparation_submit" xml:space="preserve">
+    <value>distribution_pending_distribution_list_preparation_submit</value>
+  </data>
+  <data name="distribution_pending_kfnlcopies_distribution_by_printing_unit" xml:space="preserve">
+    <value>distribution_pending_kfnlcopies_distribution_by_printing_unit</value>
+  </data>
+  <data name="distribution_pending_kfnlcopies_distribution_by_printing_unit_submit" xml:space="preserve">
+    <value>distribution_pending_kfnlcopies_distribution_by_printing_unit_submit</value>
+  </data>
+  <data name="forward_to_press_oficer" xml:space="preserve">
+    <value>forward_to_press_oficer</value>
+  </data>
+  <data name="forward_to_proofreader" xml:space="preserve">
+    <value>forward_to_proofreader</value>
+  </data>
+  <data name="forward_to_research_unit_secretary" xml:space="preserve">
+    <value>forward_to_research_unit_secretary</value>
+  </data>
+  <data name="forward_to_spare_referee" xml:space="preserve">
+    <value>forward_to_spare_referee</value>
+  </data>
+  <data name="operation_command" xml:space="preserve">
+    <value>operation_command</value>
+  </data>
+  <data name="operation_command_pending_isbnrequest_submission" xml:space="preserve">
+    <value>operation_command_pending_isbnrequest_submission</value>
+  </data>
+  <data name="operation_command_pending_isbnrequest_submission_submit" xml:space="preserve">
+    <value>operation_command_pending_isbnrequest_submission_submit</value>
+  </data>
+  <data name="operation_command_pending_operation_command_approval" xml:space="preserve">
+    <value>operation_command_pending_operation_command_approval</value>
+  </data>
+  <data name="operation_command_pending_operation_command_approval_approve" xml:space="preserve">
+    <value>operation_command_pending_operation_command_approval_approve</value>
+  </data>
+  <data name="operation_command_pending_operation_command_execution" xml:space="preserve">
+    <value>operation_command_pending_operation_command_execution</value>
+  </data>
+  <data name="operation_command_pending_operation_command_execution_submit" xml:space="preserve">
+    <value>operation_command_pending_operation_command_execution_submit</value>
+  </data>
+  <data name="operation_command_pending_operation_command_final_approval" xml:space="preserve">
+    <value>operation_command_pending_operation_command_final_approval</value>
+  </data>
+  <data name="operation_command_pending_operation_command_forward" xml:space="preserve">
+    <value>operation_command_pending_operation_command_forward</value>
+  </data>
+  <data name="operation_command_pending_operation_command_forward_forward_to_press_oficer" xml:space="preserve">
+    <value>operation_command_pending_operation_command_forward_forward_to_press_oficer</value>
+  </data>
+  <data name="operation_command_pending_operation_command_forward_forward_to_proofreader" xml:space="preserve">
+    <value>operation_command_pending_operation_command_forward_forward_to_proofreader</value>
+  </data>
+  <data name="operation_command_pending_operation_command_forward_return_to_researcher" xml:space="preserve">
+    <value>operation_command_pending_operation_command_forward_return_to_researcher</value>
+  </data>
+  <data name="operation_command_pending_operation_command_initiation" xml:space="preserve">
+    <value>operation_command_pending_operation_command_initiation</value>
+  </data>
+  <data name="operation_command_pending_operation_command_initiation_submit" xml:space="preserve">
+    <value>operation_command_pending_operation_command_initiation_submit</value>
+  </data>
+  <data name="operation_command_pending_operation_command_preparation" xml:space="preserve">
+    <value>operation_command_pending_operation_command_preparation</value>
+  </data>
+  <data name="operation_command_pending_operation_command_preparation_submit" xml:space="preserve">
+    <value>operation_command_pending_operation_command_preparation_submit</value>
+  </data>
+  <data name="operation_command_pending_operation_command_validation" xml:space="preserve">
+    <value>operation_command_pending_operation_command_validation</value>
+  </data>
+  <data name="operation_command_pending_pending_correction_submit" xml:space="preserve">
+    <value>operation_command_pending_pending_correction_submit</value>
+  </data>
+  <data name="operation_command_pending_printing" xml:space="preserve">
+    <value>operation_command_pending_printing</value>
+  </data>
+  <data name="operation_command_pending_printing_manager" xml:space="preserve">
+    <value>operation_command_pending_printing_manager</value>
+  </data>
+  <data name="operation_command_pending_printing_manager_submit" xml:space="preserve">
+    <value>operation_command_pending_printing_manager_submit</value>
+  </data>
+  <data name="operation_command_pending_printing_submit" xml:space="preserve">
+    <value>operation_command_pending_printing_submit</value>
+  </data>
+  <data name="operation_command_pending_researcher_acceptance" xml:space="preserve">
+    <value>operation_command_pending_researcher_acceptance</value>
+  </data>
+  <data name="operation_command_pending_researcher_acceptance_approve" xml:space="preserve">
+    <value>operation_command_pending_researcher_acceptance_approve</value>
+  </data>
+  <data name="pricing" xml:space="preserve">
+    <value>pricing</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_dean" xml:space="preserve">
+    <value>pricing_pending_pricing_approval_by_dean</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_dean_approve" xml:space="preserve">
+    <value>pricing_pending_pricing_approval_by_dean_approve</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_library_affairs" xml:space="preserve">
+    <value>pricing_pending_pricing_approval_by_library_affairs</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_library_affairs_approve" xml:space="preserve">
+    <value>pricing_pending_pricing_approval_by_library_affairs_approve</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_university_press" xml:space="preserve">
+    <value>pricing_pending_pricing_approval_by_university_press</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_university_press_approve" xml:space="preserve">
+    <value>pricing_pending_pricing_approval_by_university_press_approve</value>
+  </data>
+  <data name="pricing_pending_pricing_prepartion" xml:space="preserve">
+    <value>pricing_pending_pricing_prepartion</value>
+  </data>
+  <data name="proofreader" xml:space="preserve">
+    <value>proofreader</value>
+  </data>
+  <data name="publish_request_not_submitted" xml:space="preserve">
+    <value>publish_request_not_submitted</value>
+  </data>
+  <data name="publish_request_not_submitted_unspecified" xml:space="preserve">
+    <value>publish_request_not_submitted_unspecified</value>
+  </data>
+  <data name="publish_request_pending_academic_council_after_referees" xml:space="preserve">
+    <value>publish_request_pending_academic_council_after_referees</value>
+  </data>
+  <data name="publish_request_pending_academic_council_referee_selection" xml:space="preserve">
+    <value>publish_request_pending_academic_council_referee_selection</value>
+  </data>
+  <data name="publish_request_pending_academic_council_referee_selection_approve" xml:space="preserve">
+    <value>publish_request_pending_academic_council_referee_selection_approve</value>
+  </data>
+  <data name="publish_request_pending_academic_council_referee_selection_reject" xml:space="preserve">
+    <value>publish_request_pending_academic_council_referee_selection_reject</value>
+  </data>
+  <data name="publish_request_pending_coresearchers" xml:space="preserve">
+    <value>publish_request_pending_coresearchers</value>
+  </data>
+  <data name="publish_request_pending_coresearchers_unspecified" xml:space="preserve">
+    <value>publish_request_pending_coresearchers_unspecified</value>
+  </data>
+  <data name="publish_request_pending_dean_of_academic_research_publish_approval" xml:space="preserve">
+    <value>publish_request_pending_dean_of_academic_research_publish_approval</value>
+  </data>
+  <data name="publish_request_pending_dean_of_academic_research_publish_approval_approve" xml:space="preserve">
+    <value>publish_request_pending_dean_of_academic_research_publish_approval_approve</value>
+  </data>
+  <data name="publish_request_pending_initial_referee_approve_with_comments" xml:space="preserve">
+    <value>publish_request_pending_initial_referee_approve_with_comments</value>
+  </data>
+  <data name="publish_request_pending_modifications_after_rus_resubmit" xml:space="preserve">
+    <value>publish_request_pending_modifications_after_rus_resubmit</value>
+  </data>
+  <data name="publish_request_pending_paeafter_referees" xml:space="preserve">
+    <value>publish_request_pending_paeafter_referees</value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection" xml:space="preserve">
+    <value>publish_request_pending_paereferee_selection</value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection_select_referees" xml:space="preserve">
+    <value>publish_request_pending_paereferee_selection_select_referees</value>
+  </data>
+  <data name="publish_request_pending_referees" xml:space="preserve">
+    <value>publish_request_pending_referees</value>
+  </data>
+  <data name="publish_request_pending_referees_approve" xml:space="preserve">
+    <value>publish_request_pending_referees_approve</value>
+  </data>
+  <data name="publish_request_pending_research_unit_head" xml:space="preserve">
+    <value>publish_request_pending_research_unit_head</value>
+  </data>
+  <data name="publish_request_pending_research_unit_head_approve" xml:space="preserve">
+    <value>publish_request_pending_research_unit_head_approve</value>
+  </data>
+  <data name="publish_request_pending_research_unit_head_forward_to_initial_referee" xml:space="preserve">
+    <value>publish_request_pending_research_unit_head_forward_to_initial_referee</value>
+  </data>
+  <data name="publish_request_pending_research_unit_secretary" xml:space="preserve">
+    <value>publish_request_pending_research_unit_secretary</value>
+  </data>
+  <data name="publish_request_pending_research_unit_secretary_approve" xml:space="preserve">
+    <value>publish_request_pending_research_unit_secretary_approve</value>
+  </data>
+  <data name="publish_request_pending_research_unit_secretary_return_to_researcher" xml:space="preserve">
+    <value>publish_request_pending_research_unit_secretary_return_to_researcher</value>
+  </data>
+  <data name="publish_request_pending_university_rector_publish_approval" xml:space="preserve">
+    <value>publish_request_pending_university_rector_publish_approval</value>
+  </data>
+  <data name="publish_request_pending_university_rector_publish_approval_approve" xml:space="preserve">
+    <value>publish_request_pending_university_rector_publish_approval_approve</value>
+  </data>
+  <data name="publish_request_pending_university_rector_publish_approval_forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>publish_request_pending_university_rector_publish_approval_forward_to_dean_of_academic_research</value>
+  </data>
+  <data name="referee_reward" xml:space="preserve">
+    <value>referee_reward</value>
+  </data>
+  <data name="researcher_reward" xml:space="preserve">
+    <value>researcher_reward</value>
+  </data>
+  <data name="reward_pending_accountant_submit" xml:space="preserve">
+    <value>reward_pending_accountant_submit</value>
+  </data>
+  <data name="reward_pending_approval_by_dean_approve" xml:space="preserve">
+    <value>reward_pending_approval_by_dean_approve</value>
+  </data>
+  <data name="reward_pending_approval_by_vice_dean_submit" xml:space="preserve">
+    <value>reward_pending_approval_by_vice_dean_submit</value>
+  </data>
+  <data name="st" xml:space="preserve">
+    <value />
+  </data>
+  <data name="university_press_officer" xml:space="preserve">
+    <value>university_press_officer</value>
+  </data>
+  <data name="publish_request_pending_modifications_after_rus" xml:space="preserve">
+    <value>publish_request_pending_modifications_after_rus</value>
+  </data>
+  <data name="officer_of_printing_unit" xml:space="preserve">
+    <value>officer_of_printing_unit</value>
+  </data>
+  <data name="publish_request_pending_research_unit_head_reject" xml:space="preserve">
+    <value>publish_request_pending_research_unit_head_reject</value>
+  </data>
+  <data name="forward_to_research_unit_head" xml:space="preserve">
+    <value>forward_to_research_unit_head</value>
+  </data>
+  <data name="publish_request_pending_initial_referee" xml:space="preserve">
+    <value>publish_request_pending_initial_referee</value>
+  </data>
+  <data name="publish_request_pending_spare_referee" xml:space="preserve">
+    <value>publish_request_pending_spare_referee</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="requests_report" xml:space="preserve">
+    <value>Requests Report</value>
+  </data>
+  <data name="totalA" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="archive" xml:space="preserve">
+    <value>Archive</value>
+  </data>
+  <data name="list" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="email_confirmation" xml:space="preserve">
+    <value>Email confirmation</value>
+  </data>
+  <data name="resume" xml:space="preserve">
+    <value>C.V.</value>
+  </data>
+  <data name="register_as_referee" xml:space="preserve">
+    <value>Register as a referee</value>
+  </data>
+  <data name="register_as_researcher" xml:space="preserve">
+    <value>Register as a researcher</value>
+  </data>
+  <data name="add_files" xml:space="preserve">
+    <value>add_files</value>
+  </data>
+  <data name="cancel_upload" xml:space="preserve">
+    <value>cancel_upload</value>
+  </data>
+  <data name="pass_code" xml:space="preserve">
+    <value>pass_code</value>
+  </data>
+  <data name="pass_code_confirm" xml:space="preserve">
+    <value>Processing...</value>
+  </data>
+  <data name="e" xml:space="preserve">
+    <value>e</value>
+  </data>
+  <data name="Bank_Id" xml:space="preserve">
+    <value>Bank_Id</value>
+  </data>
+  <data name="BookRequestsIsArabic" xml:space="preserve">
+    <value>BookRequestsIsArabic</value>
+  </data>
+  <data name="BookRequestsMajorId" xml:space="preserve">
+    <value>BookRequestsMajorId</value>
+  </data>
+  <data name="gender" xml:space="preserve">
+    <value>gender</value>
+  </data>
+  <data name="National_Id" xml:space="preserve">
+    <value>NationalId</value>
+  </data>
+  <data name="Recommendations" xml:space="preserve">
+    <value>Recommendations</value>
+  </data>
+  <data name="Recommendations_date" xml:space="preserve">
+    <value>Recommendations_date</value>
+  </data>
+  <data name="RequestsIsScientificProduction" xml:space="preserve">
+    <value>RequestsIsScientificProduction</value>
+  </data>
+  <data name="RequestsTitle" xml:space="preserve">
+    <value>RequestsTitle</value>
+  </data>
+  <data name="Requests_CollegeId" xml:space="preserve">
+    <value>Requests_CollegeId</value>
+  </data>
+  <data name="ReviewType" xml:space="preserve">
+    <value>ReviewType</value>
+  </data>
+  <data name="approve_and_forward_to_research_unit_head" xml:space="preserve">
+    <value>approve_and_forward_to_research_unit_head</value>
+  </data>
+  <data name="publish_request_pending_research_unit_secretary_unspecified" xml:space="preserve">
+    <value>publish_request_pending_research_unit_secretary_unspecified</value>
+  </data>
+  <data name="s" xml:space="preserve">
+    <value />
+  </data>
+  <data name="last_updated" xml:space="preserve">
+    <value>Last update</value>
+  </data>
+  <data name="edit_template" xml:space="preserve">
+    <value>Edit template</value>
+  </data>
+  <data name="please_select_action" xml:space="preserve">
+    <value>Please select action..</value>
+  </data>
+  <data name="templates" xml:space="preserve">
+    <value>Templates</value>
+  </data>
+  <data name="template_name" xml:space="preserve">
+    <value>Template name</value>
+  </data>
+  <data name="scientificDepartment" xml:space="preserve">
+    <value>Scientific Department</value>
+  </data>
+  <data name="scientificDepartment_required" xml:space="preserve">
+    <value>Scientific Department is required.</value>
+  </data>
+  <data name="currentWorkPlace" xml:space="preserve">
+    <value>Current Workplace</value>
+  </data>
+  <data name="currentWorkPlace_required" xml:space="preserve">
+    <value>Current Workplace is required.</value>
+  </data>
+  <data name="degreeTypeId" xml:space="preserve">
+    <value>Degree</value>
+  </data>
+  <data name="original_handbook_title_required" xml:space="preserve">
+    <value>The Original Hand Book Title field is required.</value>
+  </data>
+  <data name="translated_To_Language_required" xml:space="preserve">
+    <value>Translate To Language is required.</value>
+  </data>
+  <data name="assistantSupervisor" xml:space="preserve">
+    <value>Assistant Supervisor</value>
+  </data>
+  <data name="contactUsMessage" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="contactUsMessage_required" xml:space="preserve">
+    <value>Your Message is required.</value>
+  </data>
+  <data name="contact_us_message" xml:space="preserve">
+    <value>Contact us message</value>
+  </data>
+  <data name="non_official_email_requires_approval" xml:space="preserve">
+    <value>An approval is required for using non official email Id while a researcher wants to register .</value>
+  </data>
+  <data name="subject_required" xml:space="preserve">
+    <value>Subject is required.</value>
+  </data>
+  <data name="Religion and theology" xml:space="preserve">
+    <value>أصول الدين</value>
+  </data>
+  <data name="contactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="notification_on_final_approval" xml:space="preserve">
+    <value>Notification Email On Final Approval</value>
+  </data>
+  <data name="notification_on_final_rejection" xml:space="preserve">
+    <value>Notification Email On Final Rejection</value>
+  </data>
+  <data name="scorebox" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="approval_average" xml:space="preserve">
+    <value>Approval Average</value>
+  </data>
+  <data name="Avg_Is_Less_Cannot_Approve" xml:space="preserve">
+    <value>You cannot approve because the approval average is &lt; 80%.</value>
+  </data>
+  <data name="rewards" xml:space="preserve">
+    <value>Rewards</value>
+  </data>
+  <data name="max_Pages" xml:space="preserve">
+    <value>Maximum Pages</value>
+  </data>
+  <data name="min_Pages" xml:space="preserve">
+    <value>Minimum Pages</value>
+  </data>
+  <data name="reward_amount" xml:space="preserve">
+    <value>Reward Amount</value>
+  </data>
+  <data name="isbn" xml:space="preserve">
+    <value>ISBN</value>
+  </data>
+  <data name="isbn_required" xml:space="preserve">
+    <value>ISBN is required.</value>
+  </data>
+  <data name="entities" xml:space="preserve">
+    <value>Entities</value>
+  </data>
+  <data name="entity_name" xml:space="preserve">
+    <value>Name of the Entity</value>
+  </data>
+  <data name="no_copies" xml:space="preserve">
+    <value>Number of Copies</value>
+  </data>
+  <data name="impersonate_user" xml:space="preserve">
+    <value>Impersonate User</value>
+  </data>
+  <data name="delegation" xml:space="preserve">
+    <value>Delegation</value>
+  </data>
+</root>

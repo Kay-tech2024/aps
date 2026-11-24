@@ -1,0 +1,217 @@
+﻿@model APS.Web.Models.PublicationViewModel
+
+@{
+    ViewBag.Title = @ApsStrings.probe_detail;
+}
+
+<div class="step-wizard-container2 @(Model.PublicationType == PublicationType.Thesis? "ro" : "")">
+
+    <div class="step-wizard">
+        <div class="progress2">
+            <div class="progressbar2 empty"></div>
+            <div id="prog" class="progressbar2"></div>
+        </div>
+        <ul>
+            <li class="active">
+                <a href="~/Publications/Create?requestId=@Model.RequestId" id="step1">
+                    <span class="step2">1</span>
+                    <span class="title2">@ApsStrings.create</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/PublicationDetails?requestId=@Model.RequestId" id="step2">
+                    <span class="step2">2</span>
+                    <span class="title2">@ApsStrings.publication_details</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/BankDetails?requestId=@Model.RequestId" id="step3">
+                    <span class="step2">3</span>
+                    <span class="title2">@ApsStrings.bank_details</span>
+                </a>
+            </li>
+
+            @if (Model.PublicationType != PublicationType.Thesis)
+            {
+                <li class="">
+                    <a href="~/Publications/Participant?requestId=@Model.RequestId" id="step4">
+                        <span class="step2">4</span>
+                        <span class="title2">@ApsStrings.co_researcher</span>
+                    </a>
+                </li>
+            }
+
+            <li class="">
+
+                <a href="~/Publications/Agreement?requestId=@Model.RequestId" id="step@(Model.PublicationType != PublicationType.Thesis? 5:4)">
+
+                    <span class="step2">@(Model.PublicationType != PublicationType.Thesis ? 5 : 4)</span>
+                    <span class="title2">@ApsStrings.agreements</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<h2>@ApsStrings.probe_detail</h2>
+
+@Html.ValidationSummary(false, "", htmlAttributes: new { @class = "text-danger" })
+
+@using (Html.BeginForm("PublicationDetails", "Publications", new { requestId = Model.RequestId, RequestType = ViewBag.RequestType }, FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.Hidden("RequestId", Model.RequestId)
+    @Html.Hidden("RequestType", Model.RequestType)
+    <div class="form-group">
+        @Html.Label("العنوان", new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.BookTitle, new { @class = "form-control", @placeholder = "العنوان" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.AuthorName, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.AuthorName, new { @class = "form-control", @placeholder = "اسم المؤلف " })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProbeType, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.RadioButtonFor(m => m.ProbeType, ProbeType.ManuScript, new { @id = ProbeType.ManuScript, @class = "radio-inline", @checked = "true" }) @ApsStrings.manu_script
+            @Html.RadioButtonFor(m => m.ProbeType, ProbeType.RareBook, new { @id = ProbeType.RareBook, @class = "radio-inline" }) @ApsStrings.rare_book
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ScopeOfManusript, new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.ScopeOfManusript, new { @class = "form-control", @placeholder = "مجال المخطوطة  " })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ProberMajorId, new { @class = "control-label col-sm-2 text-center" })
+        <div class="col-sm-10">
+            @Html.DropDownListFor(model => model.ProberMajorId, new SelectList(ViewBag.Majors, "Id", "NameArabic"), ApsStrings.select, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+
+    if (Model.Files != null && Model.Files.Count > 0)
+    {
+        <div class="row">
+            <h4 class="col-md-offset-3 col-md-6 text-center">@ApsStrings.uploaded_files</h4>
+        </div>
+
+        var i = 0;
+        foreach (var item in Model.Files)
+        {
+            <div class="form-group">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    @Html.ActionLink(!string.IsNullOrWhiteSpace(item.FileName) ? item.FileName : item.Type.ToString(), "Index", "GetFile", new { id = item.FileId }, new { @class = "btn btn-info btn-xs", target = "_blank" })
+
+                    @(item.PageCount > 0 ? "  (" + ApsStrings.no_of_pages + ": " + item.PageCount + ")" : "")
+                </div>
+            </div>
+
+            <hr style="border: 1px dashed #ddd;" />
+
+            @Html.HiddenFor(m => m.Files[i].FileId)
+            @Html.HiddenFor(m => m.Files[i].Type)
+
+            i++;
+
+        }
+
+    }
+
+    <div id="divUploadedFiles">
+        <br />
+        <h4>@ApsStrings.attachments</h4>
+
+        @Html.Partial("~/Views/Shared/_FileUploadPartial.cshtml")
+    </div>
+
+    if (Model.Type == RequestType.RepublishRequest)
+    {
+
+        <div id="type">
+            <div style="background:lavender; padding:15px; margin:5px;">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.PublishType, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.RadioButtonFor(m => m.PublishType, PublishType.Governmental, new { @id = PublishType.Governmental, @class = "radio-inline", @checked = "true" }) @ApsStrings.governmental
+                        @Html.RadioButtonFor(m => m.PublishType, PublishType.Commercial, new { @id = PublishType.Commercial, @class = "radio-inline" }) @ApsStrings.commercial
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Publisher, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(m => m.Publisher, new { @class = "form-control", @placeholder = ApsStrings.publisher })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.PublisherPlace, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(m => m.PublisherPlace, new { @class = "form-control", @placeholder = ApsStrings.publisher_place })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.DateOfPublish, new { @class = "control-label col-sm-2" })
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(m => m.DateOfPublish, new { @class = "form-control datepicker-lang", @placeholder = ApsStrings.publish_date })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="pull-right wizard-nav">
+        <input type="submit" id="submit" class="btn btn-primary wizard-fin" value="@ApsStrings.next_btn" data-current-step="2" />
+    </div>
+}
+
+@section scripts
+{
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+
+        $(document).ready(function () {
+            var typereq = $('#RequestType').val();
+
+            if (typereq == "NewPublish") {
+                $('#type').hide();
+            }
+            function setClasses(index, steps) {
+                if (index < 0 || index > steps) return;
+                if (index == 0) {
+                    $(".step-wizard-container2 #prev").prop('disabled', true);
+                } else {
+                    $(".step-wizard-container2 #prev").prop('disabled', false);
+                }
+                if (index == steps) {
+                    $(".step-wizard-container2 #next").text('done');
+                } else {
+                    $(".step-wizard-container2 #next").text('next');
+                }
+                $(".step-wizard-container2 ul li").each(function () {
+                    $(this).removeClass();
+                });
+                $(".step-wizard-container2 ul li:lt(" + index + ")").each(function () {
+                    $(this).addClass("done");
+                });
+                $(".step-wizard-container2 ul li:eq(" + index + ")").addClass("active")
+                var p = index * (100 / steps);
+                $(".step-wizard-container2 #prog").width(p + '%');
+            }
+
+            // initial state setup
+            setClasses(1, $(".step-wizard-container2 .step-wizard ul li").length - 1);
+        });
+    </script>
+
+}

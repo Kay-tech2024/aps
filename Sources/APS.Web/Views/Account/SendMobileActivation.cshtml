@@ -1,0 +1,62 @@
+﻿@model ResetPasswordViewModel
+@{
+
+    var isPostBack = HttpContextManager.Current.Request.HttpMethod == "POST";
+    var preferences = CommonManager.GetUserPreferences();
+
+    ViewBag.Title = ApsStrings.resent_mobile_activation;
+
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+@using (Html.BeginForm("SendMobileActivation", "Account", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
+
+    <div>
+        <input type="hidden" name="SmsKey" value="@(Model.SmsKey == null? "" : Model.SmsKey)" />
+    </div>
+    <div class="row divrtl nd2">
+        <div class="col-md-4 col-xs-4 login-label-bg">
+            <p class="text-center login-label">@ApsStrings.email</p>
+        </div>
+        <div class="col-md-8 col-xs-8">
+            @Html.TextBoxFor(m => m.Email, new { @class = "text-center username login-input login-input-bg" })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row divrtl nd2">
+        <div class="col-md-4 col-xs-4 login-label-bg">
+            <p class="text-center login-label">@ApsStrings.mobile</p>
+        </div>
+        <div class="col-md-8 col-xs-8">
+            @Html.TextBoxFor(m => m.MobileNumber, new { @class = "text-center username login-input login-input-bg" })
+            @Html.ValidationMessageFor(m => m.MobileNumber, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    if (Model.SmsKey != null)
+    {
+        <div class="row divrtl nd2">
+            <div class="col-md-4 col-xs-4 login-label-bg">
+                <p class="text-center login-label">@ApsStrings.sms_code</p>
+            </div>
+            <div class="col-md-8 col-xs-8">
+                @Html.TextBoxFor(m => m.SmsCode, new { @class = "text-center username login-input login-input-bg" })
+                @Html.ValidationMessageFor(m => m.SmsCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    }
+    <div class="row">
+        <button type="submit" class="text-center btn btn-block btn-info">@ApsStrings.resent_mobile_activation</button>
+    </div>
+
+}
+
+<div class="row">
+    <small class="link"><a href="~/Account/login" class="text-center">@ApsStrings.login</a></small>
+    <small class="link"><a href="~/Account/register" class="text-center">@ApsStrings.register_new_user</a></small>
+</div>

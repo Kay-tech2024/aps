@@ -1,0 +1,56 @@
+﻿@model MajorViewModel
+
+@{
+    ViewBag.Title = ApsStrings.edit_major;
+
+}
+
+<ul class="breadcrumb">
+    <li><a href="@Url.Action("Index", "Home")">@ApsStrings.homepage</a></li>
+    <li><a href="@Url.Action("Index", "Majors")">@ApsStrings.majors</a></li>
+    <li>@ApsStrings.edit_major</li>
+</ul>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger alert-validation">
+        <h5>@ApsStrings.ValidationSummary</h5>
+        <div class="text-left">
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        </div>
+    </div>
+}
+
+<div class="box2 box2-info">
+
+    @using (Html.BeginForm("Edit", "Majors", new { id = Model.Id}, FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal maximum-width" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NameEnglish, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(model => model.NameEnglish, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.NameEnglish, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NameArabic, htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextBoxFor(model => model.NameArabic, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.NameArabic, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-9">
+                    <input id="btnSubmit" type="submit" value="@ApsStrings.save" class="btn btn-primary btn-lg btn-block" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

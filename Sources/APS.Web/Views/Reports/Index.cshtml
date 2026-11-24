@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li>@Html.ActionLink(ApsStrings.homepage, "Index", "Home")</li>
+
+    <li>@ApsStrings.reports</li>
+</ul>
+
+<h2>@ApsStrings.reports</h2>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6">
+            <a href="~/Reports/Types" class="btn btn-primary btn-block">@ApsStrings.requests_report</a>
+        </div>
+        <div class="col-md-6">
+            <a href="~/Reports/Financial" class="btn btn-primary btn-block">@ApsStrings.financial_report</a>
+        </div>
+    </div>
+</div>

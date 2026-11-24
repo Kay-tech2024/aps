@@ -1,0 +1,115 @@
+﻿@model APS.Web.Models.ScientificLetterInformationViewModel
+
+@{
+    ViewBag.Title = @ApsStrings.scientificletterinformation;
+}
+
+<h2>@ApsStrings.scientificletterinformation</h2>
+
+@using (Html.BeginForm("ScientificLetterInformation", "CoResearcher", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+@Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <table id="table" class="table table-striped">
+                <tr>
+                    <th>@ApsStrings.college</th>
+                    <th>@ApsStrings.department</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.LetterTitle, new { @class = "control-label" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.LetterTitle, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.Degree, new { @class = "control-label" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Degree, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.Supervisor, new { @class = "control-label" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Supervisor, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.CommitteeMember, new { @class = "control-label" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.CommitteeMember, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.ScientificDepartment, new { @class = "control-label" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.ScientificDepartment, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.Evaluation, new { @class = "control-label" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Evaluation, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(m => m.DateOfDiscussion, new { @class = "control-label" })
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.DateOfDiscussion, new { @class = "form-control", @readonly = "readonly" })
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-2">@ApsStrings.scientificmaterialpublishedbefore</label>
+        <div class="col-sm-10">
+            @Html.RadioButtonFor(m => m.ScientificMaterialType, ScientificMaterialType.Commercial, new { @id = ScientificMaterialType.Commercial, @class = "radio-inline", @checked = "true" }) @ApsStrings.commercial
+            @Html.RadioButtonFor(m => m.ScientificMaterialType, ScientificMaterialType.Governmental, new { @id = ScientificMaterialType.Governmental, @class = "radio-inline" }) @ApsStrings.governmental
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-3">
+            @Html.LabelFor(m => m.Publisher, new { @class = "control-label col-sm-2" })
+            @Html.TextBoxFor(m => m.Publisher, new { @class = "form-control", @placeholder = "الناشر", @readonly = "readonly" })
+        </div>
+        <div class="col-sm-offset-1 col-sm-3">
+            @Html.LabelFor(m => m.PublisherPlace, new { @class = "control-label col-sm-2" })
+            @Html.TextBoxFor(m => m.PublisherPlace, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+        <div class="col-sm-offset-1 col-sm-3">
+            @Html.LabelFor(m => m.DateOfPublish, new { @class = "control-label col-sm-2" })
+            @Html.TextBoxFor(m => m.DateOfPublish, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReasonForRejection, new { @class = "control-label col-sm-2" })
+        <div class="col-sm-10">
+            @Html.TextBoxFor(m => m.ReasonForRejection, new { @class = "form-control", @rows = "5" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default" id="btnAccept">@ApsStrings.accept</button>
+            <button type="submit" class="btn btn-default" id="btnReject">@ApsStrings.reject</button>
+        </div>
+    </div>
+}

@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = ApsStrings.impersonate_user;
+
+}
+
+<ul class="breadcrumb">
+    <li>@Html.ActionLink(ApsStrings.home, "Index", "Home")</li>
+    <li>@ApsStrings.impersonate_user</li>
+</ul>
+<div class="box2 box2-info">
+    <div class="row">
+        @*<div class="col-md-6">*@
+        <div class="panel with-nav-tabs panel-default">
+            <div class="panel-heading">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tabRoles" data-toggle="tab">@ApsStrings.role</a></li>
+                    <li><a href="#tabUsers" data-toggle="tab">@ApsStrings.users</a></li>
+                </ul>
+            </div>
+            <div class="panel-body">
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tabRoles">Default 1</div>
+                    <div class="tab-pane fade" id="tabUsers">Default 2</div>
+                </div>
+            </div>
+        </div>
+        @*</div>*@
+    </div>
+</div>

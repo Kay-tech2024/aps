@@ -1,0 +1,68 @@
+﻿@model ReviewersRewardViewModel
+@{
+    ViewBag.Title = @ApsStrings.referee_reward;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li><a href="@Url.Action("Index", "Home")">@ApsStrings.home</a></li>
+    <li>@ApsStrings.rewards</li>
+    <li>@ApsStrings.referee_reward</li>
+</ul>
+@using (Html.BeginForm("Reviewers", "Rewards", FormMethod.Post, new { @class = "form-horizontal maximum-width" }))
+{
+@Html.AntiForgeryToken()
+
+    @Html.AntiForgeryToken()
+    <div class="box2 box2-info">
+        <table class="table form-group">
+            <tr>
+                <th style="text-align:center;">@ApsStrings.min_Pages</th>
+                <th></th>
+                <th style="text-align:center;">@ApsStrings.max_Pages</th>
+                <th>@ApsStrings.reward_amount</th>
+            </tr>
+            @*@foreach (ReviewerRewardViewModel m in Model.ReviewerRewards)
+                    {
+                    <tr>
+                        <td style="text-align:center;" data-rowid="m.Id">
+                            @Html.HiddenFor(mod => m.Id)
+                            @Html.Label(m.Minpages.ToString())
+                        </td>
+                        <td style="text-align:center;">
+                            -
+                        </td>
+                        <td style="text-align:center;">
+                            @Html.Label(m.MaxPages.ToString())
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(mod => m.RewardValue, new { @class = "form-control", @placeholder = ApsStrings.fullname })
+                        </td>
+                    </tr>
+                }*@
+            @for (int i = 0; i < Model.ReviewerRewards.Count; i++)
+            {
+                <tr>
+                    <td style="text-align:center;" data-rowid="m.Id">
+                        @Html.HiddenFor(m => m.ReviewerRewards[i].Id)
+                        @Html.HiddenFor(m => m.ReviewerRewards[i].Minpages)
+                        @Html.DisplayFor(m => m.ReviewerRewards[i].Minpages)
+                    </td>
+                    <td style="text-align:center;">
+                        -
+                    </td>
+                    <td style="text-align:center;">
+                        @Html.HiddenFor(m => m.ReviewerRewards[i].MaxPages)
+                        @Html.DisplayFor(m => m.ReviewerRewards[i].MaxPages)
+                    </td>
+                    <td>
+                        @Html.TextBoxFor(m => m.ReviewerRewards[i].RewardValue, new { @class = "form-control", @placeholder = ApsStrings.fullname })
+                    </td>
+                </tr>
+            }
+        </table>
+        <div class="row">
+            <button type="submit" class="text-center btn btn-block btn-info">@ApsStrings.submit</button>
+        </div>
+    </div>
+}

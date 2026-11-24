@@ -1,0 +1,473 @@
+﻿@model PublishRequestViewModel
+
+@{
+    ViewBag.Title = ApsStrings.new_publish;
+    var isActionable = Model.AllowedActions != null && Model.AllowedActions.Count > 1;
+    var allowReplacingFiles = isActionable && Model.CreatedByUserId == Utils.RequestUtils.CurrentUser.Id;
+
+    var fileCount = Model.Files == null ? 0 : Model.Files.Count;
+
+    double avgGrade = 0;
+    if (Utils.HasRolesAny(ApsUserRole.CommitteeforPAESecretary) || Utils.HasRolesAny(ApsUserRole.CommitteForPAEHead) || Utils.HasRolesAny(ApsUserRole.AcademicCouncilSecretary) || Utils.HasRolesAny(ApsUserRole.AcademicCouncilHead) || Utils.HasRolesAny(ApsUserRole.UniversityRector))
+    {
+        if (Model.Referees.Count > 0)
+        {
+            avgGrade = Model.Referees
+                       .Where(rr => rr.Action != null)
+                       .OrderByDescending(rr => rr.Grade)
+                       .Skip(0)
+                       .Take(2)
+                       .Average(x => x.Grade);
+        }
+    }
+}
+@if (Utils.IsLocalhost)
+{
+    if (TempData["coresearhcersmslink"] != null)
+    {
+        int i = 1;
+        foreach (var link in TempData["coresearhcersmslink"] as List<string>)
+        {
+            <a href='@link' target="_blank">CoResearcher link @i</a>
+            i++;
+        }
+    }
+}
+<ul class="breadcrumb">
+    <li>@Html.ActionLink(ApsStrings.home, "Index", "Home")</li>
+    <li>@Html.ActionLink(ApsStrings.requests, "Index", "Requests")</li>
+    <li>@ApsStrings.edit_request</li>
+</ul>
+
+@using (Html.BeginForm("Edit", "Requests", new { id = Model.Id }, FormMethod.Post, new { id = "frmCreateRequest", enctype = "multipart/form-data", @class = "form-horizontal maximum-width " + (isActionable ? "" : "disabled") }))
+{
+    @Html.AntiForgeryToken()
+
+    if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger alert-validation">
+            <h5>@ApsStrings.ValidationSummary</h5>
+            <div class="text-left">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    }
+
+    <div class="box2 box2-info padding">
+        <div class="form-group disabled">
+            <label class="control-label col-md-3">@ApsStrings.request_number</label>
+            <div class="col-md-6">
+                <span class="form-control">@Model.Id</span>
+            </div>
+        </div>
+        <div class="form-group disabled">
+            <label class="control-label col-md-3">@ApsStrings.request_type</label>
+            <div class="col-md-6">
+                <span class="form-control">@Model.Type</span>
+            </div>
+        </div>
+        <div class="form-group disabled">
+            <label class="control-label col-md-3">@ApsStrings.title</label>
+            <div class="col-md-6">
+                <span class="form-control">@Model.Title</span>
+            </div>
+        </div>
+        @if (!Utils.HasRolesAny(ApsUserRole.Referee))
+        {
+            <div class="form-group disabled">
+                <label class="control-label col-md-3">@ApsStrings.author_name</label>
+                <div class="col-md-6">
+                    <span class="form-control">@Model.AuthorDetails.Name</span>
+                </div>
+            </div>
+        }
+        <p class="text-center">
+            <a data-toggle="modal" data-target="#publicationDetails" class="btn btn-default">@LangHelpers.Instance["publication_details"]</a>
+            &nbsp;&nbsp;&nbsp;
+            @if (Utils.HasRolesAny(ApsUserRole.Researcher) && (Model.Request.Status == (long)RequestStatus.PublishRequestPendingModificationsAfterRUS || Model.Request.Status == (long)RequestStatus.PublishRequestPendingModificationsAfterReferees || Model.Request.Status == (long)RequestStatus.PublishRequestRejectedByCoresearchers
+                || Model.Request.Status == (long)RequestStatus.PublishRequestPendingCoresearchersAfterRefereesModified || Model.Request.Status == (long)RequestStatus.PublishRequestRejectedByCoresearchersAfterRefereeAndModified))
+            {
+                <a href="@Url.Action("Create", "Publications", new { requestId = Model.Request.Id })" class="btn btn-info">@LangHelpers.Instance["update_request"]</a>
+            }
+        </p>
+        <div class="modal fade bs-example-modal-lg" id="publicationDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">@LangHelpers.Instance["publication_details"]</h4>
+                    </div>
+                    <div class="modal-body">
+                        @*Need to modify for revisions*@
+                        @if (Model.StatusNO > 0)
+                        {
+                            @Html.Partial("_RequestSummaryPartial", WebUtils.GetRequestSummary(Model.Id.Value))
+                        }
+                        else
+                        {
+                            @Html.Partial("_RequestSummaryTabbedPartial", WebUtils.GetTabbedRequestSummary(Model.Id.Value))
+                        }
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">@LangHelpers.Instance["close"]</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    if (Model.Files != null && Model.Files.Count > 0)
+    {
+        <div class="row">
+            <h4 class="col-md-offset-3 col-md-6 text-center">@ApsStrings.attachments</h4>
+        </div>
+        var i = 0;
+        foreach (var item in Model.Files)
+        {
+            <div class="form-group">
+                <div class="col-md-3">@LangHelpers.Instance[@item.CreatedUserRole.ToString()]</div>
+                <div class="col-md-3">@item.CreatedUserName</div>
+                <div class="col-md-6">
+                    @Html.ActionLink(item.FileName, "Index", "GetFile", new { id = item.FileId }, new { @class = "btn btn-success", target = "_blank" })
+                    @if (allowReplacingFiles)
+                    {
+                        <div id="fileButton@(i)" class="custom-file-upload hide">
+                            <input data-i="@(i)" class="replace-with-file-input" type="file" name="Files[@(i)].Content" />
+                        </div>
+                        <span class="replace-with-file-button-@(i) btn btn-xs btn-danger pull-right" onclick="$('#fileButton@(i) input').click();">إستبدال الملف</span>
+                    }
+                </div>
+            </div>
+            <hr style="border: 1px dashed #ddd;" />
+            <div>
+                @Html.HiddenFor(m => m.Files[i].FileId)
+                @Html.HiddenFor(m => m.Files[i].Type)
+            </div>
+            i++;
+        }
+    }
+    if (isActionable)
+    {
+        @*<div class="form-group">
+                <label class="control-label col-md-3">@ApsStrings.new_attachments</label>
+                <div class="col-md-6">
+                    <div class="custom-file-upload">
+                        <input type="file" id="file" name="Files[@(fileCount)].Content" multiple />
+                        @Html.ValidationMessageFor(model => model.Files, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>*@
+    }
+    else
+    {
+        <div class="form-group">
+            <label class="control-label col-md-3">@ApsStrings.status</label>
+            <div class="col-md-6">
+                <em>@Model.Status</em>
+            </div>
+        </div>
+        if (Model.CurrentlyWithUserId != null)
+        {
+            <div class="form-group">
+                <label class="control-label col-md-3">@ApsStrings.currently_with</label>
+                <div class="col-md-6">
+                    <em>@Model.CurrentlyWithUserName</em>
+                </div>
+            </div>
+        }
+    }
+    if ((Model.Referees != null && Model.Referees.Count > 0 && Model.CanViewReferees == true && !(Utils.HasRolesAny(ApsUserRole.Referee) || Utils.HasRolesAny(ApsUserRole.KingFahadNationalLibraryOfficer))) || ViewBag.CanViewRefereeComments == true)
+    {
+            <div class="table table-responsive">
+                <div class="box2 box2-info">
+                    <h4 class="text-center">@ApsStrings.referees</h4>
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                @if (!Utils.HasRolesAny(ApsUserRole.Researcher))
+                                {
+                                    <th style="">@ApsStrings.name</th>
+                                    <th style="max-width: 50px">@ApsStrings.major</th>
+                                }
+                                <th style="max-width: 50px">@ApsStrings.action</th>
+                                <th style="max-width: 50px">@ApsStrings.scorebox</th>
+                                <th>@LangHelpers.Instance["sent_on"]</th>
+                                <th style="max-width: 50px">@ApsStrings.comments</th>
+                                <th style="max-width: 50px">@ApsStrings.download_attachment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                var i = 0;
+                            }
+                            @foreach (var referee in Model.Referees)
+                            {
+                                if (Utils.HasRolesAny(ApsUserRole.Researcher) && String.IsNullOrEmpty(@referee.Action) && String.IsNullOrEmpty(@referee.Comments))
+                                {
+                                    continue;
+                                }
+
+                                var fullname = referee.FullName;
+                                if (Model.Referees.Count > 2)
+                                {
+                                    fullname += "<span class=\"badge bg-" + (i < 2 ? "info" : "warning") + "\">(" + (i < 2 ? ApsStrings.prime_referee : ApsStrings.reserve_referee) + ")</span>";
+                                }
+                                if (referee.UserId == null)
+                                {
+                                    fullname += "&nbsp;<span class='badge1 bg-primary'>" + LangHelpers.Instance["external_referee"] + "</span>";
+                                }
+                                <tr class="@(++i % 2 == 0 ? " alt-row" : "" )">
+                                    @if (!Utils.HasRolesAny(ApsUserRole.Researcher))
+                                    {
+                                        <td style="font-size: 12px;">@Html.Raw(fullname)</td>
+                                        <td style="max-width: 50px">@referee.MajorName</td>
+                                    }
+                                    <td>
+                                        @referee.Action
+                                    </td>
+
+                                    <td>
+                                        @if (@referee.Grade > 0)
+                                        {
+                                            @referee.Grade
+                                        }
+                                    </td>
+                                    <td>@referee.ReviewSentOnStr</td>
+                                    <td>
+                                        @referee.Comments
+                                    </td>
+                                    <td style="max-width: 50px">
+                                        @if (!string.IsNullOrWhiteSpace(referee.FileId))
+                                        {
+                                            <a class="btn btn-xs btn-success" target="_blank" href="@(Utils.GetApplicationUrl()+"f/"+referee.FileId)">@referee.FileName</a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    }
+    <br />
+    if (Model.CouncilMembers != null && Model.CanSeeCouncilMembers && Model.CouncilMembers.Count > 0)
+    {
+        <div class="box2 box2-info">
+            <h4 class="text-center">@ApsStrings.council_members</h4>
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th style="max-width: 50px">@ApsStrings.name</th>
+                        <th style="max-width: 50px">@ApsStrings.action</th>
+                        <th style="max-width: 50px">@ApsStrings.comments</th>
+                        <th style="max-width: 50px">@ApsStrings.download_attachment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var i = 0;
+                    }
+                    @foreach (var member in Model.CouncilMembers)
+                    {
+                        <tr class="@(++i % 2 == 0 ? " alt-row" : "" )">
+                            <td>@(i + 1)</td>
+                            <td style="max-width: 50px; font-size: 12px;">@member.FullName</td>
+                            <td style="max-width: 50px; font-size: 12px;">@member.Action</td>
+                            <td>
+                                @member.Comments
+                            </td>
+                            <td style="max-width: 50px">
+                                @if (!string.IsNullOrWhiteSpace(member.FileId))
+                                {
+                                    <a class="btn btn-xs btn-success" target="_blank" href="@(Utils.GetApplicationUrl() + " f/" + member.FileId)">  @member.FileName</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <br />
+    }
+    if (Model.AllowedActions != null && Model.AllowedActions.Count > 1)
+    {
+        if (Utils.HasRolesAny(ApsUserRole.Referee) && ViewBag.ShowRefereeFeedbackForm && ViewBag.HideGrade && Model.Request.Status != (long)RequestStatus.PublishRequestPendingInitialRefereeForRUH && Model.Request.Status != (long)RequestStatus.PublishRequestPendingInitialRefereeForDAR)
+        {
+
+            <div class="box box2-info box-actions" id="actions">
+                <div class="form-group">
+                    <label class="control-label">@ApsStrings.scorebox</label>
+                    @Html.TextBoxFor(m => m.Grade, new { @class = "form-control", type = "number", min = "0", max = "100", style = "width:70px; display: inline-block;" }) %
+                </div>
+            </div>
+        }
+
+        <div class="box box2-info box-actions" id="allowedActions">
+            <div class="form-group">
+                <label class="control-label">الإجراء</label>
+                @Html.DropDownListFor(m => m.Action, new SelectList(Model.AllowedActions, "Value", "Display"), new { @class = "form-control" })
+            </div>
+        </div>
+        <div id="divSelectedReferees"></div>
+        <div class="box box2-info">
+            @if (Model.CanSelectReferees)
+            {
+                if (Model.Referees == null)
+                {
+                    Model.Referees = new List<RefereeViewModel>();
+                }
+                <div>
+                    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+                                                                var maxReferees = @Model.MaxRefereeCount;
+                                                                var minReferees = @Model.MinRefereeCount;
+                                                                var roundNo = 0;
+                                                                var selectedReferees = [];
+                                                                var preSelected = @Html.Raw(Utils.SerializeObject(Model.Referees));
+                                                                document.addEventListener("DOMContentLoaded", function (event) {
+                                                                    var validateAction = function () {
+                                                                        var isValid = true;
+                                                                        var action = $('#Action').val();
+                                                                        $('#divRefereeSelection').hide();
+                                                                        switch (action) {
+                                                                            case 'ForwardToInitialReferee':
+                                                                                roundNo = 1;
+                                                                                $('#divRefereeSelection').show();
+                                                                            case 'SelectReferees':
+                                                                                $('#divRefereeSelection').show();
+                                                                                if (selectedReferees.length > maxReferees || selectedReferees.length < minReferees) {
+                                                                                    isValid = false;
+                                                                                }
+                                                                                break;
+                                                                            default:
+                                                                                break;
+                                                                        }
+                                                                        if (isValid) {
+                                                                            $('#btnSubmit').removeClass("disabled").removeProp('disabled');
+                                                                        }
+                                                                        else {
+                                                                            $('#btnSubmit').addClass("disabled").prop('disabled', 'disabled');
+                                                                        }
+                                                                        return isValid;
+                                                                    };
+                                                                    window.onRefreeSelectionChanged = function () {
+                                                                        validateAction();
+                                                                    };
+                                                                    $('#Action').change(function () {
+                                                                        validateAction();
+                                                                    });
+                                                                    $('#frmCreateRequest').submit(function (e) {
+                                                                        if (!validateAction()) {
+                                                                            e.preventDefault();
+                                                                            return false;
+                                                                        }
+
+                                                                        $('#divSelectedReferees').empty();
+                                                                        for (var i = 0; i < selectedReferees.length; i++) {
+                                                                            $('#divSelectedReferees').append('<input type="hidden" name="Referees[' + i + '].Id" value="' + selectedReferees[i].id + '" />');
+                                                                            $('#divSelectedReferees').append('<input type="hidden" name="Referees[' + i + '].FullName" value="' + selectedReferees[i].fullName + '" />');
+                                                                            $('#divSelectedReferees').append('<input type="hidden" name="Referees[' + i + '].IsPrime" value="' + selectedReferees[i].isPrime + '" />');
+                                                                        }
+                                                                    });
+                                                                });
+                    </script>
+                </div>
+                <div id="divRefereeSelection" style="display: none;">
+                    @{
+                        ViewBag.RequestId = Model.Request.Id;
+                    }
+                    @Html.Partial("~/Views/Requests/_RefereeSelection.cshtml")
+                </div>
+            }
+        </div>
+        <div class="box2 box2-info" id="comments">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-md-3">@ApsStrings.comments</label>
+                    <div class="col-md-6">
+                        @Html.TextAreaFor(model => model.Comments, htmlAttributes: new { @class = "form-control", rows = 5, cols = 5, placeholder = @ApsStrings.comments })
+                        @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+        if (isActionable)
+        {
+            <div class="form-group @(!ViewBag.AllowToUploadAttachment ? "hidden" : "")" id="files">
+                <label class="control-label col-md-3">@ApsStrings.new_attachments</label>
+                <div class="col-md-6">
+                    <div class="custom-file-upload">
+                        <input type="file" id="file" name="Files[@(fileCount)].Content" multiple />
+                        @Html.ValidationMessageFor(model => model.Files, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="box box2-info box-actions">
+            <div class="form-group">
+                <button id="btnSubmit" class="btn btn-success btn-block">إرسال</button>
+            </div>
+        </div>
+    }
+    if (Utils.IsLocalhost)
+    {
+        <p>status: @Model.Status</p><p>Statusno:@Model.StatusNO</p>
+        <p>action:@Model.Action</p>
+    }
+}
+@if (!(Utils.HasRolesAny(ApsUserRole.Referee) || Utils.HasRolesAny(ApsUserRole.KingFahadNationalLibraryOfficer)))
+{
+    @Html.Partial("_PartialHistory", Model)
+}
+
+<div class="row text-center">
+    <a class="btn btn-default" href="~/Home/Return">العودة</a>
+    <br />
+</div>
+@section Scripts{
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+        var cutOffMarks = @ViewBag.CutOffMarks;
+        var maxMarks = 100;
+        var actionVals = [];
+
+        if ($("#Grade").length > 0) {
+            $("#Action option").each(function () {
+                actionVals.push({ text: $(this).text(), val: $(this).val() });
+            });
+
+            showObtainedMarks();
+            $("#Grade").on("change", function () {
+                showObtainedMarks();
+            });
+        }
+
+        function showObtainedMarks() {
+            var marks = $("#Grade").val();
+            if (marks == "") {
+                marks = 0;
+            }
+            if (marks > 100) {
+                $("#Grade").val(0);
+                marks = 0;
+            }
+            var _percentage = (marks / maxMarks) * 100;
+
+            if (_percentage < cutOffMarks) {
+                $("#Action").find("option").remove();
+                for (var i = 0; i < actionVals.length; i++) {
+                    if (actionVals[i].val == "" || actionVals[i].val == "Reject" || actionVals[i].val == "RejectModifications") {
+                        $('#Action').append($("<option></option>").attr("value", actionVals[i].val).text(actionVals[i].text));
+                    }
+                }
+            }
+            else {
+                $("#Action").find("option").remove();
+                for (var i = 0; i < actionVals.length; i++) {
+                    if (actionVals[i].val == "" || actionVals[i].val != "Reject") {
+                        $('#Action').append($("<option></option>").attr("value", actionVals[i].val).text(actionVals[i].text));
+                    }
+                }
+            }
+        }
+    </script>
+}

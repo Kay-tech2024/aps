@@ -1,0 +1,97 @@
+﻿@model DelegationViewModel
+@{
+    ViewBag.Title = ApsStrings.delegation;
+}
+
+<ul class="breadcrumb">
+    <li>@Html.ActionLink(ApsStrings.home, "Index", "Delegation")</li>
+    <li>@ApsStrings.delegation</li>
+</ul>
+<div class="box2 box2-info">
+    @using (Html.BeginForm("Index", "Delegation", FormMethod.Post, new { @class = "form-horizontal" }))
+    {
+        <div class="form-group required">
+            @Html.LabelFor(m => m.Email, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = ApsStrings.email })
+            </div>
+        </div>
+
+        <div class="form-group required">
+            @Html.LabelFor(m => m.EffectiveFrom, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-9">
+                <div id="EffectiveFromGreg" class="custom-date-picker input-group">
+                    @Html.TextBoxFor(m => m.EffectiveFrom, new { @class = "form-control allow-edit" })
+                    <div class="input-group-btn">
+                        <button type="button" class="custom-date-picker-button btn btn-default">&#x25a6;</button>
+                        <button type="button" class="custom-date-picker-switch btn btn-info">@ApsStrings.hijri</button>
+                    </div>
+                </div>
+                <div id="EffectiveFromHijri" class="custom-date-picker input-group" data-hirji="1" data-custom-date-picker-link="#EffectiveFromGreg" style="display: none;">
+                    <input type="text" class="form-control" />
+                    <div class="input-group-btn">
+                        <button type="button" class="custom-date-picker-button btn btn-default">&#x25a6;</button>
+                        <button type="button" class="custom-date-picker-switch btn btn-info">@ApsStrings.gregorian</button>
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.EffectiveFrom, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group required">
+            @Html.LabelFor(m => m.EffectiveTo, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-9">
+                <div id="EffectiveToGreg" class="custom-date-picker input-group">
+                    @Html.TextBoxFor(m => m.EffectiveTo, new { @class = "form-control allow-edit" })
+                    <div class="input-group-btn">
+                        <button type="button" class="custom-date-picker-button btn btn-default">&#x25a6;</button>
+                        <button type="button" class="custom-date-picker-switch btn btn-info">@ApsStrings.hijri</button>
+                    </div>
+                </div>
+                <div id="EffectiveToHijri" class="custom-date-picker input-group" data-hirji="1" data-custom-date-picker-link="#EffectiveToGreg" style="display: none;">
+                    <input type="text" class="form-control" />
+                    <div class="input-group-btn">
+                        <button type="button" class="custom-date-picker-button btn btn-default">&#x25a6;</button>
+                        <button type="button" class="custom-date-picker-switch btn btn-info">@ApsStrings.gregorian</button>
+                    </div>
+                </div>
+                @Html.ValidationMessageFor(model => model.EffectiveTo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="submit" class="text-center btn btn-block btn-info">@ApsStrings.submit</button>
+        </div>
+    }
+    @if (Model != null && Model.Delegations != null)
+    {
+        <div class="row">
+            <h4 class="col-md-offset-3 col-md-6 text-center">@ApsStrings.history</h4>
+        </div>
+        <table class="table">
+            <tr>
+                <th>@ApsStrings.name</th>
+                <th>@ApsStrings.email</th>
+                <th>@ApsStrings.from</th>
+                <th>@ApsStrings.to</th>
+            </tr>
+            @foreach (var d in Model.Delegations)
+            {
+                <tr>
+                    <td>
+                        @d.DelegateeName
+                    </td>
+                    <td>
+                        @d.DelegateeEmail
+                    </td>
+                    <td>
+                        @d.EffectiveFrom
+                    </td>
+                    <td>
+                        @d.EffectiveTo
+                    </td>
+                </tr>
+            }
+        </table>
+    }
+</div>

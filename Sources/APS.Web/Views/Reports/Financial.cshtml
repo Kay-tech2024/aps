@@ -1,0 +1,133 @@
+﻿@model  List<APS.Data.DbModels.ViewRequestsByFinancialTypesReport>
+@{
+    ViewBag.Title = "Types";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int totalsubmitted = 0;
+    int totalapproved = 0;
+    int totalrejected = 0;
+    int totalamount = 0;
+}
+
+<h3>@ApsStrings.financial_report</h3>
+<br />
+<div class="container">
+    <table class="table table-responsive table-striped table-hover">
+        <thead>
+            <tr>
+                <th>
+                    نوع الشخص
+                </th>
+                <th>
+                    عدد طلبات الصرف
+                </th>
+                <th>
+                    عدد الطلبات المقبولة
+                </th>
+                <th>
+                    عدد الطلبات المرفوضة
+                </th>
+                <th>
+                    إجمالي المبلغ المصروف
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                if (item.ApprovedRequests != null)
+                {
+                    totalapproved += (int)item.ApprovedRequests;
+                }
+                else
+                {
+                    totalapproved += 0;
+                }
+
+                if (item.SubmittedRequests != null)
+                {
+                    totalsubmitted += (int)item.SubmittedRequests;
+                }
+                else
+                {
+                    totalsubmitted += 0;
+                }
+
+                if (item.RejectedRequests != null)
+                {
+                    totalrejected += (int)item.RejectedRequests;
+                }
+                else
+                {
+                    totalrejected += 0;
+                }
+
+                if (item.TotalAmount != null)
+                {
+                    totalamount += (int)item.TotalAmount;
+                }
+                else
+                {
+                    totalamount += 0;
+                }
+                <tr>
+                    <td>@item.UserRoleAr</td>
+                    <td>
+                        @if (item.SubmittedRequests == 0)
+                        {
+                            <span>0</span>
+                        }
+                        else
+                        {
+                            <a href="@Utils.GetApplicationUrl()Reports/List?ReportNo=2&Status=1&Type=@item.UserRoleId">@item.SubmittedRequests</a>
+                        }
+                    </td>
+                    <td>
+                        @if (item.ApprovedRequests == 0)
+                        {
+                            <span>0</span>
+                        }
+                        else
+                        {
+                            <a href="@Utils.GetApplicationUrl()Reports/List?ReportNo=2&Status=2&Type=@item.UserRoleId">@item.ApprovedRequests</a>
+                        }
+                    </td>
+                    <td>
+                        @if (item.RejectedRequests == 0)
+                        {
+                            <span>0</span>
+                        }
+                        else
+                        {
+                            <a href="@Utils.GetApplicationUrl()Reports/List?ReportNo=2&Status=3&Type=@item.UserRoleId">@item.RejectedRequests</a>
+                        }
+                    </td>
+                    <td>
+                        @if (item.TotalAmount == 0)
+                        {
+                            <span>0</span>
+                        }
+                        else
+                        {
+                            <a href="@Utils.GetApplicationUrl()Reports/List?ReportNo=2&Status=4&Type=@item.UserRoleId">@item.TotalAmount</a>
+                        }
+                    </td>
+                </tr>
+            }
+
+            <tr class="success">
+                <td>@ApsStrings.totalA</td>
+                <td><a href="@Utils.GetApplicationUrl()Reports/List?ReportNo=2&Status=1&Type=0">@totalsubmitted </a></td>
+                <td><a href="@Utils.GetApplicationUrl()Reports/List?ReportNo=2&Status=2&Type=0">@totalapproved</a></td>
+                <td><a href="@Utils.GetApplicationUrl()Reports/List?ReportNo=2&Status=3&Type=0">@totalrejected </a></td>
+                <td><a href="@Utils.GetApplicationUrl()Reports/List?ReportNo=2&Status=4&Type=0">@totalamount</a> </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="row">
+        <button class="btn btn-primary printbtn" onclick="window.print();">@ApsStrings.print &nbsp;<i class="fa fa-print"></i></button>
+        <button class="btn btn-primary printbtn" onclick="location.href = '@Utils.GetApplicationUrl()' + '/Reports/ReportAsPdf?Type=financial'">Pdf &nbsp;<i class="fa fa-file-pdf-o"></i></button>
+        <button class="btn btn-primary printbtn" onclick="location.href='@Utils.GetApplicationUrl()'+'/Ajax/ExportDocuments?Type=financial'">Excel &nbsp;<i class="fa fa-file-excel-o"></i></button>
+    </div>
+</div>

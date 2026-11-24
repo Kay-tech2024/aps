@@ -1,0 +1,126 @@
+﻿@model AgreementViewModel
+
+@{
+    ViewBag.Title = @ApsStrings.agreements;
+}
+
+<div class="step-wizard-container2 @(Model.PublicationType == PublicationType.Thesis? "ro" : "")">
+    <div class="step-wizard">
+        <div class="progress2">
+            <div class="progressbar2 empty"></div>
+            <div id="prog" class="progressbar2"></div>
+        </div>
+        <ul>
+            <li class="active">
+                <a href="~/Publications/Create?requestId=@Model.RequestId" id="step1">
+                    <span class="step2">1</span>
+                    <span class="title2">@ApsStrings.create</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/PublicationDetails?requestId=@Model.RequestId" id="step2">
+                    <span class="step2">2</span>
+                    <span class="title2">@ApsStrings.publication_details</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="~/Publications/BankDetails?requestId=@Model.RequestId" id="step3">
+                    <span class="step2">3</span>
+                    <span class="title2">@ApsStrings.bank_details</span>
+                </a>
+            </li>
+
+            @if (Model.PublicationType != PublicationType.Thesis)
+            {
+                <li class="">
+                    <a href="~/Publications/Participant?requestId=@Model.RequestId" id="step4">
+                        <span class="step2">4</span>
+                        <span class="title2">@ApsStrings.co_researcher</span>
+                    </a>
+                </li>
+            }
+
+            <li class="">
+
+                <a href="~/Publications/Agreement?requestId=@Model.RequestId" id="step@(Model.PublicationType != PublicationType.Thesis? 5:4)">
+
+                    <span class="step2">@(Model.PublicationType != PublicationType.Thesis ? 5 : 4)</span>
+                    <span class="title2">@ApsStrings.agreements</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<h2>@ApsStrings.agreements</h2>
+
+@Html.ValidationSummary(false, "", htmlAttributes: new { @class = "text-danger" })
+
+@using (Html.BeginForm("Agreement", "Publications", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+@Html.AntiForgeryToken()
+
+    @Html.Hidden("RequestId", Session["RequestId"])
+
+    @Html.Partial("_RequestSummaryPartial", WebUtils.GetRequestSummary(Model.RequestId.Value))
+    <hr />
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Raw(Model.AgreementText)
+        </div>
+    </div>
+    @*<div class="form-group">
+
+            <div class="col-sm-10">
+
+                @Html.RadioButtonFor(m => m.IsApproved, true)  @ApsStrings.approved
+                <span>&nbsp;</span>
+                @Html.RadioButtonFor(m => m.IsApproved, false) @ApsStrings.rejected<span>&nbsp;</span>
+            </div>
+        </div>*@
+
+    <div class="box2 box2-info">
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-3">
+                    <input id="btnSubmit" type="submit" value="@ApsStrings.accept_and_send" class="btn btn-primary btn-lg btn-block" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts
+{
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+
+        $(document).ready(function () {
+            function setClasses(index, steps) {
+                if (index < 0 || index > steps) return;
+                if (index == 0) {
+                    $(".step-wizard-container2 #prev").prop('disabled', true);
+                } else {
+                    $(".step-wizard-container2 #prev").prop('disabled', false);
+                }
+                if (index == steps) {
+                    $(".step-wizard-container2 #next").text('done');
+                } else {
+                    $(".step-wizard-container2 #next").text('next');
+                }
+                $(".step-wizard-container2 ul li").each(function () {
+                    $(this).removeClass();
+                });
+                $(".step-wizard-container2 ul li:lt(" + index + ")").each(function () {
+                    $(this).addClass("done");
+                });
+                $(".step-wizard-container2 ul li:eq(" + index + ")").addClass("active")
+                var p = index * (100 / steps);
+                $(".step-wizard-container2 #prog").width(p + '%');
+            }
+
+            // initial state setup
+            setClasses(@(Model.PublicationType != PublicationType.Thesis? 4 : 3), $(".step-wizard-container2 .step-wizard ul li").length - 1);
+        });
+    </script>
+
+}

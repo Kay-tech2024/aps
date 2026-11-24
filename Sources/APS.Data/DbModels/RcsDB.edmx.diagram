@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="adebe3221e664db397a446f0c75c5277" Name="Diagram1">
+        <EntityTypeShape EntityType="APS.Data.DbModels.City" Width="1.5" PointX="9" PointY="22.625" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.Country" Width="1.5" PointX="6.75" PointY="21.5" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.DepartmentGroup" Width="1.5" PointX="7.5" PointY="52.75" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.Department" Width="1.5" PointX="5.25" PointY="76.625" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.Region" Width="1.5" PointX="6.75" PointY="24.75" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.RequestData" Width="1.5" PointX="8.25" PointY="33.75" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.RequestFile" Width="1.5" PointX="8.25" PointY="37.75" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.RequestHistoryLog" Width="1.5" PointX="7.375" PointY="27.875" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.Request" Width="1.5" PointX="13.5" PointY="31.5" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.Role" Width="1.5" PointX="0.75" PointY="34.625" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.Setting" Width="1.5" PointX="5.25" PointY="48.625" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.Template" Width="1.5" PointX="5.25" PointY="52" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.UserDependent" Width="1.5" PointX="11.25" PointY="31.75" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.UserFile" Width="1.5" PointX="5.25" PointY="80.5" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.UserLog" Width="1.5" PointX="5.25" PointY="72.375" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.UserNotification" Width="1.5" PointX="15.75" PointY="33.75" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.UserPreference" Width="1.5" PointX="5.25" PointY="69.375" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.UserProfile" Width="1.5" PointX="5.25" PointY="30.625" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.User" Width="1.5" PointX="3" PointY="29" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.UserSession" Width="1.5" PointX="5.25" PointY="59.875" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Cities_Countries_CountryId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Cities_Regions_RegionId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserDependents_Cities_BirthPlaceCityId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserDependents_Cities_NationalIdIssuancePlaceCityId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserProfiles_Cities_BirthPlaceCityId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserProfiles_Cities_NationalIdIssuancePlaceCityId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Regions_Countries_CountryId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserDependents_Countries_NationalityId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserProfiles_Countries_NationalityId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_DepartmentGroups_Departments_DepartmentId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_DepartmentGroups_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_DepartmentGroups_Users_UpdatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Users_DepartmentGroups_GroupId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Departments_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Departments_Users_UpdatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Users_Departments_DepartmentId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_RequestData_Requests_RequestId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_RequestData_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_RequestData_Users_UpdatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_RequestFiles_Requests_RequestId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_RequestFiles_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_RequestHistoryLogs_Requests_RequestId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_RequestHistoryLogs_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_RequestHistoryLogs_Users_CurrentlyWith" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Requests_RequestHistoryLogs_LastActionId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Requests_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Requests_Users_CurrentlyWith" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Requests_Users_LastStatusChangedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Requests_Users_UpdatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserNotifications_Requests_RequestId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Settings_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Settings_Users_UpdatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Templates_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Templates_Users_UpdatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserDependents_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserDependents_Users_UpdatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserDependents_Users_UserId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserFiles_Users_UserId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserLogs_Users_UserId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserNotifications_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserNotifications_Users_UserId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserPreferences_Users_UserId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserProfiles_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserProfiles_Users_UpdatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserProfiles_Users_UserId" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Users_Users_CreatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_Users_Users_UpdatedBy" />
+        <AssociationConnector Association="APS.Data.DbModels.FK_UserSessions_Users_UserId" />
+        <AssociationConnector Association="APS.Data.DbModels.UserRoles" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.UserClaim" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="APS.Data.DbModels.UserLogin" Width="1.5" PointX="2.75" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

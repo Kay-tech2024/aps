@@ -1,0 +1,519 @@
+﻿@model RequestSummaryViewModel2
+@{
+    var controller = HttpContextManager.Current.Request.RequestContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = HttpContextManager.Current.Request.RequestContext.RouteData.Values["action"].ToString().ToLower();
+
+}
+
+<table class="table table-responsive table-striped table-condensed">
+
+    <thead>
+
+        @if (!Utils.HasRolesAny(ApsUserRole.Referee) && controller != "account")
+        {
+            <tr><td colspan="2"><h4>@ApsStrings.researcher_information</h4></td></tr>
+
+            if (!string.IsNullOrWhiteSpace(Model.UserProfilesNationalId))
+            {
+                <tr><td>@Html.LabelFor(m => m.UserProfilesNationalId)</td><td>@Model.UserProfilesNationalId</td></tr>
+            }
+
+            if (!string.IsNullOrWhiteSpace(Model.ResearchersFirstName))
+            {
+                <tr><td>@Html.LabelFor(m => m.ResearchersFirstName)</td><td>@Model.ResearchersFirstName</td></tr>
+            }
+
+            if (!string.IsNullOrWhiteSpace(Model.UserProfilesGender))
+            {
+                <tr><td>@Html.LabelFor(m => m.UserProfilesGender)</td><td>@Model.UserProfilesGender</td></tr>
+            }
+
+            if (!string.IsNullOrWhiteSpace(Model.ResearchersDateOfBirth))
+            {
+                <tr><td>@Html.LabelFor(m => m.ResearchersDateOfBirth)</td><td>@Model.ResearchersDateOfBirth</td></tr>
+            }
+
+            if (!string.IsNullOrWhiteSpace(Model.ResearchersEmail))
+            {
+                <tr><td>@Html.LabelFor(m => m.ResearchersEmail)</td><td>@Model.ResearchersEmail</td></tr>
+            }
+
+            if (!string.IsNullOrWhiteSpace(Model.ResearchersMobileNo))
+            {
+                <tr><td>@Html.LabelFor(m => m.ResearchersMobileNo)</td><td>@Model.ResearchersMobileNo</td></tr>
+            }
+
+            <tr><td colspan="2"><h4>@ApsStrings.bank_information</h4></td></tr>
+            if (!string.IsNullOrWhiteSpace(Model.UserProfilesBankAccountType))
+            {
+                <tr><td>@Html.LabelFor(m => m.UserProfilesBankAccountType)</td><td>@Model.UserProfilesBankAccountType</td></tr>
+            }
+
+            if (!string.IsNullOrWhiteSpace(Model.UserProfilesBankName))
+            {
+                <tr><td>@Html.LabelFor(m => m.UserProfilesBankName)</td><td>@Model.UserProfilesBankName</td></tr>
+            }
+
+            if (!string.IsNullOrWhiteSpace(Model.UserProfilesBankBranch))
+            {
+                <tr><td>@Html.LabelFor(m => m.UserProfilesBankBranch)</td><td>@Model.UserProfilesBankBranch</td></tr>
+            }
+
+            if (!string.IsNullOrWhiteSpace(Model.UserProfilesBankAccountHolder))
+            {
+                <tr><td>@Html.LabelFor(m => m.UserProfilesBankAccountHolder)</td><td>@Model.UserProfilesBankAccountHolder</td></tr>
+            }
+
+            if (!string.IsNullOrWhiteSpace(Model.UserProfilesBankAccountNumberType))
+            {
+                <tr><td>@Html.LabelFor(m => m.UserProfilesBankAccountNumberType)</td><td>@Model.UserProfilesBankAccountNumberType</td></tr>
+            }
+
+            if (Model.UserProfilesBankAccountNumberTypeId == (byte)BankAccountNumberType.Iban)
+            {
+                <tr><td>@Html.LabelFor(m => m.UserProfilesBankIban)</td><td>@Model.UserProfilesBankIban</td></tr>
+            }
+            else if (Model.UserProfilesBankAccountNumberTypeId == (byte)BankAccountNumberType.Swift)
+            {
+                if (!string.IsNullOrWhiteSpace(Model.UserProfilesBankSwift))
+                {
+                    <tr><td>@Html.LabelFor(m => m.UserProfilesBankSwift)</td><td>@Model.UserProfilesBankSwift</td></tr>
+                }
+                if (!string.IsNullOrWhiteSpace(Model.UserProfilesBankRouting))
+                {
+                    <tr><td>@Html.LabelFor(m => m.UserProfilesBankRouting)</td><td>@Model.UserProfilesBankRouting</td></tr>
+                }
+            }
+
+        }
+
+        <tr><td colspan="2"><h4>@ApsStrings.request_information</h4></td></tr>
+
+        @if (!string.IsNullOrWhiteSpace(Model.RequestsId))
+        {
+            <tr><td>@Html.LabelFor(m => m.RequestsId)</td><td>@Model.RequestsId</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.RequestsTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.RequestsTitle)</td><td>@Model.RequestsTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.RequestsCollegeId))
+        {
+            <tr><td>@Html.LabelFor(m => m.RequestsCollegeId)</td><td>@Model.RequestsCollegeId</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.RequestDepartmentId))
+        {
+            <tr><td>@Html.LabelFor(m => m.RequestDepartmentId)</td><td>@Model.RequestDepartmentId</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.RequestsType))
+        {
+            <tr><td>@Html.LabelFor(m => m.RequestsType)</td><td>@Model.RequestsType</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.RequestsPublicationType))
+        {
+            <tr><td>@Html.LabelFor(m => m.RequestsPublicationType)</td><td>@Model.RequestsPublicationType</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsBookTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsBookTitle)</td><td>@Model.BookRequestsBookTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsOriginalTitleBook))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsOriginalTitleBook)</td><td>@Model.BookRequestsOriginalTitleBook</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsBookType))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsBookType)</td><td>@Model.BookRequestsBookType</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsIsArabic))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsIsArabic)</td><td>@Model.BookRequestsIsArabic</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsIsTranslated))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsIsTranslated)</td><td>@Model.BookRequestsIsTranslated</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsTranslatedTo))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsTranslatedTo)</td><td>@Model.BookRequestsTranslatedTo</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsMajorId))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsMajorId)</td><td>@Model.BookRequestsMajorId</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsNoOfRecommendations))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsNoOfRecommendations)</td><td>@Model.BookRequestsNoOfRecommendations</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsRecommendationDate))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsRecommendationDate)</td><td>@Model.BookRequestsRecommendationDate</td></tr>
+        }
+
+        @*@if (!string.IsNullOrWhiteSpace(Model.BookRequestsPublishType))
+            {
+                <tr><td>@Html.LabelFor(m => m.BookRequestsPublishType)</td><td>@Model.BookRequestsPublishType</td></tr>
+            }*@
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsPublisher))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsPublisher)</td><td>@Model.BookRequestsPublisher</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsPublisherPlace))
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsPublisherPlace)</td><td>@Model.BookRequestsPublisherPlace</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.BookRequestsPublishingDate) && Model.RequestsType == LangHelpers.Instance["RepublishRequest"])
+        {
+            <tr><td>@Html.LabelFor(m => m.BookRequestsPublishingDate)</td><td>@Model.BookRequestsPublishingDate</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ReviewRequestsReviewType))
+        {
+            <tr><td>@Html.LabelFor(m => m.ReviewRequestsReviewType)</td><td>@Model.ReviewRequestsReviewType</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ReviewRequestsAuthersName))
+        {
+            <tr><td>@Html.LabelFor(m => m.ReviewRequestsAuthersName)</td><td>@Model.ReviewRequestsAuthersName</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ReviewRequestsBookTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.ReviewRequestsBookTitle)</td><td>@Model.ReviewRequestsBookTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ReviewRequestsReviewMajor))
+        {
+            <tr><td>@Html.LabelFor(m => m.ReviewRequestsReviewMajor)</td><td>@Model.ReviewRequestsReviewMajor</td></tr>
+        }
+
+        @*@if (!string.IsNullOrWhiteSpace(Model.ReviewRequestsPublishType))
+            {
+                <tr><td>@Html.LabelFor(m => m.ReviewRequestsPublishType)</td><td>@Model.ReviewRequestsPublishType</td></tr>
+            }*@
+
+        @if (!string.IsNullOrWhiteSpace(Model.ReviewRequestsPublisher))
+        {
+            <tr><td>@Html.LabelFor(m => m.ReviewRequestsPublisher)</td><td>@Model.ReviewRequestsPublisher</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ReviewRequestsPublisherPlace))
+        {
+            <tr><td>@Html.LabelFor(m => m.ReviewRequestsPublisherPlace)</td><td>@Model.ReviewRequestsPublisherPlace</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ReviewRequestsPublisherDate))
+        {
+            <tr><td>@Html.LabelFor(m => m.ReviewRequestsPublisherDate)</td><td>@Model.ReviewRequestsPublisherDate</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsDictionaryMajor))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsDictionaryMajor)</td><td>@Model.DictionaryRequestsDictionaryMajor</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsIsArabic))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsIsArabic)</td><td>@Model.DictionaryRequestsIsArabic</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsIsTranslated))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsIsTranslated)</td><td>@Model.DictionaryRequestsIsTranslated</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsTranslatedTo))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsTranslatedTo)</td><td>@Model.DictionaryRequestsTranslatedTo</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsDictionaryTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsDictionaryTitle)</td><td>@Model.DictionaryRequestsDictionaryTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsOriginalDictionaryTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsOriginalDictionaryTitle)</td><td>@Model.DictionaryRequestsOriginalDictionaryTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsMajorOfAuther))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsMajorOfAuther)</td><td>@Model.DictionaryRequestsMajorOfAuther</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsNoOfRecommendations))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsNoOfRecommendations)</td><td>@Model.DictionaryRequestsNoOfRecommendations</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsRecommendationDate))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsRecommendationDate)</td><td>@Model.DictionaryRequestsRecommendationDate</td></tr>
+        }
+
+        @*@if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsPublishType))
+            {
+                <tr><td>@Html.LabelFor(m => m.DictionaryRequestsPublishType)</td><td>@Model.DictionaryRequestsPublishType</td></tr>
+            }*@
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsPublisher))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsPublisher)</td><td>@Model.DictionaryRequestsPublisher</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsPublisherPlace))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsPublisherPlace)</td><td>@Model.DictionaryRequestsPublisherPlace</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.DictionaryRequestsPublisherDate))
+        {
+            <tr><td>@Html.LabelFor(m => m.DictionaryRequestsPublisherDate)</td><td>@Model.DictionaryRequestsPublisherDate</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsMajorOfEncyclopedia))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsMajorOfEncyclopedia)</td><td>@Model.EncyclopediaRequestsMajorOfEncyclopedia</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsIsArabic))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsIsArabic)</td><td>@Model.EncyclopediaRequestsIsArabic</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsIsTranslated))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsIsTranslated)</td><td>@Model.EncyclopediaRequestsIsTranslated</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsTranslatedTo))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsTranslatedTo)</td><td>@Model.EncyclopediaRequestsTranslatedTo</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsEncyclopediaTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsEncyclopediaTitle)</td><td>@Model.EncyclopediaRequestsEncyclopediaTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsOriginalEncyclopediaTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsOriginalEncyclopediaTitle)</td><td>@Model.EncyclopediaRequestsOriginalEncyclopediaTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsMajorOfAuther))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsMajorOfAuther)</td><td>@Model.EncyclopediaRequestsMajorOfAuther</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsNoOfRecommendations))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsNoOfRecommendations)</td><td>@Model.EncyclopediaRequestsNoOfRecommendations</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsRecommendationDate))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsRecommendationDate)</td><td>@Model.EncyclopediaRequestsRecommendationDate</td></tr>
+        }
+
+        @*@if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsPublishType))
+            {
+                <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsPublishType)</td><td>@Model.EncyclopediaRequestsPublishType</td></tr>
+            }*@
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsPublisher))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsPublisher)</td><td>@Model.EncyclopediaRequestsPublisher</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsPublisherPlace))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsPublisherPlace)</td><td>@Model.EncyclopediaRequestsPublisherPlace</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.EncyclopediaRequestsPublisherDate))
+        {
+            <tr><td>@Html.LabelFor(m => m.EncyclopediaRequestsPublisherDate)</td><td>@Model.EncyclopediaRequestsPublisherDate</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsHandbookType))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsHandbookType)</td><td>@Model.HandbookRequestsHandbookType</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsIsArabic))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsIsArabic)</td><td>@Model.HandbookRequestsIsArabic</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsIsTranslated))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsIsTranslated)</td><td>@Model.HandbookRequestsIsTranslated</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsTranslatedTo))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsTranslatedTo)</td><td>@Model.HandbookRequestsTranslatedTo</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsHandbookTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsHandbookTitle)</td><td>@Model.HandbookRequestsHandbookTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsOriginalHandbookTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsOriginalHandbookTitle)</td><td>@Model.HandbookRequestsOriginalHandbookTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsMajorId))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsMajorId)</td><td>@Model.HandbookRequestsMajorId</td></tr>
+        }
+
+        @*@if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsPublishType))
+            {
+                <tr><td>@Html.LabelFor(m => m.HandbookRequestsPublishType)</td><td>@Model.HandbookRequestsPublishType</td></tr>
+            }*@
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsPublisher))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsPublisher)</td><td>@Model.HandbookRequestsPublisher</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsPublisherPlace))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsPublisherPlace)</td><td>@Model.HandbookRequestsPublisherPlace</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.HandbookRequestsPublisherDate))
+        {
+            <tr><td>@Html.LabelFor(m => m.HandbookRequestsPublisherDate)</td><td>@Model.HandbookRequestsPublisherDate</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.RequestsIsScientificProduction))
+        {
+            <tr><td>@Html.LabelFor(m => m.RequestsIsScientificProduction)</td><td>@Model.RequestsIsScientificProduction</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsSciDepartmentId))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsSciDepartmentId)</td><td>@Model.ThesisRequestsSciDepartmentId</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsSupervisor))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsSupervisor)</td><td>@Model.ThesisRequestsSupervisor</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsAsstSupervisor))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsAsstSupervisor)</td><td>@Model.ThesisRequestsAsstSupervisor</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsThesisTitle))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsThesisTitle)</td><td>@Model.ThesisRequestsThesisTitle</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsCommitteeMembers))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsCommitteeMembers)</td><td>@Model.ThesisRequestsCommitteeMembers</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsDegree))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsDegree)</td><td>@Model.ThesisRequestsDegree</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsGPA))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsGPA)</td><td>@Model.ThesisRequestsGPA</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsDateOfDiscussion))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsDateOfDiscussion)</td><td>@Model.ThesisRequestsDateOfDiscussion</td></tr>
+        }
+
+        @*@if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsPublishType))
+            {
+                <tr><td>@Html.LabelFor(m => m.ThesisRequestsPublishType)</td><td>@Model.ThesisRequestsPublishType</td></tr>
+            }*@
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsPublisher))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsPublisher)</td><td>@Model.ThesisRequestsPublisher</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsPublisherPlace))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsPublisherPlace)</td><td>@Model.ThesisRequestsPublisherPlace</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsPublisherDate))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsPublisherDate)</td><td>@Model.ThesisRequestsPublisherDate</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsMajorId))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsMajorId)</td><td>@Model.ThesisRequestsMajorId</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsCollegeId))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsCollegeId)</td><td>@Model.ThesisRequestsCollegeId</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsUniversityOther))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsUniversityOther)</td><td>@Model.ThesisRequestsUniversityOther</td></tr>
+        }
+
+        @if (!string.IsNullOrWhiteSpace(Model.ThesisRequestsMajorOther))
+        {
+            <tr><td>@Html.LabelFor(m => m.ThesisRequestsMajorOther)</td><td>@Model.ThesisRequestsMajorOther</td></tr>
+        }
+
+        @if (!Utils.HasRolesAny(ApsUserRole.Referee) && Model.Participants.Count > 0 && controller != "account")
+        {
+
+            <tr><td colspan="2"><h4>@ApsStrings.Participants</h4></td></tr>
+            foreach (var p in Model.Participants)
+            {
+                <tr><td colspan="2">@p</td></tr>
+            }
+
+        }
+
+        @if ((controller == "publications" || controller == "account" || controller == "templinks") && Model.Files.Count > 0)
+        {
+
+            <tr><td colspan="2"><h4>@ApsStrings.uploaded_files</h4></td></tr>
+            foreach (var p in Model.Files.Where(f => f.CreatedUserRole == ApsUserRole.Researcher))
+            {
+                <tr><td colspan="2"><a href="~/f/@p.FileId" target="_blank">@p.FileName</a></td></tr>
+            }
+
+        }
+    </thead>
+</table>

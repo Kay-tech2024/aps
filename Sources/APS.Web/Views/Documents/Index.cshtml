@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = @ApsStrings.documents;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li>@Html.ActionLink(ApsStrings.homepage, "Index", "Home")</li>
+
+    <li>@ApsStrings.documents</li>
+</ul>
+
+<h2>@ApsStrings.documents</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 padding">
+            <a href="~/Documents/DocumentsPdf?name=TermsAndConditions" class="btn btn-primary btn-block">@ApsStrings.terms_and_conditions</a>
+        </div>
+        <div class="col-md-4 padding">
+            <a href="~/Documents/DocumentsPdf?name=Rules" class="btn btn-primary btn-block">@ApsStrings.rules</a>
+        </div>
+        <div class="col-md-4 padding">
+            <a href="~/Documents/DocumentsPdf?name=Others" class="btn btn-primary btn-block">@ApsStrings.other_documents</a>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-4 padding">
+            <a href="~/Documents/DocumentsPdf?name=Researchers" class="btn btn-primary btn-block">@ApsStrings.researchers_documents</a>
+        </div>
+        <div class="col-md-4 padding">
+            <a href="~/Documents/DocumentsPdf?name=Referees" class="btn btn-primary btn-block">@ApsStrings.referees_documents</a>
+        </div>
+    </div>
+</div>

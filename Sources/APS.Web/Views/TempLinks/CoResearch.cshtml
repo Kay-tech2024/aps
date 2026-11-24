@@ -1,0 +1,348 @@
+﻿@model CoResearcherMessageViewModel
+@{
+    ViewBag.Title = "CoResearch";
+    var Booktype = Model.type == (byte)BookType.Cultural ? BookType.Cultural.ToString() : (Model.type == (byte)BookType.PublicScience ? BookType.PublicScience.ToString() : BookType.Systematic.ToString());
+    var HandBooktype = Model.type == (byte)HandBookType.ChildrenStories ? HandBookType.Cultural.ToString() : (Model.type == (byte)HandBookType.Cultural ? HandBookType.Cultural.ToString() : BookType.Systematic.ToString());
+    var Reviewtype = Model.type == (byte)ProbeType.ManuScript ? ProbeType.ManuScript.ToString() : ProbeType.RareBook.ToString();
+}
+
+@using (Html.BeginForm("CoResearch", "TempLinks", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.Key)
+    @Html.ValidationSummary(false, "", htmlAttributes: new { @class = "text-danger" })
+
+    <p class="text-center">
+        <a data-toggle="modal" data-target="#publicationDetails" class="btn btn-default">@LangHelpers.Instance["publication_details"]</a>
+        &nbsp;&nbsp;&nbsp;
+    </p>
+    <div class="modal fade bs-example-modal-lg" id="publicationDetails" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">@LangHelpers.Instance["publication_details"]</h4>
+                </div>
+                <div class="modal-body">
+                    @*@if (Model.RequestStatus > 0)
+                        {
+                            @Html.Partial("_RequestSummaryPartial", WebUtils.GetRequestSummary(Model.RequestId))
+                        }
+                        else
+                        {
+                            @Html.Partial("_RequestSummaryTabbedPartial", WebUtils.GetTabbedRequestSummary(Model.RequestId))
+                        }*@
+                    @Html.Partial("_RequestSummaryPartial", WebUtils.GetRequestSummary(Model.RequestId))
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">@LangHelpers.Instance["close"]</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <Label class="control-label col-sm-2 text-center"> @ApsStrings.name </Label>
+        <div class="col-sm-10" id="language">
+            @Html.TextBoxFor(m => m.Name, @Model.Name, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group">
+        <Label class="control-label col-sm-2 text-center"> @ApsStrings.email </Label>
+        <div class="col-sm-10" id="language">
+            @Html.TextBoxFor(m => m.Email, @Model.Email, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="form-group">
+        <Label class="control-label col-sm-2 text-center"> @ApsStrings.mobile </Label>
+        <div class="col-sm-10" id="language">
+            @Html.TextBoxFor(m => m.mobileNo, @Model.mobileNo, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+    if (Model.ScientificType == "Book")
+    {
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.book_type</Label>
+            <div class="col-sm-10" id="language">
+                @Html.TextBox("Booktype", LangHelpers.Instance[Booktype.ToString()], new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+    }
+    if (Model.ScientificType == "Handbook")
+    {
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.handbook_type</Label>
+            <div class="col-sm-10" id="language">
+                @Html.TextBox("HandBooktype", LangHelpers.Instance[HandBooktype.ToString()], new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+    }
+    if (Model.ScientificType == "Review")
+    {
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.probe_type</Label>
+            <div class="col-sm-10" id="language">
+                @*@Html.TextBoxFor(m => m.type, @Model.type == (byte)ProbeType.ManuScript ? ApsStrings.manu_script : ApsStrings.rare_book, new { @class = "form-control", @readonly = "readonly" })*@
+                @Html.TextBox("ReviewBooktype", @Model.type == (byte)ProbeType.ManuScript ? ApsStrings.manu_script : ApsStrings.rare_book, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+    }
+    if (Model.ScientificType != "Thesis" && Model.ScientificType != "Review")
+    {
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">
+                @if (Model.ScientificType == "Book")
+                {
+                    @ApsStrings.book_lang
+                }
+                else if (Model.ScientificType == "Handbook")
+                {
+                    @ApsStrings.handbook_lang
+                }
+                else if (Model.ScientificType == "Dictionary")
+                {
+                    @ApsStrings.dictionary_language
+                }
+                else if (Model.ScientificType == "Encyclopedia")
+                {
+                    @ApsStrings.encyclopedia_lang
+                }
+            </Label>
+            <div class="col-sm-10" id="language">
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        @if (Model.IsArabic)
+                        {
+                            <label class="control-label col-sm-2">العربية</label>
+                        }
+                    </div>
+                    <div class="col-sm-3">
+                        @ApsStrings.transulat_to
+                        @Html.TextBoxFor(model => model.TranslatedTo, @Model.TranslatedTo, new { @class = "form-control", @readonly = "readonly" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <Label class="control-label col-sm-2 text-center">
+            @if (Model.ScientificType == "Book")
+            {
+                @ApsStrings.book_title
+            }
+            else if (Model.ScientificType == "Thesis")
+            {
+                @ApsStrings.thesis_title
+            }
+            else if (Model.ScientificType == "Handbook")
+            {
+                @ApsStrings.handBook_title
+            }
+            else if (Model.ScientificType == "Review")
+            {
+                @ApsStrings.probe_title
+            }
+            else if (Model.ScientificType == "Dictionary")
+            {
+                @ApsStrings.dictionary_title
+            }
+            else if (Model.ScientificType == "Encyclopedia")
+            {
+                @ApsStrings.encyclopedia_title
+            }
+        </Label>
+        <div class="col-sm-10" id="language">
+            @Html.TextBoxFor(m => m.Title, @Model.Title, new { @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+    if (Model.ScientificType == "Encyclopedia" || Model.ScientificType == "Dictionary")
+    {
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">
+                @if (Model.ScientificType == "Dictionary")
+                {
+                    @ApsStrings.majorof_dictionary
+                }
+                else
+                {
+                    @ApsStrings.encyclopedia_major
+                }
+            </Label>
+            <div class="col-sm-10" id="language">
+                @Html.DropDownListFor(model => model.MajorId, new SelectList(ViewBag.Major, "Id", "NameArabic"), htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.Recommendations_date</Label>
+            <div class="col-sm-10">
+                @Html.TextBoxFor(m => m.RecommendationDate, @Model.RecommendationDate.ToString(), new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.recommendation_number</Label>
+            <div class="col-sm-10">
+                @*@Html.TextBoxFor(m => m.NoOfRecommendations, @Model.NoOfRecommendations, new { @class = "form-control", @readonly = "readonly" })*@
+                <input type="text" value="@Model.NoOfRecommendations" id="NoOfRecommendations" name="NoOfRecommendations" readonly="readonly" class="form-control" />
+            </div>
+        </div>
+    }
+    if (Model.ScientificType == "Review")
+    {
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.author_name</Label>
+            <div class="col-sm-10" id="language">
+                @Html.TextBoxFor(m => m.AuthersName, @Model.AuthersName, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.scope_manuscript</Label>
+            <div class="col-sm-10" id="language">
+                @Html.TextBoxFor(m => m.ScopOfManuscript, @Model.ScopOfManuscript, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+    }
+    if (Model.ScientificType == "Thesis")
+    {
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.degree</Label>
+            <div class="col-sm-10" id="language">
+                @Html.TextBoxFor(m => m.Degree, @Model.Degree == (byte)Degree.Master ? ApsStrings.master : ApsStrings.phd, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.supervisor</Label>
+            <div class="col-sm-10" id="language">
+                @Html.TextBoxFor(m => m.Supervisor, @Model.Supervisor, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.committeefor_paemember</Label>
+            <div class="col-sm-10" id="language">
+                @Html.TextBoxFor(m => m.CommitteeMembers, @Model.CommitteeMembers, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.scientific_department</Label>
+            <div class="col-sm-10" id="language">
+                @Html.DropDownListFor(model => model.MajorAuthorId, new SelectList(ViewBag.AutherMajors, "Id", "NameArabic"), htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.gpa</Label>
+            <div class="col-sm-10" id="language">
+                @Html.TextBoxFor(m => m.Gpa, @Model.Gpa, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">@ApsStrings.discussion_date</Label>
+            <div class="col-sm-10" id="language">
+                @Html.TextBoxFor(m => m.DateOfDiscussion, @Model.DateOfDiscussion.ToString(), new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+    }
+    @*if (Model.ScientificType != "Thesis" || Model.ScientificType != "Review")
+        {
+            <div class="form-group">
+                <Label class="control-label col-sm-2 text-center">
+                    @if (Model.ScientificType == "Book")
+                    {
+                        @ApsStrings.original_book_title
+                    }
+
+                    else if (Model.ScientificType == "Handbook")
+                    {
+                        @ApsStrings.original_handbook_title
+                    }
+
+                    else if (Model.ScientificType == "Dictionary")
+                    {
+                        @ApsStrings.original_dictionary_title
+                    }
+                    else if (Model.ScientificType == "Encyclopedia")
+                    {
+                        @ApsStrings.original_encyclopedia_title
+                    }
+                </Label>
+                <div class="col-sm-10" id="language">
+                    @Html.TextBoxFor(m => m.OriginalTitle, @Model.OriginalTitle, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+        }*@
+
+    if (Model.ScientificType != "Thesis")
+    {
+        <div class="form-group">
+            <Label class="control-label col-sm-2 text-center">
+                @if (Model.ScientificType == "Review")
+                {
+                    @ApsStrings.prober_major
+                }
+                else
+                {
+                    @ApsStrings.author_major
+                }
+            </Label>
+            <div class="col-sm-10" id="language">
+                @Html.DropDownListFor(model => model.MajorId, new SelectList(ViewBag.AutherMajors, "Id", "NameArabic"), htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+    }
+    @*<div class="form-group ">
+            <label class="control-label col-md-3">@ApsStrings.attached_file_thes</label>
+            <div class="col-md-6">
+                <div class="custom-file-upload">
+                    <input type="file" name="FileUpload" />
+                    @if (Model.ResearcherFile != null)
+                    {
+                        <a class="btn btn-xs btn-success" target="_blank" href="@(Utils.GetApplicationUrl() + "f/" + Model.ResearcherFile.FileId)">    @Model.ResearcherFile.FileName</a>
+                    }
+                </div>
+            </div>
+        </div>*@
+    if (Model.CoResearcherFiles != null && Model.CoResearcherFiles.Count > 0)
+    {
+        <div class="row">
+            <h4 class="col-md-offset-3 col-md-6 text-center">@ApsStrings.attachments</h4>
+        </div>
+        var i = 0;
+        foreach (var item in Model.CoResearcherFiles)
+        {
+            <div class="form-group">
+                <div class="col-md-3">@LangHelpers.Instance[@item.CreatedUserRole.ToString()]</div>
+                <div class="col-md-3">@item.CreatedUserName</div>
+                <div class="col-md-6">
+                    @Html.ActionLink(item.FileName, "Index", "GetFile", new { id = item.FileId }, new { @class = "btn btn-success", target = "_blank" })
+                </div>
+            </div>
+            <hr style="border: 1px dashed #ddd;" />
+            <div>
+                @Html.HiddenFor(m => m.CoResearcherFiles[i].FileId)
+                @Html.HiddenFor(m => m.CoResearcherFiles[i].Type)
+            </div>
+            i++;
+        }
+    }
+
+    <div class="form-group">
+        <label class="control-label col-md-3">@ApsStrings.Approval</label>
+        <div class="col-md-6">
+            <div class="checkbox">
+                @Html.RadioButtonFor(m => m.SelectedAction, "approved") @ApsStrings.approved &nbsp;
+                @Html.RadioButtonFor(m => m.SelectedAction, "Reject") @ApsStrings.rejected &nbsp;
+            </div>
+        </div>
+    </div>
+
+    <div class="box2 box2-info">
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-6 col-md-offset-3">
+                    <input id="btnSubmit" type="submit" value="@ApsStrings.submit" class="btn btn-primary btn-lg btn-block" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

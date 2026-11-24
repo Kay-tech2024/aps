@@ -1,0 +1,4423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="absences" xml:space="preserve">
+    <value>المعتذرون</value>
+  </data>
+  <data name="absense_reason" xml:space="preserve">
+    <value>سبب الغياب</value>
+  </data>
+  <data name="absentees" xml:space="preserve">
+    <value>الغائبين</value>
+  </data>
+  <data name="academic_council_head" xml:space="preserve">
+    <value>رئيس المجلس العلمي</value>
+  </data>
+  <data name="academic_council_member" xml:space="preserve">
+    <value>عضو المجلس العلمي</value>
+  </data>
+  <data name="academic_council_secretary" xml:space="preserve">
+    <value>أمين المجلس العلمي</value>
+  </data>
+  <data name="academic_year" xml:space="preserve">
+    <value>السنة الأكاديمية</value>
+  </data>
+  <data name="accept" xml:space="preserve">
+    <value>قبول</value>
+  </data>
+  <data name="accepted" xml:space="preserve">
+    <value>مقبول</value>
+  </data>
+  <data name="accept_with_updates" xml:space="preserve">
+    <value>موافقة مع اجراء التعديلات</value>
+  </data>
+  <data name="accountant" xml:space="preserve">
+    <value>المحاسب</value>
+  </data>
+  <data name="account_City" xml:space="preserve">
+    <value>المدينة</value>
+  </data>
+  <data name="account_country" xml:space="preserve">
+    <value>البلد</value>
+  </data>
+  <data name="account_holder_name" xml:space="preserve">
+    <value>اسم صاحب الحساب</value>
+  </data>
+  <data name="account_holder_name_inter" xml:space="preserve">
+    <value>اسم صاحب الحساب</value>
+  </data>
+  <data name="account_holder_name_required" xml:space="preserve">
+    <value>اسم صاحب الحساب مطلوب</value>
+  </data>
+  <data name="action" xml:space="preserve">
+    <value>الإجراء</value>
+  </data>
+  <data name="action1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="action2" xml:space="preserve">
+    <value>الإجراء</value>
+  </data>
+  <data name="actions" xml:space="preserve">
+    <value>الإجراءات</value>
+  </data>
+  <data name="action_accept" xml:space="preserve">
+    <value>موافق </value>
+  </data>
+  <data name="action_accept_with_comments" xml:space="preserve">
+    <value>موافقة مع تعديلات </value>
+  </data>
+  <data name="action_approve" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="action_approve_and_and_forard_to_dean_of_academic_research" xml:space="preserve">
+    <value>موافقة وإرسال إلى عميد البحث العلمي </value>
+  </data>
+  <data name="action_approve_and_forward_to_academic_council" xml:space="preserve">
+    <value>موافقة وإرسال إلى المجلس العلمي </value>
+  </data>
+  <data name="action_approve_and_forward_to_accountant" xml:space="preserve">
+    <value>موافقة وإرسال إلى المحاسب </value>
+  </data>
+  <data name="action_approve_and_forward_to_deanship_of_library_affairs" xml:space="preserve">
+    <value>موافقة وإرسال إلى عميد شؤون المكتبات </value>
+  </data>
+  <data name="action_approve_and_forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>موافقة وإرسال إلى عميد البحث العلمي</value>
+  </data>
+  <data name="action_approve_and_forward_to_fiancial_department_director" xml:space="preserve">
+    <value>موافقة وإرسال إلى مدير الإدارة المالية </value>
+  </data>
+  <data name="action_approve_and_forward_to_research_unit_head" xml:space="preserve">
+    <value>موافقة وإرسال إلى رئيس وحدة البحوث</value>
+  </data>
+  <data name="action_approve_and_forward_to_university_press_director" xml:space="preserve">
+    <value>موافقة وإرسال إلى مدير مطابع الجامعة </value>
+  </data>
+  <data name="action_approve_and_forward_to_unversity_rector" xml:space="preserve">
+    <value>موافقة وإرسال إلى مدير الجامعة </value>
+  </data>
+  <data name="action_approve_and_forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>موافقة وإرسال إلى وكيل عمادة للبحث العلمي </value>
+  </data>
+  <data name="action_approve_and_return_to_paecommitee" xml:space="preserve">
+    <value>موافقة وإعادة للجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="action_approve_approval" xml:space="preserve">
+    <value>اعتماد الموافقة </value>
+  </data>
+  <data name="action_approve_approval_and_forward_to_university_rector" xml:space="preserve">
+    <value>اعتماد الموافقة وإرسال إلى مدير الجامعة </value>
+  </data>
+  <data name="action_approve_modifications" xml:space="preserve">
+    <value>الموافقة على التعديلات </value>
+  </data>
+  <data name="action_approve_rejection" xml:space="preserve">
+    <value>اعتماد الرفض </value>
+  </data>
+  <data name="action_approve_rejection_and_forward_to_university_rector" xml:space="preserve">
+    <value>موافقة وإعادة توجيه لمدير الجامعة  </value>
+  </data>
+  <data name="action_approve_with_comments" xml:space="preserve">
+    <value>موافقة مع ملاحظات </value>
+  </data>
+  <data name="action_approve_with_comments_and_forward_to_academic_council" xml:space="preserve">
+    <value>موافقة مع ملاحظات وإرسال إلى المجلس العلمي </value>
+  </data>
+  <data name="action_approve_with_no_referees" xml:space="preserve">
+    <value>موافقة من غير محكمين </value>
+  </data>
+  <data name="action_cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="action_canceled" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="action_certify_and_forward_to_university_press_officer" xml:space="preserve">
+    <value>تصديق وإعادة إرسال إلى موظف مطابع الجامعة </value>
+  </data>
+  <data name="action_close_request" xml:space="preserve">
+    <value>إقفال الطلب</value>
+  </data>
+  <data name="action_confirm_delivering_copies_to_agencies" xml:space="preserve">
+    <value>تأكيد إستلام نسخ الجهات </value>
+  </data>
+  <data name="action_confirm_delivering_copies_to_kfnl" xml:space="preserve">
+    <value>تأكيد إستلام مكتبة الملك فهد النسخ </value>
+  </data>
+  <data name="action_confirm_delivering_copies_to_resaercher" xml:space="preserve">
+    <value>تاكيد إستلام الباحث للنسخ </value>
+  </data>
+  <data name="action_confirm_receival_of_copies" xml:space="preserve">
+    <value>تأكيد إستلام النسخ </value>
+  </data>
+  <data name="action_forward" xml:space="preserve">
+    <value>إعادة توجيه </value>
+  </data>
+  <data name="action_forward_to_academic_council" xml:space="preserve">
+    <value>إرسال إلى المجلس العلمي </value>
+  </data>
+  <data name="action_forward_to_academic_council_head" xml:space="preserve">
+    <value>إرسال إلى رئيس المجلس العلمي </value>
+  </data>
+  <data name="action_forward_to_deanship_of_academic_research_commitee_members" xml:space="preserve">
+    <value>إرسال إلى أعضاء لجنة  عمادة البحث العلمي </value>
+  </data>
+  <data name="action_forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>إرسال إلى عميد البحث العلمي </value>
+  </data>
+  <data name="action_forward_to_initial_referee" xml:space="preserve">
+    <value>إرسال للمحكم المبدئي</value>
+  </data>
+  <data name="action_forward_to_kfnl" xml:space="preserve">
+    <value>إرسال إلى موظف مكتبة الملك فهد </value>
+  </data>
+  <data name="action_forward_to_main_referees" xml:space="preserve">
+    <value>إرسال إلى المحكمان  الأساسيان </value>
+  </data>
+  <data name="action_forward_to_paecommittee_head" xml:space="preserve">
+    <value>إرسال إلى رئيس لجنة النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="action_forward_to_press_oficer" xml:space="preserve">
+    <value>إرسال إلى موظف مطابع الجامعة</value>
+  </data>
+  <data name="action_forward_to_proofreader" xml:space="preserve">
+    <value>إرسال إلى المصحح</value>
+  </data>
+  <data name="action_forward_to_referees" xml:space="preserve">
+    <value>إرسال للمحكمين </value>
+  </data>
+  <data name="action_forward_to_researcher" xml:space="preserve">
+    <value>إرسال إلى الباحث </value>
+  </data>
+  <data name="action_forward_to_research_unit_head" xml:space="preserve">
+    <value>إرسال إلى رئيس وحدة البحوث </value>
+  </data>
+  <data name="action_forward_to_research_unit_secretary" xml:space="preserve">
+    <value>إعادة توجيه إلى أمين وحدة البحوث </value>
+  </data>
+  <data name="action_forward_to_spare_referee" xml:space="preserve">
+    <value>إرسال إلى المحكم الإحتياطي</value>
+  </data>
+  <data name="action_forward_to_university_press_director" xml:space="preserve">
+    <value>إرسال إلى مدير مطابع الجامعة </value>
+  </data>
+  <data name="action_forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>إرسال إلى وكيل عمادة البحث العلمي </value>
+  </data>
+  <data name="action_operation_command_executed_and_forward_to_puap" xml:space="preserve">
+    <value>تنفيذ أمر التشغيل وإرسال إلى أمين لجنة التجهيز الطباعي </value>
+  </data>
+  <data name="action_payment_completed" xml:space="preserve">
+    <value>صرف المكافأة </value>
+  </data>
+  <data name="action_prepare_distribution_list" xml:space="preserve">
+    <value>تجهيز قوائم التوزيع</value>
+  </data>
+  <data name="action_printing_completed" xml:space="preserve">
+    <value>تمت الطباعة </value>
+  </data>
+  <data name="action_provide_feedback" xml:space="preserve">
+    <value>إبداء الرأي</value>
+  </data>
+  <data name="action_publish" xml:space="preserve">
+    <value>نشر</value>
+  </data>
+  <data name="action_reject" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="action_reject_and_forward_to_academic_council" xml:space="preserve">
+    <value>رفض وإرسال إلى المجلس العلمي </value>
+  </data>
+  <data name="action_reject_and_forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>رفض وإرسال إلى عميد البحث العلمي </value>
+  </data>
+  <data name="action_reject_and_forward_to_university_rector" xml:space="preserve">
+    <value>رفض وإرسال إلى مدير الجامعة </value>
+  </data>
+  <data name="action_reject_and_forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>رفض وإرسال وكيل عمادة البحث العلمي</value>
+  </data>
+  <data name="action_reject_and_return_to_dean_of_academic_research" xml:space="preserve">
+    <value>رفض وإرجاع إلى عميد البحث العلمي </value>
+  </data>
+  <data name="action_reject_and_return_to_officer_of_printing_unit" xml:space="preserve">
+    <value>رفض وإرجاع لأمين وحدة التجهيز الطباعي </value>
+  </data>
+  <data name="action_reject_and_return_to_paecommitee" xml:space="preserve">
+    <value>رفض وإرسال إلى لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="action_reject_and_return_to_puap" xml:space="preserve">
+    <value>إعادة إلى أمين لجنة التجهيز الطباعي </value>
+  </data>
+  <data name="action_reject_and_return_to_researcher" xml:space="preserve">
+    <value>رفض وإرجاع للباحث </value>
+  </data>
+  <data name="action_reject_and_return_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>رفض وإعادة إلى وكيل عمادة البحث العلمي </value>
+  </data>
+  <data name="action_reject_modifications" xml:space="preserve">
+    <value>رفض التعديلات </value>
+  </data>
+  <data name="action_resend_to_referees" xml:space="preserve">
+    <value>إرسال إلى المحكمين</value>
+  </data>
+  <data name="action_resubmit" xml:space="preserve">
+    <value>إعادة إرسال</value>
+  </data>
+  <data name="action_resubmit_and_forward_to_paecommitee" xml:space="preserve">
+    <value>إعادة إرسال  إلى لجنة النشر النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="action_resubmit_and_return_to_coresearchers" xml:space="preserve">
+    <value>إعادة إرسال للمشاركين في البحث</value>
+  </data>
+  <data name="action_return_to_academdic_council" xml:space="preserve">
+    <value>إعادة إلى المجلس العلمي </value>
+  </data>
+  <data name="action_return_to_academdic_council_secretary" xml:space="preserve">
+    <value>إعادة إلى أمين المجلس العلمي </value>
+  </data>
+  <data name="action_return_to_deanship_of_academic_research" xml:space="preserve">
+    <value>إعادة إلى عميد البحث العلمي </value>
+  </data>
+  <data name="action_return_to_deanship_of_library_affairs" xml:space="preserve">
+    <value>إعادة إلى عميد شؤون المكتبات </value>
+  </data>
+  <data name="action_return_to_kfnlofficer" xml:space="preserve">
+    <value>إرجاع إلى موظف مكتبة الملك فهد </value>
+  </data>
+  <data name="action_return_to_officer_of_printing_unit" xml:space="preserve">
+    <value>إر جاع إلى موظف وحدة التجهيز الطباعي </value>
+  </data>
+  <data name="action_return_to_paecommittee" xml:space="preserve">
+    <value>إرسال إلى لجنة النشر والتحكيم والمعادلات بعد الإطلاع على الملاحظات</value>
+  </data>
+  <data name="action_return_to_paecommittee_secretary" xml:space="preserve">
+    <value> إرجاع إلى أمين لجنة النشر والتحكيم والمعادلات لإكمال الإجراء</value>
+  </data>
+  <data name="action_return_to_proofreader" xml:space="preserve">
+    <value>إعادة للمصحح </value>
+  </data>
+  <data name="action_return_to_puap" xml:space="preserve">
+    <value>إعادة إلى أمين وحدة التجهيز الطباعي </value>
+  </data>
+  <data name="action_return_to_researcher" xml:space="preserve">
+    <value>إعادة للباحث</value>
+  </data>
+  <data name="action_return_to_research_unit_head" xml:space="preserve">
+    <value>إعادة إلى رئيس وحدة البحوث</value>
+  </data>
+  <data name="action_return_to_research_unit_secretary" xml:space="preserve">
+    <value>إعادة إلى أمين وحدة البحوث</value>
+  </data>
+  <data name="action_return_to_university_press_director" xml:space="preserve">
+    <value>إرجاع لمدير عام مطابع الجامعة </value>
+  </data>
+  <data name="action_return_to_university_press_officer" xml:space="preserve">
+    <value>إرسال إلى موظف مطابع الجامعة </value>
+  </data>
+  <data name="action_return_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>إعادة إلى وكيل العمادة للنشر العلمي  </value>
+  </data>
+  <data name="action_select_referees" xml:space="preserve">
+    <value>اختيار محكمين</value>
+  </data>
+  <data name="action_send_to_commitee_members" xml:space="preserve">
+    <value>إرسال إلى أعضاء المجلس </value>
+  </data>
+  <data name="action_submit" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="action_submit_coresearcher_data" xml:space="preserve">
+    <value>إرسال بيانات الباحث</value>
+  </data>
+  <data name="action_submit_isbnrequest_to_kfnl" xml:space="preserve">
+    <value>رفع طلب ردمك إلى مكتبة الملك فهد الوطنية </value>
+  </data>
+  <data name="action_submit_isbnto_imam_university" xml:space="preserve">
+    <value>إرسال رقم الردمك إلى جامعة الإمام محمد بن سعود الإسلامية </value>
+  </data>
+  <data name="action_submit_operation_command_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>إرسال طلب أمر التشغيل إلى وكيل عمادة البحث العلمي </value>
+  </data>
+  <data name="action_submit_to_press_officer" xml:space="preserve">
+    <value>إرسال إلى موظف المطابع </value>
+  </data>
+  <data name="activated" xml:space="preserve">
+    <value>مفعل</value>
+  </data>
+  <data name="activate_immediately" xml:space="preserve">
+    <value>تفعيل المستخدم</value>
+  </data>
+  <data name="activation" xml:space="preserve">
+    <value>التفعيل</value>
+  </data>
+  <data name="add" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="address" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="address_required" xml:space="preserve">
+    <value>حقل العنوان مطلوب</value>
+  </data>
+  <data name="add_files" xml:space="preserve">
+    <value>اضافة ملفات</value>
+  </data>
+  <data name="admin" xml:space="preserve">
+    <value>مدير النظام</value>
+  </data>
+  <data name="adoption_of_list_arbitrators" xml:space="preserve">
+    <value>اعتماد قائمة المحكمين</value>
+  </data>
+  <data name="again" xml:space="preserve">
+    <value />
+  </data>
+  <data name="age_is_too_young" xml:space="preserve">
+    <value>يجب أن يكون عمرك 12 سنة فأكثر</value>
+  </data>
+  <data name="agree" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="agreements" xml:space="preserve">
+    <value>الإقرار</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>الجميع</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value> و</value>
+  </data>
+  <data name="Approval" xml:space="preserve">
+    <value>الموافقة</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="approved" xml:space="preserve">
+    <value>اوافق</value>
+  </data>
+  <data name="approve_and_forward_to_research_unit_head" xml:space="preserve">
+    <value>موافقة وإرسال الى رئيس وحدة البحوث </value>
+  </data>
+  <data name="approve_and_forward_to_unversity_rector" xml:space="preserve">
+    <value>موافقة وإرسال إلى مدير الجامعة </value>
+  </data>
+  <data name="approve_and_forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>موافقة وارسال إلى وكيل عمادة البحث العلمي </value>
+  </data>
+  <data name="approve_approval" xml:space="preserve">
+    <value>اعتماد موافقة عميدالبحث العلمي </value>
+  </data>
+  <data name="approve_with_comments" xml:space="preserve">
+    <value>موافقة مع اضافة ملاحظات</value>
+  </data>
+  <data name="arabic" xml:space="preserve">
+    <value>عربي</value>
+  </data>
+  <data name="arabic_dictionary" xml:space="preserve">
+    <value>عربي</value>
+  </data>
+  <data name="arbitration_grade" xml:space="preserve">
+    <value>متوسط درجات المحكمين</value>
+  </data>
+  <data name="arbitration_request" xml:space="preserve">
+    <value>طلب التحكيم</value>
+  </data>
+  <data name="arbitration_requests" xml:space="preserve">
+    <value>طلبات التحكيم</value>
+  </data>
+  <data name="arbitrator_report" xml:space="preserve">
+    <value>تقرير المحكم</value>
+  </data>
+  <data name="archive" xml:space="preserve">
+    <value>الأرشيف</value>
+  </data>
+  <data name="are_you_sure" xml:space="preserve">
+    <value>هل أنت متأكد؟</value>
+  </data>
+  <data name="assistantSupervisor" xml:space="preserve">
+    <value>مشرف مساعد</value>
+  </data>
+  <data name="attached_file_thes" xml:space="preserve">
+    <value>يرجى رفع المادة العلمية</value>
+  </data>
+  <data name="attached_file_thes_required" xml:space="preserve">
+    <value>ملف الرسالة العلمية مطلوب.</value>
+  </data>
+  <data name="attachments" xml:space="preserve">
+    <value>المرفقات:</value>
+  </data>
+  <data name="attachments_probe" xml:space="preserve">
+    <value>رفع صورة المخطوطة</value>
+  </data>
+  <data name="attendance" xml:space="preserve">
+    <value>الحاضرون</value>
+  </data>
+  <data name="attendance_state" xml:space="preserve">
+    <value>دولة الحضور</value>
+  </data>
+  <data name="audit" xml:space="preserve">
+    <value>تحقيق</value>
+  </data>
+  <data name="audit_request" xml:space="preserve">
+    <value>تحقيق الطلب</value>
+  </data>
+  <data name="authors_modifications" xml:space="preserve">
+    <value>تعديلات المؤلفين</value>
+  </data>
+  <data name="author_data" xml:space="preserve">
+    <value>بيانات الباحث</value>
+  </data>
+  <data name="author_major" xml:space="preserve">
+    <value>تخصص المؤلف</value>
+  </data>
+  <data name="author_major_required" xml:space="preserve">
+    <value>تخصص الباحث مطلوب.</value>
+  </data>
+  <data name="author_name" xml:space="preserve">
+    <value>اسم المؤلف</value>
+  </data>
+  <data name="author_name_headof" xml:space="preserve">
+    <value>بيانات الباحث وإقرار المشاركة </value>
+  </data>
+  <data name="author_name_required" xml:space="preserve">
+    <value>اسم المؤلف مطلوب</value>
+  </data>
+  <data name="author_title" xml:space="preserve">
+    <value>بيانات المؤلف</value>
+  </data>
+  <data name="back" xml:space="preserve">
+    <value>الرجوع</value>
+  </data>
+  <data name="back_to_researches_unit" xml:space="preserve">
+    <value>إرجاع الى وحدة البحوث</value>
+  </data>
+  <data name="bank_account_type" xml:space="preserve">
+    <value>نوع الحساب البنكي</value>
+  </data>
+  <data name="bank_branch" xml:space="preserve">
+    <value>الفرع</value>
+  </data>
+  <data name="bank_details" xml:space="preserve">
+    <value>البيانات البنكية</value>
+  </data>
+  <data name="Bank_Id" xml:space="preserve">
+    <value>اسم البنك</value>
+  </data>
+  <data name="bank_information" xml:space="preserve">
+    <value>المعلومات البنكية</value>
+  </data>
+  <data name="bank_name" xml:space="preserve">
+    <value>اسم البنك</value>
+  </data>
+  <data name="bank_required" xml:space="preserve">
+    <value>حقل البنك مطلوب</value>
+  </data>
+  <data name="basic_salary" xml:space="preserve">
+    <value>الراتب الأساس</value>
+  </data>
+  <data name="birthdate" xml:space="preserve">
+    <value>تاريخ الميلاد</value>
+  </data>
+  <data name="birthdate_required" xml:space="preserve">
+    <value>حقل تاريخ الميلاد مطلوب.</value>
+  </data>
+  <data name="body_arabic" xml:space="preserve">
+    <value>المحتوى (عربي)</value>
+  </data>
+  <data name="body_english" xml:space="preserve">
+    <value>المحتوى (إنجليزي)</value>
+  </data>
+  <data name="book" xml:space="preserve">
+    <value>كتاب</value>
+  </data>
+  <data name="BookRequestsIsArabic" xml:space="preserve">
+    <value>لغة الكتاب </value>
+  </data>
+  <data name="BookRequestsMajorId" xml:space="preserve">
+    <value>تخصص الكتاب</value>
+  </data>
+  <data name="book_agreement" xml:space="preserve">
+    <value>إقرار الكتاب </value>
+  </data>
+  <data name="book_attach" xml:space="preserve">
+    <value>رفع صورة من المادة العلمية</value>
+  </data>
+  <data name="book_attachment" xml:space="preserve">
+    <value>إرفاق الكتاب</value>
+  </data>
+  <data name="book_attachment_required" xml:space="preserve">
+    <value>ارفاق الكتاب الزامي</value>
+  </data>
+  <data name="book_details" xml:space="preserve">
+    <value>بيانات الكتاب</value>
+  </data>
+  <data name="book_lang" xml:space="preserve">
+    <value>لغة الكتاب </value>
+  </data>
+  <data name="book_lang_required" xml:space="preserve">
+    <value>لغة الكتاب مطلوبة.</value>
+  </data>
+  <data name="book_title" xml:space="preserve">
+    <value>عنوان الكتاب </value>
+  </data>
+  <data name="book_title_required" xml:space="preserve">
+    <value>حقل عنوان الكتاب مطلوب.</value>
+  </data>
+  <data name="book_type" xml:space="preserve">
+    <value>نوع الكتاب</value>
+  </data>
+  <data name="book_type_required" xml:space="preserve">
+    <value>نوع الكتاب مطلوب.</value>
+  </data>
+  <data name="button_login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="button_save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="calculate" xml:space="preserve">
+    <value>حسب السعر</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="canceled" xml:space="preserve">
+    <value>تم الإلغاء</value>
+  </data>
+  <data name="cancel_upload" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="cash" xml:space="preserve">
+    <value>نقدًا</value>
+  </data>
+  <data name="cash_payment_start_date" xml:space="preserve">
+    <value>تاريخ السداد</value>
+  </data>
+  <data name="change_password" xml:space="preserve">
+    <value>تغيير كلمة المرور</value>
+  </data>
+  <data name="children_stories" xml:space="preserve">
+    <value>قصص أطفال</value>
+  </data>
+  <data name="child_care" xml:space="preserve">
+    <value>رعاية طفل</value>
+  </data>
+  <data name="choose" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>المدينة</value>
+  </data>
+  <data name="collapse_menu" xml:space="preserve">
+    <value>تصغير</value>
+  </data>
+  <data name="college" xml:space="preserve">
+    <value>الكلية</value>
+  </data>
+  <data name="colleges" xml:space="preserve">
+    <value>الكليات</value>
+  </data>
+  <data name="college_created_successfully" xml:space="preserve">
+    <value>تم إنشاء الكلية</value>
+  </data>
+  <data name="college_creation_failed" xml:space="preserve">
+    <value>فشل إنشاء الكلية</value>
+  </data>
+  <data name="college_must_be_unique" xml:space="preserve">
+    <value>الكلية يجب أن تكون فريدة</value>
+  </data>
+  <data name="college_name" xml:space="preserve">
+    <value>اسم الكلية</value>
+  </data>
+  <data name="college_not_found" xml:space="preserve">
+    <value>لم يتم العثور على الكلية</value>
+  </data>
+  <data name="college_required" xml:space="preserve">
+    <value>حقل الكلية مطلوب</value>
+  </data>
+  <data name="college_updated_successfully" xml:space="preserve">
+    <value>تم تحديث الكلية</value>
+  </data>
+  <data name="college_update_failed" xml:space="preserve">
+    <value>فشل تحديث الكلية</value>
+  </data>
+  <data name="comments" xml:space="preserve">
+    <value>ملاحظات</value>
+  </data>
+  <data name="commercial" xml:space="preserve">
+    <value>تجاري</value>
+  </data>
+  <data name="committeefor_paemember" xml:space="preserve">
+    <value>أعضاء لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="committeefor_paesecretary" xml:space="preserve">
+    <value>أمين لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="committee_for_pae_member" xml:space="preserve">
+    <value>عضو لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="committee_for_pae_secretary" xml:space="preserve">
+    <value>أمين لحنة النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="committe_for_paehead" xml:space="preserve">
+    <value>رئيس لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="completed" xml:space="preserve">
+    <value>تم اكتمال الطلب</value>
+  </data>
+  <data name="condd" xml:space="preserve">
+    <value />
+  </data>
+  <data name="conditional_approval" xml:space="preserve">
+    <value>موافقة مشروطة</value>
+  </data>
+  <data name="conditional_approve" xml:space="preserve">
+    <value>موافقة مشروطة</value>
+  </data>
+  <data name="contactUs" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
+  <data name="contactUsMessage" xml:space="preserve">
+    <value>رسالتك</value>
+  </data>
+  <data name="contactUsMessage_required" xml:space="preserve">
+    <value>رسالتك مطلوبة.</value>
+  </data>
+  <data name="contact_us_message" xml:space="preserve">
+    <value>الاتصال بنا رسالة</value>
+  </data>
+  <data name="copyright" xml:space="preserve">
+    <value>جميع الحقوق محفوظة لجامعة الإمام محمد بن سعود الإسلامية</value>
+  </data>
+  <data name="council_members" xml:space="preserve">
+    <value> أعضاء المجلس</value>
+  </data>
+  <data name="country" xml:space="preserve">
+    <value>البلد</value>
+  </data>
+  <data name="country_required" xml:space="preserve">
+    <value>حقل البلد مطلوب.</value>
+  </data>
+  <data name="coun_coll_recomm_date" xml:space="preserve">
+    <value> تاريخ توصية مجلسي القسم و الكلية</value>
+  </data>
+  <data name="coun_coll_recomm_no" xml:space="preserve">
+    <value>رقم توصية مجلسي القسم و الكلية</value>
+  </data>
+  <data name="co_researcher" xml:space="preserve">
+    <value>المشاركون</value>
+  </data>
+  <data name="create" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="create_college" xml:space="preserve">
+    <value>كلية جديدة</value>
+  </data>
+  <data name="create_department" xml:space="preserve">
+    <value>إنشاء إدارة</value>
+  </data>
+  <data name="create_group" xml:space="preserve">
+    <value>إنشاء قسم</value>
+  </data>
+  <data name="create_major" xml:space="preserve">
+    <value>تخصص جديد</value>
+  </data>
+  <data name="create_new" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="create_user" xml:space="preserve">
+    <value>إنشاء </value>
+  </data>
+  <data name="Creation_and_Submitting_Minutes_of_meeting" xml:space="preserve">
+    <value>إنشاء وتقديم محضر الاجتماع</value>
+  </data>
+  <data name="css_dir" xml:space="preserve">
+    <value>rtl</value>
+  </data>
+  <data name="css_left" xml:space="preserve">
+    <value>right</value>
+  </data>
+  <data name="css_right" xml:space="preserve">
+    <value>left</value>
+  </data>
+  <data name="css_suffix" xml:space="preserve">
+    <value>-rtl</value>
+  </data>
+  <data name="cultural" xml:space="preserve">
+    <value>ثقافي</value>
+  </data>
+  <data name="currently_with" xml:space="preserve">
+    <value>حاليًا عند</value>
+  </data>
+  <data name="currentWorkPlace" xml:space="preserve">
+    <value>مكان العمل الحالي</value>
+  </data>
+  <data name="currentWorkPlace_required" xml:space="preserve">
+    <value>مكان العمل الحالي مطلوب</value>
+  </data>
+  <data name="data_of_part" xml:space="preserve">
+    <value>Data of Parthers(Repeated y Item where y is the Partbers# in SCB)</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="dcMember_required" xml:space="preserve">
+    <value>حقل أعضاء لجنة المناقشة مطلوب.</value>
+  </data>
+  <data name="deactivated" xml:space="preserve">
+    <value>غير مفعل</value>
+  </data>
+  <data name="deanship_of_academic_research_council_member" xml:space="preserve">
+    <value>عضو مجلس عمادة البحث العلمي</value>
+  </data>
+  <data name="dean_of_academic_research" xml:space="preserve">
+    <value>عميد البحث العلمي</value>
+  </data>
+  <data name="dean_of_library_affairs" xml:space="preserve">
+    <value>عميد شؤون المكتبات</value>
+  </data>
+  <data name="dearship_of_academic_research_council_secretary" xml:space="preserve">
+    <value>أمين وكيل مجلس البحث العلمي</value>
+  </data>
+  <data name="deceason_Reason" xml:space="preserve">
+    <value>السبب</value>
+  </data>
+  <data name="decision" xml:space="preserve">
+    <value>القرار</value>
+  </data>
+  <data name="declaration" xml:space="preserve">
+    <value>الإقرار</value>
+  </data>
+  <data name="deduction_payment_monthly" xml:space="preserve">
+    <value>قيمة الخصم الشهرية</value>
+  </data>
+  <data name="deduction_payment_start_date" xml:space="preserve">
+    <value>تاريخ السداد</value>
+  </data>
+  <data name="degree" xml:space="preserve">
+    <value>الدرجة العلمية</value>
+  </data>
+  <data name="degreeTypeId" xml:space="preserve">
+    <value>الدرجة العلمية</value>
+  </data>
+  <data name="degree_required" xml:space="preserve">
+    <value>الدرجة العلمية مطلوبة</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="delete_action" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="department" xml:space="preserve">
+    <value>القسم العلمي</value>
+  </data>
+  <data name="departments" xml:space="preserve">
+    <value>الإدارات</value>
+  </data>
+  <data name="department_is_deleted" xml:space="preserve">
+    <value>هذا القسم تم حذفه</value>
+  </data>
+  <data name="department_name" xml:space="preserve">
+    <value>اسم القسم</value>
+  </data>
+  <data name="department_not_found" xml:space="preserve">
+    <value>لم يتم العثور على القسم المطلوب</value>
+  </data>
+  <data name="department_profile" xml:space="preserve">
+    <value>ملف القسم</value>
+  </data>
+  <data name="department_required" xml:space="preserve">
+    <value>القسم مطلوب</value>
+  </data>
+  <data name="descision_reason" xml:space="preserve">
+    <value>اسباب القرار</value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>تفاصيل</value>
+  </data>
+  <data name="dicationary_agreeement" xml:space="preserve">
+    <value>إقرار  المعجم</value>
+  </data>
+  <data name="dictionary" xml:space="preserve">
+    <value>المعجم</value>
+  </data>
+  <data name="dictionary_details" xml:space="preserve">
+    <value>بيانات المعجم </value>
+  </data>
+  <data name="dictionary_language" xml:space="preserve">
+    <value>لغة المعجم </value>
+  </data>
+  <data name="dictionary_language_required" xml:space="preserve">
+    <value>لغة المعجم مطلوبة</value>
+  </data>
+  <data name="dictionary_title" xml:space="preserve">
+    <value>عنوان المعجم </value>
+  </data>
+  <data name="dictionary_title_original" xml:space="preserve">
+    <value>العنوان الأصلي للمعجم</value>
+  </data>
+  <data name="dictionary_title_required" xml:space="preserve">
+    <value>حقل عنوان المعجم مطلوب.</value>
+  </data>
+  <data name="dic_attach" xml:space="preserve">
+    <value>رفع نسخة المعجم</value>
+  </data>
+  <data name="dic_attach_required" xml:space="preserve">
+    <value>إرفاق المعجم مطلوب.</value>
+  </data>
+  <data name="disagree" xml:space="preserve">
+    <value>غير موافق</value>
+  </data>
+  <data name="discussed_topics_other_than_request" xml:space="preserve">
+    <value>تمت مناقشة الموضوعات الأخرى بخلاف الطلب</value>
+  </data>
+  <data name="discussiondate_required" xml:space="preserve">
+    <value>حقل تاريخ المناقشة مطلوب.</value>
+  </data>
+  <data name="discussion_committeemembers" xml:space="preserve">
+    <value>أعضاء لجنة المناقشة</value>
+  </data>
+  <data name="discussion_committeemembers_required" xml:space="preserve">
+    <value>مطلوب أعضاء لجنة المناقشة.</value>
+  </data>
+  <data name="discussion_date" xml:space="preserve">
+    <value>تاريخ المناقشة</value>
+  </data>
+  <data name="distribution" xml:space="preserve">
+    <value>توزيع</value>
+  </data>
+  <data name="distribution_pending_author_copies_distribution_by_pr" xml:space="preserve">
+    <value>معالجة طلب تسليم نسخ للمؤلف من قبل مدير العلاقات  </value>
+  </data>
+  <data name="distribution_pending_author_copies_distribution_by_pr_submit" xml:space="preserve">
+    <value>معالجة طلب تسليم نسخ للمؤلف من قبل مدير العلاقات</value>
+  </data>
+  <data name="distribution_pending_copies_distribution_by_library_affairs" xml:space="preserve">
+    <value>معالجة طلب التوزيع على الجهات من قبل عميد شؤون المكتبات</value>
+  </data>
+  <data name="distribution_pending_copies_distribution_by_library_affairs_submit" xml:space="preserve">
+    <value>معالجة طلب التوزيع على الجهات من قبل عميد شؤون المكتبات</value>
+  </data>
+  <data name="distribution_pending_distribution_closure" xml:space="preserve">
+    <value>إقفال طلب التوزيع من قبل وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="distribution_pending_distribution_closure_submit" xml:space="preserve">
+    <value>إقفال طلب التوزيع من قبل وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="distribution_pending_distribution_list_approval" xml:space="preserve">
+    <value>بانتظار اعتماد قوائم التوزيع من قبل العميد</value>
+  </data>
+  <data name="distribution_pending_distribution_list_approval_approve" xml:space="preserve">
+    <value> اعتماد قوائم التوزيع من قبل العميد</value>
+  </data>
+  <data name="distribution_pending_distribution_list_preparation" xml:space="preserve">
+    <value>بدء عملية التوزيع بانتظار وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="distribution_pending_distribution_list_preparation_submit" xml:space="preserve">
+    <value>بدء عملية التوزيع</value>
+  </data>
+  <data name="distribution_pending_kfnlcopies_distribution_by_printing_unit" xml:space="preserve">
+    <value>تجهيز تسليم النسخ إلى مكتبة الملك فهد الوطنيةمن قبل وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="distribution_pending_kfnlcopies_distribution_by_printing_unit_submit" xml:space="preserve">
+    <value>تسليم النسخ إلى مكتبة الملك فهد الوطنيةمن قبل وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="done" xml:space="preserve">
+    <value>تم</value>
+  </data>
+  <data name="download" xml:space="preserve">
+    <value>تنزيل</value>
+  </data>
+  <data name="download_attachment" xml:space="preserve">
+    <value>تحميل المرفق</value>
+  </data>
+  <data name="d_c_member" xml:space="preserve">
+    <value>D.C. Member</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="edit_action" xml:space="preserve">
+    <value>تعديل</value>
+  </data>
+  <data name="edit_college" xml:space="preserve">
+    <value>تعديل كلية</value>
+  </data>
+  <data name="edit_department" xml:space="preserve">
+    <value>تعديل إدارة</value>
+  </data>
+  <data name="edit_group" xml:space="preserve">
+    <value>تعديل قسم</value>
+  </data>
+  <data name="edit_major" xml:space="preserve">
+    <value>تعديل تخصص</value>
+  </data>
+  <data name="edit_request" xml:space="preserve">
+    <value>مشاهدة الطلب</value>
+  </data>
+  <data name="edit_template" xml:space="preserve">
+    <value>تعديل النموذج</value>
+  </data>
+  <data name="edit_user" xml:space="preserve">
+    <value>تعديل مستخدم</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="email_confirmation" xml:space="preserve">
+    <value>تأكيد البريد الإلكتروني</value>
+  </data>
+  <data name="email_confirmation_mismatch" xml:space="preserve">
+    <value>تأكيد البريد الإلكتروني لا يطابقه</value>
+  </data>
+  <data name="email_confirmation_required" xml:space="preserve">
+    <value>تأكيد البريد الإلكتروني مطلوب</value>
+  </data>
+  <data name="email_exists" xml:space="preserve">
+    <value>هذا البريد الإلكتروني موجود مسبقًا</value>
+  </data>
+  <data name="email_required" xml:space="preserve">
+    <value>البريد الإلكتروني مطلوب</value>
+  </data>
+  <data name="emergency" xml:space="preserve">
+    <value>اضطرارية</value>
+  </data>
+  <data name="employee_id" xml:space="preserve">
+    <value>الرقم الوظيفي</value>
+  </data>
+  <data name="employer_name" xml:space="preserve">
+    <value>جهة العمل</value>
+  </data>
+  <data name="employer_requerd" xml:space="preserve">
+    <value>حقل جهة العمل مطلوب.</value>
+  </data>
+  <data name="employer_required" xml:space="preserve">
+    <value>حقل جهة العمل مطلوب</value>
+  </data>
+  <data name="encyclopedia" xml:space="preserve">
+    <value>الموسوعة</value>
+  </data>
+  <data name="encyclopedia_agreement" xml:space="preserve">
+    <value>إقرار الموسوعة</value>
+  </data>
+  <data name="encyclopedia_details" xml:space="preserve">
+    <value>تفاصيل الموسوعة</value>
+  </data>
+  <data name="encyclopedia_lang" xml:space="preserve">
+    <value>لغة الموسوعة</value>
+  </data>
+  <data name="encyclopedia_language" xml:space="preserve">
+    <value>لغة الموسوعة</value>
+  </data>
+  <data name="encyclopedia_language_required" xml:space="preserve">
+    <value>لغة الموسوعةمطلوبة.</value>
+  </data>
+  <data name="encyclopedia_major" xml:space="preserve">
+    <value>تخصّص الموسوعة</value>
+  </data>
+  <data name="encyclopedia_original_title" xml:space="preserve">
+    <value>العنوان الأصلي للموسوعة</value>
+  </data>
+  <data name="encyclopedia_title" xml:space="preserve">
+    <value>عنوان الموسوعة:</value>
+  </data>
+  <data name="encyclopedia_title_required" xml:space="preserve">
+    <value>حقل عنوان الموسوعة مطلوب.</value>
+  </data>
+  <data name="evaluation" xml:space="preserve">
+    <value>التقيم</value>
+  </data>
+  <data name="evaluation_required" xml:space="preserve">
+    <value>التقيم مطلوب.</value>
+  </data>
+  <data name="excellent" xml:space="preserve">
+    <value>ممتاز</value>
+  </data>
+  <data name="exceptional" xml:space="preserve">
+    <value>استثنائية</value>
+  </data>
+  <data name="experimentnumber_required" xml:space="preserve">
+    <value>رقم التجربة مطلوب</value>
+  </data>
+  <data name="experimentorder_required" xml:space="preserve">
+    <value>ترتيب التجربة مطلوب</value>
+  </data>
+  <data name="experiment_details" xml:space="preserve">
+    <value>تفاصيل التجربة</value>
+  </data>
+  <data name="experiment_number" xml:space="preserve">
+    <value>رقم التجربة</value>
+  </data>
+  <data name="experiment_order" xml:space="preserve">
+    <value>ترتيب التجربة</value>
+  </data>
+  <data name="experiment_status" xml:space="preserve">
+    <value>حالة التجربة</value>
+  </data>
+  <data name="exp_required" xml:space="preserve">
+    <value>التجربة المطلوبة</value>
+  </data>
+  <data name="faculity" xml:space="preserve">
+    <value>الكلية</value>
+  </data>
+  <data name="faculty_name" xml:space="preserve">
+    <value>اسم الكلية</value>
+  </data>
+  <data name="faculty_required" xml:space="preserve">
+    <value>الكلية مطلوبة.</value>
+  </data>
+  <data name="failed" xml:space="preserve">
+    <value>فشلت العملية</value>
+  </data>
+  <data name="failed_to_generate_sms_code" xml:space="preserve">
+    <value>فشلت عملية إرسال رقم التحقق للجوال</value>
+  </data>
+  <data name="failed_to_send_activation_email" xml:space="preserve">
+    <value>فشلت عملية التسجيل</value>
+  </data>
+  <data name="female" xml:space="preserve">
+    <value>أنثى</value>
+  </data>
+  <data name="field_required" xml:space="preserve">
+    <value>{0} مطلوب</value>
+  </data>
+  <data name="Files" xml:space="preserve">
+    <value>الملفات</value>
+  </data>
+  <data name="file_name" xml:space="preserve">
+    <value>اسم الملف</value>
+  </data>
+  <data name="file_type_pdf_doc" xml:space="preserve">
+    <value>يجب رفع ملف بصيغة PDF أو DOCX</value>
+  </data>
+  <data name="final_authentication" xml:space="preserve">
+    <value>المصادقة النهائية</value>
+  </data>
+  <data name="financial_department_direcor" xml:space="preserve">
+    <value>مدير الإدارة المالية </value>
+  </data>
+  <data name="financial_report" xml:space="preserve">
+    <value>التقرير المالي</value>
+  </data>
+  <data name="first_st_arbitrator" xml:space="preserve">
+    <value>الفاحص المبدئي</value>
+  </data>
+  <data name="following_publication_requests" xml:space="preserve">
+    <value>طلبات النشر التالية</value>
+  </data>
+  <data name="footer" xml:space="preserve">
+    <value>نظام النشر العلمي 2017 - جميع الحقوق محفوظة</value>
+  </data>
+  <data name="force_password_change" xml:space="preserve">
+    <value>إلزام المستخدم بتغيير كلمة المرور</value>
+  </data>
+  <data name="forgot_password" xml:space="preserve">
+    <value>هل فقدت كلمة المرور؟</value>
+  </data>
+  <data name="forward" xml:space="preserve">
+    <value>إرسال </value>
+  </data>
+  <data name="forward_toInitial_referee" xml:space="preserve">
+    <value>إعادة توجيه الى المحكم </value>
+  </data>
+  <data name="forward_to_academic_council_head" xml:space="preserve">
+    <value>إرسال الى رئيس المجلس العلمي </value>
+  </data>
+  <data name="forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>إحالة لعميد البحث العلمي</value>
+  </data>
+  <data name="forward_to_paecommittee_head" xml:space="preserve">
+    <value>إرسال إلى رئيس لجنة النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="forward_to_press_oficer" xml:space="preserve">
+    <value>اعادة ارسال لموظف المطابع</value>
+  </data>
+  <data name="forward_to_proofreader" xml:space="preserve">
+    <value>اعادة ارسال للمصحح</value>
+  </data>
+  <data name="forward_to_research_council" xml:space="preserve">
+    <value>إعادة لوحة البحوث</value>
+  </data>
+  <data name="forward_to_research_unit_head" xml:space="preserve">
+    <value>إرسال الى رئيس وحدة البحوث</value>
+  </data>
+  <data name="forward_to_research_unit_secretary" xml:space="preserve">
+    <value>إعادة ارسال لأمين وحدة البحوث</value>
+  </data>
+  <data name="forward_to_spare_referee" xml:space="preserve">
+    <value>إعادة إرسال للمحكم الإحتياطي</value>
+  </data>
+  <data name="forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>إعادة توجيه إلى وكيل عمادة النشر العلمي </value>
+  </data>
+  <data name="from" xml:space="preserve">
+    <value>من</value>
+  </data>
+  <data name="fullname" xml:space="preserve">
+    <value>الاسم الكامل</value>
+  </data>
+  <data name="fullname_required" xml:space="preserve">
+    <value>الاسم مطلوب.</value>
+  </data>
+  <data name="gender" xml:space="preserve">
+    <value>الجنس</value>
+  </data>
+  <data name="good" xml:space="preserve">
+    <value>جيد</value>
+  </data>
+  <data name="governmental" xml:space="preserve">
+    <value>حكومي</value>
+  </data>
+  <data name="gpa" xml:space="preserve">
+    <value>التقدير</value>
+  </data>
+  <data name="gpa_required" xml:space="preserve">
+    <value>حقل التقدير مطلوب.</value>
+  </data>
+  <data name="gregorian" xml:space="preserve">
+    <value>ميلادي</value>
+  </data>
+  <data name="group" xml:space="preserve">
+    <value>القسم</value>
+  </data>
+  <data name="groups" xml:space="preserve">
+    <value>الأقسام</value>
+  </data>
+  <data name="group_created_successfully" xml:space="preserve">
+    <value>تم إنشاء القسم بنجاح</value>
+  </data>
+  <data name="group_creation_failed" xml:space="preserve">
+    <value>فشل إنشاء القسم </value>
+  </data>
+  <data name="group_deleted_successfully" xml:space="preserve">
+    <value>تم حذف القسم بنجاح</value>
+  </data>
+  <data name="group_delete_failed" xml:space="preserve">
+    <value>فشل حذف القسم</value>
+  </data>
+  <data name="group_must_be_unique" xml:space="preserve">
+    <value>اسم القسم موجود</value>
+  </data>
+  <data name="group_name" xml:space="preserve">
+    <value>اسم القسم</value>
+  </data>
+  <data name="group_not_found" xml:space="preserve">
+    <value>لم يتم العثور على القسم المطلوبة</value>
+  </data>
+  <data name="group_updated_successfully" xml:space="preserve">
+    <value>تم تحديث القسم بنجاح</value>
+  </data>
+  <data name="group_update_failed" xml:space="preserve">
+    <value>فشل تحديث القسم </value>
+  </data>
+  <data name="handbook" xml:space="preserve">
+    <value>كتيب</value>
+  </data>
+  <data name="HandbookRequestsIsArabic" xml:space="preserve">
+    <value>هل الكتيب باللغة العربية ؟ </value>
+  </data>
+  <data name="HandbookRequestsIsTranslated" xml:space="preserve">
+    <value>هل الكتيب مترجم للغة العربية ؟ </value>
+  </data>
+  <data name="handbook_agreement" xml:space="preserve">
+    <value>إقرار الكتيب </value>
+  </data>
+  <data name="handBook_attachments" xml:space="preserve">
+    <value>رفع صورة من الكتيب</value>
+  </data>
+  <data name="handBook_attachments_required" xml:space="preserve">
+    <value>إرفاق نسخة من الكتيب مطلوب.</value>
+  </data>
+  <data name="handbook_details" xml:space="preserve">
+    <value>تفاصيل الكتيب</value>
+  </data>
+  <data name="handbook_lang" xml:space="preserve">
+    <value>لغة الكتيب</value>
+  </data>
+  <data name="handbook_language" xml:space="preserve">
+    <value>لغة الكتيب</value>
+  </data>
+  <data name="handbook_language_required" xml:space="preserve">
+    <value>لغة الكتيب مطلوبة.</value>
+  </data>
+  <data name="handBook_title" xml:space="preserve">
+    <value>عنوان الكتيب</value>
+  </data>
+  <data name="handbook_title_required" xml:space="preserve">
+    <value>حقل عنوان الكتيب مطلوب.</value>
+  </data>
+  <data name="handbook_type" xml:space="preserve">
+    <value>نوع الكتيب</value>
+  </data>
+  <data name="handbook_type_required" xml:space="preserve">
+    <value>نوع الكتيب مطلوب.</value>
+  </data>
+  <data name="hand_book" xml:space="preserve">
+    <value>كتيب</value>
+  </data>
+  <data name="hand_book_detail" xml:space="preserve">
+    <value>بيانات كتيب مرشح للنشر</value>
+  </data>
+  <data name="hijri" xml:space="preserve">
+    <value>هجري</value>
+  </data>
+  <data name="history" xml:space="preserve">
+    <value>الأرشيف</value>
+  </data>
+  <data name="history_accept" xml:space="preserve">
+    <value>تمت الموافقة</value>
+  </data>
+  <data name="history_accept_with_comments" xml:space="preserve">
+    <value>تمت الموافقة مع تعديلات</value>
+  </data>
+  <data name="history_approve" xml:space="preserve">
+    <value>تمت الموافقة</value>
+  </data>
+  <data name="history_approve_and_and_forard_to_dean_of_academic_research" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى عميد البحث العلمي</value>
+  </data>
+  <data name="history_approve_and_forward_to_academic_council" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى المجلس العلمي</value>
+  </data>
+  <data name="history_approve_and_forward_to_accountant" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى المحاسب</value>
+  </data>
+  <data name="history_approve_and_forward_to_deanship_of_library_affairs" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى عميد شؤون المكتبات</value>
+  </data>
+  <data name="history_approve_and_forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى عميد  البحث العلمي</value>
+  </data>
+  <data name="history_approve_and_forward_to_fiancial_department_director" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى مدير الإدارة المالية</value>
+  </data>
+  <data name="history_approve_and_forward_to_research_unit_head" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى رئيس وحدة البحوث</value>
+  </data>
+  <data name="history_approve_and_forward_to_university_press_director" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى مدير مطابع الجامعة</value>
+  </data>
+  <data name="history_approve_and_forward_to_unversity_rector" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى مدير الجامعة</value>
+  </data>
+  <data name="history_approve_and_forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>تمت الموافقة والإرسال إلى وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="history_approve_and_return_to_paecommitee" xml:space="preserve">
+    <value>تمت الموافقة والإعادة إلى لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="history_approve_approval" xml:space="preserve">
+    <value>تم الاعتماد</value>
+  </data>
+  <data name="history_approve_approval_and_forward_to_university_rector" xml:space="preserve">
+    <value>تم اعتماد الموافقة والإرسال إلى مدير الجامعة</value>
+  </data>
+  <data name="history_approve_modifications" xml:space="preserve">
+    <value>تمت الموافقة على تعديلات الباحث</value>
+  </data>
+  <data name="history_approve_rejection" xml:space="preserve">
+    <value>تم اعتماد الرفض</value>
+  </data>
+  <data name="history_approve_rejection_and_forward_to_university_rector" xml:space="preserve">
+    <value>تم اعتماد الرفض والإرسال إلى مدير الجامعة</value>
+  </data>
+  <data name="history_approve_with_comments" xml:space="preserve">
+    <value>تمت الموافقة مع تعديلات</value>
+  </data>
+  <data name="history_approve_with_comments_and_forward_to_academic_council" xml:space="preserve">
+    <value>تمت الموافقة مع تعديلات، والإرسال إلى المجلس العلمي</value>
+  </data>
+  <data name="history_approve_with_no_referees" xml:space="preserve">
+    <value>تمت الموافقة بدون تحكيم</value>
+  </data>
+  <data name="history_cancel" xml:space="preserve">
+    <value>تم الإلغاء</value>
+  </data>
+  <data name="history_canceled" xml:space="preserve">
+    <value>تم الإلغاء</value>
+  </data>
+  <data name="history_certify_and_forward_to_university_press_officer" xml:space="preserve">
+    <value>تمت المصادقة، والإرسال إلى موظف مطابع الجامعة</value>
+  </data>
+  <data name="history_close_request" xml:space="preserve">
+    <value>تم إغلاق الطلب</value>
+  </data>
+  <data name="history_confirm_delivering_copies_to_agencies" xml:space="preserve">
+    <value>تم تأكيد استلام النسخ لجهات التوزيع</value>
+  </data>
+  <data name="history_confirm_delivering_copies_to_kfnl" xml:space="preserve">
+    <value>تم تأكيد استلام نسخ الكتاب من قِبل مكتبة الملك فهد الوطنية</value>
+  </data>
+  <data name="history_confirm_delivering_copies_to_resaercher" xml:space="preserve">
+    <value>تم تأكيد استلام نسخ الكتاب من قِبل الباحث</value>
+  </data>
+  <data name="history_confirm_receival_of_copies" xml:space="preserve">
+    <value>تم تأكيد استلام نسخ الكتاب</value>
+  </data>
+  <data name="history_forward" xml:space="preserve">
+    <value>تم الإرسال </value>
+  </data>
+  <data name="history_forward_to_academic_council" xml:space="preserve">
+    <value>تم الإرسال إلى المجلس العلمي</value>
+  </data>
+  <data name="history_forward_to_academic_council_head" xml:space="preserve">
+    <value>تم الإرسال إلى رئيس المجلس العلمي</value>
+  </data>
+  <data name="history_forward_to_deanship_of_academic_research_commitee_members" xml:space="preserve">
+    <value>تمت الإرسال إلى مجلس عمادة البحث العلمي</value>
+  </data>
+  <data name="history_forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>تم الإرسال إلى عميد البحث العلمي</value>
+  </data>
+  <data name="history_forward_to_initial_referee" xml:space="preserve">
+    <value>إرسال إلى المحكم المبدئي</value>
+  </data>
+  <data name="history_forward_to_kfnl" xml:space="preserve">
+    <value>تم الإرسال إلى مكتبة الملك فهد الوطنية</value>
+  </data>
+  <data name="history_forward_to_main_referees" xml:space="preserve">
+    <value>تم الإرسال إلى المحكمين الأساسيين</value>
+  </data>
+  <data name="history_forward_to_paecommittee_head" xml:space="preserve">
+    <value>تم الإرسال إلى رئيس لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="history_forward_to_press_oficer" xml:space="preserve">
+    <value>تم الإرسال إلى موظف مطابع الجامعة</value>
+  </data>
+  <data name="history_forward_to_proofreader" xml:space="preserve">
+    <value>تم الإرسال إلى المصحح</value>
+  </data>
+  <data name="history_forward_to_referees" xml:space="preserve">
+    <value>تم الإرسال إلى المحكمين </value>
+  </data>
+  <data name="history_forward_to_researcher" xml:space="preserve">
+    <value>تم الإرسال إلى الباحث</value>
+  </data>
+  <data name="history_forward_to_research_unit_head" xml:space="preserve">
+    <value>تم الإرسال إلى رئيس وحدة البحوث</value>
+  </data>
+  <data name="history_forward_to_research_unit_secretary" xml:space="preserve">
+    <value>تم الإرسال إلى أمين وحدة البحوث</value>
+  </data>
+  <data name="history_forward_to_spare_referee" xml:space="preserve">
+    <value>تم الإرسال إلى المحكم الاحتياطي</value>
+  </data>
+  <data name="history_forward_to_university_press_director" xml:space="preserve">
+    <value>تم الإرسال إلى مدير مطابع الجامعة</value>
+  </data>
+  <data name="history_forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>تم الإرسال إلى وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="history_operation_command_executed_and_forward_to_puap" xml:space="preserve">
+    <value>تم تنفيذ أمر التشغيل، والإرسال إلى موظف وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="history_payment_completed" xml:space="preserve">
+    <value>تم صرف المكافأة</value>
+  </data>
+  <data name="history_prepare_distribution_list" xml:space="preserve">
+    <value>تم إعداد قائمة التوزيع للكتاب</value>
+  </data>
+  <data name="history_printing_completed" xml:space="preserve">
+    <value>تمت الطباعة</value>
+  </data>
+  <data name="history_provide_feedback" xml:space="preserve">
+    <value>تم إبداء الرأي</value>
+  </data>
+  <data name="history_publish" xml:space="preserve">
+    <value>تم النشر</value>
+  </data>
+  <data name="history_reject" xml:space="preserve">
+    <value>تم الرفض</value>
+  </data>
+  <data name="history_reject_and_forward_to_academic_council" xml:space="preserve">
+    <value>تم الرفض والإرسال إلى المجلس العلمي</value>
+  </data>
+  <data name="history_reject_and_forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>تم الرفض والإرسال إلى عميد البحث العلمي</value>
+  </data>
+  <data name="history_reject_and_forward_to_university_rector" xml:space="preserve">
+    <value>تم الرفض والإرسال إلى مدير الجامعة</value>
+  </data>
+  <data name="history_reject_and_forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>تم الرفض والإرسال إلى وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="history_reject_and_return_to_dean_of_academic_research" xml:space="preserve">
+    <value>تم الرفض والإعادة إلى عميد البحث العلمي</value>
+  </data>
+  <data name="history_reject_and_return_to_officer_of_printing_unit" xml:space="preserve">
+    <value>تم الرفض والإعادة إلى موظف وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="history_reject_and_return_to_paecommitee" xml:space="preserve">
+    <value>تم الرفض والإعادة إلى لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="history_reject_and_return_to_puap" xml:space="preserve">
+    <value>تم الرفض والإعادة إلى موظف وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="history_reject_and_return_to_researcher" xml:space="preserve">
+    <value>تم الرفض والإعادة إلى الباحث</value>
+  </data>
+  <data name="history_reject_and_return_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>تم الرفض والإعادة إلى وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="history_reject_modifications" xml:space="preserve">
+    <value>تم رفض تعديلات الباحث</value>
+  </data>
+  <data name="history_resend_to_referees" xml:space="preserve">
+    <value>تم إعادة الإرسال للمحكمين</value>
+  </data>
+  <data name="history_resubmit" xml:space="preserve">
+    <value>تمت إعادة الإرسال</value>
+  </data>
+  <data name="history_resubmit_and_forward_to_paecommitee" xml:space="preserve">
+    <value>تم إعادة الإرسال إلى لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="history_resubmit_and_return_to_coresearchers" xml:space="preserve">
+    <value>تم إعادة الإرسال للمشاركين في المادة العلمية</value>
+  </data>
+  <data name="history_return_to_academdic_council" xml:space="preserve">
+    <value>تم الإعادة إلى المجلس العلمي</value>
+  </data>
+  <data name="history_return_to_academdic_council_secretary" xml:space="preserve">
+    <value>تم الإعادة إلى أمين المجلس العلمي</value>
+  </data>
+  <data name="history_return_to_deanship_of_academic_research" xml:space="preserve">
+    <value>تمت الإعادة إلى عميد البحث العلمي</value>
+  </data>
+  <data name="history_return_to_deanship_of_library_affairs" xml:space="preserve">
+    <value>تمت الإعادة إلى عميد شؤون المكتبات</value>
+  </data>
+  <data name="history_return_to_kfnlofficer" xml:space="preserve">
+    <value>تمت الإعادة إلى موظف مكتبة الملك فهد الوطنية</value>
+  </data>
+  <data name="history_return_to_officer_of_printing_unit" xml:space="preserve">
+    <value>تم الإعادة إلى موظف وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="history_return_to_paecommittee" xml:space="preserve">
+    <value>تم الإعادة إلى لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="history_return_to_paecommittee_secretary" xml:space="preserve">
+    <value>تم الإعادة إلى أمين لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="history_return_to_proofreader" xml:space="preserve">
+    <value>تم الإعادة إلى المصحح</value>
+  </data>
+  <data name="history_return_to_puap" xml:space="preserve">
+    <value>تم الإعادة إلى موظف وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="history_return_to_researcher" xml:space="preserve">
+    <value>إعادة للباحث</value>
+  </data>
+  <data name="history_return_to_research_unit_head" xml:space="preserve">
+    <value>إعادة إلى رئيس وحدة البحوث</value>
+  </data>
+  <data name="history_return_to_research_unit_secretary" xml:space="preserve">
+    <value>تمت الإعادة إلى أمين وحدة البحوث</value>
+  </data>
+  <data name="history_return_to_university_press_director" xml:space="preserve">
+    <value>تم الإعادة إلى مدير مطابع الجامعة</value>
+  </data>
+  <data name="history_return_to_university_press_officer" xml:space="preserve">
+    <value>تم الإعادة إلى موظف مطابع الجامعة</value>
+  </data>
+  <data name="history_return_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>إعادة إلى وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="history_select_referees" xml:space="preserve">
+    <value>تم اختيار محكمين</value>
+  </data>
+  <data name="history_send_to_commitee_members" xml:space="preserve">
+    <value>تم الإرسال إلى أعضاء اللجنة</value>
+  </data>
+  <data name="history_submit" xml:space="preserve">
+    <value>تم الإرسال </value>
+  </data>
+  <data name="history_submit_coresearcher_data" xml:space="preserve">
+    <value>طلب النشر بانتظار </value>
+  </data>
+  <data name="history_submit_isbnrequest_to_kfnl" xml:space="preserve">
+    <value>تم إرسال طلب الردمك إلى مكتبة الملك الفهد الوطنية</value>
+  </data>
+  <data name="history_submit_isbnto_imam_university" xml:space="preserve">
+    <value>تم إرسال الردمك إلى جامعة الإمام محمد بن سعود الإسلامية</value>
+  </data>
+  <data name="history_submit_operation_command_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>تم إرسال أمر التشغيل إلى وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="history_submit_to_press_officer" xml:space="preserve">
+    <value>تم الإرسال إلى موظف مطابع الجامعة</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="homepage" xml:space="preserve">
+    <value>الصفحة الرئيسة</value>
+  </data>
+  <data name="iban" xml:space="preserve">
+    <value>رقم الايبان</value>
+  </data>
+  <data name="iban_required" xml:space="preserve">
+    <value>رقم IBAN مطلوب</value>
+  </data>
+  <data name="inbox" xml:space="preserve">
+    <value>صندوق الوارد</value>
+  </data>
+  <data name="international" xml:space="preserve">
+    <value>دولي</value>
+  </data>
+  <data name="international_bank_account_details" xml:space="preserve">
+    <value>تفاصيل البنك الدولي</value>
+  </data>
+  <data name="Invalidkey" xml:space="preserve">
+    <value>الرمز غير صالح</value>
+  </data>
+  <data name="InvalidLink" xml:space="preserve">
+    <value>الرابط غير صحيح</value>
+  </data>
+  <data name="invalid_credentials" xml:space="preserve">
+    <value>بيانات الدخول غير صحيحة</value>
+  </data>
+  <data name="invalid_email" xml:space="preserve">
+    <value>البريد الإلكتروني غير صحيح</value>
+  </data>
+  <data name="invalid_iban" xml:space="preserve">
+    <value>رقم IBAN غير صالح</value>
+  </data>
+  <data name="invalid_mobile_number" xml:space="preserve">
+    <value>رقم الجوال غير صالح</value>
+  </data>
+  <data name="invalid_national_id" xml:space="preserve">
+    <value>رقم الهوية غير صحيح</value>
+  </data>
+  <data name="invalid_return_user" xml:space="preserve">
+    <value>لم يتم اختيار الشخص المحول له</value>
+  </data>
+  <data name="invite_referee" xml:space="preserve">
+    <value> رسالة دعوة لتحكيم مادة علمية</value>
+  </data>
+  <data name="invite_referee_sms" xml:space="preserve">
+    <value>رسالة دعوة لتحكيم مادة علمية عبر رسائل الجوال </value>
+  </data>
+  <data name="is_language_arabic" xml:space="preserve">
+    <value>هل لغة المادة العلمية عربية؟</value>
+  </data>
+  <data name="is_published_before" xml:space="preserve">
+    <value>هل تم نشر المادة العلمية من قبل؟</value>
+  </data>
+  <data name="is_the_material" xml:space="preserve">
+    <value>هل المادة العلمية جزء من إنتاج علمي</value>
+  </data>
+  <data name="is_translated" xml:space="preserve">
+    <value>هل المادة العلمية مترجمة؟</value>
+  </data>
+  <data name="job_name" xml:space="preserve">
+    <value>الوظيفة</value>
+  </data>
+  <data name="job_title" xml:space="preserve">
+    <value>المسمى الوظيفي</value>
+  </data>
+  <data name="judgement_committee_meetings" xml:space="preserve">
+    <value>محاضر اجتماعات لجنة التحكيم</value>
+  </data>
+  <data name="judgement_commity_meeting_list" xml:space="preserve">
+    <value>قوائم اجتماع لجنةالتحكيم</value>
+  </data>
+  <data name="keep_me_signed_in" xml:space="preserve">
+    <value>البقاء لفترة أطول</value>
+  </data>
+  <data name="king_fahad_national_library_officer" xml:space="preserve">
+    <value>موظف مكتبة الملك فهد الوطنية</value>
+  </data>
+  <data name="lang" xml:space="preserve">
+    <value>ar</value>
+  </data>
+  <data name="language_name" xml:space="preserve">
+    <value>اسم اللغة</value>
+  </data>
+  <data name="lang_code" xml:space="preserve">
+    <value>ar</value>
+  </data>
+  <data name="last_meetings" xml:space="preserve">
+    <value>الاجتماعات الأخيرة</value>
+  </data>
+  <data name="last_updated" xml:space="preserve">
+    <value>آخر تحديث</value>
+  </data>
+  <data name="lecturer_of_deanship_of_scientific_research" xml:space="preserve">
+    <value>محاضر عمادة البحث العلمي</value>
+  </data>
+  <data name="lecturer_of_scientific_council" xml:space="preserve">
+    <value>محاضر المجلس العلمي</value>
+  </data>
+  <data name="LinkisAlreadyused" xml:space="preserve">
+    <value>الرابط مستخدم مسبقا</value>
+  </data>
+  <data name="list" xml:space="preserve">
+    <value>قائمة</value>
+  </data>
+  <data name="loan" xml:space="preserve">
+    <value>سلفة</value>
+  </data>
+  <data name="loan_amount" xml:space="preserve">
+    <value>قيمة السلفة</value>
+  </data>
+  <data name="local" xml:space="preserve">
+    <value>محلي</value>
+  </data>
+  <data name="localbank_account_details" xml:space="preserve">
+    <value>تفاصيل البنك المحلي</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>تسجيل الدخول</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="main_page" xml:space="preserve">
+    <value>الشاشة الرئيسية</value>
+  </data>
+  <data name="major" xml:space="preserve">
+    <value>التخصص</value>
+  </data>
+  <data name="majorauthor_required" xml:space="preserve">
+    <value>حقل تخصص المؤلف مطلوب</value>
+  </data>
+  <data name="majorof_dictionary" xml:space="preserve">
+    <value>تخصص المعجم</value>
+  </data>
+  <data name="majorof_encyclopedia" xml:space="preserve">
+    <value>تخصص الموسوعة</value>
+  </data>
+  <data name="majorof_theAuthor_dic" xml:space="preserve">
+    <value>تخصص المؤلف</value>
+  </data>
+  <data name="majors" xml:space="preserve">
+    <value>التخصصات</value>
+  </data>
+  <data name="major_created_successfully" xml:space="preserve">
+    <value>تم إنشاء التخصص</value>
+  </data>
+  <data name="major_creation_failed" xml:space="preserve">
+    <value>فشل إنشاء التخصص</value>
+  </data>
+  <data name="major_deleted_successfully" xml:space="preserve">
+    <value>تم حذف التخصص</value>
+  </data>
+  <data name="major_delete_failed" xml:space="preserve">
+    <value>فشل حذف التخصص</value>
+  </data>
+  <data name="major_dictionary_required" xml:space="preserve">
+    <value>حقل تخصص المعجم مطلوب.</value>
+  </data>
+  <data name="major_encyclopedia_required" xml:space="preserve">
+    <value>حقل تخصّص الموسوعة مطلوب.</value>
+  </data>
+  <data name="major_must_be_unique" xml:space="preserve">
+    <value>اسم التخصص موجود</value>
+  </data>
+  <data name="major_name" xml:space="preserve">
+    <value>اسم التخصص</value>
+  </data>
+  <data name="major_not_found" xml:space="preserve">
+    <value>لم يتم العثور على التخصص</value>
+  </data>
+  <data name="major_ofthe_author" xml:space="preserve">
+    <value>تخصص المؤلف</value>
+  </data>
+  <data name="major_required" xml:space="preserve">
+    <value>التخصص مطلوب</value>
+  </data>
+  <data name="major_updated_successfully" xml:space="preserve">
+    <value>تم تحديث التخصص</value>
+  </data>
+  <data name="major_update_failed" xml:space="preserve">
+    <value>فشل تحديث التخصص</value>
+  </data>
+  <data name="male" xml:space="preserve">
+    <value>ذكر</value>
+  </data>
+  <data name="manu_script" xml:space="preserve">
+    <value>مخطوط</value>
+  </data>
+  <data name="master" xml:space="preserve">
+    <value>ماجستير</value>
+  </data>
+  <data name="meeting" xml:space="preserve">
+    <value>اجتماع</value>
+  </data>
+  <data name="meetingsofthe_committee" xml:space="preserve">
+    <value>اجتماعات اللجنة</value>
+  </data>
+  <data name="meeting_date" xml:space="preserve">
+    <value>تاريخ الإجتماع</value>
+  </data>
+  <data name="meeting_day" xml:space="preserve">
+    <value>اليوم</value>
+  </data>
+  <data name="meeting_head_name" xml:space="preserve">
+    <value>اسم رئيس الإجتماع</value>
+  </data>
+  <data name="meeting_id" xml:space="preserve">
+    <value>رقم الاجتماع</value>
+  </data>
+  <data name="meeting_place" xml:space="preserve">
+    <value>مكان الإجتماع </value>
+  </data>
+  <data name="meeting_proceedings" xml:space="preserve">
+    <value>وقائع الإجتماع</value>
+  </data>
+  <data name="meeting_requests" xml:space="preserve">
+    <value>طلبات الاجتماع</value>
+  </data>
+  <data name="meeting_room" xml:space="preserve">
+    <value>قاعة الاجتماعات</value>
+  </data>
+  <data name="meeting_schedule" xml:space="preserve">
+    <value>جدول اعمال الاجتماع</value>
+  </data>
+  <data name="meeting_session_id" xml:space="preserve">
+    <value>رقم جلسة الاجتماع</value>
+  </data>
+  <data name="meeting_time" xml:space="preserve">
+    <value>الساعة</value>
+  </data>
+  <data name="meeting_topics" xml:space="preserve">
+    <value>موضوعات الاجتماع</value>
+  </data>
+  <data name="member_name" xml:space="preserve">
+    <value>اسم العضو</value>
+  </data>
+  <data name="member_opinion" xml:space="preserve">
+    <value>رأي العضو</value>
+  </data>
+  <data name="minutes_of_meeting" xml:space="preserve">
+    <value>محضر الاجتماع</value>
+  </data>
+  <data name="minutes_Of_meeting_List" xml:space="preserve">
+    <value>محاضر من قائمة الاجتماعات</value>
+  </data>
+  <data name="minutes_of_meeting_Status" xml:space="preserve">
+    <value>محضر اجتماع الحالة</value>
+  </data>
+  <data name="mobile" xml:space="preserve">
+    <value>رقم الجوال</value>
+  </data>
+  <data name="mobile_no_required" xml:space="preserve">
+    <value>رقم الجوال مطلوب</value>
+  </data>
+  <data name="mobile_number_required" xml:space="preserve">
+    <value>حقل رقم الجوال مطلوب</value>
+  </data>
+  <data name="mobile_required" xml:space="preserve">
+    <value>رقم الجوال مطلوب.</value>
+  </data>
+  <data name="modification_requests" xml:space="preserve">
+    <value>طلبات التعديل</value>
+  </data>
+  <data name="more_e" xml:space="preserve">
+    <value>المزيد</value>
+  </data>
+  <data name="must_be_unique" xml:space="preserve">
+    <value>يجب أن يكون فريدا</value>
+  </data>
+  <data name="must_enter_file_names_for_all_files" xml:space="preserve">
+    <value>يجب إدخال أسماء الملفات لجميع الملفات</value>
+  </data>
+  <data name="must_enter_page_numbers_for_all_files" xml:space="preserve">
+    <value>يجب إدخال أرقام الصفحات لجميع الملفات</value>
+  </data>
+  <data name="must_select_an_action" xml:space="preserve">
+    <value>يجب تحديد حالة الطلب</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="name_arabic" xml:space="preserve">
+    <value>الاسم بالعربية</value>
+  </data>
+  <data name="name_arabic_required" xml:space="preserve">
+    <value>حقل الاسم العربي مطلوب</value>
+  </data>
+  <data name="name_english" xml:space="preserve">
+    <value>الاسم بالإنجليزية</value>
+  </data>
+  <data name="name_english_required" xml:space="preserve">
+    <value>حقل الاسم الإنجليزي مطلوب</value>
+  </data>
+  <data name="name_required" xml:space="preserve">
+    <value>الاسم مطلوب</value>
+  </data>
+  <data name="nationality" xml:space="preserve">
+    <value>الجنسية</value>
+  </data>
+  <data name="nationality_required" xml:space="preserve">
+    <value>حقل الجنسية مطلوب.</value>
+  </data>
+  <data name="national_id" xml:space="preserve">
+    <value>رقم الهوية</value>
+  </data>
+  <data name="national_id_required" xml:space="preserve">
+    <value>رقم الهوية مطلوب</value>
+  </data>
+  <data name="newpublish" xml:space="preserve">
+    <value>نشر جديد</value>
+  </data>
+  <data name="new_attachments" xml:space="preserve">
+    <value>إرفاق</value>
+  </data>
+  <data name="new_employment_request" xml:space="preserve">
+    <value>طلب توظيف</value>
+  </data>
+  <data name="new_insurance_request" xml:space="preserve">
+    <value>طلب تأمين صحي</value>
+  </data>
+  <data name="new_loan_request" xml:space="preserve">
+    <value>طلب سلفة</value>
+  </data>
+  <data name="new_publish" xml:space="preserve">
+    <value>نشر جديد</value>
+  </data>
+  <data name="new_publish_request" xml:space="preserve">
+    <value>طلب نشر</value>
+  </data>
+  <data name="new_republish_request" xml:space="preserve">
+    <value>طلب إعادة نشر</value>
+  </data>
+  <data name="new_request" xml:space="preserve">
+    <value>طلب جديد</value>
+  </data>
+  <data name="new_resignation_request" xml:space="preserve">
+    <value>طلب استقالة</value>
+  </data>
+  <data name="new_user" xml:space="preserve">
+    <value>مستخدم جديد</value>
+  </data>
+  <data name="new_user_email_activation" xml:space="preserve">
+    <value>رسالة تفعيل البريد الإلكتروني لمستخدم جديد</value>
+  </data>
+  <data name="new_user_sms_activation" xml:space="preserve">
+    <value>رسالة تفعيل المستخدم  عن طريق رسالة جوال </value>
+  </data>
+  <data name="new_vacation_request" xml:space="preserve">
+    <value>طلب إجازة</value>
+  </data>
+  <data name="new_vehicle_request" xml:space="preserve">
+    <value>طلب تصريح دخول مؤقت</value>
+  </data>
+  <data name="next_book" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="next_btn" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="no" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>لايوجد</value>
+  </data>
+  <data name="non_official_email_requires_approval" xml:space="preserve">
+    <value>يلزم الحصول على موافقة لاستخدام معرف بريد إلكتروني غير رسمي بينما يريد الباحث التسجيل.</value>
+  </data>
+  <data name="notification" xml:space="preserve">
+    <value>إشعار</value>
+  </data>
+  <data name="notifications_you_have" xml:space="preserve">
+    <value>لديك:</value>
+  </data>
+  <data name="notification_aproval_afterrfree" xml:space="preserve">
+    <value>عزيزي الباحث نفيدكم بأنه تم تحكيم طلبكم الخاص بكم</value>
+  </data>
+  <data name="Notification_aproval_manager" xml:space="preserve">
+    <value>عزيزي الباحث نفيدكم بأنه تم الموافقة على طلبكم من قبل مدير الجامعة</value>
+  </data>
+  <data name="notification_on_final_approval" xml:space="preserve">
+    <value>تنبيه على الحصول على الموافقة النهائية</value>
+  </data>
+  <data name="notification_on_final_rejection" xml:space="preserve">
+    <value>تنبيه  بأن طلبك قد تم رفضه رقم الطلب</value>
+  </data>
+  <data name="Notification_refree_notificcation" xml:space="preserve">
+    <value>عزيزي المحكم نفيدكم بأنه تم ارسال لكم طلب تحكيم</value>
+  </data>
+  <data name="notification_requests_loan" xml:space="preserve">
+    <value>طلب سلفة</value>
+  </data>
+  <data name="notification_requests_publishrequest" xml:space="preserve">
+    <value>طلب نشر</value>
+  </data>
+  <data name="notification_requests_republishrequest" xml:space="preserve">
+    <value>طلب إعادة نشر</value>
+  </data>
+  <data name="notification_requests_vacation" xml:space="preserve">
+    <value>طلب إجازة</value>
+  </data>
+  <data name="not_submitted" xml:space="preserve">
+    <value>لم يتم الإرسال</value>
+  </data>
+  <data name="not_submitted_unspecified" xml:space="preserve">
+    <value>لم يتم تقديم الطلب-غير محدد</value>
+  </data>
+  <data name="no_account" xml:space="preserve">
+    <value>لا</value>
+  </data>
+  <data name="no_colleges" xml:space="preserve">
+    <value>لا توجد كليات</value>
+  </data>
+  <data name="no_departments" xml:space="preserve">
+    <value>لا توجد أقسام حاليًا</value>
+  </data>
+  <data name="no_groups" xml:space="preserve">
+    <value>لا توجد أقسام حاليًا</value>
+  </data>
+  <data name="no_majors" xml:space="preserve">
+    <value>لا توجد تخصصات</value>
+  </data>
+  <data name="no_of_pages" xml:space="preserve">
+    <value>عدد الصفحات</value>
+  </data>
+  <data name="no_of_parts" xml:space="preserve">
+    <value>عدد الاجزاء</value>
+  </data>
+  <data name="no_partcipants" xml:space="preserve">
+    <value>(لا يوجد مشاركين)</value>
+  </data>
+  <data name="no_referees" xml:space="preserve">
+    <value>لا يوجد محكمين في قاعدة البيانات حاليًا</value>
+  </data>
+  <data name="no_results" xml:space="preserve">
+    <value>لا توجد نتائج</value>
+  </data>
+  <data name="no_users" xml:space="preserve">
+    <value>لا يوجد مستخدمون</value>
+  </data>
+  <data name="num" xml:space="preserve">
+    <value>الرقم</value>
+  </data>
+  <data name="number_of_participants" xml:space="preserve">
+    <value>عدد المشاركين في المادة العلمية</value>
+  </data>
+  <data name="number_of_votes" xml:space="preserve">
+    <value>عدد الأصوات</value>
+  </data>
+  <data name="officer_of_printing_unit" xml:space="preserve">
+    <value>أمين وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="operation_command" xml:space="preserve">
+    <value>أمر التشغيل</value>
+  </data>
+  <data name="operation_command_pending_isbnrequest_submission" xml:space="preserve">
+    <value>إرسال رقم الردمك من قبل وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="operation_command_pending_isbnrequest_submission_submit" xml:space="preserve">
+    <value>إرسال طلب الردمك لمكتبة الملك فهد الوطنية</value>
+  </data>
+  <data name="operation_command_pending_operation_command_approval" xml:space="preserve">
+    <value>بانتظار الموافقة على امر التشغيل من قبل عميد البحث العلمي </value>
+  </data>
+  <data name="operation_command_pending_operation_command_approval_approve" xml:space="preserve">
+    <value>موافقة على امر التشغيل </value>
+  </data>
+  <data name="operation_command_pending_operation_command_execution" xml:space="preserve">
+    <value>تنفيذ أمر التشغيل من قبل موظف مطابع الجامعة </value>
+  </data>
+  <data name="operation_command_pending_operation_command_execution_submit" xml:space="preserve">
+    <value>تنفيذ امر التشغيل</value>
+  </data>
+  <data name="operation_command_pending_operation_command_final_approval" xml:space="preserve">
+    <value>الموافقة النهائية على امر التشغيل من قبل عميد البحث العلمي</value>
+  </data>
+  <data name="operation_command_pending_operation_command_final_approval_approve" xml:space="preserve">
+    <value>في انتظار الاعتماد النهائي لأمر التنفيد</value>
+  </data>
+  <data name="operation_command_pending_operation_command_forward" xml:space="preserve">
+    <value>توجية امر التشغيل الى وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="operation_command_pending_operation_command_forward_forward_to_press_oficer" xml:space="preserve">
+    <value>اعادة ارسال امر التشغيل الى موظف مطابع الجامعة</value>
+  </data>
+  <data name="operation_command_pending_operation_command_forward_forward_to_proofreader" xml:space="preserve">
+    <value>اعادة ارسال امر التشغيل للمصحح</value>
+  </data>
+  <data name="operation_command_pending_operation_command_forward_return_to_researcher" xml:space="preserve">
+    <value>إرسال طلب التشغيل إلى الباحث للموافقة</value>
+  </data>
+  <data name="operation_command_pending_operation_command_initiation" xml:space="preserve">
+    <value>أمر التشغيل-بانتظار اعطاء امر بدء التشغيل من قبل وكيل العمادة للنشر العلمي </value>
+  </data>
+  <data name="operation_command_pending_operation_command_initiation_submit" xml:space="preserve">
+    <value>موافقة على البدء في امر التشغيل</value>
+  </data>
+  <data name="operation_command_pending_operation_command_preparation" xml:space="preserve">
+    <value>تجهيز أمر التشغيل من قبل وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="operation_command_pending_operation_command_preparation_submit" xml:space="preserve">
+    <value>موافقة على تجهيز امر التشغيل</value>
+  </data>
+  <data name="operation_command_pending_operation_command_validation" xml:space="preserve">
+    <value>المصادقة على أمر التشغيل من قبل مدير عام مطابع الجامعة</value>
+  </data>
+  <data name="operation_command_pending_operation_command_validation_submit" xml:space="preserve">
+    <value>مصادقة على امر التشغيل</value>
+  </data>
+  <data name="operation_command_pending_pending_correction" xml:space="preserve">
+    <value>امر التشغيل بانتظار المصحح</value>
+  </data>
+  <data name="operation_command_pending_pending_correction_submit" xml:space="preserve">
+    <value>موافقة المصحح على امر التشغيل</value>
+  </data>
+  <data name="operation_command_pending_printing" xml:space="preserve">
+    <value>طلب التشغيل -بانتظار الطباعة من قبل موظف مطابع الجامعة</value>
+  </data>
+  <data name="operation_command_pending_printing_manager" xml:space="preserve">
+    <value>امر التشغيل بانتظار مدير مطابع الجامعة</value>
+  </data>
+  <data name="operation_command_pending_printing_manager_submit" xml:space="preserve">
+    <value>تم إرسال أمر الطباعة من قبل مدير مطابع الجامعة</value>
+  </data>
+  <data name="operation_command_pending_printing_submit" xml:space="preserve">
+    <value>في انتظار الطباعة</value>
+  </data>
+  <data name="operation_command_pending_researcher_acceptance" xml:space="preserve">
+    <value>امر التشغيل بانتظار موافقة الباحث</value>
+  </data>
+  <data name="operation_command_pending_researcher_acceptance_approve" xml:space="preserve">
+    <value>موافقة الباحث على امر التشغيل </value>
+  </data>
+  <data name="ordinary" xml:space="preserve">
+    <value>عادية</value>
+  </data>
+  <data name="original_book_title" xml:space="preserve">
+    <value>عنوان الكتاب الأصلي (فقط في حالة الكتب المترجمة).</value>
+  </data>
+  <data name="original_book_title_required" xml:space="preserve">
+    <value>حقل عنوان الكتيب الأصلي مطلوب.</value>
+  </data>
+  <data name="original_dictionary_title" xml:space="preserve">
+    <value>العنوان الأصلي للمعجم</value>
+  </data>
+  <data name="original_dictionary_title_required" xml:space="preserve">
+    <value>حقل العنوان الأصلي للمعجم (خاص بالمعاجم المترجمة) مطلوب.</value>
+  </data>
+  <data name="original_encyclopedia_title" xml:space="preserve">
+    <value>العنوان الأصلي للموسوعة</value>
+  </data>
+  <data name="original_encyclopedia_title_required" xml:space="preserve">
+    <value>حقل العنوان الأصلي للموسوعة مطلوب.</value>
+  </data>
+  <data name="original_handbook_title" xml:space="preserve">
+    <value>عنوان الكتيب الأصلي</value>
+  </data>
+  <data name="original_handbook_title_required" xml:space="preserve">
+    <value>مطلوب حقل عنوان الكتاب اليد الأصلي.</value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>اخرى</value>
+  </data>
+  <data name="other_lang" xml:space="preserve">
+    <value>en</value>
+  </data>
+  <data name="other_topics" xml:space="preserve">
+    <value>موضوعات أخرى</value>
+  </data>
+  <data name="outbox" xml:space="preserve">
+    <value>الصادر</value>
+  </data>
+  <data name="overdue" xml:space="preserve">
+    <value>المتأخر</value>
+  </data>
+  <data name="Participants" xml:space="preserve">
+    <value>المشاركون</value>
+  </data>
+  <data name="participants_details" xml:space="preserve">
+    <value>بيانات المشارك في مادة علمية</value>
+  </data>
+  <data name="participant_email" xml:space="preserve">
+    <value>البريد الإلكتروني للمشارك في المادة العلمية </value>
+  </data>
+  <data name="participant_name" xml:space="preserve">
+    <value>اسم المشارك في المادة العلمية</value>
+  </data>
+  <data name="participant_name_required" xml:space="preserve">
+    <value>اسم المشارك مطلوب.</value>
+  </data>
+  <data name="partner_email" xml:space="preserve">
+    <value>البريد الإلكتروني للمشارك في المادة العلمية</value>
+  </data>
+  <data name="partner_mobile" xml:space="preserve">
+    <value>رقم جوال المشارك في المادة العلمية</value>
+  </data>
+  <data name="partner_name" xml:space="preserve">
+    <value>اسم المشارك في المادة العلمية</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>كلمة المرور</value>
+  </data>
+  <data name="password_confirmation" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="password_confirmation_mismatch" xml:space="preserve">
+    <value>كلمة المرور وتأكيدها غير متطابقين</value>
+  </data>
+  <data name="password_confirmation_required" xml:space="preserve">
+    <value>حقل تأكيد كلمة المرور مطلوب.</value>
+  </data>
+  <data name="password_required" xml:space="preserve">
+    <value>كلمة المرور مطلوبة</value>
+  </data>
+  <data name="pass_the_audit" xml:space="preserve">
+    <value>اجتاز التدقيق</value>
+  </data>
+  <data name="payment_method" xml:space="preserve">
+    <value>طريقة السداد</value>
+  </data>
+  <data name="payment_request" xml:space="preserve">
+    <value>طلب الدفع</value>
+  </data>
+  <data name="payment_requests" xml:space="preserve">
+    <value>طلبات الدفع</value>
+  </data>
+  <data name="payment_status" xml:space="preserve">
+    <value>حالة الدفع</value>
+  </data>
+  <data name="pending" xml:space="preserve">
+    <value>تحت الإجراء</value>
+  </data>
+  <data name="PendingAcademicCouncilRefereeSelection" xml:space="preserve">
+    <value>بانتظار المجلس العلمي لاختيار المحكمين </value>
+  </data>
+  <data name="PendingCoresearchers" xml:space="preserve">
+    <value>بانتظار المشاركين بالبحث</value>
+  </data>
+  <data name="PendingModifications" xml:space="preserve">
+    <value>التعديلات المعلقة</value>
+  </data>
+  <data name="PendingResearchUnitSecretary" xml:space="preserve">
+    <value>معلق عند أمين وحدة البحوث</value>
+  </data>
+  <data name="pending_academic_council_after_referees" xml:space="preserve">
+    <value>بانتظار المجلس العلمي بعد التحكيم</value>
+  </data>
+  <data name="pending_academic_council_approval" xml:space="preserve">
+    <value>في انتظار موافقة المجلس العلمي</value>
+  </data>
+  <data name="pending_academic_council_approval_approve" xml:space="preserve">
+    <value>تمت موافقة المجلس العلمي</value>
+  </data>
+  <data name="pending_academic_council_approval_reject" xml:space="preserve">
+    <value>تم رفض المجلس العلمي</value>
+  </data>
+  <data name="pending_academic_council_referee_selection" xml:space="preserve">
+    <value>بانتظار المجلس العلمي لاختيار المحكمين</value>
+  </data>
+  <data name="pending_academic_council_referee_selection_approve" xml:space="preserve">
+    <value>بانتظار موافقة المجلس العلمي على اختيار المحكمين</value>
+  </data>
+  <data name="pending_academic_council_referee_selection_forward" xml:space="preserve">
+    <value>إرسال الى المجلس العلمي لاختيار المحكمين</value>
+  </data>
+  <data name="pending_academic_council_referee_selection_reject" xml:space="preserve">
+    <value>بانتظار رفض المجلس العلمي للمحكمين</value>
+  </data>
+  <data name="pending_advertisement" xml:space="preserve">
+    <value>في انتظار الإعلان</value>
+  </data>
+  <data name="pending_copies_distribution_by_libraryaffairs" xml:space="preserve">
+    <value>في انتظار توزيع النسخ بواسطة شؤون المكتبات</value>
+  </data>
+  <data name="pending_copies_distribution_by_library_affairs" xml:space="preserve">
+    <value>في انتظار توزيع النسخ حسب شؤون المكتبات</value>
+  </data>
+  <data name="pending_coresearchers" xml:space="preserve">
+    <value>في انتظار الباحثين المشاركين</value>
+  </data>
+  <data name="pending_coresearchers_submit" xml:space="preserve">
+    <value>بانتظار موافقة المشاركين</value>
+  </data>
+  <data name="pending_coresearchers_submit_coresearcher_data" xml:space="preserve">
+    <value>بانتظار ارفاق بيانات المشاركين بالبحث </value>
+  </data>
+  <data name="pending_DistributionListPreparation_Approve" xml:space="preserve">
+    <value>موافقة على قائمة التوزيع</value>
+  </data>
+  <data name="pending_distribution_closure" xml:space="preserve">
+    <value>بانتظار اقفال طلب التوزيع</value>
+  </data>
+  <data name="pending_distribution_closure_approve" xml:space="preserve">
+    <value>في انتظار الموافقة على إغلاق التوزيع</value>
+  </data>
+  <data name="pending_distribution_list_approval" xml:space="preserve">
+    <value>قائمة التوزيع </value>
+  </data>
+  <data name="pending_distribution_list_approval_approve" xml:space="preserve">
+    <value>الموافقة على موافقة قائمة التوزيع</value>
+  </data>
+  <data name="pending_distribution_list_preparatio" xml:space="preserve">
+    <value>في انتظار إعداد قائمة التوزيع</value>
+  </data>
+  <data name="pending_distribution_list_preparation" xml:space="preserve">
+    <value>في انتظار إعداد قائمة التوزيع</value>
+  </data>
+  <data name="pending_distribution_list_preparation_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على اعداد قائمة التوزيع</value>
+  </data>
+  <data name="pending_distribution_list_preparation_reject" xml:space="preserve">
+    <value>في انتظار رفض اعداد قائمة التجهيز</value>
+  </data>
+  <data name="pending_Initial_referee" xml:space="preserve">
+    <value>في انتظار الفاحص المبدئي</value>
+  </data>
+  <data name="pending_initial_referee_aprove" xml:space="preserve">
+    <value>بانتظار موافقة الفاحص المبدئي </value>
+  </data>
+  <data name="pending_initial_referee_reject" xml:space="preserve">
+    <value>بانتظار رفض الفاحص المبدئي</value>
+  </data>
+  <data name="pending_isbn_request_submission_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على طلب الردمك</value>
+  </data>
+  <data name="pending_kfnl_copies_distribution_by_printing_unit" xml:space="preserve">
+    <value>في انتظار مكتبة الملك فهد لتوزيع النسخ بواسطة وحدة المطابع  </value>
+  </data>
+  <data name="pending_knl_copies_distribution_by_printing_unit_approve" xml:space="preserve">
+    <value>في انتظار الموافقة على نسخ التوزيع  عن طريق وحدة الطباعة الموافقة</value>
+  </data>
+  <data name="pending_modifications" xml:space="preserve">
+    <value>التعديلات المعلقة</value>
+  </data>
+  <data name="pending_modifications_submit" xml:space="preserve">
+    <value>تم ارسال التعديلات </value>
+  </data>
+  <data name="pending_operation_command_approval" xml:space="preserve">
+    <value>بانتظار موافقة إعداد أمر التشغيل</value>
+  </data>
+  <data name="pending_operation_command_approval_forward" xml:space="preserve">
+    <value>بانتظار ارسال موافقة إعداد أمر التشغيل</value>
+  </data>
+  <data name="pending_operation_command_execution" xml:space="preserve">
+    <value>بانتظار اعداد امر التشغيل</value>
+  </data>
+  <data name="pending_operation_command_execution_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على امر التشغيل </value>
+  </data>
+  <data name="pending_operation_command_execution_reject" xml:space="preserve">
+    <value>بانتظار الرفض على امر التشغيل</value>
+  </data>
+  <data name="pending_operation_command_finalApproval_Reject" xml:space="preserve">
+    <value>بانتظار رفض الموافقةعلى  امر التشغيل</value>
+  </data>
+  <data name="pending_operation_command_final_approval" xml:space="preserve">
+    <value>في انتظار الموافقة النهائية على أمر التشغيل</value>
+  </data>
+  <data name="pending_operation_command_final_approval_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على الموافقة النهائية على امر التشغيل</value>
+  </data>
+  <data name="pending_operation_command_initiation" xml:space="preserve">
+    <value>بانتظار اعداد امر التشغيل</value>
+  </data>
+  <data name="pending_operation_command_initiation_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على بدء اعداد امر التشغيل </value>
+  </data>
+  <data name="pending_operation_command_preparation" xml:space="preserve">
+    <value>بانتظار اعطاء امر التجهيز</value>
+  </data>
+  <data name="pending_operation_command_preparation_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على إعداد أمر التشغيل</value>
+  </data>
+  <data name="pending_paeafter_referees" xml:space="preserve">
+    <value>في انتظار لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="pending_paereferee_selection" xml:space="preserve">
+    <value>اختيار محكمين من قبل لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="pending_paereferee_selection_select_referees" xml:space="preserve">
+    <value>بانتظار تحديد المحكمين</value>
+  </data>
+  <data name="pending_pae_after_referees" xml:space="preserve">
+    <value>بانتظار لجنة النشر والتحكيم والمعادلات بعد التحكيم</value>
+  </data>
+  <data name="pending_pae_after_referees_approve" xml:space="preserve">
+    <value>بانتظارموافقة المجلس العلمي بعد التحكيم </value>
+  </data>
+  <data name="pending_pae_referee_selection_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على اختيار المحكمين</value>
+  </data>
+  <data name="pending_pricingApproval_by_library_affairs_reject" xml:space="preserve">
+    <value>pending_pricingApproval_by_library_affairs_reject</value>
+  </data>
+  <data name="pending_pricing_approval_by_dean" xml:space="preserve">
+    <value>بانتظار قبول طلب التسعير من قبل العميد</value>
+  </data>
+  <data name="pending_pricing_approval_by_dean_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على قبول طلب التسعير من قبل العميد</value>
+  </data>
+  <data name="pending_pricing_approval_by_library_affairs" xml:space="preserve">
+    <value>في انتظار الموافقة على  التسعير من قبل شؤون المكتبات</value>
+  </data>
+  <data name="pending_pricing_approval_by_library_affairs_approve" xml:space="preserve">
+    <value>في انتظار الموافقة على  التسعير من قبل شؤون المكتبات</value>
+  </data>
+  <data name="pending_pricing_approval_by_library_affairs_reject" xml:space="preserve">
+    <value>رفض الموافقة على التسعير من قبل شوؤون المكتبات</value>
+  </data>
+  <data name="pending_pricing_approval_by_university_press" xml:space="preserve">
+    <value>في انتظار الموافقة على  التسعير من قبل مطبعة الجامعة</value>
+  </data>
+  <data name="pending_pricing_approval_by_university_press_forward" xml:space="preserve">
+    <value>في انتظار اعادة ارسال الموافقةعلى  التسعير من قبل مطبعة الجامعة </value>
+  </data>
+  <data name="pending_pricing_approval_by_university_press_reject" xml:space="preserve">
+    <value>بانتظار الرفض على التسعير من قبل الجامعة</value>
+  </data>
+  <data name="pending_pricing_prepartion" xml:space="preserve">
+    <value>بانتظار تجهيز طلب التسعير</value>
+  </data>
+  <data name="pending_pricing_prepartion_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على تجهيز التسعير</value>
+  </data>
+  <data name="pending_pricing_prepartion_reject" xml:space="preserve">
+    <value>بانتظار رفض تجهيز التسعير</value>
+  </data>
+  <data name="pending_printing" xml:space="preserve">
+    <value>في انتظار الطباعة</value>
+  </data>
+  <data name="pending_printing_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على الطباعة</value>
+  </data>
+  <data name="pending_referees" xml:space="preserve">
+    <value>بانتظار موافقة المحكمين</value>
+  </data>
+  <data name="pending_referees_approve" xml:space="preserve">
+    <value>بانتظار الموافقة على المحكمين</value>
+  </data>
+  <data name="pending_referees_forward" xml:space="preserve">
+    <value>بانتظار اعادة التوجيه للمحكمين</value>
+  </data>
+  <data name="pending_researcher_acceptance" xml:space="preserve">
+    <value>بانتظار موافقة الباحث</value>
+  </data>
+  <data name="pending_researcher_acceptance_forward" xml:space="preserve">
+    <value>بانتظار ارسال الموافقة للباحث</value>
+  </data>
+  <data name="pending_researchUnit_secretary" xml:space="preserve">
+    <value>معلق عند أمين وحدة البحوث</value>
+  </data>
+  <data name="pending_research_unit_head" xml:space="preserve">
+    <value>في انتظار موافقة رئيس وحدة البحوث</value>
+  </data>
+  <data name="pending_research_unit_head_approve" xml:space="preserve">
+    <value>بانتظار موافقة رئيس وحدة البحوث</value>
+  </data>
+  <data name="pending_research_unit_head_reject" xml:space="preserve">
+    <value>بانتظار رفض رئيس وحدة البحوث</value>
+  </data>
+  <data name="pending_research_unit_members" xml:space="preserve">
+    <value>معلق عند أعضاء وحدة البحوث</value>
+  </data>
+  <data name="pending_research_unit_secretary" xml:space="preserve">
+    <value>في انتظار أمين وحدة البحث العلمي</value>
+  </data>
+  <data name="pending_research_unit_secretary_approve" xml:space="preserve">
+    <value>بانتظار موافقة أمين وحدة البحوث</value>
+  </data>
+  <data name="pending_research_unit_secretary_submit" xml:space="preserve">
+    <value>بانتظار موافقة  امين وحدة البحوث</value>
+  </data>
+  <data name="pending_university_rector_publish_approval" xml:space="preserve">
+    <value>في انتظار موافقة مدير الجامعة</value>
+  </data>
+  <data name="pending_university_rector_publish_approval_approve" xml:space="preserve">
+    <value>موافقة مدير الجامعة على النشر</value>
+  </data>
+  <data name="pending_university_rector_publish_approval_reject" xml:space="preserve">
+    <value>رفض مدير الجامعة على النشر</value>
+  </data>
+  <data name="pending_university_rector_referee_approval" xml:space="preserve">
+    <value>بانتظار اعتماد محضر المحكمين</value>
+  </data>
+  <data name="pending_university_rector_referee_approval_approve" xml:space="preserve">
+    <value>بانتظار موافقة مدير الجامعة على المحكمين</value>
+  </data>
+  <data name="pending_unspecified" xml:space="preserve">
+    <value>بالإنتظار-غير محدد</value>
+  </data>
+  <data name="pending_vicedean_of_academic_research" xml:space="preserve">
+    <value>في انتظارموافقة وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="pending_vice_dean_of_academic_research" xml:space="preserve">
+    <value> معلق عند وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="pending_vice_dean_of_academic_research_approve" xml:space="preserve">
+    <value>بانتظار موافقة وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="pending_vice_dean_of_academic_research_reject" xml:space="preserve">
+    <value>بانتظار رفض وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="pending_vice_dean_of_academic_research_return_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>بانتظار وكيل العمادة للنشر العلمي </value>
+  </data>
+  <data name="people_to_be_Invited" xml:space="preserve">
+    <value>الأشخاص الذين سيتم دعوتهم</value>
+  </data>
+  <data name="phd" xml:space="preserve">
+    <value>دكتوراه</value>
+  </data>
+  <data name="phone_number" xml:space="preserve">
+    <value>الجوال</value>
+  </data>
+  <data name="please_entervalidname" xml:space="preserve">
+    <value>يرجى ادخال اسم صحيح</value>
+  </data>
+  <data name="please_enter_email" xml:space="preserve">
+    <value />
+  </data>
+  <data name="please_select_action" xml:space="preserve">
+    <value>فضلًا اختر الإجراء المطلوب..</value>
+  </data>
+  <data name="plz_enter_name" xml:space="preserve">
+    <value>يرجى ادخال الاسم</value>
+  </data>
+  <data name="plz_enter_pass" xml:space="preserve">
+    <value>الرجاء ادخال كلمة المرور!!</value>
+  </data>
+  <data name="plz_enter_user" xml:space="preserve">
+    <value>يرجى إدخال اسم المستخدم!!</value>
+  </data>
+  <data name="price" xml:space="preserve">
+    <value>السعر</value>
+  </data>
+  <data name="pricing" xml:space="preserve">
+    <value>تسعير</value>
+  </data>
+  <data name="pricing_committee_secretary" xml:space="preserve">
+    <value>أمين لجنة التسعير</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_dean" xml:space="preserve">
+    <value>بانتظار موافقة على عملية التسعير من قبل العميد </value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_dean_approve" xml:space="preserve">
+    <value>موافقة على عملية التسعير من قبل العميد</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_library_affairs" xml:space="preserve">
+    <value>بانتظار موافقة عميد شؤون المكتبات</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_library_affairs_approve" xml:space="preserve">
+    <value>موافقة على عملية التسعير من قبل العميد</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_university_press" xml:space="preserve">
+    <value>بانتظار قبول طلب التسعير من قبل مدير مطابع الجامعة</value>
+  </data>
+  <data name="pricing_pending_pricing_approval_by_university_press_approve" xml:space="preserve">
+    <value>بانتظار موافقة على عملية التسعير من قبل   المطابع</value>
+  </data>
+  <data name="pricing_pending_pricing_prepartion" xml:space="preserve">
+    <value>تجهيز طلب التسعير من قبل وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="pricing_pending_pricing_prepartion_submit" xml:space="preserve">
+    <value>طلب تسعير </value>
+  </data>
+  <data name="pricing_request" xml:space="preserve">
+    <value>طلب تسعير</value>
+  </data>
+  <data name="pricing_requests" xml:space="preserve">
+    <value>طلبات التسعير</value>
+  </data>
+  <data name="prime_referee" xml:space="preserve">
+    <value>محكم أساس</value>
+  </data>
+  <data name="print" xml:space="preserve">
+    <value>طباعة</value>
+  </data>
+  <data name="printing_experiments" xml:space="preserve">
+    <value>طباعة التجارب</value>
+  </data>
+  <data name="printing_unit_ofthe_academic_publishing_agency" xml:space="preserve">
+    <value>وحدة الطباعة التابعة لوكالة النشر الأكاديمية</value>
+  </data>
+  <data name="probe" xml:space="preserve">
+    <value>التحقيق</value>
+  </data>
+  <data name="prober_major" xml:space="preserve">
+    <value>تخصص المحقق</value>
+  </data>
+  <data name="prober_major_required" xml:space="preserve">
+    <value>حقل تخصص المحقق مطلوب.</value>
+  </data>
+  <data name="probe_agreement" xml:space="preserve">
+    <value>إقرار التحقيق </value>
+  </data>
+  <data name="probe_detail" xml:space="preserve">
+    <value>بيانات التحقيق</value>
+  </data>
+  <data name="probe_type" xml:space="preserve">
+    <value>نوع التحقيق</value>
+  </data>
+  <data name="probe_type_required" xml:space="preserve">
+    <value>نوع التحقيق مطلوب.</value>
+  </data>
+  <data name="profile" xml:space="preserve">
+    <value>الملف الشخصي</value>
+  </data>
+  <data name="proofreader" xml:space="preserve">
+    <value>مصحح</value>
+  </data>
+  <data name="proof_of_identity_copy" xml:space="preserve">
+    <value>صورة الهوية :</value>
+  </data>
+  <data name="provide_feedback" xml:space="preserve">
+    <value>إبداء الرأي</value>
+  </data>
+  <data name="puap" xml:space="preserve">
+    <value>طلب تصحيح </value>
+  </data>
+  <data name="publication_details" xml:space="preserve">
+    <value>تفاصيل المادة العلمية</value>
+  </data>
+  <data name="publication_request" xml:space="preserve">
+    <value>طلب النشر</value>
+  </data>
+  <data name="publication_request_no" xml:space="preserve">
+    <value>رقم الطلب</value>
+  </data>
+  <data name="public_relations_director" xml:space="preserve">
+    <value>مدير العلاقات العامة</value>
+  </data>
+  <data name="public_science" xml:space="preserve">
+    <value>علمي عام</value>
+  </data>
+  <data name="publish" xml:space="preserve">
+    <value>نشر</value>
+  </data>
+  <data name="publisher" xml:space="preserve">
+    <value>الناشر</value>
+  </data>
+  <data name="publisher_date" xml:space="preserve">
+    <value>تاريخ النشر</value>
+  </data>
+  <data name="publisher_date_required" xml:space="preserve">
+    <value>تاريخ النشر مطلوب.</value>
+  </data>
+  <data name="publisher_place" xml:space="preserve">
+    <value>مكان النشر</value>
+  </data>
+  <data name="publisher_place_required" xml:space="preserve">
+    <value>مكان الناشر مطلوب.</value>
+  </data>
+  <data name="publisher_required" xml:space="preserve">
+    <value>حقل الناشر مطلوب.</value>
+  </data>
+  <data name="publishing_requests" xml:space="preserve">
+    <value>طلبات النشر</value>
+  </data>
+  <data name="publishing_requests_discussed_during_meeting" xml:space="preserve">
+    <value>نشر الطلبات التي نوقشت خلال الاجتماع</value>
+  </data>
+  <data name="publish_date" xml:space="preserve">
+    <value>تاريخ النشر</value>
+  </data>
+  <data name="publish_order" xml:space="preserve">
+    <value>رفع طلب نشر جديد</value>
+  </data>
+  <data name="publish_place" xml:space="preserve">
+    <value>مكان النشر</value>
+  </data>
+  <data name="publish_request" xml:space="preserve">
+    <value>طلب نشر</value>
+  </data>
+  <data name="publish_request_not_submitted" xml:space="preserve">
+    <value>طلب نشر لم يقدم</value>
+  </data>
+  <data name="publish_request_not_submitted_cancel" xml:space="preserve">
+    <value>تم إلغاء الطلب</value>
+  </data>
+  <data name="publish_request_not_submitted_unspecified" xml:space="preserve">
+    <value>طلب النشر لم يقدم </value>
+  </data>
+  <data name="publish_request_pending_academic_council_after_referees" xml:space="preserve">
+    <value>طلب النشر بانتظار المجلس العلمي بعد التحكيم</value>
+  </data>
+  <data name="publish_request_pending_academic_council_referee_selection" xml:space="preserve">
+    <value> بانتظار التوصية على اختيار المحكمين  من قبل امين المجلس العلمي</value>
+  </data>
+  <data name="publish_request_pending_academic_council_referee_selection_approve" xml:space="preserve">
+    <value>طلب النشر -موافقة المجلس العلمي على المحكمين</value>
+  </data>
+  <data name="publish_request_pending_academic_council_referee_selection_head" xml:space="preserve">
+    <value>بانتظار التوصية على اختيار المحكمين من قبل رئيس المجلس العلمي </value>
+  </data>
+  <data name="publish_request_pending_academic_council_referee_selection_reject" xml:space="preserve">
+    <value>رفض اختيار المحكمين من قبل المجلس العلمي</value>
+  </data>
+  <data name="publish_request_pending_academic_council_referee_selection_return_to_paecommittee_secretary" xml:space="preserve">
+    <value>إعادة الطلب من المجلس العلمي الى أمين  لجنة النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="publish_request_pending_coresearchers" xml:space="preserve">
+    <value>طلب النشر بانتظار المشاركين </value>
+  </data>
+  <data name="publish_request_pending_coresearchers_unspecified" xml:space="preserve">
+    <value>طلب النشر بانظار المشاركين بالبحث-غير محدد</value>
+  </data>
+  <data name="publish_request_pending_deanship_of_academic_research_commitee" xml:space="preserve">
+    <value>طلب النشر بانتظار قرار عميد البحث العلمي </value>
+  </data>
+  <data name="publish_request_pending_dean_of_academic_research_publish_approval" xml:space="preserve">
+    <value>طلب النشر بانتظار موافقة عميد البحث العلمي</value>
+  </data>
+  <data name="publish_request_pending_dean_of_academic_research_publish_approval_approve" xml:space="preserve">
+    <value>موافقة مدير الجامعة على طلب النشر</value>
+  </data>
+  <data name="publish_request_pending_dean_of_academic_research_publish_approval_approve_and_forward_to_unversity_rector" xml:space="preserve">
+    <value>تمت الموافقة من قبل عميد البحث العلمي وتوجيه الطلب إلى مدير الجامعة </value>
+  </data>
+  <data name="publish_request_pending_initial_referee" xml:space="preserve">
+    <value>طلب النشر بانتظار الفاحص المبدئي </value>
+  </data>
+  <data name="publish_request_pending_initial_referee_approve_with_comments" xml:space="preserve">
+    <value>طلب النشر-موافقة المحكم المدئي مع ملاحظات</value>
+  </data>
+  <data name="publish_request_pending_modifications_after_referees" xml:space="preserve">
+    <value>طلب النشر بانتظار التعديلات بعد التحكيم </value>
+  </data>
+  <data name="publish_request_pending_modifications_after_rus" xml:space="preserve">
+    <value>طلب النشر بانتظار الباحث على الموافقة على ملاحظات امين وحدةالبحوث </value>
+  </data>
+  <data name="publish_request_pending_modifications_after_rus_resubmit" xml:space="preserve">
+    <value>موافقة الباحث على التعديلات</value>
+  </data>
+  <data name="publish_request_pending_paeafter_referees" xml:space="preserve">
+    <value>طلب النشر بانتظار لجنة النشر والتحكيم والمعادلات بعد التحكيم</value>
+  </data>
+  <data name="publish_request_pending_paeafter_referees_approve" xml:space="preserve">
+    <value>طلب النشر بانتظار لجنة النشر والمعادلة والتحكيم بعد التحكيم  </value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection" xml:space="preserve">
+    <value>طلب النشر بانتظار تحديد المحكمين من قبل امين لجنة النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection_forward_to_paecommittee_head" xml:space="preserve">
+    <value>تم إعادة توجيه طلب اختيار المحكمين الى رئيس لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection_head" xml:space="preserve">
+    <value>طلب النشر بانتظار اختيار المحكمين من قبل رئيس لجنة النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection_head_send_to_commitee_members" xml:space="preserve">
+    <value>إرسال طلب ترشيح محكمين من قبل رئيس لجنة النشر والتحكيم والمعادلات الى أعضاء اللجنة</value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection_members" xml:space="preserve">
+    <value>طلب النشر بانتظار اختيار اأعضاء لمحكمين  </value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection_members_return_to_paecommittee_secretary" xml:space="preserve">
+    <value>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 3e0eb31c7d3a97be2dd18c60887858a1881634a3</value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection_members_select_referees" xml:space="preserve">
+    <value>بانتظار إختيار أعضاء لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="publish_request_pending_paereferee_selection_select_referees" xml:space="preserve">
+    <value>طلب النشر -تحديد المحكمين</value>
+  </data>
+  <data name="publish_request_pending_referees" xml:space="preserve">
+    <value>طلب النشر بانتظار التحكيم</value>
+  </data>
+  <data name="publish_request_pending_referees_approve" xml:space="preserve">
+    <value>طلب النشر - بانتظار موافقة المحكمين</value>
+  </data>
+  <data name="publish_request_pending_research_unit_committee" xml:space="preserve">
+    <value>طلب النشر بانتظار قرار رئيس مجلس وحدة البحوث</value>
+  </data>
+  <data name="publish_request_pending_research_unit_head" xml:space="preserve">
+    <value>طلب النشر بانظار رئيس وحدة البحوث</value>
+  </data>
+  <data name="publish_request_pending_research_unit_head_approve" xml:space="preserve">
+    <value>طلب النشر بانتظار موافقة رئيس وحدة البحوث</value>
+  </data>
+  <data name="publish_request_pending_research_unit_head_approve_and_forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>تمت الموافقة على الطلب من قبل رئيس وحدة البحوث وإعادة توجيه الطلب إلى عميد البحث العلمي </value>
+  </data>
+  <data name="publish_request_pending_research_unit_head_forward_to_initial_referee" xml:space="preserve">
+    <value>اعادة ارسال للفاحص المبدئي</value>
+  </data>
+  <data name="publish_request_pending_research_unit_head_reject" xml:space="preserve">
+    <value>طلب النشرفي إنتظار رفض رئيس وحدة البحوث</value>
+  </data>
+  <data name="publish_request_pending_research_unit_secretary" xml:space="preserve">
+    <value>بانتظار أمين وحدة البحوث</value>
+  </data>
+  <data name="publish_request_pending_research_unit_secretary_approve" xml:space="preserve">
+    <value>طلب النشر بانتظار موافقة  امين وحدة البحوث</value>
+  </data>
+  <data name="publish_request_pending_research_unit_secretary_approve_and_forward_to_research_unit_head" xml:space="preserve">
+    <value>تمت الموافقة على طلب النشر من قبل أمين وحدة البحوث وإعادة توجيه الطلب الى رئيس وحدة البحوث</value>
+  </data>
+  <data name="publish_request_pending_research_unit_secretary_return_to_researcher" xml:space="preserve">
+    <value>إعادة للباحث من قبل امين وحدة البحوث</value>
+  </data>
+  <data name="publish_request_pending_research_unit_secretary_unspecified" xml:space="preserve">
+    <value>طلب النشر بانتظار أمين وحدة البحوث </value>
+  </data>
+  <data name="publish_request_pending_spare_referee" xml:space="preserve">
+    <value>طلب النشر بانتظار المكم الإحتياطي</value>
+  </data>
+  <data name="publish_request_pending_university_rector_publish_approval" xml:space="preserve">
+    <value>طلب النشر بانتظار موافقة مدير الجامعة</value>
+  </data>
+  <data name="publish_request_pending_university_rector_publish_approval_approve" xml:space="preserve">
+    <value>طلب النشر تمت الموافقة عليه من قبل مدير الجامعة</value>
+  </data>
+  <data name="publish_request_pending_university_rector_publish_approval_approve_approval" xml:space="preserve">
+    <value>تم اعتماد موافقة عميد البحث العلمي من قبل مدير الجامعة </value>
+  </data>
+  <data name="publish_request_pending_university_rector_publish_approval_forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>موافقة مدير الجامعة واعادة الإرسال لعميد البحث العلمي</value>
+  </data>
+  <data name="publish_request_pending_vice_dean_of_academic_research_publish_approval" xml:space="preserve">
+    <value>طلب النشر بانتظار موافقة وكيل عمادة البحث العلمي </value>
+  </data>
+  <data name="publish_request_pending_vice_dean_of_academic_research_publish_approval_forward_to_dean_of_academic_research" xml:space="preserve">
+    <value>تم إحالة الطلب إلى عميد البحث العلمي</value>
+  </data>
+  <data name="publish_req_follw" xml:space="preserve">
+    <value>متابعة طلبات النشر</value>
+  </data>
+  <data name="publish_type" xml:space="preserve">
+    <value>نوع النشر</value>
+  </data>
+  <data name="publish_type_required" xml:space="preserve">
+    <value>نوع البحث مطلوب.</value>
+  </data>
+  <data name="r" xml:space="preserve">
+    <value>الباحث</value>
+  </data>
+  <data name="rank" xml:space="preserve">
+    <value>المرتبة</value>
+  </data>
+  <data name="rare_book" xml:space="preserve">
+    <value>كتاب نادر</value>
+  </data>
+  <data name="read" xml:space="preserve">
+    <value>اقرأ</value>
+  </data>
+  <data name="reason" xml:space="preserve">
+    <value>السبب</value>
+  </data>
+  <data name="reason_for_reject" xml:space="preserve">
+    <value>سبب الرفض</value>
+  </data>
+  <data name="recommendation" xml:space="preserve">
+    <value>التوصية</value>
+  </data>
+  <data name="Recommendations" xml:space="preserve">
+    <value>رقم توصية مجلسي القسم والكلية/المعهد</value>
+  </data>
+  <data name="Recommendations_date" xml:space="preserve">
+    <value>تاريخ التوصية </value>
+  </data>
+  <data name="Recommendations_type" xml:space="preserve">
+    <value>نوع التوصية </value>
+  </data>
+  <data name="recommendation_date" xml:space="preserve">
+    <value>تاريخ توصية مجلسي القسم والكلية/المعهد</value>
+  </data>
+  <data name="recommendation_date_required" xml:space="preserve">
+    <value>حقل تاريخ توصية مجلسي القسم والكلية/المعهد مطلوب.</value>
+  </data>
+  <data name="recommendation_number" xml:space="preserve">
+    <value>رقم توصية مجلسي القسم والكلية/المعهد</value>
+  </data>
+  <data name="recommendation_number_required" xml:space="preserve">
+    <value>حقل رقم توصية مجلسي القسم والكلية/المعهد مطلوب.</value>
+  </data>
+  <data name="referee" xml:space="preserve">
+    <value>محكم</value>
+  </data>
+  <data name="referees" xml:space="preserve">
+    <value>المحكمون</value>
+  </data>
+  <data name="referee_reward" xml:space="preserve">
+    <value>مكافأة المحكمين</value>
+  </data>
+  <data name="refuse" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>تسجيل</value>
+  </data>
+  <data name="register_as_referee" xml:space="preserve">
+    <value>التسجيل كمحكم</value>
+  </data>
+  <data name="register_as_researcher" xml:space="preserve">
+    <value>التسجيل كباحث</value>
+  </data>
+  <data name="register_new_user" xml:space="preserve">
+    <value>تسجيل مستخدم جديد</value>
+  </data>
+  <data name="register_referee" xml:space="preserve">
+    <value>رسالة تسجيل محكم </value>
+  </data>
+  <data name="register_referee_sms" xml:space="preserve">
+    <value>رسالة تسجيل محكم بواسطة رسائل الجوال </value>
+  </data>
+  <data name="registration" xml:space="preserve">
+    <value>التسجيل</value>
+  </data>
+  <data name="reject" xml:space="preserve">
+    <value>أرفض</value>
+  </data>
+  <data name="rejected" xml:space="preserve">
+    <value>لا أوافق</value>
+  </data>
+  <data name="rejected_by_coresearchers" xml:space="preserve">
+    <value>رفضت بواسطة المشارك في البحث</value>
+  </data>
+  <data name="rejected_by_coresearchers_return_to_researcher" xml:space="preserve">
+    <value>رفضت بواسطة المشاركين بالبحث وتم ارجاعها للباحث</value>
+  </data>
+  <data name="rejected_by_researcher" xml:space="preserve">
+    <value>تم الرفض بواسطة الباحث</value>
+  </data>
+  <data name="reject_and_forward_to_university_rector" xml:space="preserve">
+    <value>رفض وإرسال إلى مدير الجامعة</value>
+  </data>
+  <data name="reject_and_forward_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>رفض وإرسال الى وكيل عمادة البحث العلمي </value>
+  </data>
+  <data name="related_publish_request" xml:space="preserve">
+    <value>طلب النشر السابق</value>
+  </data>
+  <data name="remuneration_of_arbitrators_examiners" xml:space="preserve">
+    <value>مكافآت المحكمين والممتحنين</value>
+  </data>
+  <data name="reply" xml:space="preserve">
+    <value>الرد</value>
+  </data>
+  <data name="report" xml:space="preserve">
+    <value>تقرير</value>
+  </data>
+  <data name="reports" xml:space="preserve">
+    <value>التقارير</value>
+  </data>
+  <data name="republish" xml:space="preserve">
+    <value>إعادة نشر</value>
+  </data>
+  <data name="republish_request" xml:space="preserve">
+    <value>طلب أعادة نشر </value>
+  </data>
+  <data name="requestof_modification" xml:space="preserve">
+    <value>طلب التعديل</value>
+  </data>
+  <data name="requests" xml:space="preserve">
+    <value>الطلبات</value>
+  </data>
+  <data name="RequestsIsScientificProduction" xml:space="preserve">
+    <value>هل المادة العلمية جزء من نتاج علمي</value>
+  </data>
+  <data name="RequestsTitle" xml:space="preserve">
+    <value>عنوان الطلب </value>
+  </data>
+  <data name="Requests_CollegeId" xml:space="preserve">
+    <value>اسم الكلية </value>
+  </data>
+  <data name="requests_report" xml:space="preserve">
+    <value>تقرير الطلبات</value>
+  </data>
+  <data name="request_created_successfully" xml:space="preserve">
+    <value>تم إنشاء الطلب رقم {0}</value>
+  </data>
+  <data name="request_history" xml:space="preserve">
+    <value>مسار الطلب</value>
+  </data>
+  <data name="request_id" xml:space="preserve">
+    <value>رقم الطلب</value>
+  </data>
+  <data name="request_information" xml:space="preserve">
+    <value>بيانات الطلب</value>
+  </data>
+  <data name="request_meeting" xml:space="preserve">
+    <value>ارسال دعوة اجتماع </value>
+  </data>
+  <data name="request_not_actionable" xml:space="preserve">
+    <value>ليس لديك صلاحية التعديل على هذا الطلب</value>
+  </data>
+  <data name="request_not_found" xml:space="preserve">
+    <value>لم يتم العثور على الطلب {0}</value>
+  </data>
+  <data name="request_number" xml:space="preserve">
+    <value>رقم طلب النشر</value>
+  </data>
+  <data name="request_publish" xml:space="preserve">
+    <value>طلب نشر</value>
+  </data>
+  <data name="request_republish" xml:space="preserve">
+    <value>طلب إعادة نشر</value>
+  </data>
+  <data name="request_status" xml:space="preserve">
+    <value>حالة الطلب</value>
+  </data>
+  <data name="request_type" xml:space="preserve">
+    <value>نوع الطلب</value>
+  </data>
+  <data name="request_updated_successfully" xml:space="preserve">
+    <value>تم تحديث الطلب بنجاح</value>
+  </data>
+  <data name="researcher" xml:space="preserve">
+    <value>باحث</value>
+  </data>
+  <data name="researchers" xml:space="preserve">
+    <value>الباحثون</value>
+  </data>
+  <data name="researcher_approval_requests" xml:space="preserve">
+    <value>طلبات الموافقة على البحوث</value>
+  </data>
+  <data name="researcher_information" xml:space="preserve">
+    <value>بيانات الباحث</value>
+  </data>
+  <data name="researcher_name" xml:space="preserve">
+    <value>اسم الباحث</value>
+  </data>
+  <data name="researcher_name_required" xml:space="preserve">
+    <value>اسم الباحث مطلوب</value>
+  </data>
+  <data name="researcher_next" xml:space="preserve">
+    <value>ارسال</value>
+  </data>
+  <data name="researcher_reward" xml:space="preserve">
+    <value>مكافأة الباحث</value>
+  </data>
+  <data name="research_unit_council_member" xml:space="preserve">
+    <value>عضو مجلس وحدة البحوث</value>
+  </data>
+  <data name="research_unit_head" xml:space="preserve">
+    <value>رئيس وحدة الأبحاث</value>
+  </data>
+  <data name="research_unit_scretary" xml:space="preserve">
+    <value>أمين وحدة البحوث</value>
+  </data>
+  <data name="resent_mobile_activation" xml:space="preserve">
+    <value>إرسال رسالة تفعيل رقم الجوال</value>
+  </data>
+  <data name="reserve_referee" xml:space="preserve">
+    <value>محكم احتياط</value>
+  </data>
+  <data name="reset_password" xml:space="preserve">
+    <value>إعادة تعيين كلمة المرور</value>
+  </data>
+  <data name="resubmit" xml:space="preserve">
+    <value>إعادة الإرسال</value>
+  </data>
+  <data name="resubmitted" xml:space="preserve">
+    <value>تم إعادة الإرسال</value>
+  </data>
+  <data name="resume" xml:space="preserve">
+    <value>السيرة الذاتية</value>
+  </data>
+  <data name="resume_required" xml:space="preserve">
+    <value>السيرة الذاتية مطلوبة</value>
+  </data>
+  <data name="returned" xml:space="preserve">
+    <value>تم الإرجاع</value>
+  </data>
+  <data name="returnedd" xml:space="preserve">
+    <value>تم الإرجاع</value>
+  </data>
+  <data name="return_to" xml:space="preserve">
+    <value>إرجاع إلى</value>
+  </data>
+  <data name="return_to_deanship_of_academic_research" xml:space="preserve">
+    <value>إرجاع الطلب إلى عميد البحث العلمي </value>
+  </data>
+  <data name="return_to_paecommittee_secretary" xml:space="preserve">
+    <value>إعادة إلى أمين لجنة النشر والحكيم والمعادلات</value>
+  </data>
+  <data name="return_to_res" xml:space="preserve">
+    <value>إرجاع إلى الباحث</value>
+  </data>
+  <data name="return_to_researcher" xml:space="preserve">
+    <value>إعادة للباحث</value>
+  </data>
+  <data name="return_to_research_unit_head" xml:space="preserve">
+    <value>العودة إلى رئيس وحدة البحوث</value>
+  </data>
+  <data name="return_to_research_unit_secretary" xml:space="preserve">
+    <value>إرجاع الطلب الى أمين وحدة البحوث</value>
+  </data>
+  <data name="return_to_the_researcher" xml:space="preserve">
+    <value>إعادة للباحث</value>
+  </data>
+  <data name="return_to_vice_dean_of_academic_research" xml:space="preserve">
+    <value>إرجاع إلى وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="ReviewType" xml:space="preserve">
+    <value>نوع التحقيق</value>
+  </data>
+  <data name="Review_Requests_Publisher" xml:space="preserve">
+    <value>&gt;&gt;&gt;&gt;&gt;&gt;&gt; 0312fc7e683ca3220fea2a2a6e83a23d9c5c8a1b</value>
+  </data>
+  <data name="reward_of_Authors" xml:space="preserve">
+    <value>مكافأة المؤلفين</value>
+  </data>
+  <data name="reward_pending_accountant" xml:space="preserve">
+    <value>بانتظار صرف المكافأة من قبل المحاسب</value>
+  </data>
+  <data name="reward_pending_accountant_submit" xml:space="preserve">
+    <value>تم الصرف من قبل المحاسب</value>
+  </data>
+  <data name="reward_pending_approval_by_dean" xml:space="preserve">
+    <value>المكافأة بانتظار موافقة العميد</value>
+  </data>
+  <data name="reward_pending_approval_by_dean_approve" xml:space="preserve">
+    <value>موافقة العميد على المكافأة</value>
+  </data>
+  <data name="reward_pending_approval_by_vice_dean" xml:space="preserve">
+    <value>المكافأة بانتظار موافقة وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="reward_pending_approval_by_vice_dean_submit" xml:space="preserve">
+    <value>موافقة وكيل العمادة للنشر العلمي على المكافأة</value>
+  </data>
+  <data name="role" xml:space="preserve">
+    <value>الدور</value>
+  </data>
+  <data name="role_required" xml:space="preserve">
+    <value>الدور مطلوب</value>
+  </data>
+  <data name="r_major" xml:space="preserve">
+    <value>نوع طلب النشر</value>
+  </data>
+  <data name="salam" xml:space="preserve">
+    <value>السلام</value>
+  </data>
+  <data name="salary_deduction" xml:space="preserve">
+    <value>الخصم من الراتب</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="scientificDepartment" xml:space="preserve">
+    <value>القسم العلمي</value>
+  </data>
+  <data name="scientificDepartment_required" xml:space="preserve">
+    <value>القسم العلمي مطلوب</value>
+  </data>
+  <data name="scientificletterinformation" xml:space="preserve">
+    <value>معلومات الرسالة العلمية</value>
+  </data>
+  <data name="scientificletter_attachments" xml:space="preserve">
+    <value>ارفاق الرسالة العلمية</value>
+  </data>
+  <data name="scientificletter_attachments_required" xml:space="preserve">
+    <value>الرسالة العلمية يجب أن ترفق.</value>
+  </data>
+  <data name="scientificmaterialpublishedbefore" xml:space="preserve">
+    <value>هل تم نشر المادة العلمية من قبل؟</value>
+  </data>
+  <data name="scientificMat_type" xml:space="preserve">
+    <value>نوع المادة العلمية</value>
+  </data>
+  <data name="scientificsubject_required" xml:space="preserve">
+    <value>يجب ادخال عنوان الماة العلمية</value>
+  </data>
+  <data name="scientific_council_meeting" xml:space="preserve">
+    <value>محضر اجتماع المجلس العلمي</value>
+  </data>
+  <data name="scientific_department" xml:space="preserve">
+    <value>القسم العلمي</value>
+  </data>
+  <data name="scientific_department_required" xml:space="preserve">
+    <value>القسم العلمي مطلوب</value>
+  </data>
+  <data name="scientific_material_details" xml:space="preserve">
+    <value>تفاصيل المادة العلمية</value>
+  </data>
+  <data name="scientific_material_type" xml:space="preserve">
+    <value>نوع المادة العلمية</value>
+  </data>
+  <data name="scientific_material_type_required" xml:space="preserve">
+    <value>نوع المادة العلمية مطلوب.</value>
+  </data>
+  <data name="scientific_mat_type" xml:space="preserve">
+    <value>نوع المادة العلمية</value>
+  </data>
+  <data name="sci_letterinformation_title" xml:space="preserve">
+    <value>عنوان الرسالة</value>
+  </data>
+  <data name="sci_letterinformation_title_required" xml:space="preserve">
+    <value>عنوان الرسالة مطلوب.</value>
+  </data>
+  <data name="scope_manuscript" xml:space="preserve">
+    <value>مجال المخطوطة</value>
+  </data>
+  <data name="scope_manuscript_required" xml:space="preserve">
+    <value>حقل مجال المخطوطة مطلوب.</value>
+  </data>
+  <data name="scorebox" xml:space="preserve">
+    <value>درجة</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>بحث</value>
+  </data>
+  <data name="second_arbitrator" xml:space="preserve">
+    <value>المحكم الثاني</value>
+  </data>
+  <data name="secretaryofthe_committee_publishing_arbitration" xml:space="preserve">
+    <value>أمين لجنة النشر والتحكيم</value>
+  </data>
+  <data name="secretcode" xml:space="preserve">
+    <value>الرمز السري</value>
+  </data>
+  <data name="secretcode_required" xml:space="preserve">
+    <value>الرمز السري مطلوب.</value>
+  </data>
+  <data name="select" xml:space="preserve">
+    <value>اختر</value>
+  </data>
+  <data name="select_arbitrators" xml:space="preserve">
+    <value>اختر المحكمين</value>
+  </data>
+  <data name="select_bank" xml:space="preserve">
+    <value>يرجى اختيار البنك</value>
+  </data>
+  <data name="select_department" xml:space="preserve">
+    <value>اختر القسم</value>
+  </data>
+  <data name="select_faculty" xml:space="preserve">
+    <value>يرجى اختيار الكلية</value>
+  </data>
+  <data name="select_major" xml:space="preserve">
+    <value>يرجى اختيار التخصص</value>
+  </data>
+  <data name="select_publish_request" xml:space="preserve">
+    <value>يرجى اختيار طلب النشر السابق</value>
+  </data>
+  <data name="select_referee" xml:space="preserve">
+    <value>اختر هذا المحكم</value>
+  </data>
+  <data name="select_referees" xml:space="preserve">
+    <value>اختيار محكمين</value>
+  </data>
+  <data name="select_scientific_department" xml:space="preserve">
+    <value>اختر القسم العلمي</value>
+  </data>
+  <data name="selec_scientficmaterial" xml:space="preserve">
+    <value>يرجى اختيار نوع المادة العلمية</value>
+  </data>
+  <data name="send" xml:space="preserve">
+    <value>إعادة توجيه </value>
+  </data>
+  <data name="send_to_board_members" xml:space="preserve">
+    <value>ارسال الى المجلس الادارة</value>
+  </data>
+  <data name="send_to_commitee_members" xml:space="preserve">
+    <value>إرسال الى اعضاء اللجنة </value>
+  </data>
+  <data name="send_to_examiner" xml:space="preserve">
+    <value>ارسال الى الفاحص</value>
+  </data>
+  <data name="serial_no" xml:space="preserve">
+    <value>م.</value>
+  </data>
+  <data name="session_expired" xml:space="preserve">
+    <value>انتهت هذه الجلسة</value>
+  </data>
+  <data name="session_locked" xml:space="preserve">
+    <value>قمت بتسجيل الدخول في متصفح آخر</value>
+  </data>
+  <data name="sign_out" xml:space="preserve">
+    <value>تسجيل الخروج</value>
+  </data>
+  <data name="similar_request_already_exists" xml:space="preserve">
+    <value>هناك طلب مشابه لا زال تحت المراجعة</value>
+  </data>
+  <data name="site_map" xml:space="preserve">
+    <value>خريطة الموقع</value>
+  </data>
+  <data name="site_title" xml:space="preserve">
+    <value>نظام النشر العلمي</value>
+  </data>
+  <data name="site_title_long" xml:space="preserve">
+    <value>نظام النشر العلمي</value>
+  </data>
+  <data name="sl" xml:space="preserve">
+    <value>تسلسل</value>
+  </data>
+  <data name="sms_code" xml:space="preserve">
+    <value>رمز التفعيل</value>
+  </data>
+  <data name="sms_code_mismatch" xml:space="preserve">
+    <value>رقم التحقق المدخل غير صحيح</value>
+  </data>
+  <data name="sms_key" xml:space="preserve">
+    <value>رمز التفعيل</value>
+  </data>
+  <data name="sms_verification_message" xml:space="preserve">
+    <value>لقد دعيت إلى المشاركة لنشر بحث علمي في جامعة الإمام محمد بن سعود الإسلامية، لإكمال التسجيل يرجى استخدام الرابط التالي: {1}</value>
+  </data>
+  <data name="spare_arbitrator" xml:space="preserve">
+    <value>المحكم الإحتياطي</value>
+  </data>
+  <data name="specialization" xml:space="preserve">
+    <value>التخصص الدقيق</value>
+  </data>
+  <data name="specialization_required" xml:space="preserve">
+    <value>حقل التخصص مطلوب.</value>
+  </data>
+  <data name="st" xml:space="preserve">
+    <value />
+  </data>
+  <data name="state" xml:space="preserve">
+    <value>publish_request_pending_paeafter_referees_and_researcher_modifications_head</value>
+  </data>
+  <data name="state1" xml:space="preserve">
+    <value>publish_request_pending_referees_after_referees_and_researcher_modifications</value>
+  </data>
+  <data name="state10" xml:space="preserve">
+    <value>operation_command_pending_operation_command_forward2_and_half</value>
+  </data>
+  <data name="state11" xml:space="preserve">
+    <value>operation_command_pending_operation_command_execution3</value>
+  </data>
+  <data name="state12" xml:space="preserve">
+    <value>operation_command_pending_operation_command_forward3</value>
+  </data>
+  <data name="state13" xml:space="preserve">
+    <value>operation_command_pending_operation_command_researcher_rejected</value>
+  </data>
+  <data name="state14" xml:space="preserve">
+    <value>operation_command_pending_isbn</value>
+  </data>
+  <data name="state15" xml:space="preserve">
+    <value>distribution_pending_kfnlcopies_distribution_by_printing_unit</value>
+  </data>
+  <data name="state2" xml:space="preserve">
+    <value>operation_command_pending_operation_command_preparation</value>
+  </data>
+  <data name="state3" xml:space="preserve">
+    <value>operation_command_pending_operation_command_approval</value>
+  </data>
+  <data name="state4" xml:space="preserve">
+    <value>operation_command_pending_operation_command_execution</value>
+  </data>
+  <data name="state5" xml:space="preserve">
+    <value>operation_command_pending_operation_command_validation</value>
+  </data>
+  <data name="state6" xml:space="preserve">
+    <value>operation_command_pending_operation_command_forward1_and_half</value>
+  </data>
+  <data name="state7" xml:space="preserve">
+    <value>operation_command_pending_researcher_comments2</value>
+  </data>
+  <data name="state8" xml:space="preserve">
+    <value>operation_command_pending_operation_command_execution2</value>
+  </data>
+  <data name="state9" xml:space="preserve">
+    <value>operation_command_pending_operation_command_forward2</value>
+  </data>
+  <data name="state_approved" xml:space="preserve">
+    <value>تم الاعتماد </value>
+  </data>
+  <data name="state_canceled" xml:space="preserve">
+    <value>تم إلغاء الطلب</value>
+  </data>
+  <data name="state_completed" xml:space="preserve">
+    <value>تم اكتمال الطلب</value>
+  </data>
+  <data name="state_conditional_approval" xml:space="preserve">
+    <value>موافقة مشروطة</value>
+  </data>
+  <data name="state_distribution_pending_author_copies_distribution_by_pr" xml:space="preserve">
+    <value>معالجة طلب تسليم نسخ للمؤلف من قبل مدير العلاقات العامة</value>
+  </data>
+  <data name="state_distribution_pending_copies_distribution_by_library_affairs" xml:space="preserve">
+    <value>معالجة طلب التوزيع على الجهات</value>
+  </data>
+  <data name="state_distribution_pending_copy_distribution" xml:space="preserve">
+    <value>في انتظار توزيع النسخ من قبل العلاقات العامة</value>
+  </data>
+  <data name="state_distribution_pending_distribution_closure" xml:space="preserve">
+    <value>في انتظار إغلاق طلب التوزيع من قبل امين وحدة التجهيز الطباعي </value>
+  </data>
+  <data name="state_distribution_pending_distribution_list_approval" xml:space="preserve">
+    <value>اعتماد قوائم التوزيع</value>
+  </data>
+  <data name="state_distribution_pending_distribution_list_approval_vice_dean" xml:space="preserve">
+    <value>في انتظار موافقة وكيل عمادة النشر العلمي </value>
+  </data>
+  <data name="state_distribution_pending_distribution_list_preparation" xml:space="preserve">
+    <value>إعداد قوائم التوزيع</value>
+  </data>
+  <data name="state_distribution_pending_researcher_confirmation" xml:space="preserve">
+    <value>في انتظار تأكيد استلام النسخ من قِبل الباحث</value>
+  </data>
+  <data name="state_operation_command_after_isbn" xml:space="preserve">
+    <value>أمر التشغيل في إنتظار أمين لجنة التجهيز الطباعي  بعد إصدار الردمك </value>
+  </data>
+  <data name="state_operation_command_pending_isbn" xml:space="preserve">
+    <value>في إنظار رقم الردمك من قبل موظف مكتبة الملك فهد الوطنية</value>
+  </data>
+  <data name="state_operation_command_pending_isbnrequest_submission" xml:space="preserve">
+    <value>في انتظار إرسال طلب رقم  الردمك من قبل أمين لجنة التجهيز الطباعي  </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_approval" xml:space="preserve">
+    <value>في إنتظار إعتماد طلب التشغيل من قبل عميد البحث العلمي </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_execution" xml:space="preserve">
+    <value>في إنتظار تنفيذ أمر التشغيل من قبل موظف مطابع الجامعة </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_execution2" xml:space="preserve">
+    <value>في إنتظار تنفيذ أمر التشغيل من قبل موظف مطابع الجامعة التجربة الثانية </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_execution3" xml:space="preserve">
+    <value>في إنتظار تنفيذ أمر التشغيل من قبل موظف مطابع الجامعة التجربة الثالثة </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_final_approval" xml:space="preserve">
+    <value>اعتماد طلب التشغيل من قبل عميد البحث العلمي </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_final_approval_vice_dean" xml:space="preserve">
+    <value>الموافقة النهائية من قبل وكيل عمادة البحث العلمي </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_forward" xml:space="preserve">
+    <value>إعادة توجيه أمر التشغيل إلى أمين لجنة التجهيز الطباعي  </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_forward1_and_half" xml:space="preserve">
+    <value>طلب التشغيل في إنتظار أمين لجنة التجهيز الطباعي التجربة الأولى  </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_forward2" xml:space="preserve">
+    <value>إعادة توجيه طلب التشغيل التجربة الثانية  إلى أمين لجنةالتجهيز الطباعي </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_forward2_and_half" xml:space="preserve">
+    <value>إعادة توجيه أمر التشغيل التجربة الثانية إلى أمين لجنة التجهيز الطباعي </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_forward3" xml:space="preserve">
+    <value>إعادة توجيه أمر التشغيل التجربة الثالثة إلى أمين لجنة التجهيز الطباعي </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_forward_researcher_rejection" xml:space="preserve">
+    <value>في انتظار إعادة توجيه رفض الباحث </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_initiation" xml:space="preserve">
+    <value>في انتظار اعطاء امر بدء التشغيل من قبل أمين وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_initiation_after_proof_reading" xml:space="preserve">
+    <value>في انتظار اعطاء امر بدء التشغيل من قبل أمين وحدة التجهيز الطباعي</value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_preparation" xml:space="preserve">
+    <value>في إنتظار إعطاء أمر التشغيل من قبل وكيل عمادة النشر العلمي </value>
+  </data>
+  <data name="state_operation_command_pending_operation_command_validation" xml:space="preserve">
+    <value>في إنتظار المصادقة على أمر التشغيل من قبل مدير عام مطابع الجامعة</value>
+  </data>
+  <data name="state_operation_command_pending_pending_correction" xml:space="preserve">
+    <value>في انتظار التصحيح</value>
+  </data>
+  <data name="state_operation_command_pending_printing" xml:space="preserve">
+    <value>في انتظار الطباعةمن قبل موظف مطابع الجامعة   </value>
+  </data>
+  <data name="state_operation_command_pending_printing_manager" xml:space="preserve">
+    <value>في انتظار مدير المطابع </value>
+  </data>
+  <data name="state_operation_command_pending_proofreading" xml:space="preserve">
+    <value>في انتظار المصحح </value>
+  </data>
+  <data name="state_operation_command_pending_researcher_acceptance" xml:space="preserve">
+    <value>في إنتظار موافقة الباحث على طلب التشغيل</value>
+  </data>
+  <data name="state_operation_command_pending_researcher_comments" xml:space="preserve">
+    <value>في انتظار تعديلات الباحث </value>
+  </data>
+  <data name="state_operation_command_pending_researcher_comments2" xml:space="preserve">
+    <value>إعادة أمر التشغيل الى الباحث التجربة الثانية </value>
+  </data>
+  <data name="state_operation_command_pending_researcher_proofreading_acceptance" xml:space="preserve">
+    <value>في انتظار موافقة المصحح </value>
+  </data>
+  <data name="state_pending" xml:space="preserve">
+    <value>قيد الانتظار</value>
+  </data>
+  <data name="state_pending_academic_council_approval" xml:space="preserve">
+    <value>في انتظار موافقة المجلس العلمي</value>
+  </data>
+  <data name="state_pending_advertisement" xml:space="preserve">
+    <value>في انتظار الإعلان</value>
+  </data>
+  <data name="state_pricing_pending_pricing_approval_by_dean" xml:space="preserve">
+    <value>في انتظار موافقة العميد </value>
+  </data>
+  <data name="state_pricing_pending_pricing_approval_by_library_affairs" xml:space="preserve">
+    <value>في انتظار موافقة عميد شؤون المكتبات </value>
+  </data>
+  <data name="state_pricing_pending_pricing_approval_by_university_press" xml:space="preserve">
+    <value>في انتظار موافقة مدير مطابع الجامعة </value>
+  </data>
+  <data name="state_pricing_pending_pricing_prepartion" xml:space="preserve">
+    <value>بدء عملية التسعيرمن قبل وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="state_publish_request_not_submitted" xml:space="preserve">
+    <value>لم يتم إرسال الطلب </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees" xml:space="preserve">
+    <value>في انتظار المجلس العلمي بعد التحكيم </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_approve" xml:space="preserve">
+    <value>في انتظار موافقة المجلس العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_approve_head" xml:space="preserve">
+    <value>في انتظار موافقة رئيس المجلس العلمي  </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_approve_members" xml:space="preserve">
+    <value>في انتظار موافقة أعضاء المجلس العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_approve_with_comments" xml:space="preserve">
+    <value>موافقة المجلس العلمي مع وجود ملاحظات </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_approve_with_comments_head" xml:space="preserve">
+    <value>موافقة رئيس المجلس العلمي مع وجود ملاحظات </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_approve_with_comments_members" xml:space="preserve">
+    <value>موافقة أعضاء المجلس العلمي مع وجود ملاحظات </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_head" xml:space="preserve">
+    <value>في انتظار رئيس المجلس العلمي  </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_members" xml:space="preserve">
+    <value>في انتظار  أعضاء المجلس العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_rector_approved" xml:space="preserve">
+    <value>تم الموافقة على المحكمين وفي إنتظار إعتماد المدير </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_rector_rejected" xml:space="preserve">
+    <value>في إنتظار الرفض من قبل مدير الجامعة </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_reject" xml:space="preserve">
+    <value>في إنتظار الرفض من قبل المجلس العلمي</value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_reject_head" xml:space="preserve">
+    <value>في إنتظار الرفض من قبل  رئيس المجلس العلمي</value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_after_referees_reject_members" xml:space="preserve">
+    <value>تم الرفض من قبل أعضاء المجلس </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_referee_selection" xml:space="preserve">
+    <value>في انتظار اختيار المحكمين من قبل المجلس العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_referee_selection_head" xml:space="preserve">
+    <value>في انتظار اختيار المحكمين من قبل رئيس المجلس العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_academic_council_referee_selection_members" xml:space="preserve">
+    <value>في انتظار اختيار المحكمين من قبل أعضاء المجلس العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_coresearchers" xml:space="preserve">
+    <value>في انتظار المشاركين في المادة العلمية </value>
+  </data>
+  <data name="state_publish_request_pending_deanship_of_academic_research_commitee" xml:space="preserve">
+    <value>في انتظار رأي مجلس عمادة البحث العلمي</value>
+  </data>
+  <data name="state_publish_request_pending_dean_of_academic_research_publish_approval" xml:space="preserve">
+    <value>في انتظار  موافقة عميد البحث العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_initial_referee" xml:space="preserve">
+    <value>في انتظار  المحكم المبدئي </value>
+  </data>
+  <data name="state_publish_request_pending_modifications_after_referees" xml:space="preserve">
+    <value>في انتظار تعديلات الباحث بعد التحكيم </value>
+  </data>
+  <data name="state_publish_request_pending_modifications_after_rus" xml:space="preserve">
+    <value>في انتظار تعديلات الباحث </value>
+  </data>
+  <data name="state_publish_request_pending_paeafter_referees" xml:space="preserve">
+    <value>في انتظار لجنة النشر والتحكيم والمعادلات بعد التحكيم </value>
+  </data>
+  <data name="state_publish_request_pending_paeafter_referees_and_researcher_modifications" xml:space="preserve">
+    <value>طلب النشر في إنتظار لجنة النشر والتحكيم والمعادلات بعد تعديلات الباحث</value>
+  </data>
+  <data name="state_publish_request_pending_paeafter_referees_and_researcher_modifications_vice_dean" xml:space="preserve">
+    <value>في انتظار وكيل عمادة  البحث العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_paeafter_referees_head" xml:space="preserve">
+    <value>في انتظار رئيس لجنة النشر والتحكيم والمعادلات</value>
+  </data>
+  <data name="state_publish_request_pending_paeafter_referees_members" xml:space="preserve">
+    <value>في انتظار أعضاء لجنة النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="state_publish_request_pending_paeafter_referees_vice_dean" xml:space="preserve">
+    <value>في انتظار وكيل عمادة النشر العلمي</value>
+  </data>
+  <data name="state_publish_request_pending_paeafter_referee_selection" xml:space="preserve">
+    <value>في انتظار لجنة النشر والتحكيم والمعادلات بعد التحكيم </value>
+  </data>
+  <data name="state_publish_request_pending_paeafter_referee_selection_vice_dean" xml:space="preserve">
+    <value>في انتظار اختيار المحكمين من قبل وكيل عمادة البحث العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_paecouncil_after_referees_approve_with_comments" xml:space="preserve">
+    <value>موافقة لجنة النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="state_publish_request_pending_paecouncil_after_referees_approve_with_comments_head" xml:space="preserve">
+    <value>موافقة رئيس لجنة النشر والتحكيم والمعادلات مع وجود ملاحظات </value>
+  </data>
+  <data name="state_publish_request_pending_paecouncil_after_referees_approve_with_comments_vice_dean" xml:space="preserve">
+    <value>موافقة وكيل عمادة النشر العلمي </value>
+  </data>
+  <data name="state_publish_request_pending_paereferee_selection" xml:space="preserve">
+    <value>في انتظار اختيار المحكمين من قبل لجنة النشر والتحكيم والمعادلات </value>
+  </data>
+  <data name="state_publish_request_pending_paereferee_selection_head" xml:space="preserve">
+    <value>في انتظار اختيار المحكمين من قبل رئيس لجنة النشر والتحكيم والمعادلات للمحكمين </value>
+  </data>
+  <data name="state_publish_request_pending_paereferee_selection_members" xml:space="preserve">
+    <value>في انتظار اختيار أعضاء لجنة النشر والتحكيم والمعادلات للمحكمين </value>
+  </data>
+  <data name="state_publish_request_pending_paereferee_selection_vice_dean" xml:space="preserve">
+    <value>في انتظار اختيار المحكمين من قبل عميد عمادة النشر العلمي</value>
+  </data>
+  <data name="state_publish_request_pending_referees" xml:space="preserve">
+    <value>إرسال إلى لجنة النشر والتحكيم والمعادلات، وفي انتظار تقارير المحكمين</value>
+  </data>
+  <data name="state_publish_request_pending_research_unit_committee" xml:space="preserve">
+    <value>في انتظار اراء اعضاء المجلس</value>
+  </data>
+  <data name="state_publish_request_pending_research_unit_head" xml:space="preserve">
+    <value>في انتظار  رئيس وحدة البحوث </value>
+  </data>
+  <data name="state_publish_request_pending_research_unit_secretary" xml:space="preserve">
+    <value>في انتظار أمين وحدة البحوث </value>
+  </data>
+  <data name="state_publish_request_pending_spare_referee" xml:space="preserve">
+    <value>في انتظار المحكم الإحتياطي</value>
+  </data>
+  <data name="state_publish_request_pending_university_rector_after_referee_selection" xml:space="preserve">
+    <value>في انتظار موافقة مدير الجامعة على اختيار المحكمين  </value>
+  </data>
+  <data name="state_publish_request_pending_university_rector_publish_approval" xml:space="preserve">
+    <value>في انتظار موافقة اعتماد مدير الجامعة </value>
+  </data>
+  <data name="state_publish_request_pending_vice_dean_of_academic_research_publish_approval" xml:space="preserve">
+    <value>في انتظار  وكيل العمادة للنشر العلمي </value>
+  </data>
+  <data name="state_publish_request_rejected_by_coresearchers" xml:space="preserve">
+    <value>طلب النشر رفض بواسطة المشاركون بالبحث</value>
+  </data>
+  <data name="state_rejected" xml:space="preserve">
+    <value>تم رفض الطلب</value>
+  </data>
+  <data name="state_rejected_by_researcher" xml:space="preserve">
+    <value>تم رفض الطلب بواسطة الباحث</value>
+  </data>
+  <data name="state_reward_pending_accountant" xml:space="preserve">
+    <value>في انتظار صرف الموافقة من قبل المحاسب</value>
+  </data>
+  <data name="state_reward_pending_approval_by_dean" xml:space="preserve">
+    <value>في انتظار اعتماد المكافأة من قبل العميد</value>
+  </data>
+  <data name="state_reward_pending_approval_by_vice_dean" xml:space="preserve">
+    <value>في انتظار اعتماد المكافأة من قبل وكيل عمادة النشر العلمي </value>
+  </data>
+  <data name="state_reward_pending_financial_department_director" xml:space="preserve">
+    <value>في انتظار الموافقة من قبل مدير الإدارة المالية</value>
+  </data>
+  <data name="status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="subject" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="subject_arabic" xml:space="preserve">
+    <value>العنوان (عربي)</value>
+  </data>
+  <data name="subject_english" xml:space="preserve">
+    <value>العنوان (إنجليزي)</value>
+  </data>
+  <data name="subject_one" xml:space="preserve">
+    <value>الموضوع الأول</value>
+  </data>
+  <data name="subject_required" xml:space="preserve">
+    <value>الموضوع مطلوب.</value>
+  </data>
+  <data name="subject_title" xml:space="preserve">
+    <value>عنوان المادة العلمية</value>
+  </data>
+  <data name="subject_type" xml:space="preserve">
+    <value>نوع المادة العلمية</value>
+  </data>
+  <data name="submit" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="submitted" xml:space="preserve">
+    <value>تم إرسال الطلب</value>
+  </data>
+  <data name="submitting_publish_recommendation" xml:space="preserve">
+    <value>رفع توصية بشأن طلب نشر</value>
+  </data>
+  <data name="submit_accept" xml:space="preserve">
+    <value>موافق</value>
+  </data>
+  <data name="submit_coresearcher_data" xml:space="preserve">
+    <value>إرسال بيانات الباحث</value>
+  </data>
+  <data name="superivisor_required" xml:space="preserve">
+    <value>حقل المشرف مطلوب.</value>
+  </data>
+  <data name="supervisor" xml:space="preserve">
+    <value>المشرف</value>
+  </data>
+  <data name="supervisor_required" xml:space="preserve">
+    <value>المشرف مطلوب.</value>
+  </data>
+  <data name="swift_code" xml:space="preserve">
+    <value>سويفت كود</value>
+  </data>
+  <data name="systematic" xml:space="preserve">
+    <value>منهجي</value>
+  </data>
+  <data name="system_admin" xml:space="preserve">
+    <value>مدير النظام</value>
+  </data>
+  <data name="system_title" xml:space="preserve">
+    <value>نظام النشر العلمي</value>
+  </data>
+  <data name="s_no" xml:space="preserve">
+    <value>مسلسل</value>
+  </data>
+  <data name="templates" xml:space="preserve">
+    <value>النماذج</value>
+  </data>
+  <data name="template_name" xml:space="preserve">
+    <value>اسم النموذج</value>
+  </data>
+  <data name="text_of_decl" xml:space="preserve">
+    <value>الإقرار</value>
+  </data>
+  <data name="thesis" xml:space="preserve">
+    <value>الرسائل العلمية</value>
+  </data>
+  <data name="ThesisRequestsCollegeId" xml:space="preserve">
+    <value>اسم الكلية</value>
+  </data>
+  <data name="ThesisRequestsGPA" xml:space="preserve">
+    <value>التقدير</value>
+  </data>
+  <data name="ThesisRequestsMajorId" xml:space="preserve">
+    <value>تخصص الكتيب </value>
+  </data>
+  <data name="thesis_agreeement" xml:space="preserve">
+    <value>إقرار الرسالة</value>
+  </data>
+  <data name="thesis_detals" xml:space="preserve">
+    <value>بيانات الرسالة</value>
+  </data>
+  <data name="thesis_title" xml:space="preserve">
+    <value>عنوان الرسالة</value>
+  </data>
+  <data name="thesis_title_required" xml:space="preserve">
+    <value>عنوان الرسالة مطلوب.</value>
+  </data>
+  <data name="the_authorname_requird" xml:space="preserve">
+    <value>حقل اسم المؤلف مطلوب.</value>
+  </data>
+  <data name="the_originalbooktitle_required" xml:space="preserve">
+    <value>حقل عنوان الكتاب الأصلي مطلوب.</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="title_book_required" xml:space="preserve">
+    <value>حقل عنوان الكتاب مطلوب.</value>
+  </data>
+  <data name="title_oftheoriginal_dictionary" xml:space="preserve">
+    <value>العنوان الأصلي للمعجم (خاص بالمعاجم المترجمة)</value>
+  </data>
+  <data name="title_ofThesis_required" xml:space="preserve">
+    <value>حقل عنوان الرسالة مطلوب.</value>
+  </data>
+  <data name="title_of_original_encyclopedia" xml:space="preserve">
+    <value>العنوان الأصلي للموسوعة(خاص بالموسوعات المترجمة)</value>
+  </data>
+  <data name="title_of_the_book" xml:space="preserve">
+    <value>عنوان الكتاب</value>
+  </data>
+  <data name="title_origianal_book" xml:space="preserve">
+    <value>عنوان الكتاب الأصلي (خاص بالكتب المترجمة)</value>
+  </data>
+  <data name="title_original_handBook" xml:space="preserve">
+    <value>عنوان الكتيب الأصلي(خاص بالكتب المترجمة)</value>
+  </data>
+  <data name="to" xml:space="preserve">
+    <value>إلى</value>
+  </data>
+  <data name="topic" xml:space="preserve">
+    <value>الموضوع</value>
+  </data>
+  <data name="topics" xml:space="preserve">
+    <value>الموضوعات</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>المجموع</value>
+  </data>
+  <data name="totalA" xml:space="preserve">
+    <value>الإجمالي</value>
+  </data>
+  <data name="translated_to" xml:space="preserve">
+    <value>مترجمة إلى</value>
+  </data>
+  <data name="translated_To_Language_required" xml:space="preserve">
+    <value>الترجمة إلى اللغة مطلوبة.</value>
+  </data>
+  <data name="transulated_to" xml:space="preserve">
+    <value>مترجم/ة إلى:</value>
+  </data>
+  <data name="transulat_to" xml:space="preserve">
+    <value>مترجم إلى :</value>
+  </data>
+  <data name="transulat_to_dic" xml:space="preserve">
+    <value>مترجم إلى</value>
+  </data>
+  <data name="type_book" xml:space="preserve">
+    <value>كتاب</value>
+  </data>
+  <data name="type_dictionary" xml:space="preserve">
+    <value>معجم</value>
+  </data>
+  <data name="type_encyclopedia" xml:space="preserve">
+    <value>موسوعة</value>
+  </data>
+  <data name="type_handbook" xml:space="preserve">
+    <value>كتيب</value>
+  </data>
+  <data name="type_probe" xml:space="preserve">
+    <value>تحقيق</value>
+  </data>
+  <data name="type_thesis" xml:space="preserve">
+    <value>رسالة علمية</value>
+  </data>
+  <data name="under_audit" xml:space="preserve">
+    <value>تحت التدقيق</value>
+  </data>
+  <data name="university" xml:space="preserve">
+    <value>الجهة المانحة للدرجة العلمية</value>
+  </data>
+  <data name="university_press_director" xml:space="preserve">
+    <value>مدير مطبعة الجامعة</value>
+  </data>
+  <data name="university_press_officer" xml:space="preserve">
+    <value>موظف مطابع الجامعة</value>
+  </data>
+  <data name="university_rector" xml:space="preserve">
+    <value>مدير الجامعة</value>
+  </data>
+  <data name="university_rector_office_director" xml:space="preserve">
+    <value>مدير مكتب الجامعة</value>
+  </data>
+  <data name="university_required" xml:space="preserve">
+    <value>حقل جامعة التخرج مطلوب.</value>
+  </data>
+  <data name="unselect" xml:space="preserve">
+    <value>إلغاء الاختيار</value>
+  </data>
+  <data name="unspecificed" xml:space="preserve">
+    <value>غير محدد</value>
+  </data>
+  <data name="update_book_details" xml:space="preserve">
+    <value>تعديل بيانات الكتاب </value>
+  </data>
+  <data name="update_dictionary_details" xml:space="preserve">
+    <value>تحديث بيانات المعجم</value>
+  </data>
+  <data name="update_encyclopedia_details" xml:space="preserve">
+    <value>تحديث بيانات الموسوعة</value>
+  </data>
+  <data name="update_handbook_details" xml:space="preserve">
+    <value>تحديث بيانات كتيب مرشح للنشر </value>
+  </data>
+  <data name="update_probe_details" xml:space="preserve">
+    <value>تحديث بيانات المخطوط</value>
+  </data>
+  <data name="upload" xml:space="preserve">
+    <value>الملف المطلوب</value>
+  </data>
+  <data name="uploaded_files" xml:space="preserve">
+    <value>الملفات المرفوعة</value>
+  </data>
+  <data name="upload_publishing_request" xml:space="preserve">
+    <value>رفع طلب نشر جديد</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>اسم المستخدم</value>
+  </data>
+  <data name="username_required" xml:space="preserve">
+    <value>اسم المستخدم مطلوب</value>
+  </data>
+  <data name="users" xml:space="preserve">
+    <value>المستخدمون</value>
+  </data>
+  <data name="user_management" xml:space="preserve">
+    <value>إدارة المستخدمين</value>
+  </data>
+  <data name="vacation" xml:space="preserve">
+    <value>إجازة</value>
+  </data>
+  <data name="vacation_address" xml:space="preserve">
+    <value>عنواني خلال الإجازة</value>
+  </data>
+  <data name="vacation_in_days" xml:space="preserve">
+    <value>مدة الإجازة بالأيام</value>
+  </data>
+  <data name="vacation_start_date" xml:space="preserve">
+    <value>تاريخ بداية الإجازة</value>
+  </data>
+  <data name="vacation_type" xml:space="preserve">
+    <value>نوع الإجازة</value>
+  </data>
+  <data name="ValidationSummary" xml:space="preserve">
+    <value>ملخص الأخطاء</value>
+  </data>
+  <data name="very_good" xml:space="preserve">
+    <value>جيد جدًا</value>
+  </data>
+  <data name="vice_dean_of_academic_research" xml:space="preserve">
+    <value>وكيل العمادة للنشر العلمي</value>
+  </data>
+  <data name="view" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="wait" xml:space="preserve">
+    <value>فضلًا انتظر قليلًا..</value>
+  </data>
+  <data name="webmaster" xml:space="preserve">
+    <value>مدير الموقع</value>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>مرحبًا</value>
+  </data>
+  <data name="y" xml:space="preserve">
+    <value />
+  </data>
+  <data name="yes" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="yes_account" xml:space="preserve">
+    <value>نعم</value>
+  </data>
+  <data name="you_must_change_password" xml:space="preserve">
+    <value>يجب تغيير كلمة المرور</value>
+  </data>
+  <data name="approval_average" xml:space="preserve">
+    <value>متوسط ​​الموافقة</value>
+  </data>
+  <data name="Avg_Is_Less_Cannot_Approve" xml:space="preserve">
+    <value>لا يمكنك الموافقة لأن متوسط ​​الموافقة هو &lt; 80٪.</value>
+  </data>
+  <data name="rewards" xml:space="preserve">
+    <value>المكافآت</value>
+  </data>
+  <data name="max_Pages" xml:space="preserve">
+    <value>الحد الأقصى للصفحات</value>
+  </data>
+  <data name="min_Pages" xml:space="preserve">
+    <value>الحد الأدنى للصفحات</value>
+  </data>
+  <data name="reward_amount" xml:space="preserve">
+    <value>مبلغ المكافأة</value>
+  </data>
+  <data name="notification_on_grade_based_referee_approval" xml:space="preserve">
+    <value>نموذج نسبة الموافقة من قبل المحكمين إذا كانت النسبة اكثر من 80 % </value>
+  </data>
+  <data name="notification_on_grade_based_referee_rejection" xml:space="preserve">
+    <value>نموذج نسبة الموافقة من قبل المحكمين اذا كانت النسبة اقل من 80 %</value>
+  </data>
+  <data name="isbn" xml:space="preserve">
+    <value>ISBN</value>
+  </data>
+  <data name="isbn_required" xml:space="preserve">
+    <value>رقم إيسبن مطلوب.</value>
+  </data>
+  <data name="entities" xml:space="preserve">
+    <value>الجهات</value>
+  </data>
+  <data name="entity_name" xml:space="preserve">
+    <value>إسم الجهة</value>
+  </data>
+  <data name="no_copies" xml:space="preserve">
+    <value>عدد النسخ</value>
+  </data>
+  <data name="impersonate_user" xml:space="preserve">
+    <value>انتحال شخصية المستخدم</value>
+  </data>
+  <data name="delegation" xml:space="preserve">
+    <value>تفويض</value>
+  </data>
+  <data name="effective_from" xml:space="preserve">
+    <value>فعال من تاريخ</value>
+  </data>
+  <data name="effective_from_required" xml:space="preserve">
+    <value>فعال من تاريخ</value>
+  </data>
+  <data name="effective_to" xml:space="preserve">
+    <value>فعال إلى تاريخ مطلوب</value>
+  </data>
+  <data name="effective_to_required" xml:space="preserve">
+    <value>فعالة حتى مطلوب</value>
+  </data>
+  <data name="distribution_copies_condition" xml:space="preserve">
+    <value>يجب أن يكون عدد النسخ أقل من النسخ المحددة.</value>
+  </data>
+  <data name="distribution_copies_selected" xml:space="preserve">
+    <value>عدد النسخ المختارة للتوزيع</value>
+  </data>
+  <data name="other_documents" xml:space="preserve">
+    <value>وثائق أخرى</value>
+  </data>
+  <data name="rules" xml:space="preserve">
+    <value>قواعد</value>
+  </data>
+  <data name="terms_and_conditions" xml:space="preserve">
+    <value>الأحكام والشروط</value>
+  </data>
+  <data name="documents" xml:space="preserve">
+    <value>مستندات</value>
+  </data>
+  <data name="referees_agreement" xml:space="preserve">
+    <value>اتفاقية الحكام</value>
+  </data>
+  <data name="referees_documents" xml:space="preserve">
+    <value>حكام الوثائق</value>
+  </data>
+  <data name="researchers_documents" xml:space="preserve">
+    <value>وثائق الباحثين</value>
+  </data>
+  <data name="entitylist_dla" xml:space="preserve">
+    <value>استلام قائمة الجهات من قبل عميد شؤون المكتبات</value>
+  </data>
+  <data name="email_code" xml:space="preserve">
+    <value>رمز تفعيل البريد الإلكتروني</value>
+  </data>
+  <data name="email_code_mismatch" xml:space="preserve">
+    <value>Activationb code mismatch</value>
+  </data>
+  <data name="birth_date" xml:space="preserve">
+    <value>تاريخ الميلاد</value>
+  </data>
+  <data name="city_id" xml:space="preserve">
+    <value>مدينة الإقامة</value>
+  </data>
+  <data name="college_id" xml:space="preserve">
+    <value>الكلية</value>
+  </data>
+  <data name="country_id" xml:space="preserve">
+    <value>بلد الإقامة</value>
+  </data>
+  <data name="department_id" xml:space="preserve">
+    <value>رقم القسم</value>
+  </data>
+  <data name="nationality_id" xml:space="preserve">
+    <value>الجنسية</value>
+  </data>
+  <data name="quad_name" xml:space="preserve">
+    <value>الاسم الرباعي</value>
+  </data>
+  <data name="qualification" xml:space="preserve">
+    <value>الرتبة العلمية</value>
+  </data>
+  <data name="university_id" xml:space="preserve">
+    <value>الجامعة</value>
+  </data>
+  <data name="bank_account_holder_name" xml:space="preserve">
+    <value>اسم صاحب الحساب</value>
+  </data>
+  <data name="bank_account_iban" xml:space="preserve">
+    <value>رقم الايبان</value>
+  </data>
+  <data name="bank_iban_photocopy" xml:space="preserve">
+    <value>صورة بطاقة آيبان</value>
+  </data>
+  <data name="confirm_password" xml:space="preserve">
+    <value>تأكيد كلمة المرور</value>
+  </data>
+  <data name="data_saved_successfully" xml:space="preserve">
+    <value>تم حفظ البيانات بنجاح</value>
+  </data>
+  <data name="email_verification" xml:space="preserve">
+    <value>التأكد من البريد الإلكتروني</value>
+  </data>
+  <data name="mobile_number" xml:space="preserve">
+    <value>رقم الجوال</value>
+  </data>
+  <data name="mobile_verification" xml:space="preserve">
+    <value>التأكد من رقم الجوال</value>
+  </data>
+  <data name="prev_btn" xml:space="preserve">
+    <value>السابق</value>
+  </data>
+  <data name="registration_successul" xml:space="preserve">
+    <value>تم التسجيل بنجاح</value>
+  </data>
+  <data name="send_verification_code" xml:space="preserve">
+    <value>إرسال رمز التحقق</value>
+  </data>
+  <data name="verify" xml:space="preserve">
+    <value>تحقق</value>
+  </data>
+  <data name="already_verified" xml:space="preserve">
+    <value>تم التحقق مسبقا</value>
+  </data>
+  <data name="aps_guide" xml:space="preserve">
+    <value>ضوابط النشر</value>
+  </data>
+  <data name="invalid_code" xml:space="preserve">
+    <value>رمز تفعيل خاطئ</value>
+  </data>
+  <data name="publishing_priorities" xml:space="preserve">
+    <value>اولويات النشر </value>
+  </data>
+  <data name="user_guide" xml:space="preserve">
+    <value>دليل المستخدم</value>
+  </data>
+  <data name="initial_referee" xml:space="preserve">
+    <value>محكم مبدئي</value>
+  </data>
+  <data name="state_publish_request_pending_initial_referee_for_dar" xml:space="preserve">
+    <value>في انتظار  المحكم المبدئي </value>
+  </data>
+  <data name="state_publish_request_pending_initial_referee_for_ruh" xml:space="preserve">
+    <value>في انتظار  المحكم المبدئي </value>
+  </data>
+  <data name="home_address" xml:space="preserve">
+    <value>عنوان السكن</value>
+  </data>
+  <data name="bank" xml:space="preserve">
+    <value>البنك</value>
+  </data>
+  <data name="assistant_professor" xml:space="preserve">
+    <value>أستاذ مساعد</value>
+  </data>
+  <data name="associate_professor" xml:space="preserve">
+    <value>أستاذ مشارك </value>
+  </data>
+  <data name="iban_photo_required" xml:space="preserve">
+    <value>صورة بطاقة الأيبان مطلوبة </value>
+  </data>
+  <data name="professor" xml:space="preserve">
+    <value>أستاذ</value>
+  </data>
+  <data name="quadname_required" xml:space="preserve">
+    <value>الإسم الرباعي مطلوب</value>
+  </data>
+  <data name="qualification_required" xml:space="preserve">
+    <value>حقل المؤهل مطلوب</value>
+  </data>
+  <data name="register_as" xml:space="preserve">
+    <value>تسجيل بصفة</value>
+  </data>
+  <data name="robot_required" xml:space="preserve">
+    <value>لطفًا .. يرجى اختر مربع (أنا لست برنامج روبوت).</value>
+  </data>
+  <data name="missing_address" xml:space="preserve">
+    <value>إدخال خاطئ</value>
+  </data>
+  <data name="invalid_request" xml:space="preserve">
+    <value>طلب خاطئ</value>
+  </data>
+  <data name="add_extra_role" xml:space="preserve">
+    <value>دور إضافي</value>
+  </data>
+  <data name="is_enabled" xml:space="preserve">
+    <value>التفعيل</value>
+  </data>
+  <data name="role_name" xml:space="preserve">
+    <value>الدور</value>
+  </data>
+  <data name="college_other" xml:space="preserve">
+    <value>الكلية</value>
+  </data>
+  <data name="residence_city_required" xml:space="preserve">
+    <value>حقل مدينة الإقامة مطلوب</value>
+  </data>
+  <data name="accept_and_send" xml:space="preserve">
+    <value>موافقة وإرسال</value>
+  </data>
+  <data name="bachelors" xml:space="preserve">
+    <value>بكالوريوس</value>
+  </data>
+  <data name="diploma" xml:space="preserve">
+    <value>دبلوم</value>
+  </data>
+  <data name="masters" xml:space="preserve">
+    <value>ماجستير</value>
+  </data>
+  <data name="master_student" xml:space="preserve">
+    <value>طالب ماجستير</value>
+  </data>
+  <data name="PhdStudent" xml:space="preserve">
+    <value>طالب دكتوراه</value>
+  </data>
+  <data name="phd_student" xml:space="preserve">
+    <value>طالب دكتوراه</value>
+  </data>
+  <data name="undergraduate_student" xml:space="preserve">
+    <value>طالب بكالوريس</value>
+  </data>
+  <data name="history_accepted_by_co_researcher" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="publication" xml:space="preserve">
+    <value>منشور</value>
+  </data>
+  <data name="disabled" xml:space="preserve">
+    <value>غير مفعل</value>
+  </data>
+  <data name="enabled" xml:space="preserve">
+    <value>مُفعل</value>
+  </data>
+  <data name="remove" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="sn" xml:space="preserve">
+    <value>ر.ت.</value>
+  </data>
+  <data name="add_external_referee" xml:space="preserve">
+    <value>إضافة محكم من خارج النظام</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="external_referee" xml:space="preserve">
+    <value>محكم خارجي</value>
+  </data>
+  <data name="external_referee_welcome_page_message" xml:space="preserve">
+    <value>سعادة الأستاذ الدكتور / {FullName}  وفقه الله
+السلام عليكم ورحمة الله وبركاته،،
+ترحب بكم "عمادة البحث العلمي" بجامعة "الإمام محمد بن سعود الإسلامية" في برنامجها "النشر العلمي" وتتمنى لكم مزيداً من النجاح والتميز..
+وتتشرّف بدعوتكم إلى الانضمام لفريق المحكمين الخاص بها.
+لطفاً.. اضغط على مربع ( تفاصيل الطلب ) للاطلاع على المادة العلمية المراد تحكيمها.
+في حالة ( قبول التحكيم ) لطفاً.. اضغط على زر ( قبول ) ومن ثم استكمال باقي الخطوات.
+في حالة ( رفض التحكيم ) لطفاً.. اضغط على زر ( رفض ).
+ولكم جزيل الشكر والتقدير،،،</value>
+  </data>
+  <data name="sent_on" xml:space="preserve">
+    <value>تم الإرسال بتاريخ</value>
+  </data>
+  <data name="update_request" xml:space="preserve">
+    <value>تعديل الطلب</value>
+  </data>
+  <data name="user_belong_to_other_college" xml:space="preserve">
+    <value>هذا المستخدم ينتمي لكلية أخرى </value>
+  </data>
+  <data name="failed_to_send_email_" xml:space="preserve">
+    <value>فشلت عمليةالإرسال للبريد الإلكتروني</value>
+  </data>
+  <data name="mobile_not_verified" xml:space="preserve">
+    <value>لم يتم التحقق من الجوال</value>
+  </data>
+  <data name="residence_country_required" xml:space="preserve">
+    <value>حقل بلد الإقامة مطلوب</value>
+  </data>
+  <data name="action_accept_to_review" xml:space="preserve">
+    <value>موافق للتحكيم</value>
+  </data>
+  <data name="action_reject_to_review" xml:space="preserve">
+    <value>رفض التحكيم</value>
+  </data>
+  <data name="history_reject_to_review" xml:space="preserve">
+    <value>رفض التحكيم</value>
+  </data>
+  <data name="reject_to_review" xml:space="preserve">
+    <value>رفض التحكيم</value>
+  </data>
+  <data name="email_not_verified" xml:space="preserve">
+    <value>لم يتم تفعيل البريد الإلكتروني</value>
+  </data>
+  <data name="history_accept_to_review" xml:space="preserve">
+    <value>موافق على التحكيم</value>
+  </data>
+  <data name="accept_to_review" xml:space="preserve">
+    <value>وافق على التحكيم</value>
+  </data>
+  <data name="probe_title" xml:space="preserve">
+    <value>عنوان التحقيق</value>
+  </data>
+  <data name="history_reject_to_review_by_system" xml:space="preserve">
+    <value>تم الرفض بواسطة النظام </value>
+  </data>
+  <data name="approve_modifications" xml:space="preserve">
+    <value>الموافقة على التعديلات </value>
+  </data>
+  <data name="state_publish_request_pending_referees_after_referees_and_researcher_modifications" xml:space="preserve">
+    <value>طلب النشر في إنتظار المحكم بعد تعديلات الباحث</value>
+  </data>
+  <data name="bank_account_number_type_id" xml:space="preserve">
+    <value>نوع رقم الحساب المصرفي</value>
+  </data>
+  <data name="swift" xml:space="preserve">
+    <value>سوفت كود</value>
+  </data>
+  <data name="routing_number" xml:space="preserve">
+    <value>رقم التحويل</value>
+  </data>
+  <data name="SwiftCode" xml:space="preserve">
+    <value>رمز السرعة</value>
+  </data>
+  <data name="bank_swift_photocopy" xml:space="preserve">
+    <value>صورة البيانات البنكية لرقم سويفت</value>
+  </data>
+  <data name="invalid_routing_number" xml:space="preserve">
+    <value>رقم التوجيه غير صالح</value>
+  </data>
+  <data name="invalid_swift" xml:space="preserve">
+    <value>سوفت كود غير صحيح</value>
+  </data>
+  <data name="routing_number_required" xml:space="preserve">
+    <value>رقم التوجيه مطلوب</value>
+  </data>
+  <data name="swift_required" xml:space="preserve">
+    <value>سوفت كود مطلوب</value>
+  </data>
+  <data name="must_change_password" xml:space="preserve">
+    <value>إلزام المستخدم بتغيير كلمة المرور.</value>
+  </data>
+  <data name="field_is_required" xml:space="preserve">
+    <value>هذا الحقل مطلوب</value>
+  </data>
+  <data name="state_publish_request_pending_university_rector_publish_rejected" xml:space="preserve">
+    <value>طلب النشر في إنتظار إعتماد الرفض من قبل مدير الجامعة</value>
+  </data>
+  <data name="bank_other" xml:space="preserve">
+    <value>إسم البنك</value>
+  </data>
+  <data name="request_create_department" xml:space="preserve">
+    <value>القسم الذي ينتمي إليه الطلب</value>
+  </data>
+  <data name="request_create_department_required" xml:space="preserve">
+    <value>القسم الذي ينتمي إليه الطلب</value>
+  </data>
+  <data name="update_request_before_submitting" xml:space="preserve">
+    <value>يرجى تعديل الطلب قبل الإرسال</value>
+  </data>
+  <data name="please_wait_for_2_minutes" xml:space="preserve">
+    <value>الرجاء الإنتظار لمدة دقيقتين</value>
+  </data>
+  <data name="beta_version" xml:space="preserve">
+    <value>نسخة تجريبية</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>الإعدادات</value>
+  </data>
+  <data name="please_complete_your_profile" xml:space="preserve">
+    <value>الرجاء تحديث الملف الشخصي</value>
+  </data>
+</root>

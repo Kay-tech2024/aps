@@ -1,0 +1,222 @@
+﻿@model APS.Web.Models.RegistrationViewModel
+
+@{
+    ViewBag.Title = @ApsStrings.register_new_user;
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap-datetimepicker@(ApsStrings.css_suffix).css" />
+<link rel="stylesheet" type="text/css" href="~/Content/css/calendar@(ApsStrings.css_suffix).css" />
+
+<h2>@LangHelpers.Instance["register_as_referee"]</h2>
+
+@Html.ValidationSummary(false)
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+{
+@Html.AntiForgeryToken()
+
+    <input type="hidden" value="Referee" name="Role" />
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.NationalId, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.NationalId, new { @class = "form-control", @placeholder = ApsStrings.national_id })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.FullName, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", @placeholder = "الاسم الكامل" })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.BirthDate, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+
+            <div id="birthDateGreg" class="custom-date-picker input-group">
+                @Html.TextBoxFor(m => m.BirthDate, new { @class = "form-control allow-edit" })
+                <div class="input-group-btn">
+                    <button type="button" class="custom-date-picker-button btn btn-default">&#x25a6;</button>
+                    <button type="button" class="custom-date-picker-switch btn btn-info">@ApsStrings.hijri</button>
+                </div>
+            </div>
+            <div id="birthDateHijri" class="custom-date-picker input-group" data-hirji="1" data-custom-date-picker-link="#birthDateGreg" style="display: none;">
+                <input type="text" class="form-control" />
+                <div class="input-group-btn">
+                    <button type="button" class="custom-date-picker-button btn btn-default">&#x25a6;</button>
+                    <button type="button" class="custom-date-picker-switch btn btn-info">@ApsStrings.gregorian</button>
+                </div>
+            </div>
+
+            @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.UniversityId, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.UniversityOther, new { @class = "form-control", @placeholder = "جامعة التخرج" })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.CollegeId, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.CollegeOther, new { @class = "form-control", @placeholder = "الكلية" })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.MajorId, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.MajorOther, new { @class = "form-control", @placeholder = "التخصص" })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.NationalityId, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.DropDownListFor(m => m.NationalityId, (SelectList)ViewBag.Countries, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Address, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.Address, new { @class = "form-control", @placeholder = "العنوان" })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.MobileNumber, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.MobileNumber, new { @class = "form-control", @placeholder = ApsStrings.mobile })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.Email, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = ApsStrings.email })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.EmailConfirmation, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.EmailConfirmation, new { @class = "form-control", @placeholder = ApsStrings.email_confirmation })
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.BankName, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.BankName, new { @class = "form-control", @placeholder = ApsStrings.bank_name })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.BankBranch, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.BankBranch, new { @class = "form-control", @placeholder = ApsStrings.bank_branch })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.BankAccountHolderName, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.BankAccountHolderName, new { @class = "form-control", @placeholder = ApsStrings.account_holder_name })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.BankAccountIBAN, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.BankAccountIBAN, new { @class = "form-control", @placeholder = ApsStrings.iban })
+        </div>
+    </div>
+
+    <hr />
+
+    if (ViewBag.VerifyCaptcha != true)
+    {
+        @Html.HiddenFor(m => m.SmsKey)
+
+        if (!(ViewBag.IsMobileVerified == true))
+        {
+            <div class="form-group required">
+                @Html.LabelFor(m => m.SmsCode, new { @class = "control-label col-sm-3" })
+                <div class="col-sm-9">
+                    @Html.PasswordFor(m => m.SmsCode, new { @class = "form-control", @placeholder = ApsStrings.sms_key })
+                </div>
+            </div>
+        }
+
+        <div class="form-group required">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-9">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = ApsStrings.password })
+            </div>
+        </div>
+
+        <div class="form-group required">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-9">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = ApsStrings.password_confirmation })
+            </div>
+        </div>
+
+        @*<div class="form-group required">
+            <label class="control-label col-md-3">@ApsStrings.resume</label>
+            <div class="col-md-6">
+                <div class="custom-file-upload">
+                    <input type="file" id="file" name="File" multiple />
+                    @Html.ValidationMessageFor(model => model.File, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>*@
+
+    }
+    else
+    {
+
+        @Html.Recaptcha(useSsl: SslBehavior.AlwaysUseSsl, language: ApsStrings.lang_code, theme: RecaptchaTheme.Clean)
+    }
+
+    <div class="form-group">
+        <div class="col-sm-offset-3  col-sm-9">
+            <button type="submit" class="btn btn-info btn-block">@ApsStrings.register</button>
+        </div>
+    </div>
+}
+
+<div class="row text-center">
+    <small class="link"><a href="~/Account/login" class="btn btn-warning">@ApsStrings.login</a></small>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" nonce="@Html.ScriptNonce()"   src="~/Content/js/hijri-date.js"></script>
+    <script type="text/javascript" nonce="@Html.ScriptNonce()"   src="~/Content/js/calendar.js"></script>
+    <script type="text/javascript" nonce="@Html.ScriptNonce()"   src="~/Content/js/site.js"></script>
+
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+        if ($("#Email").val() != "") {
+            $("#EmailConfirmation").val($("#Email").val());
+            $("#Email").attr("readonly", "readonly");
+            $("#EmailConfirmation").attr("readonly", "readonly");
+        }
+        $(document).ready(function () {
+            if ($("#SmsCode").val() != "") {
+                $("#btnVerifyMobile").trigger("click");
+                $("#divPhoneVerification").show();
+            }
+
+        });
+    </script>
+}

@@ -1,0 +1,68 @@
+﻿@model LoginViewModel
+@{
+
+    var isPostBack = HttpContextManager.Current.Request.HttpMethod == "POST";
+    var preferences = CommonManager.GetUserPreferences();
+
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
+
+<div class="row divrtl">
+    <div class="col-md-4 col-xs-4 login-label-bg">
+        <p class="text-center login-label">@ApsStrings.email</p>
+    </div>
+    <div class="col-md-8 col-xs-8">
+        @Html.TextBoxFor(m => m.UserName, new { @class = "text-center username login-input login-input-bg", autofocus = "" })
+        @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="row divrtl nd2">
+    <div class="col-md-4 col-xs-4 login-label-bg">
+        <p class="text-center login-label">@ApsStrings.password</p>
+    </div>
+    <div class="col-md-8 col-xs-8">
+        @Html.PasswordFor(m => m.Password, new { @class = "text-center username login-input login-input-bg" })
+        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div>
+    @Html.Recaptcha(useSsl: SslBehavior.AlwaysUseSsl, language: LangHelpers.Instance["lang_code"], theme: RecaptchaTheme.Clean)
+</div>
+<div class="row">
+
+    <button type="submit" class="text-center btn btn-block btn-info">@ApsStrings.login</button>
+</div>
+
+}
+
+<div class="row">
+    <small class="link"><a href="~/Account/register" class="text-center">@ApsStrings.register_new_user</a></small>
+
+    <small class="link"><a href="~/Account/SendResetPasswordEmail" class="text-center">@ApsStrings.forgot_password</a></small>
+</div>
+
+<div style=" margin: 0 177px 10px;">
+
+    <p class="text-right">
+        <a href="@Url.Action("PublishingPriorities", "About")" target="_blank" class="btn btn-success" style="float:left">
+            <span>@ApsStrings.publishing_priorities</span>
+        </a>
+    </p>
+
+    <p class="text-center">
+        <a href="@Url.Action("ApsGuide", "About")" target="_blank" class="btn btn-success" style="float:left">
+            <span>@ApsStrings.aps_guide</span>
+        </a>
+    </p>
+
+    <p class="text-left">
+        <a href="@Url.Action("UserGuide", "About")" target="_blank" class="btn btn-success" style="float:left">
+            <span>@ApsStrings.user_guide</span>
+        </a>
+    </p>
+</div>

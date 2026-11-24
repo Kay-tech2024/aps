@@ -1,0 +1,777 @@
+﻿@model PublishRequestViewModel
+
+@{
+    ViewBag.Title = ApsStrings.new_publish;
+    var isActionable = Model.AllowedActions != null && Model.AllowedActions.Count > 1;
+    var allowReplacingFiles = isActionable && Model.CreatedByUserId == Utils.RequestUtils.CurrentUser.Id;
+
+    var fileCount = Model.Files == null ? 0 : Model.Files.Count;
+
+    RequestSummaryViewModel2 researcher = null;
+    researcher = (RequestSummaryViewModel2)ViewBag.Researcher;
+}
+
+<ul class="breadcrumb">
+    <li>@Html.ActionLink(ApsStrings.home, "Index", "Home")</li>
+    <li>@Html.ActionLink(ApsStrings.requests, "Index", "Requests")</li>
+    <li>@ApsStrings.edit_request</li>
+</ul>
+
+@using (Html.BeginForm("Edit", "Requests", new { id = Model.Id }, FormMethod.Post, new { id = "frmCreateRequest", enctype = "multipart/form-data", @class = "form-horizontal maximum-width " + (isActionable ? "" : "disabled") }))
+{
+@Html.AntiForgeryToken()
+
+    if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger alert-validation">
+            <h5>@ApsStrings.ValidationSummary</h5>
+            <div class="text-left">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    }
+
+        <div class="box2 box2-info padding">
+
+            <div class="form-group disabled">
+                <label class="control-label col-md-3">@ApsStrings.request_number</label>
+                <div class="col-md-6">
+                    <span class="form-control">@Model.Id</span>
+                </div>
+            </div>
+
+            <div class="form-group disabled">
+                <label class="control-label col-md-3">@ApsStrings.request_type</label>
+                <div class="col-md-6">
+                    <span class="form-control">@Model.Type</span>
+                </div>
+            </div>
+
+            <div class="form-group disabled">
+                <label class="control-label col-md-3">@ApsStrings.title</label>
+                <div class="col-md-6">
+                    <span class="form-control">@Model.Title</span>
+                </div>
+            </div>
+            @if (
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (Utils.HasRolesAny(ApsUserRole.OfficerOfPrintingUnit) && (Model.Status == ApsStrings.state_operation_command_after_isbn || Model.Status == ApsStrings.state_operation_command_pending_operation_command_final_approval_vice_dean)) ||
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (Utils.HasRolesAny(ApsUserRole.ViceDeanOfAcademicResearch) && (Model.Status == ApsStrings.state_operation_command_pending_operation_command_final_approval_vice_dean || Model.Status == ApsStrings.state_operation_command_pending_operation_command_final_approval)) ||
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (Utils.HasRolesAny(ApsUserRole.DeanOfAcademicResearch) && (Model.Status == ApsStrings.state_operation_command_pending_operation_command_final_approval || Model.Status == ApsStrings.state_operation_command_pending_printing_manager)) ||
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (Utils.HasRolesAny(ApsUserRole.UniversityPressDirector) && (Model.Status == ApsStrings.state_operation_command_pending_printing_manager || Model.Status == ApsStrings.state_operation_command_pending_printing)) ||
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                (Utils.HasRolesAny(ApsUserRole.UniversityPressOfficer) && (Model.Status == ApsStrings.state_operation_command_pending_printing || Model.Status == ApsStrings.state_completed))
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                )
+            {
+                <div class="form-group disabled">
+                    <label class="control-label col-md-3">@ApsStrings.isbn</label>
+                    <div class="col-md-6">
+                        <span class="form-control">@Model.ISBN</span>
+                    </div>
+                </div>
+            }
+
+            @if (Model.RequestType == RequestType.Pricing && (Model.AllowEdit || Model.Price > 0))
+            {
+                <div class="form-group @(Model.AllowEdit ? " " : "disabled" )">
+                    <label class="control-label col-md-3">عدد الصفحات</label>
+                    <div class="col-md-6">
+
+                        @if (Model.AllowEdit)
+                        {
+                            @Html.TextBoxFor(m => m.PageCount, new { id = "txtPageCount", @class = "form-control" })
+                        }
+                        else
+                        {
+                            <span class="form-control">@Model.PageCount</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="form-group disabled">
+                    <label class="control-label col-md-3">السعر</label>
+                    <div class="col-md-6">
+
+                        @if (Model.AllowEdit)
+                        {
+                            @Html.TextBoxFor(m => m.Price, new { id = "txtPrice", @class = "form -control" })
+                        }
+                        else
+                        {
+                            <span class="form-control">@Model.Price</span>
+                        }
+                    </div>
+                </div>
+
+            }
+            @*else if (Model.RequestType == RequestType.OperationCommand && (Model.AllowEdit || Model.Price > 0))
+        {
+            <div class="form-group @(Model.AllowEdit ? " " : "disabled" )">
+                <label class="control-label col-md-3">عدد النسخ</label>
+                <div class="col-md-6">
+
+                    @if (Model.AllowEdit)
+                    {
+                        @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+                    }
+                    else
+                    {
+                        <span class="form-control">@Model.Price</span>
+                    }
+                </div>
+            </div>
+        }*@
+            else if ((Model.RequestType == RequestType.ProofreaderReward || Model.RequestType == RequestType.ResearcherReward || Model.RequestType == RequestType.RefereeReward) && (Model.AllowEdit || Model.Price > 0))
+            {
+                <div class="form-group @(Model.AllowEdit ? " " : "disabled" )">
+                    <label class="control-label col-md-3">قيمة المكافأة</label>
+                    <div class="col-md-6">
+
+                        @if (Model.AllowEdit)
+                        {
+                            @Html.TextBoxFor(m => m.Price, new { @class = "form-control" })
+                        }
+                        else
+                        {
+                            <span class="form-control">@Model.Price</span>
+                        }
+                    </div>
+                </div>
+            }
+            @if (Model.RequestType == RequestType.OperationCommand)
+            {
+                if (Utils.HasRolesAny(ApsUserRole.DeanOfAcademicResearch))
+                {
+                    if (Model.Status == ApsStrings.state_operation_command_pending_operation_command_final_approval)
+                    {
+                        <div class="form-group ">
+                            <label class="control-label col-md-3">عدد النسخ</label>
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(m => m.NoOfCopies, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                    }
+                    else if (Model.Status == ApsStrings.state_operation_command_pending_printing_manager)
+                    {
+                        <div class="form-group">
+                            <label class="control-label col-md-3">عدد النسخ</label>
+                            <div class="col-md-6">
+                                @*@Html.TextBoxFor(m => m.NoOfCopies, new { @class = "form-control" })*@
+                                <span class="form-control" id="NoOfCopies">@Model.NoOfCopies</span>
+                            </div>
+                        </div>
+                    }
+                }
+                if (Utils.HasRolesAny(ApsUserRole.UniversityPressDirector))
+                {
+                    if (Model.Status == ApsStrings.state_operation_command_pending_printing_manager || Model.Status == ApsStrings.state_operation_command_pending_printing)
+                    {
+                        <div class="form-group disabled">
+                            <label class="control-label col-md-3">عدد النسخ</label>
+                            <div class="col-md-6">
+                                <span class="form-control">@Model.NoOfCopies</span>
+                            </div>
+                        </div>
+                    }
+                }
+                if (Utils.HasRolesAny(ApsUserRole.UniversityPressOfficer))
+                {
+                    if (Model.Status == ApsStrings.state_operation_command_pending_printing || Model.Status == ApsStrings.state_completed)
+                    {
+                        <div class="form-group disabled">
+                            <label class="control-label col-md-3">عدد النسخ</label>
+                            <div class="col-md-6">
+                                <span class="form-control">@Model.NoOfCopies</span>
+                            </div>
+                        </div>
+                    }
+                }
+
+            }
+            @if (Model.RequestType == RequestType.Distribution)
+            {
+                <div class="form-group disabled">
+                    <label class="control-label col-md-3">عدد النسخ</label>
+                    <div class="col-md-6">
+                        <span class="form-control" id="NoOfCopies">@Model.NoOfCopies</span>
+                    </div>
+                </div>
+            }
+            @if ((Model.RequestType == RequestType.ProofreaderReward || Model.RequestType == RequestType.ResearcherReward || Model.RequestType == RequestType.RefereeReward) && (Model.AllowEdit || Model.Price > 0))
+            {
+                <div class="form-group @(Model.AllowEdit? " " : "disabled" )">
+                    <label class="control-label col-md-3">اسم البنك</label>
+                    <div class="col-md-6">
+
+                        @if (Model.AllowEdit)
+                        {
+                            @Html.TextBoxFor(m => m.AuthorDetails.AccountBank, new { @class = "form-control" })
+                        }
+                        else
+                        {
+                            <span class="form-control">@Model.AuthorDetails.AccountBank</span>
+                        }
+                    </div>
+                </div>
+
+                <div class="form-group @(Model.AllowEdit? " " : "disabled" )">
+                    <label class="control-label col-md-3">اسم صاحب الحساب</label>
+                    <div class="col-md-6">
+
+                        <span class="form-control">@Model.AuthorDetails.AccountName</span>
+                    </div>
+                </div>
+                <div class="form-group @(Model.AllowEdit? " " : "disabled" )">
+                    <label class="control-label col-md-3">رقم IBAN</label>
+                    <div class="col-md-6">
+
+                        @if (Model.AllowEdit)
+                        {
+                            @Html.TextBoxFor(m => m.AuthorDetails.AccountIBAN, new { @class = "form-control" })
+                        }
+                        else
+                        {
+                            <span class="form-control">@Model.AuthorDetails.AccountIBAN</span>
+                        }
+                    </div>
+                </div>
+                <div class="form-group @(Model.AllowEdit ? "" : "disabled")">
+                    @if (Model.AuthorDetails.IbanImage != null)
+                    {
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            @Html.ActionLink((Model.AuthorDetails.IbanImage.Type != FileType.Unspecified ? LangHelpers.Instance[Model.AuthorDetails.IbanImage.Type.ToString()] + ": " : "") + Model.AuthorDetails.IbanImage.FileName, "Index", "GetFile", new { id = Model.AuthorDetails.IbanImage.FileId }, new { @class = "btn btn-success", target = "_blank" })
+                        </div>
+                    }
+                </div>
+            }
+
+            @if (Utils.HasRolesAny(ApsUserRole.KingFahadNationalLibraryOfficer))
+            {
+
+                <div class="form-group disabled">
+                    <h4>@ApsStrings.researcher_information</h4>
+                </div>
+                if (!string.IsNullOrWhiteSpace(researcher.UserProfilesNationalId))
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.national_id</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.UserProfilesNationalId</span>
+                        </div>
+                    </div>
+                }
+                if (!string.IsNullOrWhiteSpace(researcher.ResearchersFirstName))
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.researcher_name</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.ResearchersFirstName</span>
+                        </div>
+                    </div>
+                }
+                if (!string.IsNullOrWhiteSpace(researcher.UserProfilesGender))
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.gender</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.UserProfilesGender</span>
+                        </div>
+                    </div>
+                }
+                if (!string.IsNullOrWhiteSpace(researcher.ResearchersDateOfBirth))
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.birthdate</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.ResearchersDateOfBirth</span>
+                        </div>
+                    </div>
+                }
+                if (!string.IsNullOrWhiteSpace(researcher.ResearchersEmail))
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.email</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.ResearchersEmail</span>
+                        </div>
+                    </div>
+                }
+                if (!string.IsNullOrWhiteSpace(researcher.ResearchersMobileNo))
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.mobile</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.ResearchersMobileNo</span>
+                        </div>
+                    </div>
+                }
+                <div class="form-group disabled">
+                    <h4>@ApsStrings.request_information</h4>
+                </div>
+                <div class="form-group disabled">
+                    <label class="control-label col-md-3">@ApsStrings.title</label>
+                    <div class="col-md-6">
+                        <span class="form-control">@researcher.RequestsTitle</span>
+                    </div>
+                </div>
+                <div class="form-group disabled">
+                    <label class="control-label col-md-3">@ApsStrings.Requests_CollegeId</label>
+                    <div class="col-md-6">
+                        <span class="form-control">@researcher.RequestsCollegeId</span>
+                    </div>
+                </div>
+
+                <div class="form-group disabled">
+                    <label class="control-label col-md-3">@ApsStrings.request_type</label>
+                    <div class="col-md-6">
+                        <span class="form-control">@researcher.RequestsType</span>
+                    </div>
+                </div>
+
+                <div class="form-group disabled">
+                    <label class="control-label col-md-3">@ApsStrings.publish_type</label>
+                    <div class="col-md-6">
+                        <span class="form-control">@researcher.RequestsPublicationType</span>
+                    </div>
+                </div>
+
+                if (researcher.RequestsPublicationType == ApsStrings.type_book)
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.title_of_the_book</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.BookRequestsBookTitle</span>
+                        </div>
+                    </div>
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.book_type</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.BookRequestsBookType</span>
+                        </div>
+                    </div>
+                }
+                else if (researcher.RequestsPublicationType == ApsStrings.type_handbook)
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.handBook_title</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.HandbookRequestsHandbookTitle</span>
+                        </div>
+                    </div>
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.handbook_type</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.HandbookRequestsHandbookType</span>
+                        </div>
+                    </div>
+                }
+                else if (researcher.RequestsPublicationType == ApsStrings.type_thesis)
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.thesis_title</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.ThesisRequestsThesisTitle</span>
+                        </div>
+                    </div>
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.publish_type</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.ThesisRequestsPublishType</span>
+                        </div>
+                    </div>
+                }
+                else if (researcher.RequestsPublicationType == ApsStrings.type_dictionary)
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.dictionary_title</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.DictionaryRequestsDictionaryTitle</span>
+                        </div>
+                    </div>
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.r_major</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.DictionaryRequestsPublishType</span>
+                        </div>
+                    </div>
+                }
+                else if (researcher.RequestsPublicationType == ApsStrings.type_encyclopedia)
+                {
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.encyclopedia_title</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.EncyclopediaRequestsEncyclopediaTitle</span>
+                        </div>
+                    </div>
+                    <div class="form-group disabled">
+                        <label class="control-label col-md-3">@ApsStrings.Recommendations_type</label>
+                        <div class="col-md-6">
+                            <span class="form-control">@researcher.EncyclopediaRequestsPublishType</span>
+                        </div>
+                    </div>
+                }
+
+            }
+
+            @if (researcher != null)
+            {
+                if (researcher.Files != null && researcher.Files.Count > 0)
+                {
+                    <div class="row">
+                        <h4 class="col-md-offset-3 col-md-6 text-center">@ApsStrings.uploaded_files (من الباحث)</h4>
+                    </div>
+                    var i = 0;
+                    foreach (var item in researcher.Files)
+                    {
+                        <div class="form-group">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                @Html.ActionLink(!string.IsNullOrWhiteSpace(item.FileName) ? item.FileName : item.Type.ToString(), "Index", "GetFile", new { id = item.FileId }, new { @class = "btn btn-info btn-xs", target = "_blank" })
+                                @(item.PageCount > 0 ? "  (" + ApsStrings.no_of_pages + ": " + item.PageCount + ")" : "")
+                            </div>
+                        </div>
+                        <hr style="border: 1px dashed #ddd;" />
+                        i++;
+                    }
+                }
+            }
+            @if (Model.RequestType == RequestType.OperationCommand && Model.Files.Count > 0)
+            {
+                @*<div class="row">
+                <h4 class="col-md-offset-3 col-md-6 text-center">@ApsStrings.uploaded_files (من المصحح)</h4>
+            </div>*@
+                var i = 0;
+                foreach (var item in Model.Files)
+                {
+                    <div class="row">
+                        <h4 class="col-md-offset-3 col-md-6 text-center">@ApsStrings.uploaded_files (@LangHelpers.Instance[item.CreatedUserRole.ToString()])</h4>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            @Html.ActionLink(!string.IsNullOrWhiteSpace(item.FileName) ? item.FileName : item.Type.ToString(), "Index", "GetFile", new { id = item.FileId }, new { @class = "btn btn-info btn-xs", target = "_blank" })
+                            @(item.PageCount > 0 ? "  (" + ApsStrings.no_of_pages + ": " + item.PageCount + ")" : "")
+                        </div>
+                    </div>
+                    <hr style="border: 1px dashed #ddd;" />
+                    i++;
+                }
+            }
+        </div>
+
+    if (isActionable)
+    {
+        <div class="form-group">
+            <label class="control-label col-md-3">@ApsStrings.new_attachments</label>
+            <div class="col-md-6">
+                <div class="custom-file-upload">
+                    <input type="file" id="file" name="Files[@(fileCount)].Content" multiple />
+                    @Html.ValidationMessageFor(model => model.Files, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+    }
+    else
+    {
+        <div class="form-group">
+            <label class="control-label col-md-3">@ApsStrings.status</label>
+            <div class="col-md-6">
+                <em>@Model.Status</em>
+            </div>
+        </div>
+        if (Model.CurrentlyWithUserId != null)
+        {
+            <div class="form-group">
+                <label class="control-label col-md-3">@ApsStrings.currently_with</label>
+                <div class="col-md-6">
+                    <em>@Model.CurrentlyWithUserName</em>
+                </div>
+            </div>
+        }
+    }
+    if (Model.DistributionEntities.Count > 0)
+    {
+        <div class="form-group">
+            <label class="control-label col-md-3">@ApsStrings.distribution_copies_selected</label>
+            <div class="col-md-6">
+                <em id="copiesSelected">0</em>
+            </div>
+        </div>
+        if (
+            (Utils.HasRolesAny(ApsUserRole.OfficerOfPrintingUnit) && Model.Status == ApsStrings.state_distribution_pending_distribution_list_preparation) ||
+            (Utils.HasRolesAny(ApsUserRole.ViceDeanOfAcademicResearch) && Model.Status == ApsStrings.state_distribution_pending_distribution_list_approval_vice_dean) ||
+            (Utils.HasRolesAny(ApsUserRole.DeanOfAcademicResearch) && Model.Status == ApsStrings.state_distribution_pending_distribution_list_approval)
+            )
+        {
+
+            <div class="box box2-info  box-actions">
+                <div class="panel-group div-repeatable" data-key="DistributionEntities">
+                    <table id="tblDistributionEntities" class="table order-list table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                @if (Model.Status == ApsStrings.state_distribution_pending_distribution_list_preparation || (Utils.HasRolesAny(ApsUserRole.ViceDeanOfAcademicResearch) && (Model.Status == ApsStrings.state_distribution_pending_distribution_list_approval_vice_dean)) || (Utils.HasRolesAny(ApsUserRole.DeanOfAcademicResearch) && Model.Status == ApsStrings.state_distribution_pending_distribution_list_approval)
+)
+                                {
+                                    <td>
+                                        <input type="checkbox" id="chkSelectAll" />
+                                    </td>
+                                }
+                                <td>@ApsStrings.entity_name</td>
+                                <td>@ApsStrings.no_copies</td>
+                            </tr>
+                        </thead>
+                        <tbody class="div-repeatable" id="repeatable">
+                            @for (int i = 0; i < Model.DistributionEntities.Count; i++)
+                            {
+                                <tr>
+                                    @if (Model.Status == ApsStrings.state_distribution_pending_distribution_list_preparation)
+                            {
+                                        <td>
+                                            @Html.CheckBoxFor(m => m.DistributionEntities[i].IsSelected)
+                                        </td>
+                                    }
+                                    else if ((Utils.HasRolesAny(ApsUserRole.ViceDeanOfAcademicResearch) && Model.Status == ApsStrings.state_distribution_pending_distribution_list_approval_vice_dean) || (Utils.HasRolesAny(ApsUserRole.DeanOfAcademicResearch) && Model.Status == ApsStrings.state_distribution_pending_distribution_list_approval))
+                                    {
+                                        <td>
+                                            @Html.CheckBoxFor(m => m.DistributionEntities[i].IsSelected)
+                                        </td>
+                                    }
+                                    <td name="Name" class="form-group disabled">
+                                        @Html.HiddenFor(m => m.DistributionEntities[i].Id)
+                                        @Html.TextBoxFor(m => m.DistributionEntities[i].Name, new { @class = "form-control", @readonly = "readonly" })
+                                    </td>
+                                    <td name="NoOfCopies" class="form-group">
+                                        @Html.TextBoxFor(m => m.DistributionEntities[i].NoOfCopies, new { @class = "form-control", @type = "number", @min = "0" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <a href="@Url.Action("Index", "Entities")" class="btn btn-success pull-right">
+                        <span>@ApsStrings.entities</span>
+                    </a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="box box2-info  box-actions">
+                <div class="panel-group div-repeatable" data-key="DistributionEntities">
+                    <table id="tblDistributionEntities" class="table order-list table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <td>@ApsStrings.entity_name</td>
+                                <td>@ApsStrings.no_copies</td>
+                            </tr>
+                        </thead>
+                        <tbody class="div-repeatable disabled" id="repeatable">
+                            @for (int i = 0; i < Model.DistributionEntities.Count; i++)
+                        {
+                                <tr>
+                                    <td name="Name" class="form-group">
+                                        @Html.HiddenFor(m => m.DistributionEntities[i].Id)
+                                        <span class="form-control">@Model.DistributionEntities[i].Name</span>
+                                    </td>
+                                    <td name="NoOfCopies" class="form-group">
+                                        <span class="form-control">@Model.DistributionEntities[i].NoOfCopies</span>
+                                        @Html.HiddenFor(m => m.DistributionEntities[i].NoOfCopies)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    @if (Utils.HasRolesAny(ApsUserRole.DeanOfLibraryAffairs) && Model.Status == ApsStrings.entitylist_dla)
+                    {
+                        <a href="#" target="_self" class="btn btn-success pull-right" onclick="location.href='@Utils.GetApplicationUrl()'+'/Ajax/ExportDocuments?Type=entities&requestId=@Model.Id'">
+                            <span>@ApsStrings.print</span>
+                        </a>
+                    }
+                </div>
+            </div>
+        }
+
+    }
+
+    <br />
+    if (!(Utils.HasRolesAny(ApsUserRole.KingFahadNationalLibraryOfficer)))
+    {
+        @Html.Partial("_PartialHistory", Model)
+    }
+    if (Model.AllowedActions != null && Model.AllowedActions.Count > 1)
+    {
+        <div class="box box2-info  box-actions">
+
+            <div class="form-group">
+                <label class="control-label">الإجراء</label>
+                @Html.DropDownListFor(m => m.Action, new SelectList(Model.AllowedActions, "Value", "Display"), new { @class = "form-control" })
+            </div>
+        </div>
+        if ((Utils.HasRolesAny(ApsUserRole.KingFahadNationalLibraryOfficer)))
+        {
+            <div class="box box2-info  box-actions">
+
+                <div class="form-group">
+                    <label class="control-label">@ApsStrings.isbn</label>
+                    @Html.TextBoxFor(m => m.ISBN, new { @class = "form-control" })
+                </div>
+            </div>
+        }
+        <div class="box2 box2-info box-actions">
+            <div class="row">
+                <div class="form-group">
+                    <label class="control-label col-md-3">@ApsStrings.comments</label>
+                    <div class="col-md-6">
+                        @Html.TextAreaFor(model => model.Comments, htmlAttributes: new { @class = "form-control", rows = 5, cols = 5, placeholder = @ApsStrings.comments })
+                        @Html.ValidationMessageFor(model => model.Comments, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box box2-info  box-actions">
+            <div class="form-group">
+                <button id="btnSubmit" class="btn btn-success btn-block">إرسال</button>
+            </div>
+        </div>
+    }
+}
+
+<div class="row text-center">
+    <a class="btn btn-default" href="~/Home/Return">العودة</a>
+    <br />
+</div>
+
+<div class="btn-seleted-refeee hide"></div>
+
+@section scripts
+{
+
+    <script type="text/javascript" nonce="@Html.ScriptNonce()">
+
+        function CountOfEntities()
+        {
+            var total = 0;
+            var NoOfCopies =parseInt($('#NoOfCopies').text());
+            console.log(total);
+            $('#tblDistributionEntities tbody.disabled tr').each(function (i, row) {
+                var $row = $(row),
+                    $NoOfCopies = $row.find('input[name*="DistributionEntities['+i+'].NoOfCopies"]');
+                var noOfSelectedCopies = parseInt($NoOfCopies.val());
+                total = total+noOfSelectedCopies;
+
+            });
+            $('#copiesSelected').text(total);
+            $('#copiesSelected').css('color','Red');
+            $('#copiesSelected').css('font-weight','bold');
+
+            if(total <= NoOfCopies)
+            {
+                isValid = true;
+                $('#copiesSelected').css('color','Green');
+            }
+            return isValid;
+        }
+        function verifyCondition()
+        {
+            var isValid =false;
+            var total = 0;
+            var NoOfCopies =parseInt($('#NoOfCopies').text());
+            $('#tblDistributionEntities tbody tr').each(function (i, row) {
+                var $row = $(row),
+                    $NoOfCopies = $row.find('input[name*="DistributionEntities['+i+'].NoOfCopies"]'),
+                    $IsChecked = $row.find('input[name*="DistributionEntities['+i+'].IsSelected"]');
+                var noOfSelectedCopies = parseInt($NoOfCopies.val());
+                if($IsChecked.is(':checked'))
+                {
+                    total = total+noOfSelectedCopies;
+                }
+            });
+            $('#copiesSelected').text(total);
+            $('#copiesSelected').css('color','Red');
+            $('#copiesSelected').css('font-weight','bold');
+            if(total <= NoOfCopies)
+            {
+                isValid = true;
+                $('#copiesSelected').css('color','Green');
+            }
+            // isValid = isValid();
+            if(!isValid)
+            {
+                alert('@ApsStrings.distribution_copies_condition');
+            }
+            //return isValid;
+        }
+        function applyCheckBoxStyle(e)
+        {
+            var isSelected = $(e).is(':checked');
+            if(isSelected)
+            {
+                $(e).parents("tr:first").css('background-color','orange');
+            }
+            else
+            {
+                $(e).parents("tr:first").css('background-color','');
+            }
+        }
+        function toggleSelectAll()
+        {
+            var isChecked = true;
+            $('#tblDistributionEntities tbody tr input[type*="checkbox"]').each(function () {
+                var isSelected = $(this).is(':checked');
+                if(!isSelected)
+                {
+                    isChecked = false;
+                    return true;
+                }
+            });
+            $('#chkSelectAll').prop("checked", isChecked);
+        }
+        $('#tblDistributionEntities .div-repeatable').on('input', function () {
+            verifyCondition();
+        });
+        $(document).ready(function() {
+            $("#tblDistributionEntities .div-repeatable").on("change", ":checkbox", function() {
+                var isSelected = $(this).is(':checked');
+                applyCheckBoxStyle($(this));
+                verifyCondition();
+                toggleSelectAll();
+            });
+            CountOfEntities();
+        });
+        //var calculatePrice = @(Model.AllowEdit && Model.RequestType == RequestType.Pricing).ToString().ToLower();
+        var allowEdit = @Model.AllowEdit.ToString().ToLower();
+
+        if (allowEdit) {
+            $('#txtPageCount').on('input', function () {
+                var pageCount = $(this).val();
+                if (!pageCount || pageCount.trim() === '') {
+                    pageCount = 0;
+                }
+
+                var price = Math.round(pageCount / 20);
+                if (price > 50) price = 50;
+
+                $('#txtPrice').val(price);
+            });
+        }
+
+        $('#chkSelectAll').change(function() {
+            if($(this).is(":checked")) {
+                $('#tblDistributionEntities tbody tr input[type*="checkbox"]').each(function () {
+                    $(this).prop("checked", true);
+                    applyCheckBoxStyle($(this));
+                });
+            }
+            else
+            {
+                $('#tblDistributionEntities tbody tr input[type*="checkbox"]').each(function () {
+                    $(this).prop("checked", false);
+                    applyCheckBoxStyle($(this));
+                });
+            }
+            verifyCondition();
+        });
+    </script>
+
+}

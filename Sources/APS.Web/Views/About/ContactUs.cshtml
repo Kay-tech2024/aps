@@ -1,0 +1,60 @@
+﻿@model ContactUsViewModel
+@{
+    ViewBag.Title = "ContactUs";
+    string CurrentName = Utils.GetUserId();
+    string cLayout = "";
+    if (string.IsNullOrWhiteSpace(CurrentName))
+    {
+        cLayout = "~/Views/Shared/_LayoutLogin.cshtml";
+    }
+    else
+    {
+        cLayout = "~/Views/Shared/_Layout.cshtml";
+        <ul class="breadcrumb">
+            <li>@Html.ActionLink(ApsStrings.homepage, "Index", "Home")</li>
+            <li>@ApsStrings.contactUs</li>
+        </ul>
+        <h2 class="page-header">@ApsStrings.contactUs</h2>
+    }
+    Layout = cLayout;
+}
+<link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap-datetimepicker@(ApsStrings.css_suffix).css" />
+@*@Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })*@
+@Html.ValidationSummary(false)
+@*@using (Html.BeginForm("ContactUs", "Account", FormMethod.Post))*@
+@using (Html.BeginForm("ContactUs", "About", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+@Html.AntiForgeryToken()
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.FullName, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", @placeholder = ApsStrings.fullname })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.EmailAddress, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", @placeholder = ApsStrings.email })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.Subject, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control", @placeholder = ApsStrings.title })
+        </div>
+    </div>
+
+    <div class="form-group required">
+        @Html.LabelFor(m => m.Message, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-9">
+            @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @placeholder = ApsStrings.contactUsMessage, rows = 5 })
+        </div>
+    </div>
+
+    <div class="row">
+        <button type="submit" class="text-center btn btn-block btn-info">@ApsStrings.submit</button>
+    </div>
+}
